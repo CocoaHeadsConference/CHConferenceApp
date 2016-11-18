@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TalksDashboardView" customModule="CocoaheadsConf" customModuleProvider="target">
+            <connections>
+                <outlet property="talkListView" destination="8oF-bi-oyV" id="eFu-XN-kn0"/>
+                <outlet property="talkSegmentedControl" destination="R9u-gP-lC2" id="MJ9-J0-UX2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBd-cK-MGY">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="R9u-gP-lC2">
+                            <rect key="frame" x="16" y="16" width="343" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="W4p-Tc-YFR"/>
+                            </constraints>
+                            <segments>
+                                <segment title="Todas"/>
+                                <segment title="Palestras"/>
+                                <segment title="Workshops"/>
+                            </segments>
+                            <color key="tintColor" red="0.0" green="0.44077781440000002" blue="0.37931953099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="changeTalkDisplayTypeWithSegmentedControl:" destination="-1" eventType="valueChanged" id="XP1-uo-4AC"/>
+                            </connections>
+                        </segmentedControl>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z22-ru-uWd">
+                            <rect key="frame" x="0.0" y="60" width="375" height="1"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="b0g-dU-6j7"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="R9u-gP-lC2" secondAttribute="trailing" constant="16" id="9Et-ss-kdB"/>
+                        <constraint firstItem="R9u-gP-lC2" firstAttribute="top" secondItem="fBd-cK-MGY" secondAttribute="top" constant="16" id="G1m-Sg-aak"/>
+                        <constraint firstAttribute="trailing" secondItem="z22-ru-uWd" secondAttribute="trailing" id="J0d-xm-5ze"/>
+                        <constraint firstItem="z22-ru-uWd" firstAttribute="leading" secondItem="fBd-cK-MGY" secondAttribute="leading" id="PUn-ja-V0P"/>
+                        <constraint firstItem="R9u-gP-lC2" firstAttribute="leading" secondItem="fBd-cK-MGY" secondAttribute="leading" constant="16" id="WOV-sx-iCp"/>
+                        <constraint firstAttribute="bottom" secondItem="z22-ru-uWd" secondAttribute="bottom" id="YdN-DK-agn"/>
+                        <constraint firstItem="z22-ru-uWd" firstAttribute="top" secondItem="R9u-gP-lC2" secondAttribute="bottom" constant="16" id="vRi-VU-2fU"/>
+                        <constraint firstAttribute="height" constant="61" id="w0S-4J-dmk"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8oF-bi-oyV" customClass="CollectionStackView" customModule="Compose">
+                    <rect key="frame" x="0.0" y="61" width="375" height="606"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fBd-cK-MGY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="A4G-4i-K2f"/>
+                <constraint firstAttribute="trailing" secondItem="fBd-cK-MGY" secondAttribute="trailing" id="GxS-b2-QzB"/>
+                <constraint firstAttribute="trailing" secondItem="8oF-bi-oyV" secondAttribute="trailing" id="cQD-zh-Uho"/>
+                <constraint firstAttribute="bottom" secondItem="8oF-bi-oyV" secondAttribute="bottom" id="cdP-0V-d7i"/>
+                <constraint firstItem="8oF-bi-oyV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ejI-o6-Kz1"/>
+                <constraint firstItem="fBd-cK-MGY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qIz-du-W8l"/>
+                <constraint firstItem="8oF-bi-oyV" firstAttribute="top" secondItem="fBd-cK-MGY" secondAttribute="bottom" id="woV-xd-6Vf"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

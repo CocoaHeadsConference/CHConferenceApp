@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Iw-qo-Ugf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Speakers List View Controller-->
+        <scene sceneID="QV5-RG-9uZ">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="5Iw-qo-Ugf" customClass="SpeakersListViewController" customModule="CocoaheadsConf" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XhD-uE-RKC"/>
+                        <viewControllerLayoutGuide type="bottom" id="L7A-0a-7ra"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rkU-bX-jIv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DB1-6c-hjx" customClass="SpeakerListView" customModule="CocoaheadsConf" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DB1-6c-hjx" firstAttribute="top" secondItem="XhD-uE-RKC" secondAttribute="bottom" id="6Le-3M-NLD"/>
+                            <constraint firstItem="L7A-0a-7ra" firstAttribute="top" secondItem="DB1-6c-hjx" secondAttribute="bottom" id="Gss-6K-GK6"/>
+                            <constraint firstItem="DB1-6c-hjx" firstAttribute="leading" secondItem="rkU-bX-jIv" secondAttribute="leading" id="fT4-Bu-IsE"/>
+                            <constraint firstAttribute="trailing" secondItem="DB1-6c-hjx" secondAttribute="trailing" id="mJA-OW-4Fc"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="listView" destination="DB1-6c-hjx" id="WWO-TX-gni"/>
+                        <segue destination="inl-n1-0x5" kind="presentation" identifier="showDetail" modalTransitionStyle="coverVertical" id="yWM-7h-UiO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aIY-Mr-AfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109.59999999999999" y="192.95352323838082"/>
+        </scene>
+        <!--Speaker Detail View Controller-->
+        <scene sceneID="hRJ-rW-Di2">
+            <objects>
+                <viewController id="inl-n1-0x5" customClass="SpeakerDetailViewController" customModule="CocoaheadsConf" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1tY-Wv-6Kx"/>
+                        <viewControllerLayoutGuide type="bottom" id="gZw-ip-IQo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JIL-t7-KgF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vU5-0b-6aa" customClass="SpeakerDetailView" customModule="CocoaheadsConf" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2D-rr-YwZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="PMG-zL-Nv8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f2D-rr-YwZ" firstAttribute="top" secondItem="JIL-t7-KgF" secondAttribute="top" id="B5m-ud-e1Z"/>
+                            <constraint firstItem="f2D-rr-YwZ" firstAttribute="leading" secondItem="JIL-t7-KgF" secondAttribute="leading" id="cdh-bO-2Xu"/>
+                            <constraint firstItem="vU5-0b-6aa" firstAttribute="leading" secondItem="JIL-t7-KgF" secondAttribute="leading" id="fxa-1q-Pcs"/>
+                            <constraint firstAttribute="trailing" secondItem="f2D-rr-YwZ" secondAttribute="trailing" id="hpq-qV-Shp"/>
+                            <constraint firstItem="vU5-0b-6aa" firstAttribute="top" secondItem="JIL-t7-KgF" secondAttribute="top" id="iVu-o3-h3D"/>
+                            <constraint firstItem="gZw-ip-IQo" firstAttribute="top" secondItem="vU5-0b-6aa" secondAttribute="bottom" id="tOw-e9-Clw"/>
+                            <constraint firstAttribute="trailing" secondItem="vU5-0b-6aa" secondAttribute="trailing" id="x6k-8t-yI9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="speakerDetailView" destination="vU5-0b-6aa" id="k3I-le-9xl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aiS-X8-gOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861.60000000000002" y="192.95352323838082"/>
+        </scene>
+    </scenes>
+</document>

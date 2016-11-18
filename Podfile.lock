@@ -1,0 +1,21 @@
+PODS:
+  - Compose (1.0)
+  - Kingfisher (3.1.4)
+  - Marshal (1.0.0)
+  - NibDesignable (3.0.0)
+
+DEPENDENCIES:
+  - Compose
+  - Kingfisher
+  - Marshal
+  - NibDesignable
+
+SPEC CHECKSUMS:
+  Compose: 248a2e4602d77d319765570b3060163a31fe4ab8
+  Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
+  Marshal: a3c5c5dbd388112edf3cdabb718f2b4cfe48658a
+  NibDesignable: 6ccf1e54135cb05be0a78f803b9a8d78125a7d6d
+
+PODFILE CHECKSUM: 9aaa00d9fc32579758b792e6005e00d04e8188ea
+
+COCOAPODS: 1.1.1
