@@ -16,6 +16,14 @@
 		1515D11F1DDCE47A008690FD /* SpeakerDetailSocialCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1515D11D1DDCE47A008690FD /* SpeakerDetailSocialCollectionViewCell.xib */; };
 		1515D1211DDCE487008690FD /* SpeakerDetailSocialUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1515D1201DDCE487008690FD /* SpeakerDetailSocialUnit.swift */; };
 		1515D1231DDCEF11008690FD /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1515D1221DDCEF11008690FD /* UIColor+Hex.swift */; };
+		1519A68E1DE287B50044EE8C /* DetailHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A68C1DE287B50044EE8C /* DetailHeaderCollectionViewCell.swift */; };
+		1519A68F1DE287B50044EE8C /* DetailHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1519A68D1DE287B50044EE8C /* DetailHeaderCollectionViewCell.xib */; };
+		1519A6931DE28CAC0044EE8C /* TalkDetailLocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A6911DE28CAC0044EE8C /* TalkDetailLocationCollectionViewCell.swift */; };
+		1519A6941DE28CAC0044EE8C /* TalkDetailLocationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1519A6921DE28CAC0044EE8C /* TalkDetailLocationCollectionViewCell.xib */; };
+		1519A6971DE33A3B0044EE8C /* ConferenceStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A6961DE33A3B0044EE8C /* ConferenceStyleKit.swift */; };
+		1519A6991DE341160044EE8C /* TalkDetailUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A6981DE341160044EE8C /* TalkDetailUnits.swift */; };
+		1519A69D1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */; };
+		1519A69E1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */; };
 		152F38BE1DCD0BD700FE9ECF /* Talks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F38BD1DCD0BD700FE9ECF /* Talks.storyboard */; };
 		152F38C01DCD0BE600FE9ECF /* Sponsors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F38BF1DCD0BE600FE9ECF /* Sponsors.storyboard */; };
 		152F38C21DCD0BF000FE9ECF /* Speakers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F38C11DCD0BF000FE9ECF /* Speakers.storyboard */; };
@@ -37,6 +45,9 @@
 		155BF1331DDD302D00985B9F /* LabelUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BF1321DDD302D00985B9F /* LabelUnit.swift */; };
 		155BF1361DDD304200985B9F /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155BF1341DDD304200985B9F /* LabelCollectionViewCell.swift */; };
 		155BF1371DDD304200985B9F /* LabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 155BF1351DDD304200985B9F /* LabelCollectionViewCell.xib */; };
+		158F3E5A1DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F3E581DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.swift */; };
+		158F3E5B1DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 158F3E591DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.xib */; };
+		158F3E5D1DE3CC890076CDB6 /* SpeakerDetailSmallTalkUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F3E5C1DE3CC890076CDB6 /* SpeakerDetailSmallTalkUnit.swift */; };
 		1591645B1DDD370600995EC2 /* TalkDashboardUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1591645A1DDD370600995EC2 /* TalkDashboardUnits.swift */; };
 		1591645E1DDD419700995EC2 /* TalkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1591645C1DDD419700995EC2 /* TalkCollectionViewCell.swift */; };
 		1591645F1DDD419700995EC2 /* TalkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1591645D1DDD419700995EC2 /* TalkCollectionViewCell.xib */; };
@@ -68,7 +79,7 @@
 		15DDF92A1DD11DA200AD4B93 /* TalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DDF9291DD11DA200AD4B93 /* TalkModel.swift */; };
 		15DDF92C1DD11DAA00AD4B93 /* SpeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DDF92B1DD11DAA00AD4B93 /* SpeakerModel.swift */; };
 		15DDF9301DD11E9300AD4B93 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DDF92F1DD11E9300AD4B93 /* RoomModel.swift */; };
-		15DDF9331DD122E700AD4B93 /* FakeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 15DDF9321DD122E700AD4B93 /* FakeData.json */; };
+		15DDF9331DD122E700AD4B93 /* LocalData.json in Resources */ = {isa = PBXBuildFile; fileRef = 15DDF9321DD122E700AD4B93 /* LocalData.json */; };
 		15DDF9351DD126CA00AD4B93 /* LocalDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DDF9341DD126CA00AD4B93 /* LocalDataFetcher.swift */; };
 		15DDF9381DD1284500AD4B93 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DDF9371DD1284500AD4B93 /* Cache.swift */; };
 		15DDF93A1DD1298800AD4B93 /* Date+Marshal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DDF9391DD1298800AD4B93 /* Date+Marshal.swift */; };
@@ -76,6 +87,10 @@
 		15DDF9461DD2B86100AD4B93 /* ParseDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DDF9451DD2B86100AD4B93 /* ParseDataTest.swift */; };
 		15DDF9491DD2C38400AD4B93 /* CacheUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DDF9481DD2C38400AD4B93 /* CacheUpdatable.swift */; };
 		15DDF94B1DD2C4C700AD4B93 /* TalkDashboardViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DDF94A1DD2C4C700AD4B93 /* TalkDashboardViewState.swift */; };
+		15F9E4251DDF7A1F00C05ECC /* TalkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9E4241DDF7A1F00C05ECC /* TalkDetailViewController.swift */; };
+		15F9E4271DDF7A4600C05ECC /* TalkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9E4261DDF7A4600C05ECC /* TalkDetailView.swift */; };
+		15F9E42B1DDF7A7500C05ECC /* TalkDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F9E42A1DDF7A7500C05ECC /* TalkDetailView.xib */; };
+		15F9E42D1DDF85E200C05ECC /* TalkDetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9E42C1DDF85E200C05ECC /* TalkDetailViewState.swift */; };
 		1FB33EC6A0E4FD8A272779D7 /* Pods_CocoaheadsConf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0668A8CC5476A35E0163F0B6 /* Pods_CocoaheadsConf.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +115,14 @@
 		1515D11D1DDCE47A008690FD /* SpeakerDetailSocialCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerDetailSocialCollectionViewCell.xib; sourceTree = "<group>"; };
 		1515D1201DDCE487008690FD /* SpeakerDetailSocialUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerDetailSocialUnit.swift; sourceTree = "<group>"; };
 		1515D1221DDCEF11008690FD /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		1519A68C1DE287B50044EE8C /* DetailHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		1519A68D1DE287B50044EE8C /* DetailHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
+		1519A6911DE28CAC0044EE8C /* TalkDetailLocationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailLocationCollectionViewCell.swift; sourceTree = "<group>"; };
+		1519A6921DE28CAC0044EE8C /* TalkDetailLocationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkDetailLocationCollectionViewCell.xib; sourceTree = "<group>"; };
+		1519A6961DE33A3B0044EE8C /* ConferenceStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferenceStyleKit.swift; sourceTree = "<group>"; };
+		1519A6981DE341160044EE8C /* TalkDetailUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailUnits.swift; sourceTree = "<group>"; };
+		1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkDetailDescriptionCollectionViewCell.xib; sourceTree = "<group>"; };
 		152F38BD1DCD0BD700FE9ECF /* Talks.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Talks.storyboard; sourceTree = "<group>"; };
 		152F38BF1DCD0BE600FE9ECF /* Sponsors.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sponsors.storyboard; sourceTree = "<group>"; };
 		152F38C11DCD0BF000FE9ECF /* Speakers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Speakers.storyboard; sourceTree = "<group>"; };
@@ -121,7 +144,10 @@
 		155BF1321DDD302D00985B9F /* LabelUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelUnit.swift; sourceTree = "<group>"; };
 		155BF1341DDD304200985B9F /* LabelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		155BF1351DDD304200985B9F /* LabelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCollectionViewCell.xib; sourceTree = "<group>"; };
-		1591645A1DDD370600995EC2 /* TalkDashboardUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDashboardUnits.swift; sourceTree = "<group>"; };
+		158F3E581DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerDetailSmallTalkCollectionViewCell.swift; sourceTree = "<group>"; };
+		158F3E591DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerDetailSmallTalkCollectionViewCell.xib; sourceTree = "<group>"; };
+		158F3E5C1DE3CC890076CDB6 /* SpeakerDetailSmallTalkUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerDetailSmallTalkUnit.swift; sourceTree = "<group>"; };
+		1591645A1DDD370600995EC2 /* TalkDashboardUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalkDashboardUnits.swift; path = Units/TalkDashboardUnits.swift; sourceTree = "<group>"; };
 		1591645C1DDD419700995EC2 /* TalkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkCollectionViewCell.swift; sourceTree = "<group>"; };
 		1591645D1DDD419700995EC2 /* TalkCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkCollectionViewCell.xib; sourceTree = "<group>"; };
 		159164601DDD458800995EC2 /* TalkUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkUnit.swift; sourceTree = "<group>"; };
@@ -156,7 +182,7 @@
 		15DDF9291DD11DA200AD4B93 /* TalkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkModel.swift; sourceTree = "<group>"; };
 		15DDF92B1DD11DAA00AD4B93 /* SpeakerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerModel.swift; sourceTree = "<group>"; };
 		15DDF92F1DD11E9300AD4B93 /* RoomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
-		15DDF9321DD122E700AD4B93 /* FakeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FakeData.json; sourceTree = "<group>"; };
+		15DDF9321DD122E700AD4B93 /* LocalData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocalData.json; sourceTree = "<group>"; };
 		15DDF9341DD126CA00AD4B93 /* LocalDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataFetcher.swift; sourceTree = "<group>"; };
 		15DDF9371DD1284500AD4B93 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		15DDF9391DD1298800AD4B93 /* Date+Marshal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Marshal.swift"; sourceTree = "<group>"; };
@@ -164,6 +190,10 @@
 		15DDF9451DD2B86100AD4B93 /* ParseDataTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseDataTest.swift; sourceTree = "<group>"; };
 		15DDF9481DD2C38400AD4B93 /* CacheUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheUpdatable.swift; sourceTree = "<group>"; };
 		15DDF94A1DD2C4C700AD4B93 /* TalkDashboardViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDashboardViewState.swift; sourceTree = "<group>"; };
+		15F9E4241DDF7A1F00C05ECC /* TalkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailViewController.swift; sourceTree = "<group>"; };
+		15F9E4261DDF7A4600C05ECC /* TalkDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailView.swift; sourceTree = "<group>"; };
+		15F9E42A1DDF7A7500C05ECC /* TalkDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkDetailView.xib; sourceTree = "<group>"; };
+		15F9E42C1DDF85E200C05ECC /* TalkDetailViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailViewState.swift; sourceTree = "<group>"; };
 		6D327FD898FBF26989AC9F44 /* Pods-CocoaheadsConf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaheadsConf.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaheadsConf/Pods-CocoaheadsConf.release.xcconfig"; sourceTree = "<group>"; };
 		A19881DAEC2FFA8E5C75DC4B /* Pods-CocoaheadsConf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaheadsConf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaheadsConf/Pods-CocoaheadsConf.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +237,41 @@
 			name = SpeakerDetailSocial;
 			sourceTree = "<group>";
 		};
+		1519A68B1DE2879D0044EE8C /* DetailHeaderUnit */ = {
+			isa = PBXGroup;
+			children = (
+				1519A68C1DE287B50044EE8C /* DetailHeaderCollectionViewCell.swift */,
+				1519A68D1DE287B50044EE8C /* DetailHeaderCollectionViewCell.xib */,
+			);
+			name = DetailHeaderUnit;
+			sourceTree = "<group>";
+		};
+		1519A6901DE28C8F0044EE8C /* TalkDetailLocationUnit */ = {
+			isa = PBXGroup;
+			children = (
+				1519A6911DE28CAC0044EE8C /* TalkDetailLocationCollectionViewCell.swift */,
+				1519A6921DE28CAC0044EE8C /* TalkDetailLocationCollectionViewCell.xib */,
+			);
+			name = TalkDetailLocationUnit;
+			sourceTree = "<group>";
+		};
+		1519A6951DE33A3B0044EE8C /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				1519A6961DE33A3B0044EE8C /* ConferenceStyleKit.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		1519A69A1DE347C00044EE8C /* TalkDescriptionUnit */ = {
+			isa = PBXGroup;
+			children = (
+				1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */,
+				1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */,
+			);
+			name = TalkDescriptionUnit;
+			sourceTree = "<group>";
+		};
 		152F38B11DCD0B5600FE9ECF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +287,7 @@
 		152F38B21DCD0B5600FE9ECF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1519A6951DE33A3B0044EE8C /* Theme */,
 				15BBD89F1DDA232500A9A45F /* Views */,
 				15D88FE21DD3740D0055F781 /* ViewControllers */,
 				15DDF9471DD2C37900AD4B93 /* Protocols */,
@@ -308,9 +374,10 @@
 		152F38BA1DCD0B5600FE9ECF /* Talks */ = {
 			isa = PBXGroup;
 			children = (
-				15D88FC81DD2C8D00055F781 /* Units */,
 				152F38BD1DCD0BD700FE9ECF /* Talks.storyboard */,
 				152F38C71DCD0C1A00FE9ECF /* TalksScene.swift */,
+				15F9E4231DDF79F900C05ECC /* Detail */,
+				15D88FC81DD2C8D00055F781 /* Units */,
 				15F9E4221DDF24DA00C05ECC /* Timeline */,
 			);
 			path = Talks;
@@ -335,9 +402,20 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		158F3E571DE3CAE90076CDB6 /* SpeakerDetailSmallTalkDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				158F3E5C1DE3CC890076CDB6 /* SpeakerDetailSmallTalkUnit.swift */,
+				158F3E581DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.swift */,
+				158F3E591DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.xib */,
+			);
+			name = SpeakerDetailSmallTalkDisplay;
+			sourceTree = "<group>";
+		};
 		15BBD8981DD9E9AB00A9A45F /* Units */ = {
 			isa = PBXGroup;
 			children = (
+				158F3E571DE3CAE90076CDB6 /* SpeakerDetailSmallTalkDisplay */,
 				1515D11B1DDCE462008690FD /* SpeakerDetailSocial */,
 				1515D1141DDA9DDF008690FD /* SpeakerDetailDescription */,
 				15BBD8AD1DDA46AB00A9A45F /* SpeakerDetailHeader */,
@@ -444,10 +522,10 @@
 		15D88FC81DD2C8D00055F781 /* Units */ = {
 			isa = PBXGroup;
 			children = (
-				1591645A1DDD370600995EC2 /* TalkDashboardUnits.swift */,
-				1591645C1DDD419700995EC2 /* TalkCollectionViewCell.swift */,
-				1591645D1DDD419700995EC2 /* TalkCollectionViewCell.xib */,
-				159164601DDD458800995EC2 /* TalkUnit.swift */,
+				1519A69A1DE347C00044EE8C /* TalkDescriptionUnit */,
+				1519A6901DE28C8F0044EE8C /* TalkDetailLocationUnit */,
+				1519A68B1DE2879D0044EE8C /* DetailHeaderUnit */,
+				15E3ABAC1DDFDD2100F7C8F7 /* TalkUnit */,
 			);
 			path = Units;
 			sourceTree = "<group>";
@@ -463,7 +541,7 @@
 		15DDF9311DD122CC00AD4B93 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				15DDF9321DD122E700AD4B93 /* FakeData.json */,
+				15DDF9321DD122E700AD4B93 /* LocalData.json */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -497,6 +575,16 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		15E3ABAC1DDFDD2100F7C8F7 /* TalkUnit */ = {
+			isa = PBXGroup;
+			children = (
+				1591645C1DDD419700995EC2 /* TalkCollectionViewCell.swift */,
+				1591645D1DDD419700995EC2 /* TalkCollectionViewCell.xib */,
+				159164601DDD458800995EC2 /* TalkUnit.swift */,
+			);
+			name = TalkUnit;
+			sourceTree = "<group>";
+		};
 		15F9E4221DDF24DA00C05ECC /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,8 +592,21 @@
 				152F38DE1DCD687300FE9ECF /* TalksDashboardView.swift */,
 				15DDF9401DD1FB8600AD4B93 /* TalksDashboardView.xib */,
 				15DDF94A1DD2C4C700AD4B93 /* TalkDashboardViewState.swift */,
+				1591645A1DDD370600995EC2 /* TalkDashboardUnits.swift */,
 			);
 			name = Timeline;
+			sourceTree = "<group>";
+		};
+		15F9E4231DDF79F900C05ECC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				15F9E4241DDF7A1F00C05ECC /* TalkDetailViewController.swift */,
+				15F9E4261DDF7A4600C05ECC /* TalkDetailView.swift */,
+				15F9E42A1DDF7A7500C05ECC /* TalkDetailView.xib */,
+				15F9E42C1DDF85E200C05ECC /* TalkDetailViewState.swift */,
+				1519A6981DE341160044EE8C /* TalkDetailUnits.swift */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		4B6C875008CF0617F4E19934 /* Pods */ = {
@@ -615,9 +716,12 @@
 			files = (
 				1515D11F1DDCE47A008690FD /* SpeakerDetailSocialCollectionViewCell.xib in Resources */,
 				152F38C21DCD0BF000FE9ECF /* Speakers.storyboard in Resources */,
+				1519A68F1DE287B50044EE8C /* DetailHeaderCollectionViewCell.xib in Resources */,
 				1591645F1DDD419700995EC2 /* TalkCollectionViewCell.xib in Resources */,
+				158F3E5B1DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.xib in Resources */,
 				15D88FDF1DD35E420055F781 /* TimeDisplayCollectionViewCell.xib in Resources */,
 				15BD91681DC95DF90088AEB4 /* LaunchScreen.storyboard in Resources */,
+				1519A69E1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib in Resources */,
 				152F38C01DCD0BE600FE9ECF /* Sponsors.storyboard in Resources */,
 				15BBD8951DD64AD300A9A45F /* SpeakerListView.xib in Resources */,
 				15DDF9411DD1FB8600AD4B93 /* TalksDashboardView.xib in Resources */,
@@ -626,10 +730,12 @@
 				15BD91651DC95DF90088AEB4 /* Assets.xcassets in Resources */,
 				152F38BE1DCD0BD700FE9ECF /* Talks.storyboard in Resources */,
 				15BBD89E1DD9EA2D00A9A45F /* SpeakerHeroCollectionViewCell.xib in Resources */,
+				15F9E42B1DDF7A7500C05ECC /* TalkDetailView.xib in Resources */,
 				15BBD8A91DDA414900A9A45F /* SpeakerDetailView.xib in Resources */,
 				152F38C41DCD0BF800FE9ECF /* Place.storyboard in Resources */,
-				15DDF9331DD122E700AD4B93 /* FakeData.json in Resources */,
+				15DDF9331DD122E700AD4B93 /* LocalData.json in Resources */,
 				152F38C61DCD0C0300FE9ECF /* Favorites.storyboard in Resources */,
+				1519A6941DE28CAC0044EE8C /* TalkDetailLocationCollectionViewCell.xib in Resources */,
 				1515D11A1DDA9E34008690FD /* SpeakerDetailDescriptionCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,6 +808,8 @@
 				152F38E21DD110F500FE9ECF /* NetworkFetcher.swift in Sources */,
 				152F38C81DCD0C1A00FE9ECF /* TalksScene.swift in Sources */,
 				152F38D71DCD0C8400FE9ECF /* Scene.swift in Sources */,
+				1519A6971DE33A3B0044EE8C /* ConferenceStyleKit.swift in Sources */,
+				158F3E5A1DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.swift in Sources */,
 				1515D11E1DDCE47A008690FD /* SpeakerDetailSocialCollectionViewCell.swift in Sources */,
 				15BBD8971DD9E6B000A9A45F /* SpeakersListState.swift in Sources */,
 				15DDF9381DD1284500AD4B93 /* Cache.swift in Sources */,
@@ -721,9 +829,12 @@
 				15BBD8AF1DDA493400A9A45F /* SpeakerDetailHeaderUnit.swift in Sources */,
 				15DDF9351DD126CA00AD4B93 /* LocalDataFetcher.swift in Sources */,
 				152F38CA1DCD0C2500FE9ECF /* SponsorsScene.swift in Sources */,
+				15F9E4271DDF7A4600C05ECC /* TalkDetailView.swift in Sources */,
+				1519A68E1DE287B50044EE8C /* DetailHeaderCollectionViewCell.swift in Sources */,
 				15BBD89A1DD9E9BD00A9A45F /* SpeakerHeroUnit.swift in Sources */,
 				1591645B1DDD370600995EC2 /* TalkDashboardUnits.swift in Sources */,
 				15DDF92A1DD11DA200AD4B93 /* TalkModel.swift in Sources */,
+				1519A6931DE28CAC0044EE8C /* TalkDetailLocationCollectionViewCell.swift in Sources */,
 				152F38CE1DCD0C3B00FE9ECF /* PlaceScene.swift in Sources */,
 				15BD91601DC95DF90088AEB4 /* ViewController.swift in Sources */,
 				1515D1161DDA9E21008690FD /* SpeakerDetailDescriptionUnit.swift in Sources */,
@@ -731,9 +842,13 @@
 				152F38DD1DCD144800FE9ECF /* TalksDashboardViewController.swift in Sources */,
 				1515D1231DDCEF11008690FD /* UIColor+Hex.swift in Sources */,
 				152F38D51DCD0C7D00FE9ECF /* MainScene.swift in Sources */,
+				15F9E42D1DDF85E200C05ECC /* TalkDetailViewState.swift in Sources */,
 				152F38CC1DCD0C3100FE9ECF /* SpeakersScene.swift in Sources */,
 				152F38E41DD1113400FE9ECF /* URLSessionFetcher.swift in Sources */,
+				1519A69D1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift in Sources */,
+				158F3E5D1DE3CC890076CDB6 /* SpeakerDetailSmallTalkUnit.swift in Sources */,
 				152F38DB1DCD130C00FE9ECF /* UIStoryboard+Generics.swift in Sources */,
+				1519A6991DE341160044EE8C /* TalkDetailUnits.swift in Sources */,
 				15BBD8AB1DDA415900A9A45F /* SpeakerDetailViewState.swift in Sources */,
 				15DDF9301DD11E9300AD4B93 /* RoomModel.swift in Sources */,
 				15BD915E1DC95DF90088AEB4 /* AppDelegate.swift in Sources */,
@@ -741,6 +856,7 @@
 				15DDF93A1DD1298800AD4B93 /* Date+Marshal.swift in Sources */,
 				155BF1361DDD304200985B9F /* LabelCollectionViewCell.swift in Sources */,
 				1591645E1DDD419700995EC2 /* TalkCollectionViewCell.swift in Sources */,
+				15F9E4251DDF7A1F00C05ECC /* TalkDetailViewController.swift in Sources */,
 				15DDF9491DD2C38400AD4B93 /* CacheUpdatable.swift in Sources */,
 				1515D1211DDCE487008690FD /* SpeakerDetailSocialUnit.swift in Sources */,
 				1515D1121DDA7913008690FD /* SpeakerDetailHeaderCollectionViewCell.swift in Sources */,

@@ -37,11 +37,45 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="listView" destination="ssh-54-bF5" id="KLh-OF-SqR"/>
+                        <segue destination="BMB-92-QfB" kind="show" identifier="displayTalk" id="YN4-Nx-3Be"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTj-3w-weS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128.80000000000001" y="176.76161919040482"/>
+        </scene>
+        <!--Talk Detail View Controller-->
+        <scene sceneID="rUV-TK-NkH">
+            <objects>
+                <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="BMB-92-QfB" customClass="TalkDetailViewController" customModule="CocoaheadsConf" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AEg-Sq-qjL"/>
+                        <viewControllerLayoutGuide type="bottom" id="8kZ-80-2HK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qDs-R6-F8j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lnc-kM-fK2" customClass="TalkDetailView" customModule="CocoaheadsConf" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Lnc-kM-fK2" firstAttribute="top" secondItem="qDs-R6-F8j" secondAttribute="top" id="JAD-bh-qbs"/>
+                            <constraint firstAttribute="trailing" secondItem="Lnc-kM-fK2" secondAttribute="trailing" id="TfZ-hw-2id"/>
+                            <constraint firstAttribute="bottom" secondItem="Lnc-kM-fK2" secondAttribute="bottom" id="mzU-qn-PwP"/>
+                            <constraint firstItem="Lnc-kM-fK2" firstAttribute="leading" secondItem="qDs-R6-F8j" secondAttribute="leading" id="sv1-tp-2zb"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="detailView" destination="Lnc-kM-fK2" id="xCI-2B-eRc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1x3-91-4nc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="176.76161919040482"/>
         </scene>
     </scenes>
 </document>

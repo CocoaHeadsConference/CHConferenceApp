@@ -23,8 +23,8 @@ struct TalkDashboardUnits {
         return TimeDisplayUnit(date: date, hideUpperLine: hideUpperLine)
     }
     
-    static func EntryUnit(for talk: TalkModel, filtered: Bool)-> ComposingUnit {
-        return TalkUnit(talk: talk)
+    static func EntryUnit(for talk: TalkModel, filtered: Bool, callback:((TalkModel)-> Void)?)-> ComposingUnit {
+        return TalkUnit(talk: talk, callback: callback)
     }
     
 }

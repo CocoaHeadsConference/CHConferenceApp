@@ -9,11 +9,12 @@
 import UIKit
 import Compose
 
-struct TalkUnit: TypedUnit {
+struct TalkUnit: TypedUnit, SelectableUnit {
 
     typealias Cell = TalkCollectionViewCell
     
     let talk: TalkModel
+    let callback: ((TalkModel)-> Void)?
     let titleAttributedText: NSAttributedString
     let summaryAttributedText: NSAttributedString
     
@@ -23,24 +24,25 @@ struct TalkUnit: TypedUnit {
     
     let heightUnit: DimensionUnit
     
-    init(talk: TalkModel) {
+    init(talk: TalkModel, callback:((TalkModel)-> Void)?) {
         self.talk = talk
+        self.callback = callback
         let title = NSAttributedString(string: talk.title, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 20, weight: UIFontWeightBold)])
-        let summary = NSAttributedString(string: self.talk.summary, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 14)])
+        let summary = NSAttributedString(string: self.talk.summary, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 15)])
         self.titleAttributedText = title
         self.summaryAttributedText = summary
         self.heightUnit = DimensionUnit { size in
-            let reductedSize = CGSize(width: size.width - 90, height: size.height)
+            let reductedSize = CGSize(width: size.width - 92, height: size.height)
             let titleFrame = title.boundingRect(with: reductedSize, options: .usesLineFragmentOrigin, context: nil)
             
             let summaryFrame = summary.boundingRect(with: reductedSize, options: .usesLineFragmentOrigin, context: nil)
-            return round(titleFrame.height + summaryFrame.height) + 86
+            return round(titleFrame.height + summaryFrame.height) + 92
         }
         
     }
     
     func configure(innerView: Cell) {
-        innerView.backgroundColor = .clear
+        innerView.backgroundColor = talk.type.backgroundColor
         innerView.speakerImageURL = talk.speaker?.imageURL
         innerView.placeLabel.text = talk.room?.title ?? "Não definido"
         innerView.speakerNameLabel.text = talk.speaker?.name ?? "Não definido"
@@ -57,6 +59,10 @@ struct TalkUnit: TypedUnit {
     
     func register(in collectionView: UICollectionView) {
         Cell.register(in: collectionView)
+    }
+    
+    func didSelect() {
+        callback?(talk)
     }
     
 }

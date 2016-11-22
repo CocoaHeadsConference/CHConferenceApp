@@ -13,6 +13,7 @@ class SpeakerDetailViewController: UIViewController {
     @IBOutlet var speakerDetailView: SpeakerDetailView! {
         didSet {
             speakerDetailView.closeCallback = self.closeCard
+            speakerDetailView.backgroundColor = UIColor(hexString: "004D40")
         }
     }
     
@@ -24,7 +25,9 @@ class SpeakerDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        speakerDetailView.state.speaker = speakerToDisplay
+        let talks = Cache.default.talks(for: speakerToDisplay)
+        speakerDetailView.state = SpeakerDetailViewState(speaker: speakerToDisplay, talks: talks)
+        
     }
     
     func closeCard() {

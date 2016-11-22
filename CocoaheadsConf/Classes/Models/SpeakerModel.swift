@@ -16,6 +16,7 @@ struct SpeakerModel: Unmarshaling {
     let id: Int
     let name: String
     let headline: String
+    let citation: String
     let bio: String
     let twitterHandle: String
     let linkedInHandle: String
@@ -27,6 +28,7 @@ struct SpeakerModel: Unmarshaling {
         name = try object.value(for: "name")
         headline = try object.value(for: "title")
         bio = try object.value(for: "bio")
+        citation = try object.value(for: "citation")
         imageHandle = try object.value(for: "image")
         
         twitterHandle = try object.value(for: "twitterHandle")

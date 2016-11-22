@@ -13,8 +13,9 @@ class TalkCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var speakerImageView: UIImageView! {
         didSet {
-            speakerImageView.layer.cornerRadius = 26
+            speakerImageView.layer.cornerRadius = 27
             speakerImageView.layer.borderWidth = 2
+            speakerImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.8).cgColor
         }
     }
     @IBOutlet var speakerNameLabel: UILabel!
@@ -22,24 +23,23 @@ class TalkCollectionViewCell: UICollectionViewCell {
     @IBOutlet var talkSummaryLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var placeLabel: UILabel!
-    @IBOutlet var cardContainerView: UIView! {
-        didSet {
-            cardContainerView.layer.borderColor = UIColor(white: 1, alpha: 0.15).cgColor
-            cardContainerView.layer.borderWidth = 1
-        }
-    }
+    @IBOutlet var cardContainerView: UIView! 
     
-    @IBOutlet var lineView: UIView!
-    @IBOutlet var timeContainerView: UIView!
-
+    @IBOutlet var kindIndicatorView: UIView!
+    
     var talkColor: UIColor? {
         didSet {
-            let color = talkColor?.withAlphaComponent(0.8)
-            lineView.backgroundColor = color
-            timeContainerView.backgroundColor = color
-            speakerImageView.backgroundColor = color
+            kindIndicatorView.backgroundColor = talkColor
+            /*let color = talkColor
+            placeLabel.textColor = talkColor
+            timeLabel.textColor = talkColor
+            speakerNameLabel.textColor = talkColor
+            talkTitleLabel.textColor = talkColor
+            talkSummaryLabel.textColor = talkColor
             speakerImageView.layer.borderColor = color?.cgColor
-            cardContainerView.backgroundColor = talkColor?.withAlphaComponent(0.5)
+            cardContainerView.layer.borderColor = talkColor?.withAlphaComponent(0.8).cgColor
+            cardContainerView.backgroundColor = .white// talkColor?.withAlphaComponent(0.25)
+             */
         }
     }
     

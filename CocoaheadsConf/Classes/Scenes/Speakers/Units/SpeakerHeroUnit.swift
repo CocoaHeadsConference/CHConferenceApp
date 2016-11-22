@@ -16,7 +16,7 @@ struct SpeakerHeroUnit: TypedUnit, SelectableUnit {
     var identifier: String {
         return String(describing: speaker.id)
     }
-    let heightUnit = DimensionUnit(widthPercent: 1.25)
+    let heightUnit = DimensionUnit(widthPercent: 1)
     
     let speaker: SpeakerModel
     

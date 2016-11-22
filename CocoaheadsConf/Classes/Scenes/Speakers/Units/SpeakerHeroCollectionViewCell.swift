@@ -16,7 +16,8 @@ class SpeakerHeroCollectionViewCell: UICollectionViewCell {
 
     var speakerImageURL: URL? {
         didSet {
-            speakerImageView.kf.setImage(with: speakerImageURL, placeholder: #imageLiteral(resourceName: "cocoaheads_teammember"), options: nil, progressBlock: nil, completionHandler: nil)
+            speakerImageView.tintColor = .white
+            speakerImageView.kf.setImage(with: speakerImageURL, placeholder: ConferenceStyleKit.imageOfCocoaHeadsLogo, options: nil, progressBlock: nil, completionHandler: nil)
         }
     }
     
@@ -28,7 +29,8 @@ class SpeakerHeroCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.borderColor = UIColor(white: 1.0, alpha: 0.3).cgColor
+        self.backgroundColor = UIColor(hexString: "004D40")
+        self.layer.borderColor = UIColor(white: 0.0, alpha: 0.8).cgColor
         self.layer.borderWidth = 1
     }
     

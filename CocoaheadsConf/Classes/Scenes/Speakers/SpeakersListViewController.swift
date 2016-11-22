@@ -12,6 +12,7 @@ class SpeakersListViewController: UIViewController {
 
     @IBOutlet var listView: SpeakerListView! {
         didSet {
+            listView.backgroundColor = UIColor(hexString: "004D40")
             listView.displayCallback = self.displayDetail(for:)
         }
     }

@@ -20,7 +20,7 @@ final class LocalDataFetcher: NetworkFetcher {
 
     init(cacheService: Cache) {
         cache = cacheService
-        fakeURL = Bundle.main.url(forResource: "FakeData", withExtension: "json")
+        fakeURL = Bundle.main.url(forResource: "LocalData", withExtension: "json")
     }
     
     func fetchNewInfo(onComplete: () -> Void) {

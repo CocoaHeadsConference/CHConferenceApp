@@ -51,6 +51,21 @@ struct TalkModel: Unmarshaling {
             }
         }
         
+        var excludeFilter: TalkType {
+            switch self {
+            case .talk:
+                return .workshop
+            case .workshop:
+                return .talk
+            default:
+                return .setup
+            }
+        }
+        
+        var backgroundColor: UIColor {
+            return UIColor.black.withAlphaComponent(0.55)
+        }
+        
         var hasImage: Bool {
             switch self {
             case .talk, .workshop, .opening, .closing: return true

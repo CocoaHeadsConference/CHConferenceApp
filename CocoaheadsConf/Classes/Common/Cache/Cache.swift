@@ -21,6 +21,14 @@ class Cache: NSObject {
         return talks[id]
     }
     
+    func talks(for speaker: SpeakerModel)-> [TalkModel]? {
+        return talks.filter { (key, talk) in
+            return talk.speaker?.id == speaker.id
+        }.map { $1 }.sorted { (first, second) in
+            return first.date.compare(second.date) == .orderedAscending
+        }
+    }
+    
     func speaker(with id: Int)-> SpeakerModel? {
         return speakers[id]
     }

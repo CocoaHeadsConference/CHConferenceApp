@@ -12,4 +12,5 @@ struct SpeakerDetailViewState {
 
     var speaker: SpeakerModel?
     
+    var talks: [TalkModel]?
 }

@@ -6,6 +6,7 @@
 			"image": "images/team/francesco-perrotti.jpg",
 			"title": "LEAD DEVELOPER, MOVILE",
 			"bio": "Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
+			"citation": "",
 			"twitterHandle": "@fpg1503",
 			"linkedinHandler": "fpg1503",
 			"githubHandler": "fpg1503"
@@ -16,6 +17,7 @@
 			"image": "images/team/rodrigo-borges.jpg",
 			"title": "LEAD DEVELOPER, VIVAREAL",			
 			"bio": "Manauara, desenvolvedor iOS no VivaReal, desenvolvedor e co-fundador do Meatless. Além de casas, apartamentos e comida vegetariana, não vive sem música e fotografia.",
+			"citation": "",
 			"twitterHandle": "@rdgborges",
 			"linkedinHandler": "rdgborges",
 			"githubHandler": "rdgborges"
@@ -26,6 +28,7 @@
 			"image": "images/team/fernando-bunn.jpg",
 			"title": "MOBILE TECH LEAD",
 			"bio": "Trabalha com iOS desde 2008; Realizou projetos para empresas Fortune 500; Foi CEO de uma empresa de mobile development por 4 anos; Atualmente trabalha como Mobile Tech Lead para uma empresa de São Francisco - CA.",
+			"citation": "",
 			"twitterHandle": "@fcbunn",
 			"linkedinHandler": "fcbunn",
 			"githubHandler": "Bunn"
@@ -36,6 +39,7 @@
 			"image": "images/team/diogo-tridapalli.jpg",
 			"title": "LEAD DEVELOPER",
 			"bio": "Na comunidade desde 2009, trabalhou em uma ad network e seu código pertubou os usuários com anúncios em mais de 200 milhões de devices. Foi um dos desenvolvedores do app 99Taxis e passou por novos projetos na Movile e Nubank. Nas horas vagas gera entropia na organização do CocoaHeadsSP e escreve no Invariante.com.",
+			"citation": "",
 			"twitterHandle": "@diogot",
 			"linkedinHandler": "diogot",
 			"githubHandler": "diogot"
@@ -46,6 +50,7 @@
 			"image": "images/team/guilherme-rambo.jpg",
 			"title": "LEAD DEVELOPER",
 			"bio": "Criador do famoso app da WWDC para macOS, trabalha há alguns anos com desenvolvimento para Mac e iOS, possuí atualmente 6 apps publicados e diversos projetos open-source.",
+			"citation": "",
 			"twitterHandle": "@_inside",
 			"linkedinHandler": "guilherme-rambo-78506425",
 			"githubHandler": "insidegui"
@@ -56,6 +61,7 @@
 			"image": "images/team/bruno-bilescky.jpg",
 			"title": "LEAD DEVELOPER, VIVAREAL",
 			"bio": "Desenvolvedor iOS desde o iPhoneOS 3, adora desenvolver frameworks como Compose. Programação funcional, Value Types, imutabilidade e Lego também estão constantemente em seu dia a dia.",
+			"citation": "Sempre crie código como se a pessoa que desse manutenção nele fosse um psicopata violento que sabe onde você mora.",
 			"twitterHandle": "@bgondim",
 			"linkedinHandler": "brunogb",
 			"githubHandler": "brunogb"
@@ -66,6 +72,7 @@
 			"image": "images/team/paulo-faria.jpg",
 			"title": "LEAD DEVELOPER",
 			"bio": "Membro do core team das APIs de Swift Server da Apple. Criador do Zewo, Venice e GraphQLSwift.",
+			"citation": "",
 			"twitterHandle": "@paulofariarl",
 			"linkedinHandler": "",
 			"githubHandler": "paulofaria"
@@ -76,6 +83,7 @@
 			"image": "images/team/marcelo-fabri.jpg",
 			"title": "LEAD DEVELOPER",
 			"bio": "",
+			"citation": "",
 			"twitterHandle": "@marcelofabri_",
 			"linkedinHandler": "marcelofabri",
 			"githubHandler": ""
@@ -86,6 +94,7 @@
 			"image": "images/team/cynthia-zanoni.jpg",
 			"title": "TECH EVANGELIST",
 			"bio": "Evangelista Técnica na Microsoft, curadora da Mobile Summit Brazil e idealizadora do WoMakersCode, um projeto focado em capacitação e empoderamento feminino e de minorias na TI e atua, também, como coordenadora do WoMoz (Women & Mozilla). É apaixonada open source e nas horas vagas, cria projetos e iniciativas que possam contribuir para o fortalecimento das mulheres no mercado de trabalho e comunidades de tecnologia.",
+			"citation": "",
 			"twitterHandle": "@cynthiazanoni",
 			"linkedinHandler": "cynthiazanoni",
 			"githubHandler": ""
@@ -96,6 +105,7 @@
 			"image": "images/team/tales-pinheiro.jpg",
 			"title": "CHAPTER LEADER, CONCRETE SOLUTIONS",
 			"bio": "Mestre em computação pelo IME-USP, é desenvolvedor C desde 2003 e iOS desde 2010. Organizador do CocoaHeads SP e sócio-fundador da Newt Labs. Atualmente é iOS Chapter Leader na Concrete Solutions.",
+			"citation": "",
 			"twitterHandle": "@talesp",
 			"linkedinHandler": "talespinheiro",
 			"githubHandler": ""
@@ -106,6 +116,7 @@
 			"image": "images/team/douglas-fischer.jpg",
 			"title": "MOBILE PRODUCTS LEAD, ABACOMM",
 			"bio": "Desenvolvedor iOS desde 2008. Fundador do XT3 Studios, Advanced e Arapuka Antivirus. É Mobile Products Lead na Abacomm. Também atua como Community Manager & Podcaster do @CocoaHeadsBR.",
+			"citation": "",
 			"twitterHandle": "@DougDiskin",
 			"linkedinHandler": "dougdiskin",
 			"githubHandler": "DougFischer"
@@ -116,6 +127,7 @@
 			"image": "images/team/vinicius-carvalho.jpg",
 			"title": "MOBILE DEVELOPER, CONCRETE SOLUTIONS",
 			"bio": "Se envolveu com a comunidade iOS no final de 2014 e nunca mais saiu. É líder do CocoaHeads Brasil em Fortaleza e participante do Devbeers Fortaleza. Entusiasta de Ruby e biker.",
+			"citation": "",
 			"twitterHandle": "@viniciusc70",
 			"linkedinHandler": "viniciuscarvalhomarques",
 			"githubHandler": "Viniciuscarvalho"
@@ -126,6 +138,7 @@
 			"image": "images/team/juliana-salgado.jpg",
 			"title": "IOS DEVELOPER, IFOOD",
 			"bio": "Formada em Análise de Sistemas pela PUC-Campinas, foi premiada duas vezes com uma bolsa de estudos da WWDC nos anos de 2015 e 2016. Estudou no BEPID e é também Android Developer. Hoje trabalha como iOS Developer no iFood.",
+			"citation": "",
 			"twitterHandle": "@jusalt",
 			"linkedinHandler": "julianasalgado",
 			"githubHandler": ""
@@ -136,6 +149,7 @@
 			"image": "",
 			"title": "Mercado Livre",
 			"bio": "",
+			"citation": "",
 			"twitterHandle": "",
 			"linkedinHandler": "",
 			"githubHandler": ""
@@ -146,6 +160,7 @@
 			"image": "",
 			"title": "",
 			"bio": "",
+			"citation": "",
 			"twitterHandle": "",
 			"linkedinHandler": "",
 			"githubHandler": ""
@@ -156,6 +171,7 @@
 			"image": "images/team/igor-ferreira.jpg",
 			"title": "iOS Frameworks Developer",
 			"bio": "Desenvolvedor mobile com experiência em Android, iOS, Unity, wearable e IoT (protocolo MQTT, Arduino e RaspberryPie). Com projetos desenvolvidos para Apple Watch e Android Wear, com utilização de mapa, Game Kit, Google Play e as principais frameworks.",
+			"citation": "",
 			"twitterHandle": "icastanheda",
 			"linkedinHandler": "igorcferreira",
 			"githubHandler": ""
@@ -166,6 +182,7 @@
 			"image": "images/team/fellipecaetano.png",
 			"title": "Não Definido",
 			"bio": "Não definido",
+			"citation": "",
 			"twitterHandle": "bgondim",
 			"linkedinHandler": "",
 			"githubHandler": ""
@@ -176,6 +193,7 @@
 			"image": "images/team/raffabhaktin.png",
 			"title": "Não definido",
 			"bio": "Não definido",
+			"citation": "",
 			"twitterHandle": "bgondim",
 			"linkedinHandler": "",
 			"githubHandler": ""
@@ -186,6 +204,7 @@
 			"image": "images/team/joaopauloros.png",
 			"title": "Não definido",
 			"bio": "Não definido",
+			"citation": "",
 			"twitterHandle": "bgondim",
 			"linkedinHandler": "",
 			"githubHandler": ""
@@ -391,12 +410,12 @@
 		},
 		{
 			"id": 17,
-			"title": "Talk Do Fabri",
+			"title": "Geração de Código",
 			"speaker": 8,
 			"room": 1,
 			"date": "2016-12-03T13:45:00-0300",
-			"summary": "#descubra",
-			"description": "Nesse talk o Marcelo Fabri vai falar de algo que você ainda não sabe, mas vai se surpreender! :)",
+			"summary": "👍 ou 👎?",
+			"description": "O que é? Por que fazer? É bom ou ruim? Onde vive? Do que se alimenta? Dia 03, no Globo Repórter na palestra do Fabri.",
 			"type": "talk"
 		},
 		{
@@ -421,13 +440,13 @@
 		},
 		{
 			"id": 20,
-			"title": "A Definir",
+			"title": "Coffeebreak & Networking",
 			"speaker": 0,
-			"room": 1,
+			"room": 4,
 			"date": "2016-12-03T16:00:00-0300",
-			"summary": "Talk ou Coffee-break?",
-			"description": "Atividade aguardando definição.",
-			"type": "talk"
+			"summary": "Pausa pra mais um lanche e networking",
+			"description": "Um intervalo para passear pela área comum do local, tomar um café e claro, bater papo com todos os incríveis participantes.",
+			"type": "breaktime"
 		},
 		{
 			"id": 21,

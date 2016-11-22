@@ -19,7 +19,7 @@ struct TalkDashboardViewState {
             return talks
         }
         return talks.filter({ (model) -> Bool in
-            return model.type == filter
+            return model.type != filter.excludeFilter
         })
     }
     

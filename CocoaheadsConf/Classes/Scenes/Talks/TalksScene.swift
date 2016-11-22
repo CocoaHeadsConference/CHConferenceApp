@@ -10,7 +10,7 @@ import UIKit
 
 struct TalksScene: Scene, CacheUpdatable {
     
-    let name = "Palestras"
+    let name = "Atividades"
     let storyboard = UIStoryboard(name: "Talks", bundle: nil)
     let initialViewController: UIViewController
     let rootViewController: TalksDashboardViewController
@@ -18,11 +18,16 @@ struct TalksScene: Scene, CacheUpdatable {
     init() {
         rootViewController = storyboard.firstViewController()
         initialViewController = NavigationViewController(rootViewController: rootViewController)
-        initialViewController.tabBarItem = UITabBarItem(title: "Palestras", image: nil, tag: 0)
+        initialViewController.tabBarItem = UITabBarItem(title: "Atividades", image: nil, tag: 0)
+        
+        rootViewController.displayTalkCallback = { [unowned rootViewController] talk in
+            rootViewController.performSegue(withIdentifier: "displayTalk", sender: talk)
+        }
     }
     
     func updateFromCache() {
         rootViewController.updateListState()
     }
+    
     
 }

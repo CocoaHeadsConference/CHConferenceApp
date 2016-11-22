@@ -16,6 +16,7 @@ class TalksDashboardView: NibDesignable {
     @IBOutlet var talkListView: CollectionStackView! {
         didSet {
             talkListView.backgroundColor = UIColor(hexString: "004D40")
+            talkListView.container.lineSpace = 1
         }
     }
     
@@ -23,9 +24,11 @@ class TalksDashboardView: NibDesignable {
 
     var state: TalkDashboardViewState = TalkDashboardViewState(talks:[], filter: nil) {
         didSet {
-            talkListView.container.state = composeTalkDashboardView(with: state)
+            talkListView.container.state = composeTalkDashboardView(with: state, didSelectCallback: didSelectTalkCallback)
         }
     }
+    
+    var didSelectTalkCallback: ((TalkModel)-> Void)?
     
     @IBAction func changeTalkDisplayType(segmentedControl: UISegmentedControl) {
         self.state.filter = TalkModel.TalkType(intValue: segmentedControl.selectedSegmentIndex)
@@ -33,7 +36,7 @@ class TalksDashboardView: NibDesignable {
     
 }
 
-func composeTalkDashboardView(with state: TalkDashboardViewState)-> [ComposingUnit] {
+func composeTalkDashboardView(with state: TalkDashboardViewState, didSelectCallback:((TalkModel)-> Void)?)-> [ComposingUnit] {
     var units: [ComposingUnit] = []
     var groupedTalks = groupByDate(talks: state.filteredTalks)
     groupedTalks.keys.sorted().forEach { (date) in
@@ -45,7 +48,7 @@ func composeTalkDashboardView(with state: TalkDashboardViewState)-> [ComposingUn
                     return compare == ComparisonResult.orderedAscending
                 })
                 return sortedTalks.map { talk in
-                    return TalkDashboardUnits.EntryUnit(for: talk, filtered: false)
+                    return TalkDashboardUnits.EntryUnit(for: talk, filtered: false, callback: didSelectCallback)
                 }
             }
             return dateUnits

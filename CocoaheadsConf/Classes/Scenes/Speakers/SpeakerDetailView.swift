@@ -15,7 +15,8 @@ class SpeakerDetailView: NibDesignable {
 
     @IBOutlet var detailView: CollectionStackView! {
         didSet {
-            
+            detailView.container.lineSpace = 4
+            detailView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         }
     }
     
@@ -31,12 +32,22 @@ class SpeakerDetailView: NibDesignable {
 
 
 func ComposeSpeakerDetailView(with state: SpeakerDetailViewState, closeCallback: (()-> Void)?)-> [ComposingUnit] {
-    var units: [ComposingUnit] = []
-    units.add(manyIfLet: state.speaker) { speaker in
-        let header = SpeakerDetailHeaderUnit(imageURL: speaker.imageURL, name: speaker.name, headline: speaker.headline, closeCallback: closeCallback)
-        let social = SpeakerDetailAllSocialUnit(twitter: speaker.twitterHandle, linkedIn: speaker.linkedInHandle, github: speaker.githubHandle)
-        let bio = SpeakerDetailDescriptionUnit(bio: speaker.bio)
-        return [header, social, bio]
+    
+    guard let speaker = state.speaker else { return [] }
+
+    let header = SpeakerDetailHeaderUnit(imageURL: speaker.imageURL, name: speaker.name, headline: speaker.headline, citation: speaker.bio, closeCallback: closeCallback)
+    let social = SpeakerDetailAllSocialUnit(twitter: speaker.twitterHandle, linkedIn: speaker.linkedInHandle, github: speaker.githubHandle)
+    
+    var units: [ComposingUnit] = [header]
+    
+    units.add(manyIfLet: state.talks) { talks in
+        let timeDateFormatter = DateFormatter()
+        timeDateFormatter.dateFormat = "EEEE, HH:mm •"
+        
+        return talks.map { SpeakerDetailSmallTalkUnit(identifier: String($0.id), title: $0.title, date: timeDateFormatter.string(from: $0.date).capitalized, room: $0.room?.title, color: $0.type.color) }
     }
+    
+    units.append(social)
+    
     return units
 }

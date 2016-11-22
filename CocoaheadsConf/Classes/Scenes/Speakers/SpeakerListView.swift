@@ -16,10 +16,10 @@ class SpeakerListView: NibDesignable {
     @IBOutlet var collectionListView: CollectionStackView! {
         didSet {
             collectionListView.container.direction = .verticalGrid(columns: 3)
-            collectionListView.container.sectionInset = UIEdgeInsets(8)
-            collectionListView.container.itemSpace = 8
-            collectionListView.container.lineSpace = 8
-            collectionListView.backgroundColor = UIColor(hexString: "004D40")
+            collectionListView.container.sectionInset = UIEdgeInsets(2)
+            collectionListView.container.itemSpace = 2
+            collectionListView.container.lineSpace = 2
+            collectionListView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         }
     }
     
@@ -30,7 +30,7 @@ class SpeakerListView: NibDesignable {
             collectionListView.container.state = ComposeSpeakerListView(with: state, selectCallback: displayCallback)
         }
     }
-
+    
 }
 
 func ComposeSpeakerListView(with state: SpeakersListState, selectCallback: ((SpeakerModel)-> Void)?)-> [ComposingUnit] {
