@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var mainScene: MainScene<LocalDataFetcher> = {
         let talksScene = TalksScene()
         let speakersScene = SpeakersScene()
-        return MainScene(with: [talksScene, speakersScene])
+        let videosScene = VideosScene()
+        
+        return MainScene(with: [talksScene, speakersScene, videosScene])
     }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
