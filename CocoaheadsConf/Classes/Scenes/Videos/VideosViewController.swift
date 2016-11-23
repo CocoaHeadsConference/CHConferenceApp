@@ -32,6 +32,7 @@ class VideosViewController: UIViewController {
         tableView.backgroundColor = UIColor(hexString: "004D40")
         tableView.separatorColor = UIColor(hexString: "006654")
         tableView.separatorInset = .zero
+        tableView.indicatorStyle = .white
     }
     
     func updateList() {
@@ -64,6 +65,8 @@ extension VideosViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cell, for: indexPath)
+        
+        cell.accessoryType = .disclosureIndicator
         
         let video = videos[indexPath.row]
         cell.textLabel?.text = video.talk!.title
