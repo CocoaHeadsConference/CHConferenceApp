@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double NibDesignableVersionNumber;
-FOUNDATION_EXPORT const unsigned char NibDesignableVersionString[];
+FOUNDATION_EXPORT double YoutubeSourceParserKitVersionNumber;
+FOUNDATION_EXPORT const unsigned char YoutubeSourceParserKitVersionString[];
 
