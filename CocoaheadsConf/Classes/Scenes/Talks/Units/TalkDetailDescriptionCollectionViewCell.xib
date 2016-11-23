@@ -35,6 +35,9 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title="Assistir Vídeo"/>
                     </button>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="61X-3z-FO1">
+                        <rect key="frame" x="50" y="84.5" width="20" height="20"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
@@ -45,13 +48,16 @@
                 <constraint firstItem="U9S-jZ-TyX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="Sg1-SR-j4P"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="r3K-uJ-ODu" secondAttribute="bottom" constant="12" id="jax-iT-LCX"/>
                 <constraint firstItem="Lt2-t9-rYI" firstAttribute="top" secondItem="U9S-jZ-TyX" secondAttribute="bottom" constant="8" id="khZ-OR-cDs"/>
+                <constraint firstItem="61X-3z-FO1" firstAttribute="centerX" secondItem="r3K-uJ-ODu" secondAttribute="centerX" id="l86-U3-X23"/>
                 <constraint firstAttribute="trailing" secondItem="U9S-jZ-TyX" secondAttribute="trailing" constant="16" id="n9W-zo-Y4C"/>
+                <constraint firstItem="61X-3z-FO1" firstAttribute="centerY" secondItem="r3K-uJ-ODu" secondAttribute="centerY" id="nXj-HF-dDo"/>
                 <constraint firstItem="Lt2-t9-rYI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="pbg-pz-dXh"/>
                 <constraint firstAttribute="trailing" secondItem="Lt2-t9-rYI" secondAttribute="trailing" constant="16" id="xAb-21-6YM"/>
             </constraints>
             <size key="customSize" width="320" height="133"/>
             <connections>
                 <outlet property="descriptionLabel" destination="Lt2-t9-rYI" id="MWG-88-vAz"/>
+                <outlet property="spinner" destination="61X-3z-FO1" id="hR0-bU-7Nu"/>
                 <outlet property="summaryLabel" destination="U9S-jZ-TyX" id="PHY-1X-al8"/>
                 <outlet property="videoButton" destination="r3K-uJ-ODu" id="phQ-Ex-Dhy"/>
             </connections>
