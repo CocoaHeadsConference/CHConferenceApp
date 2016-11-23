@@ -17,6 +17,7 @@ class Cache: NSObject {
     var rooms: [Int:RoomModel] = [:]
     var talks: [Int:TalkModel] = [:]
     var sponsors: [SponsorModel] = []
+    var videos: [Int:VideoModel] = [:]
     
     func talk(with id: Int)-> TalkModel? {
         return talks[id]
@@ -38,6 +39,14 @@ class Cache: NSObject {
         return rooms[id]
     }
     
+    func video(with id: Int) -> VideoModel? {
+        return videos[id]
+    }
+    
+    func video(for talk: Int) -> VideoModel? {
+        return videos.flatMap({ $0.1 }).filter({ $0.talk?.id == talk }).first
+    }
+    
     func `import`(json: [String:Any]) throws {
         let allSpeakers: [SpeakerModel] = try json.value(for: "speakers")
         allSpeakers.forEach { speakers[$0.id] = $0 }
@@ -45,8 +54,9 @@ class Cache: NSObject {
         allRooms.forEach { rooms[$0.id] = $0 }
         let allTalks: [TalkModel] = try json.value(for: "talks")
         allTalks.forEach { talks[$0.id] = $0 }
-        
         sponsors = try json.value(for: "sponsors")
+        let allVideos: [VideoModel] = try json.value(for: "videos")
+        allVideos.forEach({ videos[$0.id] = $0 })
     }
     
 }

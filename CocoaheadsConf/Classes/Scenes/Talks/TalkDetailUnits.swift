@@ -39,7 +39,7 @@ struct TalkDetailUnits {
         return header
     }
     
-    static func Description(for talk: TalkModel)-> ComposingUnit {
+    static func Description(for talk: TalkModel, playHandler: (() -> Void)? = nil)-> ComposingUnit {
         let summaryFont = UIFont.systemFont(ofSize: 22, weight: UIFontWeightMedium)
         let descriptionFont = UIFont.systemFont(ofSize: 14)
         let attributedSummary = NSAttributedString(string: talk.summary, attributes: [NSFontAttributeName: summaryFont])
@@ -53,6 +53,9 @@ struct TalkDetailUnits {
         let unit = ViewUnit<TalkDetailDescriptionCollectionViewCell>(id: "description", traits: [.height(height)]) { view in
             view.summaryLabel.attributedText = attributedSummary
             view.descriptionLabel.attributedText = attributedDescription
+            view.videoButton.tintColor = UIColor(hexString: "E11A73")
+            view.videoButton.isHidden = (talk.video == nil)
+            view.videoButtonCallback = playHandler
         }
         return unit
     }

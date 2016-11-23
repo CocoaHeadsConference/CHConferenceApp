@@ -104,4 +104,8 @@ struct TalkModel: Unmarshaling {
         return Cache.default.room(with: roomId)
     }
     
+    var video: VideoModel? {
+        return Cache.default.video(for: self.id)
+    }
+    
 }
