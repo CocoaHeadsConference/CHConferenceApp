@@ -11,7 +11,13 @@ import UIKit
 struct SponsorsScene: Scene {
 
     let name = "Patrocinadores"
-    let storyboard = UIStoryboard(name: "Sponsors", bundle: nil)
-    let initialViewController = UIViewController()
+    let initialViewController: UIViewController
+    let rootViewController: SponsorsListViewController
+    
+    init(cache: Cache) {
+        rootViewController = SponsorsListViewController(with: cache)
+        initialViewController = UINavigationController(rootViewController: rootViewController)
+        initialViewController.tabBarItem = UITabBarItem(title: "Patrocinadores", image: nil, tag: 0)
+    }
     
 }

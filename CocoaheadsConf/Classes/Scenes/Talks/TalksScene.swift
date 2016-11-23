@@ -8,21 +8,26 @@
 
 import UIKit
 
-struct TalksScene: Scene, CacheUpdatable {
+class TalksScene: Scene, CacheUpdatable {
     
-    let name = "Atividades"
-    let storyboard = UIStoryboard(name: "Talks", bundle: nil)
+    let cache: Cache
     let initialViewController: UIViewController
     let rootViewController: TalksDashboardViewController
     
-    init() {
-        rootViewController = storyboard.firstViewController()
+    init(cache: Cache) {
+        self.cache = cache
+        rootViewController = TalksDashboardViewController(with: self.cache)
         initialViewController = NavigationViewController(rootViewController: rootViewController)
-        initialViewController.tabBarItem = UITabBarItem(title: "Atividades", image: nil, tag: 0)
         
-        rootViewController.displayTalkCallback = { [unowned rootViewController] talk in
-            rootViewController.performSegue(withIdentifier: "displayTalk", sender: talk)
+        rootViewController.displayTalkCallback = { [unowned self] talk in
+            let viewController = self.viewController(for: talk)
+            viewController.hidesBottomBarWhenPushed = true
+            self.rootViewController.navigationController?.pushViewController(viewController, animated: true)
         }
+    }
+    
+    func viewController(for talk: TalkModel)-> TalkDetailViewController {
+        return TalkDetailViewController(for: talk)
     }
     
     func updateFromCache() {

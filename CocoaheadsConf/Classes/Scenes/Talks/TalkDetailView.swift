@@ -10,20 +10,14 @@ import UIKit
 import NibDesignable
 import Compose
 
-class TalkDetailView: NibDesignable {
-
-    @IBOutlet var listView: CollectionStackView! {
-        didSet {
-            listView.backgroundColor = UIColor.black.withAlphaComponent(0.75)
-        }
-    }
+class TalkDetailView: CollectionStackView {
     
     var didTapGoBackCallback: (()-> Void)?
     
     var state: TalkDetailViewState = TalkDetailViewState() {
         didSet {
             self.backgroundColor = state.talk?.type.color
-            listView.container.state = ComposeTalkDetailView(with: state, goBackCallback: self.goBack)
+            container.state = ComposeTalkDetailView(with: state, goBackCallback: self.goBack)
         }
     }
     
@@ -41,7 +35,9 @@ func ComposeTalkDetailView(with state: TalkDetailViewState, goBackCallback: (()-
     units.add(manyIfLet: state.talk) { talk in
         let header = TalkDetailUnits.Header(for: talk, goBack: goBackCallback)
         let desc = TalkDetailUnits.Description(for: talk)
-        return [header, desc]
+        let spacer = TalkDetailUnits.Spacer(with: "upperSpacer")
+        let stats = TalkDetailUnits.Stats(for: talk)
+        return [header, desc, spacer, stats]
     }
     return units
 }

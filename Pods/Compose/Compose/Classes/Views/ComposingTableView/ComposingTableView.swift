@@ -28,14 +28,18 @@ public class ComposingTableView: UITableView, ComposingContainer {
 
     private lazy var stateChangeDiff: TableViewDiffCalculator<String> = {
         let diff = TableViewDiffCalculator<String>(tableView: self)
-        diff.finishReorderingCallback = self.didFinishReorderingItems(changedSet:)
+        diff.finishReorderingCallback = { set in
+            self.didFinishReorderingItems(changedSet: set)
+        }
         return diff
     }()
     
     /// Current state. On each update here we will use each's unit identifier and add/remove/update cell with animation
     public var state: [ComposingUnit] = [] {
         didSet {
-            let identifiers = state.map { $0.identifier }
+            let identifiers = state.map { unit in
+                return unit.identifier
+            }
             stateChangeDiff.updateSource(with: identifiers) { [unowned self] in
                 self.internalSource.state = self.state
             }
@@ -95,13 +99,15 @@ public class ComposingTableView: UITableView, ComposingContainer {
     }
     
     private func didFinishReorderingItems(changedSet: Set<Int>) {
-        self.visibleCells.flatMap { cell in
+        let cellsWithIndexPath: [(UITableViewCell, Int)] = self.visibleCells.flatMap { cell in
             guard let indexPath = self.indexPath(for: cell), !changedSet.contains(indexPath.row) else { return nil }
             return (cell, indexPath.item)
-            }.flatMap { (cell, index) in
-                return (cell, self.internalSource[index])
-            }.forEach { (cell, unit) in
-                unit.configure(view: cell)
+        }
+        let cellsWithUnits: [(UITableViewCell, ComposingUnit)] = cellsWithIndexPath.flatMap { (cell, index) in
+            return (cell, self.internalSource[index])
+        }
+        cellsWithUnits.forEach { (cell, unit) in
+            unit.configure(view: cell)
         }
     }
     

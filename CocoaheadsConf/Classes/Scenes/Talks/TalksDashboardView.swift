@@ -17,6 +17,7 @@ class TalksDashboardView: NibDesignable {
         didSet {
             talkListView.backgroundColor = UIColor(hexString: "004D40")
             talkListView.container.lineSpace = 1
+            talkListView.container.sectionInset = UIEdgeInsets(bottom: 48)
         }
     }
     

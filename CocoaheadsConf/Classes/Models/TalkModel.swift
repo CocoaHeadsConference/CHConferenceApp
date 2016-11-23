@@ -82,6 +82,7 @@ struct TalkModel: Unmarshaling {
     let summary: String
     let fullDescription: String
     let type: TalkType
+    let duration: Int
     
     init(object: MarshaledObject) throws {
         id = try object.value(for: "id")
@@ -92,6 +93,7 @@ struct TalkModel: Unmarshaling {
         type = try object.value(for: "type")
         speakerId = try object.value(for: "speaker")
         roomId = try object.value(for: "room")
+        duration = try object.value(for: "duration")
     }
     
     var speaker: SpeakerModel? {

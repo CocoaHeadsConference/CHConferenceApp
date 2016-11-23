@@ -42,15 +42,10 @@ open class CollectionStackView: UIView {
         self.backgroundColor = .clear
         container.backgroundColor = .clear
         self.addSubview(container)
-        self.translatesAutoresizingMaskIntoConstraints = false
         container.translatesAutoresizingMaskIntoConstraints = false
-        let toView = self
-        let itemView = container
-        let leadingConstraint = NSLayoutConstraint(item: itemView, attribute: .leading, relatedBy: .equal, toItem: toView, attribute: .leading, multiplier: 1, constant: 0)
-        let topConstraint = NSLayoutConstraint(item: itemView, attribute: .top, relatedBy: .equal, toItem: toView, attribute: .top, multiplier: 1, constant: 0)
-        let trailingConstraint = NSLayoutConstraint(item: itemView, attribute: .trailing, relatedBy: .equal, toItem: toView, attribute: .trailing, multiplier: 1, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: itemView, attribute: .bottom, relatedBy: .equal, toItem: toView, attribute: .bottom, multiplier: 1, constant: 0)
-        toView.addConstraints([leadingConstraint, topConstraint, trailingConstraint, bottomConstraint])
+        let bindings = ["view": container]
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options:[], metrics:nil, views: bindings))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options:[], metrics:nil, views: bindings))
     }
     
     /// IBDesignable method, called to display this view inside Interface Builder

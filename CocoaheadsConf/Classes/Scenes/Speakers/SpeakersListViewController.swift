@@ -10,32 +10,40 @@ import UIKit
 
 class SpeakersListViewController: UIViewController {
 
-    @IBOutlet var listView: SpeakerListView! {
-        didSet {
-            listView.backgroundColor = UIColor(hexString: "004D40")
-            listView.displayCallback = self.displayDetail(for:)
-        }
+    let cache: Cache
+    
+    var listView: SpeakerListView? {
+        return self.view as? SpeakerListView
     }
     
-    var displaySpeakerCallback: ((SpeakerModel, UIViewController)-> Void)?
+    var displaySpeakerCallback: ((SpeakerModel)-> Void)?
+    
+    init(with cache: Cache) {
+        self.cache = cache
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.cache = Cache.default
+        super.init(coder: aDecoder)
+    }
+    
+    override func loadView() {
+        super.loadView()
+        self.view = SpeakerListView(frame: UIScreen.main.bounds)
+        listView?.displayCallback = self.displayDetail(for:)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Palestrantes"
-        listView.state.speakers = Array(Cache.default.speakers.values).sorted(by: { (first, second) -> Bool in
+        listView?.state.speakers = Array(cache.speakers.values).sorted(by: { (first, second) -> Bool in
             return first.name.compare(second.name) == .orderedAscending
         })
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let detailVc = segue.destination as? SpeakerDetailViewController,
-            let speaker = sender as? SpeakerModel {
-            detailVc.speakerToDisplay = speaker
-        }
-    }
 
     func displayDetail(for speaker: SpeakerModel) {
-        displaySpeakerCallback?(speaker, self)
+        displaySpeakerCallback?(speaker)
     }
     
 }

@@ -1,5 +1,5 @@
 PODS:
-  - Compose (1.0)
+  - Compose (1.0.1)
   - Kingfisher (3.1.4)
   - Marshal (1.0.0)
   - NibDesignable (3.0.0)
@@ -11,7 +11,7 @@ DEPENDENCIES:
   - NibDesignable
 
 SPEC CHECKSUMS:
-  Compose: 248a2e4602d77d319765570b3060163a31fe4ab8
+  Compose: f1db433ec5ffc67e09ea1ee54ec8213b703fd903
   Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
   Marshal: a3c5c5dbd388112edf3cdabb718f2b4cfe48658a
   NibDesignable: 6ccf1e54135cb05be0a78f803b9a8d78125a7d6d

@@ -34,7 +34,7 @@ struct SpeakerDetailHeaderUnit: TypedUnit {
             let font = UIFont.systemFont(ofSize: 15)
             let attributed = NSAttributedString(string: citation, attributes: [NSFontAttributeName: font])
             let frame = attributed.boundingRect(with: reducedSize, options: .usesLineFragmentOrigin, context: nil)
-            return round(frame.height) + 210
+            return round(frame.height) + 200
         }
     }
     

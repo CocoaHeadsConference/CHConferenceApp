@@ -1,4 +1,69 @@
 {
+	"sponsors":[
+		{
+			"id": 0,
+			"title": "iFood",
+			"url": "https://www.ifood.com.br/",
+			"image": "http://cocoaheadsconference.com.br/images/sponsors/6.png",
+			"type": "",
+		},
+		{
+			"id": 1,
+			"title": "Twitter",
+			"url": "http://www.twitter.com/",
+			"image": "http://cocoaheadsconference.com.br/images/sponsors/7.png",
+			"type": "",
+		},
+		{
+			"id": 2,
+			"title": "Work&Co",
+			"url": "http://work.co",
+			"image": "http://cocoaheadsconference.com.br/images/sponsors/8.png",
+			"type": "",
+		},
+		{
+			"id": 3,
+			"title": "AvenueCode",
+			"url": "http://www.avenuecode.com/",
+			"image": "http://cocoaheadsconference.com.br/images/sponsors/9.png",
+			"type": "",
+		},
+		{
+			"id": 4,
+			"title": "Sympla",
+			"url": "http://www.sympla.com.br/",
+			"image": "http://cocoaheadsconference.com.br/images/sponsors/1.png",
+			"type": "",
+		},
+		{
+			"id": 5,
+			"title": "Abacomm",
+			"url": "http://abacomm.com.br/",
+			"image": "http://cocoaheadsconference.com.br/images/sponsors/2.png",
+			"type": "",
+		},
+		{
+			"id": 6,
+			"title": "iMasters",
+			"url": "http://imasters.com.br/",
+			"image": "http://cocoaheadsconference.com.br/images/sponsors/3.png",
+			"type": "",
+		},
+		{
+			"id": 7,
+			"title": "Mercado Livre",
+			"url": "http://www.mercadolivre.com.br/",
+			"image": "http://cocoaheadsconference.com.br/images/sponsors/4.png",
+			"type": "",
+		},
+		{
+			"id": 8,
+			"title": "Concrete Solutions",
+			"url": "http://www.concretesolutions.com.br/",
+			"image": "http://cocoaheadsconference.com.br/images/sponsors/5.png",
+			"type": "",
+		}
+	],
 	"speakers":[
 		{
 			"id": 1,
@@ -82,11 +147,11 @@
 			"name": "Marcelo Fabri",
 			"image": "images/team/marcelo-fabri.jpg",
 			"title": "LEAD DEVELOPER",
-			"bio": "",
+			"bio": "Desenvolvedor iOS desde quando a contagem de referências era manual e Xcode e Interface Builder eram apps distintos. Gosta de contribuir em projetos open-source sempre que possível.",
 			"citation": "",
 			"twitterHandle": "@marcelofabri_",
 			"linkedinHandler": "marcelofabri",
-			"githubHandler": ""
+			"githubHandler": "marcelofabri"
 		},
 		{
 			"id": 9,
@@ -224,12 +289,22 @@
 		{
 			"id":2,
 			"title": "Sala Workshop1",
-			"capacity": 10
+			"capacity": 8
 		},
 		{
 			"id":3,
 			"title": "Sala Workshop2",
-			"capacity": 10
+			"capacity": 6
+		},
+		{
+			"id":5,
+			"title": "Sala Workshop3",
+			"capacity": 8
+		},
+		{
+			"id":6,
+			"title": "Sala Workshop4",
+			"capacity": 6
 		},
 		{
 			"id":4,
@@ -244,6 +319,7 @@
 			"speaker": 0,
 			"room": 0,
 			"date": "2016-12-02T16:30:00-0300",
+			"duration": 45,
 			"summary": "Pegue seu crachá e material do evento.",
 			"description": "Aproveite esse momento para se apresentar aos participantes, conhecer aquela pessoa que você conversa apenas pela internet e postar sobre o evento nas redes sociais.",
 			"type": "setup"
@@ -254,6 +330,7 @@
 			"speaker": 15,
 			"room": 1,
 			"date": "2016-12-02T17:15:00-0300",
+			"duration": 15,
 			"summary": "Declaramos aberta a 1º CocoaHeads Conference.",
 			"description": "O momento tão esperado por todos: A abertura do primeiro evento nacional do CocoaHeads Brasil! Um momento muito emocionante e um marco para toda a comunidade iOS.",
 			"type": "opening"
@@ -264,6 +341,7 @@
 			"speaker": 14,
 			"room": 1,
 			"date": "2016-12-02T17:30:00-0300",
+			"duration": 30,
 			"summary": "",
 			"description": "",
 			"type": "talk"
@@ -274,6 +352,7 @@
 			"speaker": 7,
 			"room": 1,
 			"date": "2016-12-02T18:00:00-0300",
+			"duration": 60,
 			"summary": "Desmistificando modelos de concorrência e suas aplicações em Swift no servidor.",
 			"description": "O Paulo Faria, fundador do famoso projeto Zewo e hoje membro do Core Team de API's Swift Server da Apple irá explicar como usufruir do Swift para aplicações web.",
 			"type": "talk"
@@ -284,6 +363,7 @@
 			"speaker": 0,
 			"room": 4,
 			"date": "2016-12-02T19:00:00-0300",
+			"duration": 30,
 			"summary": "Pausa para um lanche!",
 			"description": "Um intervalo para passear pela área comum do local, tomar um café e claro, bater papo com todos os incríveis participantes. Aproveite esse momento para ficar de olho na programação do Sábado.",
 			"type": "breaktime"
@@ -294,6 +374,7 @@
 			"speaker": 0,
 			"room": 1,
 			"date": "2016-12-02T19:30:00-0300",
+			"duration": 40,
 			"summary": "(atividade aguardando confirmação)",
 			"description": "Talk reservada para equipe técnica da Sympla. Atividade aguardando confirmação..",
 			"type": "talk"
@@ -304,6 +385,7 @@
 			"speaker": 0,
 			"room": 1,
 			"date": "2016-12-02T20:10:00-0300",
+			"duration": 30,
 			"summary": "Entendendo deep links e como facilitar sua vida usando o Branch.io",
 			"description": "A Branch.io envia um de seus engenheiros mobile para o Brasil para falar sobre Deep Links. Esse recurso tão útil e ainda tão pouco utilizado pelos apps nacionais!",
 			"type": "talk"
@@ -314,6 +396,7 @@
 			"speaker": 12,
 			"room": 1,
 			"date": "2016-12-02T20:40:00-0300",
+			"duration": 20,
 			"summary": "Agradecimento, sorteio, encerramento e feedback!",
 			"description": "Vinicius irá sortear alguns brindes cedidos pelos apoiadores do evento e o primeiro dia de evento chega ao fim!",
 			"type": "closing"
@@ -324,6 +407,7 @@
 			"speaker": 0,
 			"room": 0,
 			"date": "2016-12-03T07:00:00-0300",
+			"duration": 60,
 			"summary": "Se for seu primeiro dia, pegue seu crachá!",
 			"description": "Aproveite esse momento para se informar sobre os workshops e demais atividades de cada sala. Converse com os participantes e tome um café.",
 			"type": "setup"
@@ -334,6 +418,7 @@
 			"speaker": 11,
 			"room": 1,
 			"date": "2016-12-03T08:00:00-0300",
+			"duration": 20,
 			"summary": "E breve recado dos apoiadores!",
 			"description": "Cerimônia de abertura do segundo dia de evento, com breve palavra das empresas apoiadoras e apresentação das atividades do dia.",
 			"type": "opening"
@@ -344,6 +429,7 @@
 			"speaker": 2,
 			"room": 1,
 			"date": "2016-12-03T08:20:00-0300",
+			"duration": 40,
 			"summary": "Rich Notifications.",
 			"description": "O iOS 10 trouxe muitas mudanças, mas uma das mais impactantes no dia a dia dos devs é relacionada as API's de Push Notifications. Vamos entender o que você precisa fazer para tirar o maior proveito das Rich Notifications.",
 			"type": "talk"
@@ -354,6 +440,7 @@
 			"speaker": 1,
 			"room": 1,
 			"date": "2016-12-03T09:00:00-0300",
+			"duration": 40,
 			"summary": "O que é e como fazer!",
 			"description": "Escrever código bom não é uma tarefa simples. Vamos abordar como reconhecer melhorias e aplicadas em nossos códigos e quais features de Swift e bibliotecas podem nos auxiliar nessa tarefa.",
 			"type": "talk"
@@ -364,6 +451,7 @@
 			"speaker": 9,
 			"room": 1,
 			"date": "2016-12-03T09:40:00-0300",
+			"duration": 35,
 			"summary": "Ainda orfão do Parse?",
 			"description": "Azure SDK para apps iOS nativos.",
 			"type": "talk"
@@ -374,6 +462,7 @@
 			"speaker": 6,
 			"room": 1,
 			"date": "2016-12-03T10:15:00-0300",
+			"duration": 45,
 			"summary": "Structs, Enums, Protocolos, Imutabilidade, Programação funcional, Testes",
 			"description": "Structs, Enums, Protocolos, Imutabilidade, Programação funcional, Testes",
 			"type": "talk"
@@ -384,6 +473,7 @@
 			"speaker": 13,
 			"room": 1,
 			"date": "2016-12-03T11:00:00-0300",
+			"duration": 30,
 			"summary": "Dando voz aos seus aplicativos",
 			"description": "Juliana oferece uma visão geral dos recursos de acessibilidade existentes que os desenvolvedores podem (e devem) explorar. Será apresentado como tornar o seu aplicativo acessível aos deficientes visuais através de um case real do app iFood.",
 			"type": "talk"
@@ -394,6 +484,7 @@
 			"speaker": 0,
 			"room": 4,
 			"date": "2016-12-03T11:30:00-0300",
+			"duration": 90,
 			"summary": "Hora de comer!",
 			"description": "O almoço é servido no restaurante do Mercado Livre e fica disponível até as 14:00.",
 			"type": "breaktime"
@@ -404,6 +495,7 @@
 			"speaker": 3,
 			"room": 1,
 			"date": "2016-12-03T13:00:00-0300",
+			"duration": 45,
 			"summary": "LLDB é seu amigo.",
 			"description": "LLDB é aquele cara tímido que gosta de aparecer quando seu app da crash. Vamos ver algumas dicas e truques de como usar o LLDB para facilitar a sua vida, quem sabe ele te ajuda a remover alguns NSLogs, códigos de teste (aquele que acaba indo pro cliente) ou até mesmo evitar build and runs desnecessários.",
 			"type": "talk"
@@ -414,6 +506,7 @@
 			"speaker": 8,
 			"room": 1,
 			"date": "2016-12-03T13:45:00-0300",
+			"duration": 45,
 			"summary": "👍 ou 👎?",
 			"description": "O que é? Por que fazer? É bom ou ruim? Onde vive? Do que se alimenta? Dia 03, no Globo Repórter na palestra do Fabri.",
 			"type": "talk"
@@ -424,6 +517,7 @@
 			"speaker": 4,
 			"room": 1,
 			"date": "2016-12-03T14:30:00-0300",
+			"duration": 45,
 			"summary": "Adapt to survive!",
 			"description": "MVC+MVVM+Coordinator+Other stuffs.",
 			"type": "talk"
@@ -434,6 +528,7 @@
 			"speaker": 5,
 			"room": 1,
 			"date": "2016-12-03T15:15:00-0300",
+			"duration": 45,
 			"summary": "Três conceitos que farão a diferença nos seus apps.",
 			"description": "Nesta talk Guilherme irá apresentar três padrões que adotou e que mudaram significativamente a qualidade dos seus apps: Abstrair a internet dos seus view controllers; calcular diferenças entre coleções de models e lidar com navegação entre telas.",
 			"type": "talk"
@@ -444,6 +539,7 @@
 			"speaker": 0,
 			"room": 4,
 			"date": "2016-12-03T16:00:00-0300",
+			"duration": 30,
 			"summary": "Pausa pra mais um lanche e networking",
 			"description": "Um intervalo para passear pela área comum do local, tomar um café e claro, bater papo com todos os incríveis participantes.",
 			"type": "breaktime"
@@ -454,6 +550,7 @@
 			"speaker": 10,
 			"room": 1,
 			"date": "2016-12-03T16:30:00-0300",
+			"duration": 30,
 			"summary": "Hora de dar tchau!",
 			"description": "Iremos realizar alguns sorteios de coisinhas gentilmente cedidas pelas empresas apoiadoras e encerrar o evento!",
 			"type": "closing"
@@ -464,6 +561,7 @@
 			"speaker": 17,
 			"room": 2,
 			"date": "2016-12-03T09:00:00-0300",
+			"duration": 30,
 			"summary": "Containers previsíveis de estado e fluxos unidirecionais de dados e… oi?",
 			"description": "Código que mantém estado é um saco. É complexo. Tende a bugs. E ainda assim, é o destino inevitável do desenvolvedor de UIs. Aprenda, na prática, como usar os princípios e técnicas do famoso Redux para controlar o estado de sua aplicação iOS, de forma previsível e controlada.",
 			"type": "workshop"
@@ -474,6 +572,7 @@
 			"speaker": 17,
 			"room": 2,
 			"date": "2016-12-03T10:00:00-0300",
+			"duration": 30,
 			"summary": "Containers previsíveis de estado e fluxos unidirecionais de dados e… oi?",
 			"description": "Código que mantém estado é um saco. É complexo. Tende a bugs. E ainda assim, é o destino inevitável do desenvolvedor de UIs. Aprenda, na prática, como usar os princípios e técnicas do famoso Redux para controlar o estado de sua aplicação iOS, de forma previsível e controlada.",
 			"type": "workshop"
@@ -484,6 +583,7 @@
 			"speaker": 19,
 			"room": 3,
 			"date": "2016-12-03T13:00:00-0300",
+			"duration": 30,
 			"summary": "Integre seu app com sua voz!",
 			"description": "Workshop mostrando, na prática, como suportar comandos de voz da Siri dentro do seu app.",
 			"type": "workshop"
@@ -494,6 +594,7 @@
 			"speaker": 19,
 			"room": 3,
 			"date": "2016-12-03T14:00:00-0300",
+			"duration": 30,
 			"summary": "Integre seu app com sua voz!",
 			"description": "Workshop mostrando, na prática, como suportar comandos de voz da Siri dentro do seu app.",
 			"type": "workshop"
@@ -504,6 +605,7 @@
 			"speaker": 16,
 			"room": 2,
 			"date": "2016-12-03T10:30:00-0300",
+			"duration": 30,
 			"summary": "Crie o seu!",
 			"description": "Igor vem trabalhando os últimos meses exclusivamente na criação de frameworks. Nesse workshop ele dará os caminhos das pedras para você criar o seu próprio framework. E é claro, uma descrição melhor será publicada nos próximos dias.",
 			"type": "workshop"
@@ -514,6 +616,7 @@
 			"speaker": 18,
 			"room": 1,
 			"date": "2016-12-03T15:30:00-0300",
+			"duration": 30,
 			"summary": "Integre seu app com sua casa!",
 			"description": "Workshop mostrando, na prática, como desenvolver um app que utiliza as API's do HomeKit. Atividade aguardando confirmação.",
 			"type": "workshop"

@@ -16,6 +16,7 @@ class Cache: NSObject {
     var speakers: [Int:SpeakerModel] = [:]
     var rooms: [Int:RoomModel] = [:]
     var talks: [Int:TalkModel] = [:]
+    var sponsors: [SponsorModel] = []
     
     func talk(with id: Int)-> TalkModel? {
         return talks[id]
@@ -44,6 +45,8 @@ class Cache: NSObject {
         allRooms.forEach { rooms[$0.id] = $0 }
         let allTalks: [TalkModel] = try json.value(for: "talks")
         allTalks.forEach { talks[$0.id] = $0 }
+        
+        sponsors = try json.value(for: "sponsors")
     }
     
 }

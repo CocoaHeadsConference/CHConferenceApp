@@ -11,23 +11,27 @@ import NibDesignable
 import Compose
 
 @IBDesignable
-class SpeakerListView: NibDesignable {
+class SpeakerListView: CollectionStackView {
 
-    @IBOutlet var collectionListView: CollectionStackView! {
-        didSet {
-            collectionListView.container.direction = .verticalGrid(columns: 3)
-            collectionListView.container.sectionInset = UIEdgeInsets(2)
-            collectionListView.container.itemSpace = 2
-            collectionListView.container.lineSpace = 2
-            collectionListView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        container.direction = .verticalGrid(columns: 3)
+        container.sectionInset = UIEdgeInsets(top: -20, left: 2, bottom: 2, right: 0)
+        container.itemSpace = 2
+        container.lineSpace = 2
+        self.backgroundColor = UIColor(hexString: "004D40")
+        container.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     var displayCallback: ((SpeakerModel)-> Void)?
     
     var state: SpeakersListState = SpeakersListState(speakers: []) {
         didSet {
-            collectionListView.container.state = ComposeSpeakerListView(with: state, selectCallback: displayCallback)
+            container.state = ComposeSpeakerListView(with: state, selectCallback: displayCallback)
         }
     }
     
