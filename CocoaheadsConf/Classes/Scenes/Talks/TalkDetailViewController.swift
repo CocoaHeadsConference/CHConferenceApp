@@ -15,6 +15,11 @@ class TalkDetailViewController: UIViewController {
             detailView.didTapGoBackCallback = { [unowned self] in
                 _ = self.navigationController?.popViewController(animated: true)
             }
+            detailView.didTapPlayCallback = { [unowned self] in
+                guard let video = self.talkToShow?.video else { return }
+                
+                PlaybackHelper(with: video.youTubeUrl).play(from: self)
+            }
         }
     }
     

@@ -96,6 +96,7 @@
 		DD3A5AEA1DE60D580016882D /* VideosScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5AE91DE60D580016882D /* VideosScene.swift */; };
 		DD3A5AEC1DE60DE80016882D /* Videos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A5AEB1DE60DE80016882D /* Videos.storyboard */; };
 		DD3A5AEF1DE60E130016882D /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5AEE1DE60E130016882D /* VideosViewController.swift */; };
+		DD3A5B141DE633500016882D /* PlaybackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5B131DE633500016882D /* PlaybackHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +205,7 @@
 		DD3A5AE91DE60D580016882D /* VideosScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosScene.swift; sourceTree = "<group>"; };
 		DD3A5AEB1DE60DE80016882D /* Videos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Videos.storyboard; sourceTree = "<group>"; };
 		DD3A5AEE1DE60E130016882D /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
+		DD3A5B131DE633500016882D /* PlaybackHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -641,6 +643,7 @@
 			children = (
 				DD3A5AEB1DE60DE80016882D /* Videos.storyboard */,
 				DD3A5AE91DE60D580016882D /* VideosScene.swift */,
+				DD3A5B121DE6333C0016882D /* Helpers */,
 				DD3A5AED1DE60DF20016882D /* List */,
 			);
 			path = Videos;
@@ -652,6 +655,14 @@
 				DD3A5AEE1DE60E130016882D /* VideosViewController.swift */,
 			);
 			name = List;
+			sourceTree = "<group>";
+		};
+		DD3A5B121DE6333C0016882D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DD3A5B131DE633500016882D /* PlaybackHelper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -859,6 +870,7 @@
 				159164611DDD458800995EC2 /* TalkUnit.swift in Sources */,
 				15BBD8AF1DDA493400A9A45F /* SpeakerDetailHeaderUnit.swift in Sources */,
 				15DDF9351DD126CA00AD4B93 /* LocalDataFetcher.swift in Sources */,
+				DD3A5B141DE633500016882D /* PlaybackHelper.swift in Sources */,
 				152F38CA1DCD0C2500FE9ECF /* SponsorsScene.swift in Sources */,
 				15F9E4271DDF7A4600C05ECC /* TalkDetailView.swift in Sources */,
 				1519A68E1DE287B50044EE8C /* DetailHeaderCollectionViewCell.swift in Sources */,
