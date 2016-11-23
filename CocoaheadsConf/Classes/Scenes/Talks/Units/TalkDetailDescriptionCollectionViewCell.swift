@@ -12,6 +12,7 @@ class TalkDetailDescriptionCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var summaryLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet weak var videoButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

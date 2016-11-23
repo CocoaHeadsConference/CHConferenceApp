@@ -42,6 +42,10 @@ class Cache: NSObject {
         return videos[id]
     }
     
+    func video(for talk: Int) -> VideoModel? {
+        return videos.flatMap({ $0.1 }).filter({ $0.talk?.id == talk }).first
+    }
+    
     func `import`(json: [String:Any]) throws {
         let allSpeakers: [SpeakerModel] = try json.value(for: "speakers")
         allSpeakers.forEach { speakers[$0.id] = $0 }
