@@ -92,6 +92,7 @@
 		15F9E42B1DDF7A7500C05ECC /* TalkDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F9E42A1DDF7A7500C05ECC /* TalkDetailView.xib */; };
 		15F9E42D1DDF85E200C05ECC /* TalkDetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9E42C1DDF85E200C05ECC /* TalkDetailViewState.swift */; };
 		1FB33EC6A0E4FD8A272779D7 /* Pods_CocoaheadsConf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0668A8CC5476A35E0163F0B6 /* Pods_CocoaheadsConf.framework */; };
+		DD3A5AE71DE60A8D0016882D /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5AE61DE60A8D0016882D /* VideoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,7 @@
 		15F9E42C1DDF85E200C05ECC /* TalkDetailViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailViewState.swift; sourceTree = "<group>"; };
 		6D327FD898FBF26989AC9F44 /* Pods-CocoaheadsConf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaheadsConf.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaheadsConf/Pods-CocoaheadsConf.release.xcconfig"; sourceTree = "<group>"; };
 		A19881DAEC2FFA8E5C75DC4B /* Pods-CocoaheadsConf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaheadsConf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaheadsConf/Pods-CocoaheadsConf.debug.xcconfig"; sourceTree = "<group>"; };
+		DD3A5AE61DE60A8D0016882D /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 				15DDF9291DD11DA200AD4B93 /* TalkModel.swift */,
 				15DDF92B1DD11DAA00AD4B93 /* SpeakerModel.swift */,
 				15DDF92F1DD11E9300AD4B93 /* RoomModel.swift */,
+				DD3A5AE61DE60A8D0016882D /* VideoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -824,6 +827,7 @@
 				15D88FD91DD34F630055F781 /* Date+Extensions.swift in Sources */,
 				15BBD8A11DDA232F00A9A45F /* GradientView.swift in Sources */,
 				152F38D31DCD0C6B00FE9ECF /* MainTabController.swift in Sources */,
+				DD3A5AE71DE60A8D0016882D /* VideoModel.swift in Sources */,
 				1515D1191DDA9E34008690FD /* SpeakerDetailDescriptionCollectionViewCell.swift in Sources */,
 				159164611DDD458800995EC2 /* TalkUnit.swift in Sources */,
 				15BBD8AF1DDA493400A9A45F /* SpeakerDetailHeaderUnit.swift in Sources */,
