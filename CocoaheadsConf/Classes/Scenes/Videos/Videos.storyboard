@@ -1,50 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vx7-dD-fCD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9vs-Yq-3LW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Videos View Controller-->
-        <scene sceneID="kZs-Sh-FmJ">
+        <scene sceneID="Dk0-63-yGr">
             <objects>
-                <tableViewController id="vx7-dD-fCD" customClass="VideosViewController" customModule="CocoaheadsConf" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gsQ-zu-mWA">
+                <viewController id="9vs-Yq-3LW" customClass="VideosViewController" customModule="CocoaheadsConf" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yVD-Rx-xKv"/>
+                        <viewControllerLayoutGuide type="bottom" id="NJH-h2-efn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hH6-w7-pII">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" textLabel="LVP-Fo-v0a" style="IBUITableViewCellStyleDefault" id="e4F-ph-Nvu">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e4F-ph-Nvu" id="byz-Ei-gjt">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LVP-Fo-v0a">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HPa-OC-JSm">
+                                <rect key="frame" x="-4" y="20" width="383" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" textLabel="ECa-t9-bIO" style="IBUITableViewCellStyleDefault" id="k3i-Kv-tRr">
+                                        <rect key="frame" x="0.0" y="28" width="383" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k3i-Kv-tRr" id="rVk-ln-AnA">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="vx7-dD-fCD" id="545-7e-jby"/>
-                            <outlet property="delegate" destination="vx7-dD-fCD" id="bpY-YI-m4R"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SH0-Za-hSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ECa-t9-bIO">
+                                                    <rect key="frame" x="15" y="0.0" width="353" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yeV-SU-7hL" kind="show" identifier="displayTalk" id="t7G-fY-Okk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9vs-Yq-3LW" id="36f-Zg-5P0"/>
+                                    <outlet property="delegate" destination="9vs-Yq-3LW" id="YW2-rv-EKA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="HPa-OC-JSm" secondAttribute="trailing" constant="-20" id="9Dd-zG-Zxy"/>
+                            <constraint firstItem="NJH-h2-efn" firstAttribute="top" secondItem="HPa-OC-JSm" secondAttribute="bottom" id="I5W-AI-7Gb"/>
+                            <constraint firstItem="HPa-OC-JSm" firstAttribute="leading" secondItem="hH6-w7-pII" secondAttribute="leadingMargin" constant="-20" id="cgY-hn-ewb"/>
+                            <constraint firstItem="HPa-OC-JSm" firstAttribute="top" secondItem="yVD-Rx-xKv" secondAttribute="bottom" id="vgb-2H-xpr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="HPa-OC-JSm" id="wMC-bL-xFw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Uj-Cy-0F5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-497" y="-45"/>
+            <point key="canvasLocation" x="-868" y="0.44977511244377816"/>
+        </scene>
+        <!--Talk Detail View Controller-->
+        <scene sceneID="aKJ-np-WjZ">
+            <objects>
+                <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="yeV-SU-7hL" customClass="TalkDetailViewController" customModule="CocoaheadsConf" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R8E-i2-cJQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="dog-Rp-RzK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oj8-KA-qgY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDI-C1-DBn" customClass="TalkDetailView" customModule="CocoaheadsConf" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="MDI-C1-DBn" firstAttribute="leading" secondItem="Oj8-KA-qgY" secondAttribute="leading" id="0l1-nT-bkr"/>
+                            <constraint firstAttribute="bottom" secondItem="MDI-C1-DBn" secondAttribute="bottom" id="7aZ-hH-m9y"/>
+                            <constraint firstItem="MDI-C1-DBn" firstAttribute="top" secondItem="Oj8-KA-qgY" secondAttribute="top" id="ncY-jE-iJs"/>
+                            <constraint firstAttribute="trailing" secondItem="MDI-C1-DBn" secondAttribute="trailing" id="tQt-N8-awp"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="detailView" destination="MDI-C1-DBn" id="tkI-0K-VCS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WLp-z0-BSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103" y="0.0"/>
         </scene>
     </scenes>
 </document>
