@@ -518,5 +518,72 @@
 			"description": "Workshop mostrando, na prática, como desenvolver um app que utiliza as API's do HomeKit. Atividade aguardando confirmação.",
 			"type": "workshop"
 		}
+	],
+	"videos": [
+		{
+			"id": 0,
+			"talk": 2,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		},
+		{
+			"id": 1,
+			"talk": 3,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		},
+		{
+			"id": 2,
+			"talk": 5,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		},
+		{
+			"id": 3,
+			"talk": 6,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		},
+		{
+			"id": 4,
+			"talk": 10,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		},
+		{
+			"id": 5,
+			"talk": 11,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		},
+		{
+			"id": 6,
+			"talk": 12,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		},
+		{
+			"id": 7,
+			"talk": 13,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		},
+		{
+			"id": 8,
+			"talk": 14,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		},
+		{
+			"id": 9,
+			"talk": 16,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		},
+		{
+			"id": 10,
+			"talk": 17,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		},
+		{
+			"id": 11,
+			"talk": 18,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		},
+		{
+			"id": 12,
+			"talk": 19,
+			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
+		}
 	]
 }
