@@ -17,7 +17,7 @@ class VideosScene: Scene, CacheUpdatable {
     init(cache: Cache, talksScene: TalksScene) {
         rootViewController = VideosViewController(with: cache)
         initialViewController = NavigationViewController(rootViewController: rootViewController)
-        initialViewController.tabBarItem = UITabBarItem(title: "Vídeos", image: nil, tag: 0)
+        initialViewController.tabBarItem = UITabBarItem(title: "Vídeos", image: #imageLiteral(resourceName: "videos"), tag: 0)
         rootViewController.didSelectVideoCallback = { [unowned self] video in
             guard let talk = video.talk else { return }
             let viewController = talksScene.viewController(for: talk)
