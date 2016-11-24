@@ -15,12 +15,9 @@ class SpeakerListView: CollectionStackView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        container.direction = .verticalGrid(columns: 3)
-        container.sectionInset = UIEdgeInsets(top: -20, left: 2, bottom: 2, right: 0)
-        container.itemSpace = 2
-        container.lineSpace = 2
+//        container.sectionInset = UIEdgeInsets(top: -20, left: 2, bottom: 2, right: 0)
+        container.lineSpace = 1
         self.backgroundColor = UIColor(hexString: "004D40")
-        container.backgroundColor = UIColor.black.withAlphaComponent(0.4)
     }
     
     required init?(coder aDecoder: NSCoder) {

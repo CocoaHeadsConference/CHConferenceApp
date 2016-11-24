@@ -36,7 +36,14 @@ class TalksDashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Atividades"
         self.navigationController?.tabBarItem = UITabBarItem(title: "Atividades", image: nil, tag: 0)
+        
+        let typeSelector = UISegmentedControl(items: ["Todas", "Palestras", "Workshops"])
+        typeSelector.tintColor = .white
+        typeSelector.selectedSegmentIndex = 0
+        typeSelector.addTarget(self, action: #selector(self.updateFromSegmentedControl(segmentedControl:)), for: .valueChanged)
+        self.navigationItem.titleView = typeSelector
         listView?.didSelectTalkCallback = displayTalkCallback
         updateListState()
     }
@@ -45,5 +52,9 @@ class TalksDashboardViewController: UIViewController {
         listView?.state.talks = Array(cache.talks.values)
     }
     
+    
+    func updateFromSegmentedControl(segmentedControl: UISegmentedControl) {
+        listView?.changeTalkDisplayType(segmentedControl: segmentedControl)
+    }
 
 }

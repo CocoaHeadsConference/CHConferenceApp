@@ -11,27 +11,29 @@ import NibDesignable
 import Compose
 
 @IBDesignable
-class TalksDashboardView: NibDesignable {
+class TalksDashboardView: CollectionStackView {
 
-    @IBOutlet var talkListView: CollectionStackView! {
-        didSet {
-            talkListView.backgroundColor = UIColor(hexString: "004D40")
-            talkListView.container.lineSpace = 1
-            talkListView.container.sectionInset = UIEdgeInsets(bottom: 48)
-        }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = UIColor(hexString: "004D40")
+        self.container.lineSpace = 1
+        self.container.sectionInset = UIEdgeInsets(bottom: 48)
     }
     
-    @IBOutlet var talkSegmentedControl: UISegmentedControl!
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     var state: TalkDashboardViewState = TalkDashboardViewState(talks:[], filter: nil) {
         didSet {
-            talkListView.container.state = composeTalkDashboardView(with: state, didSelectCallback: didSelectTalkCallback)
+            self.container.state = composeTalkDashboardView(with: state, didSelectCallback: didSelectTalkCallback)
         }
     }
     
     var didSelectTalkCallback: ((TalkModel)-> Void)?
     
-    @IBAction func changeTalkDisplayType(segmentedControl: UISegmentedControl) {
+    func changeTalkDisplayType(segmentedControl: UISegmentedControl) {
         self.state.filter = TalkModel.TalkType(intValue: segmentedControl.selectedSegmentIndex)
     }
     

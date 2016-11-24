@@ -13,6 +13,7 @@ class SpeakerHeroCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private var speakerImageView: UIImageView!
     @IBOutlet private var speakerNameLabel: UILabel!
+    @IBOutlet private var speakerTwitterLabel: UILabel!
 
     var speakerImageURL: URL? {
         didSet {
@@ -27,17 +28,30 @@ class SpeakerHeroCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var speakerTwitter: String? {
+        didSet {
+            speakerTwitterLabel.text = speakerTwitter
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor(hexString: "004D40")
-        self.layer.borderColor = UIColor(white: 0.0, alpha: 0.8).cgColor
-        self.layer.borderWidth = 1
+//        self.backgroundColor = UIColor(hexString: "004D40")
+        self.speakerImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.8).cgColor
+        self.speakerImageView.layer.borderWidth = 1
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.speakerImageView.layer.cornerRadius = self.speakerImageView.frame.width / 2
+        
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         speakerImageURL = nil
         speakerName = nil
+        speakerTwitter = nil
     }
     
 }

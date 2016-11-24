@@ -29,10 +29,6 @@ class TalkDetailViewController: UIViewController {
         super.loadView()
         self.view = TalkDetailView(frame: UIScreen.main.bounds)
         detailView?.container.backgroundColor = UIColor.black.withAlphaComponent(0.75)
-        detailView?.container.sectionInset = UIEdgeInsets(top: -20)
-        detailView?.didTapGoBackCallback = { [unowned self] in
-            _ = self.navigationController?.popViewController(animated: true)
-        }
         detailView?.didTapPlayCallback = { [unowned self] in
             guard let video = self.talkToShow.video else { return }
             
@@ -43,6 +39,7 @@ class TalkDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.detailView?.state.talk = self.talkToShow
+        self.title = self.talkToShow.type.title
     }
     
 

@@ -6,64 +6,69 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SpeakerHeroCollectionViewCell" customModule="CocoaheadsConf" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="218" height="216"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="218" height="216"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KjU-RU-V6w">
-                        <rect key="frame" x="0.0" y="0.0" width="218" height="216"/>
+                        <rect key="frame" x="8" y="8" width="74" height="74"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="KjU-RU-V6w" secondAttribute="height" multiplier="1:1" id="vCD-hI-DcT"/>
+                        </constraints>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxt-6w-la6" customClass="GradientView" customModule="CocoaheadsConf" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="190" width="218" height="26"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EbJ-57-C7Q">
+                        <rect key="frame" x="90" y="22.5" width="269" height="45"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOp-dX-AtA">
+                                <rect key="frame" x="0.0" y="0.0" width="269" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twx-EB-P2a">
-                                <rect key="frame" x="8" y="4" width="202" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.95113779362416095" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="28" width="269" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="twx-EB-P2a" firstAttribute="leading" secondItem="bxt-6w-la6" secondAttribute="leading" constant="8" id="CO5-jB-1M6"/>
-                            <constraint firstAttribute="bottom" secondItem="twx-EB-P2a" secondAttribute="bottom" constant="4" id="OGP-Ym-mqM"/>
-                            <constraint firstItem="twx-EB-P2a" firstAttribute="top" secondItem="bxt-6w-la6" secondAttribute="top" constant="4" id="WOV-6z-4cz"/>
-                            <constraint firstAttribute="trailing" secondItem="twx-EB-P2a" secondAttribute="trailing" constant="8" id="rwn-P8-ZGp"/>
+                            <constraint firstItem="twx-EB-P2a" firstAttribute="top" secondItem="sOp-dX-AtA" secondAttribute="bottom" constant="4" id="DNZ-UP-SjU"/>
+                            <constraint firstAttribute="bottom" secondItem="twx-EB-P2a" secondAttribute="bottom" id="JXV-Hr-g4e"/>
+                            <constraint firstAttribute="trailing" secondItem="sOp-dX-AtA" secondAttribute="trailing" id="PZn-hc-KiW"/>
+                            <constraint firstItem="sOp-dX-AtA" firstAttribute="leading" secondItem="EbJ-57-C7Q" secondAttribute="leading" id="W8s-8v-cbD"/>
+                            <constraint firstItem="twx-EB-P2a" firstAttribute="trailing" secondItem="sOp-dX-AtA" secondAttribute="trailing" id="WIE-CE-bgf"/>
+                            <constraint firstItem="twx-EB-P2a" firstAttribute="leading" secondItem="sOp-dX-AtA" secondAttribute="leading" id="Z7g-RS-8VW"/>
+                            <constraint firstItem="sOp-dX-AtA" firstAttribute="top" secondItem="EbJ-57-C7Q" secondAttribute="top" id="zMl-SY-n78"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="upperColor">
-                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.097886954697986556" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
-                                <color key="value" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="KjU-RU-V6w" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Cfp-eH-mgv"/>
-                <constraint firstAttribute="trailing" secondItem="bxt-6w-la6" secondAttribute="trailing" id="EkY-0f-0oE"/>
-                <constraint firstItem="KjU-RU-V6w" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KlC-9k-rvd"/>
-                <constraint firstAttribute="trailing" secondItem="KjU-RU-V6w" secondAttribute="trailing" id="Ors-DC-yFe"/>
-                <constraint firstAttribute="bottom" secondItem="bxt-6w-la6" secondAttribute="bottom" id="ZTl-BZ-NEX"/>
-                <constraint firstAttribute="bottom" secondItem="KjU-RU-V6w" secondAttribute="bottom" id="daf-ss-H3B"/>
-                <constraint firstItem="bxt-6w-la6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="n9N-0q-ixV"/>
+                <constraint firstAttribute="bottom" secondItem="KjU-RU-V6w" secondAttribute="bottom" constant="8" id="0Fp-5L-gdf"/>
+                <constraint firstItem="EbJ-57-C7Q" firstAttribute="leading" secondItem="KjU-RU-V6w" secondAttribute="trailing" constant="8" id="BCC-y9-on5"/>
+                <constraint firstItem="KjU-RU-V6w" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="S8Z-GH-1LB"/>
+                <constraint firstAttribute="trailing" secondItem="EbJ-57-C7Q" secondAttribute="trailing" constant="16" id="vBX-0Y-S4A"/>
+                <constraint firstItem="KjU-RU-V6w" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="vYA-As-oAL"/>
+                <constraint firstItem="EbJ-57-C7Q" firstAttribute="centerY" secondItem="KjU-RU-V6w" secondAttribute="centerY" id="wdL-Gk-qjB"/>
             </constraints>
             <size key="customSize" width="218" height="216"/>
             <connections>
                 <outlet property="speakerImageView" destination="KjU-RU-V6w" id="79I-EJ-W3p"/>
-                <outlet property="speakerNameLabel" destination="twx-EB-P2a" id="Enh-IW-ahB"/>
+                <outlet property="speakerNameLabel" destination="sOp-dX-AtA" id="kYB-gJ-AGc"/>
+                <outlet property="speakerTwitterLabel" destination="twx-EB-P2a" id="hjX-0q-7wv"/>
             </connections>
-            <point key="canvasLocation" x="-50" y="137"/>
+            <point key="canvasLocation" x="-50.5" y="137"/>
         </collectionViewCell>
     </objects>
 </document>

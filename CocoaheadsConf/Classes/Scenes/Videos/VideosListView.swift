@@ -19,17 +19,24 @@ class VideosListView: CollectionStackView {
 
     var didSelectVideoCallback: ((VideoModel)-> Void)?
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = UIColor(hexString: "004D40")
+        container.lineSpace = 1
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
 }
 
 
 func ComposeVideosListView(with state: VideoListViewState, callback:((VideoModel)-> Void)?)-> [ComposingUnit] {
     var units: [ComposingUnit] = []
     units.add {
-        return VideosListViewUnits.Header()
-    }
-    
-    units.add(if: !state.videos.isEmpty) {
-        return VideosListViewUnits.Videos(videos: state.videos, callback: callback)
+        let videosUnits = state.videos.map { VideosListViewUnits.Video(video: $0, callback: callback) }
+        return videosUnits
     }
     
     units.add(if: state.videos.isEmpty) {

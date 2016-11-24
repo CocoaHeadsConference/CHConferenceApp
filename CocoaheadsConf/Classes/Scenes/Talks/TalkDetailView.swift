@@ -12,17 +12,12 @@ import Compose
 
 class TalkDetailView: CollectionStackView {
     
-    var didTapGoBackCallback: (()-> Void)?
     var didTapPlayCallback: (()-> Void)?
     var state: TalkDetailViewState = TalkDetailViewState() {
         didSet {
             self.backgroundColor = state.talk?.type.color
-            container.state = ComposeTalkDetailView(with: state, goBackCallback: self.goBack, playVideoCallback: self.playVideo)
+            container.state = ComposeTalkDetailView(with: state, playVideoCallback: self.playVideo)
         }
-    }
-    
-    func goBack() {
-        didTapGoBackCallback?()
     }
     
     func playVideo() {
@@ -32,13 +27,13 @@ class TalkDetailView: CollectionStackView {
 }
 
 
-func ComposeTalkDetailView(with state: TalkDetailViewState, goBackCallback: (()-> Void)?, playVideoCallback: (()-> Void)?)-> [ComposingUnit] {
+func ComposeTalkDetailView(with state: TalkDetailViewState, playVideoCallback: (()-> Void)?)-> [ComposingUnit] {
     let formatter = DateFormatter()
     formatter.dateFormat = "EEEE, HH:mm"
     var units: [ComposingUnit] = []
     guard let talk = state.talk else { return units }
     units.add {
-        let header = TalkDetailUnits.Header(for: talk, goBack: goBackCallback)
+        let header = TalkDetailUnits.Header(for: talk)
         let desc = TalkDetailUnits.Description(for: talk)
         return [header, desc]
     }
