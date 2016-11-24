@@ -21,6 +21,7 @@ class TalkDetailPlayVideoCollectionViewCell: UICollectionViewCell {
         spinner.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.spinner.stopAnimating()
+            self.playButton.setTitle(NSLocalizedString("Continuar Assistindo", comment: "Continue Watching - button title to continue watching a video"), for: .normal)
             self.playButton.isHidden = false
         }
     }

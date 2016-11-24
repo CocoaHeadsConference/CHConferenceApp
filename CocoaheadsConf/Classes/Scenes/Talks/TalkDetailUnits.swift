@@ -55,8 +55,8 @@ struct TalkDetailUnits {
         return unit
     }
     
-    static func Play(playHandler: (() -> Void)?)-> ComposingUnit {
-        let unit = TalkDetailPlayVideoUnit(videoButtonCallback: playHandler)
+    static func Play(playHandler: (() -> Void)?, title: String)-> ComposingUnit {
+        let unit = TalkDetailPlayVideoUnit(videoButtonCallback: playHandler, buttonTitle: title)
         return unit
     }
     
