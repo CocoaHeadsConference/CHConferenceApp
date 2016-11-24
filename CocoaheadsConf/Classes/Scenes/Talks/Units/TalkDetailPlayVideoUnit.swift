@@ -17,9 +17,11 @@ struct TalkDetailPlayVideoUnit : TypedUnit {
     let heightUnit: DimensionUnit = 38
     
     var videoButtonCallback: (() -> Void)?
+    var buttonTitle: String
     
     func configure(innerView: Cell) {
         innerView.videoButtonCallback = videoButtonCallback
+        innerView.playButton.setTitle(buttonTitle, for: .normal)
     }
     
     func reuseIdentifier() -> String {
