@@ -106,7 +106,15 @@ struct PlaybackHelper {
         let message = NSLocalizedString("Deseja assistir desde o início ou continuar assistindo?", comment: "Do you want to watch from the begining or continue watching? - alert message")
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
         
-        let continueTitle = NSLocalizedString("Continuar Assistindo", comment: "Continue from HH:mm:ss - button title (continue watching video)")
+        let continueTitle: String
+        
+        if let timeStr = String(time: position) {
+            let format = NSLocalizedString("Continuar Assistindo aos %@", comment: "Continue at HH:mm:ss - button title (continue watching video - time specified)")
+            continueTitle = String(format: format, timeStr)
+        } else {
+            continueTitle = NSLocalizedString("Continuar Assistindo", comment: "Continue Watching - button title (continue watching video - time not specified)")
+        }
+        
         let continueAction = UIAlertAction(title: continueTitle, style: .default) { _ in
             player.seek(to: CMTimeMakeWithSeconds(Float64(position), self.preferredTimeScale))
             self.showAndPlay(with: player, from: controller)
