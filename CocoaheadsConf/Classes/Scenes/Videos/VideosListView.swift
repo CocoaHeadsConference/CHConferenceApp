@@ -7,15 +7,33 @@
 //
 
 import UIKit
+import Compose
 
-class VideosListView: UIView {
+class VideosListView: CollectionStackView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    var state = VideoListViewState(videos: []) {
+        didSet {
+            self.container.state = ComposeVideosListView(with: state, callback: didSelectVideoCallback)
+        }
     }
-    */
 
+    var didSelectVideoCallback: ((VideoModel)-> Void)?
+    
+}
+
+
+func ComposeVideosListView(with state: VideoListViewState, callback:((VideoModel)-> Void)?)-> [ComposingUnit] {
+    var units: [ComposingUnit] = []
+    units.add {
+        return VideosListViewUnits.Header()
+    }
+    
+    units.add(if: !state.videos.isEmpty) {
+        return VideosListViewUnits.Videos(videos: state.videos, callback: callback)
+    }
+    
+    units.add(if: state.videos.isEmpty) {
+        return VideosListViewUnits.Empty()
+    }
+    return units
 }

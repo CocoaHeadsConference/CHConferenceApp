@@ -21,13 +21,14 @@ class TalksScene: Scene, CacheUpdatable {
         
         rootViewController.displayTalkCallback = { [unowned self] talk in
             let viewController = self.viewController(for: talk)
-            viewController.hidesBottomBarWhenPushed = true
             self.rootViewController.navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
     func viewController(for talk: TalkModel)-> TalkDetailViewController {
-        return TalkDetailViewController(for: talk)
+        let viewController = TalkDetailViewController(for: talk)
+        viewController.hidesBottomBarWhenPushed = true
+        return viewController
     }
     
     func updateFromCache() {

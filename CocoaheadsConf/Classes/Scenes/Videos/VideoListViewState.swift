@@ -8,6 +8,8 @@
 
 import UIKit
 
-class VideoListViewState: NSObject {
+struct VideoListViewState {
 
+    var videos: [VideoModel]
+    
 }

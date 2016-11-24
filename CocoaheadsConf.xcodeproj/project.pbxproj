@@ -55,6 +55,12 @@
 		1591645E1DDD419700995EC2 /* TalkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1591645C1DDD419700995EC2 /* TalkCollectionViewCell.swift */; };
 		1591645F1DDD419700995EC2 /* TalkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1591645D1DDD419700995EC2 /* TalkCollectionViewCell.xib */; };
 		159164611DDD458800995EC2 /* TalkUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159164601DDD458800995EC2 /* TalkUnit.swift */; };
+		15A761AA1DE658E40006333D /* TalkDetailPlayVideoUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A761A91DE658E40006333D /* TalkDetailPlayVideoUnit.swift */; };
+		15A761AD1DE659010006333D /* TalkDetailPlayVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A761AB1DE659010006333D /* TalkDetailPlayVideoCollectionViewCell.swift */; };
+		15A761AE1DE659010006333D /* TalkDetailPlayVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15A761AC1DE659010006333D /* TalkDetailPlayVideoCollectionViewCell.xib */; };
+		15A761B01DE65F7E0006333D /* VideosListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A761AF1DE65F7E0006333D /* VideosListView.swift */; };
+		15A761B21DE65FA70006333D /* VideoListViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A761B11DE65FA70006333D /* VideoListViewState.swift */; };
+		15A761B51DE667220006333D /* VideosListViewUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A761B41DE667220006333D /* VideosListViewUnits.swift */; };
 		15BBD8931DD64ABE00A9A45F /* SpeakerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BBD8921DD64ABE00A9A45F /* SpeakerListView.swift */; };
 		15BBD8971DD9E6B000A9A45F /* SpeakersListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BBD8961DD9E6B000A9A45F /* SpeakersListState.swift */; };
 		15BBD89A1DD9E9BD00A9A45F /* SpeakerHeroUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BBD8991DD9E9BD00A9A45F /* SpeakerHeroUnit.swift */; };
@@ -94,7 +100,6 @@
 		1FB33EC6A0E4FD8A272779D7 /* Pods_CocoaheadsConf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0668A8CC5476A35E0163F0B6 /* Pods_CocoaheadsConf.framework */; };
 		DD3A5AE71DE60A8D0016882D /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5AE61DE60A8D0016882D /* VideoModel.swift */; };
 		DD3A5AEA1DE60D580016882D /* VideosScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5AE91DE60D580016882D /* VideosScene.swift */; };
-		DD3A5AEC1DE60DE80016882D /* Videos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3A5AEB1DE60DE80016882D /* Videos.storyboard */; };
 		DD3A5AEF1DE60E130016882D /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5AEE1DE60E130016882D /* VideosViewController.swift */; };
 		DD3A5B141DE633500016882D /* PlaybackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5B131DE633500016882D /* PlaybackHelper.swift */; };
 /* End PBXBuildFile section */
@@ -159,6 +164,12 @@
 		1591645C1DDD419700995EC2 /* TalkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkCollectionViewCell.swift; sourceTree = "<group>"; };
 		1591645D1DDD419700995EC2 /* TalkCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkCollectionViewCell.xib; sourceTree = "<group>"; };
 		159164601DDD458800995EC2 /* TalkUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkUnit.swift; sourceTree = "<group>"; };
+		15A761A91DE658E40006333D /* TalkDetailPlayVideoUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailPlayVideoUnit.swift; sourceTree = "<group>"; };
+		15A761AB1DE659010006333D /* TalkDetailPlayVideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailPlayVideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		15A761AC1DE659010006333D /* TalkDetailPlayVideoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkDetailPlayVideoCollectionViewCell.xib; sourceTree = "<group>"; };
+		15A761AF1DE65F7E0006333D /* VideosListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosListView.swift; sourceTree = "<group>"; };
+		15A761B11DE65FA70006333D /* VideoListViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListViewState.swift; sourceTree = "<group>"; };
+		15A761B41DE667220006333D /* VideosListViewUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosListViewUnits.swift; sourceTree = "<group>"; };
 		15BBD8921DD64ABE00A9A45F /* SpeakerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerListView.swift; sourceTree = "<group>"; };
 		15BBD8961DD9E6B000A9A45F /* SpeakersListState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersListState.swift; sourceTree = "<group>"; };
 		15BBD8991DD9E9BD00A9A45F /* SpeakerHeroUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerHeroUnit.swift; sourceTree = "<group>"; };
@@ -203,7 +214,6 @@
 		A19881DAEC2FFA8E5C75DC4B /* Pods-CocoaheadsConf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaheadsConf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaheadsConf/Pods-CocoaheadsConf.debug.xcconfig"; sourceTree = "<group>"; };
 		DD3A5AE61DE60A8D0016882D /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		DD3A5AE91DE60D580016882D /* VideosScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosScene.swift; sourceTree = "<group>"; };
-		DD3A5AEB1DE60DE80016882D /* Videos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Videos.storyboard; sourceTree = "<group>"; };
 		DD3A5AEE1DE60E130016882D /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		DD3A5B131DE633500016882D /* PlaybackHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -435,6 +445,24 @@
 			name = TalkDetailStatsUnit;
 			sourceTree = "<group>";
 		};
+		15A761A81DE658CF0006333D /* TalkDetailPlayVideoUnit */ = {
+			isa = PBXGroup;
+			children = (
+				15A761A91DE658E40006333D /* TalkDetailPlayVideoUnit.swift */,
+				15A761AB1DE659010006333D /* TalkDetailPlayVideoCollectionViewCell.swift */,
+				15A761AC1DE659010006333D /* TalkDetailPlayVideoCollectionViewCell.xib */,
+			);
+			name = TalkDetailPlayVideoUnit;
+			sourceTree = "<group>";
+		};
+		15A761B31DE667170006333D /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				15A761B41DE667220006333D /* VideosListViewUnits.swift */,
+			);
+			path = Units;
+			sourceTree = "<group>";
+		};
 		15BBD8981DD9E9AB00A9A45F /* Units */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +571,7 @@
 		15D88FC81DD2C8D00055F781 /* Units */ = {
 			isa = PBXGroup;
 			children = (
+				15A761A81DE658CF0006333D /* TalkDetailPlayVideoUnit */,
 				158F3E5E1DE3E8C30076CDB6 /* TalkDetailStatsUnit */,
 				1519A69A1DE347C00044EE8C /* TalkDescriptionUnit */,
 				1519A68B1DE2879D0044EE8C /* DetailHeaderUnit */,
@@ -649,7 +678,7 @@
 		DD3A5AE81DE60D000016882D /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				DD3A5AEB1DE60DE80016882D /* Videos.storyboard */,
+				15A761B31DE667170006333D /* Units */,
 				DD3A5AE91DE60D580016882D /* VideosScene.swift */,
 				DD3A5B121DE6333C0016882D /* Helpers */,
 				DD3A5AED1DE60DF20016882D /* List */,
@@ -661,6 +690,8 @@
 			isa = PBXGroup;
 			children = (
 				DD3A5AEE1DE60E130016882D /* VideosViewController.swift */,
+				15A761AF1DE65F7E0006333D /* VideosListView.swift */,
+				15A761B11DE65FA70006333D /* VideoListViewState.swift */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -763,13 +794,13 @@
 			files = (
 				1515D11F1DDCE47A008690FD /* SpeakerDetailSocialCollectionViewCell.xib in Resources */,
 				152F38C21DCD0BF000FE9ECF /* Speakers.storyboard in Resources */,
-				DD3A5AEC1DE60DE80016882D /* Videos.storyboard in Resources */,
 				1519A68F1DE287B50044EE8C /* DetailHeaderCollectionViewCell.xib in Resources */,
 				1591645F1DDD419700995EC2 /* TalkCollectionViewCell.xib in Resources */,
 				158F3E5B1DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.xib in Resources */,
 				15D88FDF1DD35E420055F781 /* TimeDisplayCollectionViewCell.xib in Resources */,
 				15BD91681DC95DF90088AEB4 /* LaunchScreen.storyboard in Resources */,
 				1519A69E1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib in Resources */,
+				15A761AE1DE659010006333D /* TalkDetailPlayVideoCollectionViewCell.xib in Resources */,
 				15DDF9411DD1FB8600AD4B93 /* TalksDashboardView.xib in Resources */,
 				155BF1371DDD304200985B9F /* LabelCollectionViewCell.xib in Resources */,
 				158F3E621DE3E8EA0076CDB6 /* TalkDetailStatsCollectionViewCell.xib in Resources */,
@@ -845,10 +876,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A761B51DE667220006333D /* VideosListViewUnits.swift in Sources */,
 				152F38D01DCD0C4400FE9ECF /* FavoritesScene.swift in Sources */,
 				152F38DF1DCD687300FE9ECF /* TalksDashboardView.swift in Sources */,
 				15DDF92C1DD11DAA00AD4B93 /* SpeakerModel.swift in Sources */,
 				152F38E21DD110F500FE9ECF /* NetworkFetcher.swift in Sources */,
+				15A761AD1DE659010006333D /* TalkDetailPlayVideoCollectionViewCell.swift in Sources */,
 				152F38C81DCD0C1A00FE9ECF /* TalksScene.swift in Sources */,
 				152F38D71DCD0C8400FE9ECF /* Scene.swift in Sources */,
 				1519A6971DE33A3B0044EE8C /* ConferenceStyleKit.swift in Sources */,
@@ -861,10 +894,12 @@
 				DD3A5AEF1DE60E130016882D /* VideosViewController.swift in Sources */,
 				15D88FE61DD3795B0055F781 /* SpeakersListViewController.swift in Sources */,
 				15BBD8A71DDA414200A9A45F /* SpeakerDetailView.swift in Sources */,
+				15A761AA1DE658E40006333D /* TalkDetailPlayVideoUnit.swift in Sources */,
 				15BBD89D1DD9EA2D00A9A45F /* SpeakerHeroCollectionViewCell.swift in Sources */,
 				15BBD8A51DDA413600A9A45F /* SpeakerDetailViewController.swift in Sources */,
 				15D88FDE1DD35E420055F781 /* TimeDisplayCollectionViewCell.swift in Sources */,
 				15DDF94B1DD2C4C700AD4B93 /* TalkDashboardViewState.swift in Sources */,
+				15A761B21DE65FA70006333D /* VideoListViewState.swift in Sources */,
 				15D88FE41DD3741F0055F781 /* NavigationViewController.swift in Sources */,
 				15D88FD91DD34F630055F781 /* Date+Extensions.swift in Sources */,
 				15BBD8A11DDA232F00A9A45F /* GradientView.swift in Sources */,
@@ -885,6 +920,7 @@
 				152F38CE1DCD0C3B00FE9ECF /* PlaceScene.swift in Sources */,
 				15BD91601DC95DF90088AEB4 /* ViewController.swift in Sources */,
 				1515D1161DDA9E21008690FD /* SpeakerDetailDescriptionUnit.swift in Sources */,
+				15A761B01DE65F7E0006333D /* VideosListView.swift in Sources */,
 				15D88FDB1DD35E330055F781 /* TimeDisplayUnit.swift in Sources */,
 				152F38DD1DCD144800FE9ECF /* TalksDashboardViewController.swift in Sources */,
 				1515D1231DDCEF11008690FD /* UIColor+Hex.swift in Sources */,

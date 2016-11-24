@@ -80,6 +80,8 @@ public struct CollectionStackUnit: ComposingUnit, ContainerUnit, TwoStepDisplayU
             return customHeight
         case .vertical:
             return DimensionUnit { size in
+                let customHeightCalculated = self.customHeight.value(for: size)
+                guard customHeightCalculated == 0 else { return customHeightCalculated }
                 let height = self.units.reduce(CGFloat(0.0), { (total, unit) -> CGFloat in
                     return total + unit.heightUnit.value(for: size)
                 })
@@ -87,6 +89,8 @@ public struct CollectionStackUnit: ComposingUnit, ContainerUnit, TwoStepDisplayU
             }
         case let .verticalGrid(columns):
             return DimensionUnit { size in
+                let customHeightCalculated = self.customHeight.value(for: size)
+                guard customHeightCalculated == 0 else { return customHeightCalculated }
                 let chunks = stride(from: 0, to: self.units.count, by: columns).map {
                     Array(self.units[$0..<min($0 + columns, self.units.count)])
                 }

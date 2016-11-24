@@ -10,9 +10,19 @@ import UIKit
 
 class TalkDetailPlayVideoCollectionViewCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet var playButton: UIButton!
+    @IBOutlet var spinner: UIActivityIndicatorView!
+    
+    var videoButtonCallback: (() -> Void)?
+    
+    @IBAction func startPlaying() {
+        videoButtonCallback?()
+        playButton.isHidden = true
+        spinner.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.spinner.stopAnimating()
+            self.playButton.isHidden = false
+        }
     }
-
+    
 }

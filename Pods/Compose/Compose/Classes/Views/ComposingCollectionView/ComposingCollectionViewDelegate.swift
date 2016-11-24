@@ -71,6 +71,10 @@ class ComposingCollectionViewDelegate: NSObject, UICollectionViewDelegateFlowLay
             if cell.frame.height > collectionView.frame.height {
                 visibleContainers[scrollView] = cell.frame.origin.y
             }
+            else {
+                scrollView.isScrollEnabled = true
+                scrollView.bounces = true
+            }
         }
     }
     

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let talksScene = TalksScene(cache: cache)
         let speakersScene = SpeakersScene(cache: cache)
         let sponsorsScene = SponsorsScene(cache: cache)
-        let videosScene = VideosScene()
+        let videosScene = VideosScene(cache: cache, talksScene: talksScene)
         return MainScene(with: [talksScene, speakersScene, sponsorsScene, videosScene])
     }()
 

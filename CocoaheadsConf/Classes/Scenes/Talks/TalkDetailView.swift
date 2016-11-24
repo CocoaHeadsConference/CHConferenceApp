@@ -36,12 +36,19 @@ func ComposeTalkDetailView(with state: TalkDetailViewState, goBackCallback: (()-
     let formatter = DateFormatter()
     formatter.dateFormat = "EEEE, HH:mm"
     var units: [ComposingUnit] = []
-    units.add(manyIfLet: state.talk) { talk in
+    guard let talk = state.talk else { return units }
+    units.add {
         let header = TalkDetailUnits.Header(for: talk, goBack: goBackCallback)
-        let desc = TalkDetailUnits.Description(for: talk, playHandler: playVideoCallback)
+        let desc = TalkDetailUnits.Description(for: talk)
+        return [header, desc]
+    }
+    units.add(ifLet: talk.video) { _ in
+        return TalkDetailUnits.Play(playHandler: playVideoCallback)
+    }
+    units.add {
         let spacer = TalkDetailUnits.Spacer(with: "upperSpacer")
         let stats = TalkDetailUnits.Stats(for: talk)
-        return [header, desc, spacer, stats]
+        return [spacer, stats]
     }
     return units
 }
