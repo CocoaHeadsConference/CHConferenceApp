@@ -32,7 +32,7 @@ class TalkDetailViewController: UIViewController {
         detailView?.didTapPlayCallback = { [unowned self] in
             guard let video = self.talkToShow.video else { return }
             
-            PlaybackHelper(with: video.youTubeUrl, id: video.id).play(from: self)
+            PlaybackHelper(with: video).play(from: self)
         }
     }
     
