@@ -17,7 +17,7 @@ class SponsorsScene: Scene {
     
     init(cache: Cache) {
         rootViewController = SponsorsListViewController(with: cache)
-        initialViewController = UINavigationController(rootViewController: rootViewController)
+        initialViewController = NavigationViewController(rootViewController: rootViewController)
         initialViewController.tabBarItem = UITabBarItem(title: "Patrocinadores", image: nil, tag: 0)
         rootViewController.didSelectSponsor = { [unowned self] sponsor in
             self.present(sponsor: sponsor)

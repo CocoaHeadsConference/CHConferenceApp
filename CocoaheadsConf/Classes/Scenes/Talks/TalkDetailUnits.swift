@@ -18,21 +18,19 @@ struct TalkDetailUnits {
         return formatter
     }()
     
-    static func Header(for talk: TalkModel, goBack: (()-> Void)?)-> ComposingUnit {
+    static func Header(for talk: TalkModel)-> ComposingUnit {
         let height = DimensionUnit { size in
-            let reducedSize = CGSize(width: size.width - 146, height: size.height)
+            let reducedSize = CGSize(width: size.width - 112, height: size.height)
             let font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)
             let attributed = NSAttributedString(string: talk.title, attributes: [NSFontAttributeName: font])
             let frame = attributed.boundingRect(with: reducedSize, options: .usesLineFragmentOrigin, context: nil)
-            return frame.height + 90
+            return frame.height + 80
         }
         let header = ViewUnit<DetailHeaderCollectionViewCell>(id: "header", traits: [.height(height)]) { view in
             view.talkNameLabel.text = talk.title
             view.talkTimeLabel.text = formatter.string(from: talk.date)
             view.talkLocationLabel.text = talk.room?.title
             view.talkIndicatorView.backgroundColor = talk.type.color
-            view.backButton.tintColor = talk.type.color
-            view.tapGoBackCallback = goBack
             view.talkSpeakerImageView.kf.setImage(with: talk.speaker?.imageURL, placeholder: ConferenceStyleKit.imageOfCocoaHeadsLogo, options: nil, progressBlock: nil, completionHandler: nil)
             view.talkSpeakerImageView.isHidden = !talk.type.hasImage
         }

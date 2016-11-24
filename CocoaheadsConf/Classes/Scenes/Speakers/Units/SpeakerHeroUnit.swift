@@ -16,7 +16,7 @@ struct SpeakerHeroUnit: TypedUnit, SelectableUnit {
     var identifier: String {
         return String(describing: speaker.id)
     }
-    let heightUnit = DimensionUnit(widthPercent: 1)
+    let heightUnit: DimensionUnit = 80
     
     let speaker: SpeakerModel
     
@@ -28,8 +28,10 @@ struct SpeakerHeroUnit: TypedUnit, SelectableUnit {
     }
     
     func configure(innerView: Cell) {
+        innerView.backgroundColor =  TalkModel.TalkType.talk.backgroundColor
         innerView.speakerImageURL = speaker.imageURL
         innerView.speakerName = speaker.name
+        innerView.speakerTwitter = speaker.twitterHandle
     }
     
     func reuseIdentifier() -> String {

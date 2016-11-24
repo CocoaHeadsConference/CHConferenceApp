@@ -22,7 +22,6 @@
 		1519A6991DE341160044EE8C /* TalkDetailUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A6981DE341160044EE8C /* TalkDetailUnits.swift */; };
 		1519A69D1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */; };
 		1519A69E1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */; };
-		152F38C21DCD0BF000FE9ECF /* Speakers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F38C11DCD0BF000FE9ECF /* Speakers.storyboard */; };
 		152F38C41DCD0BF800FE9ECF /* Place.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F38C31DCD0BF800FE9ECF /* Place.storyboard */; };
 		152F38C61DCD0C0300FE9ECF /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F38C51DCD0C0300FE9ECF /* Favorites.storyboard */; };
 		152F38C81DCD0C1A00FE9ECF /* TalksScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38C71DCD0C1A00FE9ECF /* TalksScene.swift */; };
@@ -131,7 +130,6 @@
 		1519A6981DE341160044EE8C /* TalkDetailUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailUnits.swift; sourceTree = "<group>"; };
 		1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkDetailDescriptionCollectionViewCell.xib; sourceTree = "<group>"; };
-		152F38C11DCD0BF000FE9ECF /* Speakers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Speakers.storyboard; sourceTree = "<group>"; };
 		152F38C31DCD0BF800FE9ECF /* Place.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Place.storyboard; sourceTree = "<group>"; };
 		152F38C51DCD0C0300FE9ECF /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		152F38C71DCD0C1A00FE9ECF /* TalksScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalksScene.swift; sourceTree = "<group>"; };
@@ -367,7 +365,6 @@
 		152F38B81DCD0B5600FE9ECF /* Speakers */ = {
 			isa = PBXGroup;
 			children = (
-				152F38C11DCD0BF000FE9ECF /* Speakers.storyboard */,
 				152F38CB1DCD0C3100FE9ECF /* SpeakersScene.swift */,
 				15BBD8A31DDA407700A9A45F /* Detail */,
 				15BBD8981DD9E9AB00A9A45F /* Units */,
@@ -793,7 +790,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1515D11F1DDCE47A008690FD /* SpeakerDetailSocialCollectionViewCell.xib in Resources */,
-				152F38C21DCD0BF000FE9ECF /* Speakers.storyboard in Resources */,
 				1519A68F1DE287B50044EE8C /* DetailHeaderCollectionViewCell.xib in Resources */,
 				1591645F1DDD419700995EC2 /* TalkCollectionViewCell.xib in Resources */,
 				158F3E5B1DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.xib in Resources */,

@@ -31,10 +31,6 @@ class VideosViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = VideosListView(frame: UIScreen.main.bounds)
-        self.view.backgroundColor = UIColor(hexString: "004D40")
-        listView?.container.sectionInset = UIEdgeInsets(top: -20)
-        listView?.container.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        listView?.container.bounces = false
     }
     
     override func viewDidLoad() {
