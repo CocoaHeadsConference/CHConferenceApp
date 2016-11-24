@@ -102,6 +102,7 @@
 		DD3A5AEA1DE60D580016882D /* VideosScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5AE91DE60D580016882D /* VideosScene.swift */; };
 		DD3A5AEF1DE60E130016882D /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5AEE1DE60E130016882D /* VideosViewController.swift */; };
 		DD3A5B141DE633500016882D /* PlaybackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5B131DE633500016882D /* PlaybackHelper.swift */; };
+		DDABFB111DE72AEC00351DA8 /* UserDefaults+CHConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABFB101DE72AEC00351DA8 /* UserDefaults+CHConf.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +217,7 @@
 		DD3A5AE91DE60D580016882D /* VideosScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosScene.swift; sourceTree = "<group>"; };
 		DD3A5AEE1DE60E130016882D /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		DD3A5B131DE633500016882D /* PlaybackHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackHelper.swift; sourceTree = "<group>"; };
+		DDABFB101DE72AEC00351DA8 /* UserDefaults+CHConf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+CHConf.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +319,7 @@
 				15D88FD81DD34F630055F781 /* Date+Extensions.swift */,
 				1515D1221DDCEF11008690FD /* UIColor+Hex.swift */,
 				15256C211DE6A1EA00263E92 /* String+Capitalize.swift */,
+				DDABFB101DE72AEC00351DA8 /* UserDefaults+CHConf.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -906,6 +909,7 @@
 				152F38D31DCD0C6B00FE9ECF /* MainTabController.swift in Sources */,
 				DD3A5AE71DE60A8D0016882D /* VideoModel.swift in Sources */,
 				1515D1191DDA9E34008690FD /* SpeakerDetailDescriptionCollectionViewCell.swift in Sources */,
+				DDABFB111DE72AEC00351DA8 /* UserDefaults+CHConf.swift in Sources */,
 				159164611DDD458800995EC2 /* TalkUnit.swift in Sources */,
 				15BBD8AF1DDA493400A9A45F /* SpeakerDetailHeaderUnit.swift in Sources */,
 				15DDF9351DD126CA00AD4B93 /* LocalDataFetcher.swift in Sources */,
