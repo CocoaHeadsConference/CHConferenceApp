@@ -18,7 +18,7 @@ class SpeakersScene: Scene {
         self.cache = cache
         rootViewController = SpeakersListViewController(with: self.cache)
         initialViewController = NavigationViewController(rootViewController: rootViewController)
-        initialViewController.tabBarItem = UITabBarItem(title: "Palestrantes", image: nil, tag: 0)
+        initialViewController.tabBarItem = UITabBarItem(title: "Palestrantes", image: #imageLiteral(resourceName: "speakers"), tag: 0)
         rootViewController.displaySpeakerCallback = { [unowned self] speaker in
             let viewController = self.viewController(for: speaker)
             self.rootViewController.navigationController?.pushViewController(viewController, animated: true)

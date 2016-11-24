@@ -37,7 +37,7 @@ class TalksDashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Atividades"
-        self.navigationController?.tabBarItem = UITabBarItem(title: "Atividades", image: nil, tag: 0)
+        self.navigationController?.tabBarItem = UITabBarItem(title: "Atividades", image: #imageLiteral(resourceName: "schedule"), tag: 0)
         
         let typeSelector = UISegmentedControl(items: ["Todas", "Palestras", "Workshops"])
         typeSelector.tintColor = .white
