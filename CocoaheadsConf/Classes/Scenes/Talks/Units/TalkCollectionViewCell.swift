@@ -18,6 +18,14 @@ class TalkCollectionViewCell: UICollectionViewCell {
             speakerImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.8).cgColor
         }
     }
+    
+    @IBOutlet var videoImageView: UIImageView! {
+        didSet {
+            videoImageView.image = #imageLiteral(resourceName: "videos").withRenderingMode(.alwaysTemplate)
+            videoImageView.tintColor = .white
+        }
+    }
+    
     @IBOutlet var speakerNameLabel: UILabel!
     @IBOutlet var talkTitleLabel: UILabel!
     @IBOutlet var talkSummaryLabel: UILabel!
