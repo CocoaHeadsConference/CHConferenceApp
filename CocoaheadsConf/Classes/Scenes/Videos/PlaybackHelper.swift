@@ -121,12 +121,15 @@ struct PlaybackHelper {
         }
         
         let restartTitle = NSLocalizedString("Assistir Desde o Início", comment: "Watch from the begining - button title (watch video form the begining)")
-        let restartAction = UIAlertAction(title: restartTitle, style: .destructive) { _ in
+        let restartAction = UIAlertAction(title: restartTitle, style: .default) { _ in
             self.showAndPlay(with: player, from: controller)
         }
         
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancelar", comment: "Cancel"), style: .cancel, handler: nil)
+        
         alert.addAction(continueAction)
         alert.addAction(restartAction)
+        alert.addAction(cancelAction)
         
         controller.present(alert, animated: true, completion: nil)
     }
