@@ -102,6 +102,7 @@
 		DD3A5AEA1DE60D580016882D /* VideosScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5AE91DE60D580016882D /* VideosScene.swift */; };
 		DD3A5AEF1DE60E130016882D /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5AEE1DE60E130016882D /* VideosViewController.swift */; };
 		DD3A5B141DE633500016882D /* PlaybackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A5B131DE633500016882D /* PlaybackHelper.swift */; };
+		DD86972C1DE76A3D0034DAE8 /* String+CMTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD86972B1DE76A3D0034DAE8 /* String+CMTime.swift */; };
 		DDABFB111DE72AEC00351DA8 /* UserDefaults+CHConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABFB101DE72AEC00351DA8 /* UserDefaults+CHConf.swift */; };
 /* End PBXBuildFile section */
 
@@ -217,6 +218,7 @@
 		DD3A5AE91DE60D580016882D /* VideosScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosScene.swift; sourceTree = "<group>"; };
 		DD3A5AEE1DE60E130016882D /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		DD3A5B131DE633500016882D /* PlaybackHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackHelper.swift; sourceTree = "<group>"; };
+		DD86972B1DE76A3D0034DAE8 /* String+CMTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CMTime.swift"; sourceTree = "<group>"; };
 		DDABFB101DE72AEC00351DA8 /* UserDefaults+CHConf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+CHConf.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -320,6 +322,7 @@
 				1515D1221DDCEF11008690FD /* UIColor+Hex.swift */,
 				15256C211DE6A1EA00263E92 /* String+Capitalize.swift */,
 				DDABFB101DE72AEC00351DA8 /* UserDefaults+CHConf.swift */,
+				DD86972B1DE76A3D0034DAE8 /* String+CMTime.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -899,6 +902,7 @@
 				15BBD8A71DDA414200A9A45F /* SpeakerDetailView.swift in Sources */,
 				15A761AA1DE658E40006333D /* TalkDetailPlayVideoUnit.swift in Sources */,
 				15BBD89D1DD9EA2D00A9A45F /* SpeakerHeroCollectionViewCell.swift in Sources */,
+				DD86972C1DE76A3D0034DAE8 /* String+CMTime.swift in Sources */,
 				15BBD8A51DDA413600A9A45F /* SpeakerDetailViewController.swift in Sources */,
 				15D88FDE1DD35E420055F781 /* TimeDisplayCollectionViewCell.swift in Sources */,
 				15DDF94B1DD2C4C700AD4B93 /* TalkDashboardViewState.swift in Sources */,
