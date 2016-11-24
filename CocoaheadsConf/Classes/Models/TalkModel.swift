@@ -87,7 +87,8 @@ struct TalkModel: Unmarshaling {
     init(object: MarshaledObject) throws {
         id = try object.value(for: "id")
         date = try object.value(for: "date")
-        title = try object.value(for: "title")
+        let titleString: String = try object.value(for: "title")
+        title = titleString.capitalizedWord()
         summary = try object.value(for: "summary")
         fullDescription = try object.value(for: "description")
         type = try object.value(for: "type")

@@ -12,31 +12,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SpeakerDetailDescriptionCollectionViewCell" customModule="CocoaheadsConf" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="297" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="297" height="115"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="297" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="297" height="115"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glA-SI-ijm">
-                        <rect key="frame" x="16" y="0.0" width="265" height="50"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <rect key="frame" x="16" y="37.5" width="265" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                         <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DE7-mo-0JG">
+                        <rect key="frame" x="16" y="12" width="265" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="glA-SI-ijm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="01N-8u-ezn"/>
                 <constraint firstItem="glA-SI-ijm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="13J-6k-yI1"/>
-                <constraint firstAttribute="bottom" secondItem="glA-SI-ijm" secondAttribute="bottom" id="D2W-Ts-KFr"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="glA-SI-ijm" secondAttribute="bottom" constant="8" id="D2W-Ts-KFr"/>
                 <constraint firstAttribute="trailing" secondItem="glA-SI-ijm" secondAttribute="trailing" constant="16" id="Lx4-WQ-hmz"/>
+                <constraint firstItem="DE7-mo-0JG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="OOM-lI-6lI"/>
+                <constraint firstAttribute="trailing" secondItem="DE7-mo-0JG" secondAttribute="trailing" constant="16" id="aOk-LF-Gpy"/>
+                <constraint firstItem="glA-SI-ijm" firstAttribute="top" secondItem="DE7-mo-0JG" secondAttribute="bottom" constant="4" id="rx4-DM-CVC"/>
+                <constraint firstItem="DE7-mo-0JG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="sv3-pI-7ne"/>
             </constraints>
-            <size key="customSize" width="297" height="50"/>
+            <size key="customSize" width="297" height="115"/>
             <connections>
                 <outlet property="bioLabel" destination="glA-SI-ijm" id="Ff9-Ks-Hxq"/>
+                <outlet property="headlineLabel" destination="DE7-mo-0JG" id="8ps-QE-cFR"/>
             </connections>
-            <point key="canvasLocation" x="49.5" y="152"/>
+            <point key="canvasLocation" x="49.5" y="184.5"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -17,7 +17,6 @@ class SpeakerHeroCollectionViewCell: UICollectionViewCell {
 
     var speakerImageURL: URL? {
         didSet {
-            speakerImageView.tintColor = .white
             speakerImageView.kf.setImage(with: speakerImageURL, placeholder: ConferenceStyleKit.imageOfCocoaHeadsLogo, options: nil, progressBlock: nil, completionHandler: nil)
         }
     }
@@ -36,15 +35,10 @@ class SpeakerHeroCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        self.backgroundColor = UIColor(hexString: "004D40")
+        speakerImageView.tintColor = .white
         self.speakerImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.8).cgColor
         self.speakerImageView.layer.borderWidth = 1
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.speakerImageView.layer.cornerRadius = self.speakerImageView.frame.width / 2
-        
+        self.speakerImageView.layer.cornerRadius = 32
     }
     
     override func prepareForReuse() {

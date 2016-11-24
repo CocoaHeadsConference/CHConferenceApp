@@ -38,9 +38,7 @@ class SpeakerDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        speakerDetailView?.closeCallback = { [unowned self] in
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.title = "Detalhes"
         let talks = cache.talks(for: speakerToDisplay)
         speakerDetailView?.state = SpeakerDetailViewState(speaker: speakerToDisplay, talks: talks)
         

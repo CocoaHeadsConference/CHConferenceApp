@@ -11,10 +11,17 @@ import UIKit
 class SpeakerDetailDescriptionCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private var bioLabel: UILabel!
+    @IBOutlet private var headlineLabel: UILabel!
     
     var bio: NSAttributedString? {
         didSet {
             bioLabel.attributedText = bio
+        }
+    }
+    
+    var headline: NSAttributedString? {
+        didSet {
+            headlineLabel.attributedText = headline
         }
     }
     
