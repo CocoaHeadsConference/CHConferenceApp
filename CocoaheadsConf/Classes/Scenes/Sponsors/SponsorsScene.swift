@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-struct SponsorsScene: Scene {
+class SponsorsScene: Scene {
 
     let name = "Patrocinadores"
     let initialViewController: UIViewController
@@ -18,6 +19,14 @@ struct SponsorsScene: Scene {
         rootViewController = SponsorsListViewController(with: cache)
         initialViewController = UINavigationController(rootViewController: rootViewController)
         initialViewController.tabBarItem = UITabBarItem(title: "Patrocinadores", image: nil, tag: 0)
+        rootViewController.didSelectSponsor = { [unowned self] sponsor in
+            self.present(sponsor: sponsor)
+        }
+    }
+    
+    func present(sponsor: SponsorModel) {
+        let safariViewController = SFSafariViewController(url: sponsor.url)
+        rootViewController.present(safariViewController, animated: true, completion: nil)
     }
     
 }
