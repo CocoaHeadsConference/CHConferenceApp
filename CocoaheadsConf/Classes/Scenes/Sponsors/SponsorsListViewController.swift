@@ -16,6 +16,8 @@ class SponsorsListViewController: UIViewController {
         return self.view as? SponsorsListView
     }
     
+    var didSelectSponsor: ((SponsorModel)-> Void)?
+    
     init(with cache: Cache) {
         self.cache = cache
         super.init(nibName: nil, bundle: nil)
@@ -35,8 +37,12 @@ class SponsorsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Patrocinadores"
+        self.listView?.didSelectSponsor = { [unowned self] sponsor in
+            self.didSelectSponsor?(sponsor)
+        }
         self.listView?.state.sponsors = cache.sponsors
-        
     }
+    
+    
 
 }

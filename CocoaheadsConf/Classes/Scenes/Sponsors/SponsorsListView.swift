@@ -13,7 +13,7 @@ class SponsorsListView: CollectionStackView {
 
     var state: SponsorsListState = SponsorsListState(sponsors: []) {
         didSet {
-            self.container.state = ComposeSponsorsList(with: state)
+            self.container.state = ComposeSponsorsList(with: state, callback: didSelectSponsor)
         }
     }
     
@@ -34,10 +34,12 @@ class SponsorsListView: CollectionStackView {
         self.container.sectionInset = UIEdgeInsets(vertical: 4)
     }
     
+    var didSelectSponsor: ((SponsorModel)-> Void)?
+    
 }
 
 
-func ComposeSponsorsList(with state: SponsorsListState)-> [ComposingUnit] {
-    return state.sponsors.map { ListDetailUnit(for: $0) }
+func ComposeSponsorsList(with state: SponsorsListState, callback: ((SponsorModel)-> Void)?)-> [ComposingUnit] {
+    return state.sponsors.map { ListDetailUnit(for: $0, callback: callback) }
 }
 
