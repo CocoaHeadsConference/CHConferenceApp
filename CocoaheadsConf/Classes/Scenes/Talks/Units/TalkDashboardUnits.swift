@@ -20,7 +20,7 @@ struct TalkDashboardUnits {
     }()
     
     static func TimeUnit(with date: Date, hideUpperLine: Bool)-> ComposingUnit {
-        return TimeDisplayUnit(date: date, hideUpperLine: hideUpperLine)
+        return TimeDisplayUnit(date: date)
     }
     
     static func EntryUnit(for talk: TalkModel, filtered: Bool, callback:((TalkModel)-> Void)?)-> ComposingUnit {

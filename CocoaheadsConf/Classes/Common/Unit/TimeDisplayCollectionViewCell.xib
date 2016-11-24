@@ -12,64 +12,41 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TimeDisplayCollectionViewCell" customModule="CocoaheadsConf" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="301" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="301" height="68"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="301" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="301" height="68"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tw6-s4-fX9">
-                        <rect key="frame" x="8" y="8" width="285" height="34"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FML-XF-xvX">
-                                <rect key="frame" x="0.0" y="0.0" width="285" height="34"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.44077781440000002" blue="0.37931953099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexta-Feira, 02/12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMm-dW-AaB">
+                        <rect key="frame" x="16" y="22.5" width="152.5" height="22"/>
                         <constraints>
-                            <constraint firstItem="FML-XF-xvX" firstAttribute="leading" secondItem="tw6-s4-fX9" secondAttribute="leading" id="8sw-LT-7xl"/>
-                            <constraint firstItem="FML-XF-xvX" firstAttribute="top" secondItem="tw6-s4-fX9" secondAttribute="top" id="Q2M-UI-VtF"/>
-                            <constraint firstAttribute="bottom" secondItem="FML-XF-xvX" secondAttribute="bottom" id="RNr-CC-rcd"/>
-                            <constraint firstAttribute="trailing" secondItem="FML-XF-xvX" secondAttribute="trailing" id="kko-FG-LuF"/>
+                            <constraint firstAttribute="height" constant="22" id="F3T-fK-sMa"/>
                         </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rb1-fb-xXb">
-                        <rect key="frame" x="31" y="42" width="2" height="8"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30C-qU-VtP">
+                        <rect key="frame" x="8" y="48.5" width="285" height="2"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="2" id="2T3-Bx-kBN"/>
-                        </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1m8-Ts-LAh">
-                        <rect key="frame" x="31" y="0.0" width="2" height="8"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="2" id="J6H-x2-9LF"/>
+                            <constraint firstAttribute="height" constant="2" id="lm5-JE-xKm"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.0" green="0.44077781440000002" blue="0.37931953099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="tw6-s4-fX9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="IfO-Pt-ORs"/>
-                <constraint firstAttribute="bottom" secondItem="tw6-s4-fX9" secondAttribute="bottom" constant="8" id="IkQ-iY-TGC"/>
-                <constraint firstItem="Rb1-fb-xXb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="31" id="Tog-NG-sv8"/>
-                <constraint firstItem="1m8-Ts-LAh" firstAttribute="leading" secondItem="Rb1-fb-xXb" secondAttribute="leading" id="dWw-qn-p59"/>
-                <constraint firstItem="tw6-s4-fX9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="etl-Pl-MFv"/>
-                <constraint firstItem="Rb1-fb-xXb" firstAttribute="top" secondItem="tw6-s4-fX9" secondAttribute="bottom" id="gk1-uO-blh"/>
-                <constraint firstAttribute="trailing" secondItem="tw6-s4-fX9" secondAttribute="trailing" constant="8" id="ida-b3-Ide"/>
-                <constraint firstAttribute="bottom" secondItem="Rb1-fb-xXb" secondAttribute="bottom" id="lG9-59-5ak"/>
-                <constraint firstItem="tw6-s4-fX9" firstAttribute="top" secondItem="1m8-Ts-LAh" secondAttribute="bottom" id="nsF-fv-bWV"/>
-                <constraint firstItem="1m8-Ts-LAh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="t7m-sH-WzX"/>
+                <constraint firstItem="qMm-dW-AaB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="4dB-Gg-bth"/>
+                <constraint firstItem="30C-qU-VtP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="9Jj-dX-eL3"/>
+                <constraint firstItem="qMm-dW-AaB" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="WcC-Et-9mb"/>
+                <constraint firstAttribute="trailing" secondItem="30C-qU-VtP" secondAttribute="trailing" constant="8" id="gNC-U4-Bp4"/>
+                <constraint firstItem="30C-qU-VtP" firstAttribute="top" secondItem="qMm-dW-AaB" secondAttribute="bottom" constant="4" id="qkk-Yn-Qj1"/>
             </constraints>
             <size key="customSize" width="301" height="50"/>
             <connections>
-                <outlet property="bottomLine" destination="Rb1-fb-xXb" id="9Pj-9G-v9a"/>
-                <outlet property="timeLabel" destination="FML-XF-xvX" id="9eU-nh-X4S"/>
-                <outlet property="upperLine" destination="1m8-Ts-LAh" id="eLt-PT-brp"/>
+                <outlet property="dayLabel" destination="qMm-dW-AaB" id="jPq-Zs-BYJ"/>
             </connections>
             <point key="canvasLocation" x="-136.5" y="-83"/>
         </collectionViewCell>

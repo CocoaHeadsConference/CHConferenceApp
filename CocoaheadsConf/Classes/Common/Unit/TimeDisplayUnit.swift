@@ -12,23 +12,20 @@ import Compose
 struct TimeDisplayUnit: TypedUnit {
     
     let identifier: String
-    let heightUnit: DimensionUnit = 60
+    let heightUnit: DimensionUnit = 68
     let date: Date
-    let hideUpperLine: Bool
     private let timeDateFormatter: DateFormatter
     
-    init(date: Date, format: String = "eeee", hideUpperLine: Bool) {
+    init(date: Date) {
         self.identifier = "\(date.timeIntervalSince1970)"
         self.date = date
-        self.hideUpperLine = hideUpperLine
         self.timeDateFormatter = DateFormatter()
-        self.timeDateFormatter.dateFormat = format
     }
     
     func configure(innerView: TimeDisplayCollectionViewCell) {
         innerView.backgroundColor = .clear
-        innerView.timeLabel.text = timeDateFormatter.string(from: date).capitalized
-        innerView.hideUpperLine = hideUpperLine
+        timeDateFormatter.dateFormat = "eeee, dd/MM"
+        innerView.dayLabel.text = timeDateFormatter.string(from: date).capitalized
     }
     
     func reuseIdentifier() -> String {
