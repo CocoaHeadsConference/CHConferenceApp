@@ -10,7 +10,6 @@ import UIKit
 
 protocol Scene {
     
-    var name: String { get }
     var initialViewController: UIViewController { get }
     
 }

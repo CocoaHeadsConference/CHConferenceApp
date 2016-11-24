@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TalkDetailPlayVideoCollectionViewCell" customModule="CocoaheadsConf" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="333" height="40"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="333" height="40"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DZ-iR-s9T">
+                        <rect key="frame" x="16" y="0.0" width="301" height="32"/>
+                        <color key="tintColor" red="0.88235294119999996" green="0.1019607843" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Assistir vídeo"/>
+                        <connections>
+                            <action selector="startPlaying" destination="gTV-IL-0wX" eventType="touchUpInside" id="sY4-Ni-vy3"/>
+                        </connections>
+                    </button>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="q9e-0B-dpE">
+                        <rect key="frame" x="16" y="6" width="20" height="20"/>
+                        <color key="color" red="0.88235294119999996" green="0.1019607843" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </activityIndicatorView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="q9e-0B-dpE" firstAttribute="leading" secondItem="3DZ-iR-s9T" secondAttribute="leading" id="0NA-km-FEZ"/>
+                <constraint firstItem="3DZ-iR-s9T" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="425-mV-IqQ"/>
+                <constraint firstAttribute="trailing" secondItem="3DZ-iR-s9T" secondAttribute="trailing" constant="16" id="NmX-Ay-Sjf"/>
+                <constraint firstItem="q9e-0B-dpE" firstAttribute="centerY" secondItem="3DZ-iR-s9T" secondAttribute="centerY" id="Pw3-5J-lv7"/>
+                <constraint firstAttribute="bottom" secondItem="3DZ-iR-s9T" secondAttribute="bottom" constant="8" id="YdF-CK-jSt"/>
+                <constraint firstItem="3DZ-iR-s9T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="fDt-pu-HYY"/>
+            </constraints>
+            <size key="customSize" width="333" height="50"/>
+            <connections>
+                <outlet property="playButton" destination="3DZ-iR-s9T" id="Kqv-bi-fcz"/>
+                <outlet property="spinner" destination="q9e-0B-dpE" id="FzH-J7-P2l"/>
+            </connections>
+            <point key="canvasLocation" x="-60" y="-10"/>
+        </collectionViewCell>
+    </objects>
+</document>

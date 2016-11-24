@@ -11,7 +11,7 @@ import UIKit
 /// Unit that can contains other units inside it.
 /// You can specify a direction for these internal items to follow
 public struct CollectionStackUnit: ComposingUnit, ContainerUnit, TwoStepDisplayUnit {
-
+    
     typealias Cell = CollectionStackContainerCollectionViewCell
     
     public let identifier: String
@@ -80,13 +80,17 @@ public struct CollectionStackUnit: ComposingUnit, ContainerUnit, TwoStepDisplayU
             return customHeight
         case .vertical:
             return DimensionUnit { size in
+                let customHeightCalculated = self.customHeight.value(for: size)
+                guard customHeightCalculated == 0 else { return customHeightCalculated }
                 let height = self.units.reduce(CGFloat(0.0), { (total, unit) -> CGFloat in
-                    return total + unit.heightUnit.value(for: size) 
+                    return total + unit.heightUnit.value(for: size)
                 })
                 return height
             }
         case let .verticalGrid(columns):
             return DimensionUnit { size in
+                let customHeightCalculated = self.customHeight.value(for: size)
+                guard customHeightCalculated == 0 else { return customHeightCalculated }
                 let chunks = stride(from: 0, to: self.units.count, by: columns).map {
                     Array(self.units[$0..<min($0 + columns, self.units.count)])
                 }
@@ -105,12 +109,25 @@ public struct CollectionStackUnit: ComposingUnit, ContainerUnit, TwoStepDisplayU
         switch self.direction {
         case .vertical, .verticalGrid:
             return customWidth
-        case .horizontal, .horizontalGrid:
+        case .horizontal:
             return DimensionUnit { size in
                 let width = self.units.reduce(CGFloat(0.0), { (total, unit) -> CGFloat in
                     return total + unit.widthUnit.value(for: size)
                 })
                 return min(width, size.width)
+            }
+        case let .horizontalGrid(rows):
+            return DimensionUnit { size in
+                let chunks = stride(from: 0, to: self.units.count, by: rows).map {
+                    Array(self.units[$0..<min($0 + rows, self.units.count)])
+                }
+                let width = chunks.reduce(0.0) { (total, column)-> CGFloat in
+                    return total + column.reduce(0.0) { (biggest, unit)-> CGFloat in
+                        let width = floor(unit.widthUnit.value(for: size))
+                        return max(width, biggest)
+                    }
+                }
+                return width
             }
         }
     }

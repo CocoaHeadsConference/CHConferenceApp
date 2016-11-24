@@ -1,6 +1,6 @@
 PODS:
-  - Compose (1.0)
-  - Kingfisher (3.1.4)
+  - Compose (1.0.2)
+  - Kingfisher (3.2.1)
   - Marshal (1.0.0)
   - NibDesignable (3.0.0)
   - YoutubeSourceParserKit (0.2.4)
@@ -22,12 +22,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/lennet/YoutubeSourceParserKit.git
 
 SPEC CHECKSUMS:
-  Compose: 248a2e4602d77d319765570b3060163a31fe4ab8
-  Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
+  Compose: 8affbe6e5263f8d851d92ecd5757bd9dcca89fe3
+  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
   Marshal: a3c5c5dbd388112edf3cdabb718f2b4cfe48658a
   NibDesignable: 6ccf1e54135cb05be0a78f803b9a8d78125a7d6d
   YoutubeSourceParserKit: d1506222a62718ed41f18ab52ebbc1b1d9ecabcc
 
 PODFILE CHECKSUM: a71a9042264a0a1f0e4e417b5934eecb579186b2
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.1.1

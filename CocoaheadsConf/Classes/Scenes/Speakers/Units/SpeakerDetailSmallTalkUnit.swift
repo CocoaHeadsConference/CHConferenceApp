@@ -14,29 +14,35 @@ struct SpeakerDetailSmallTalkUnit: TypedUnit {
     
     let identifier: String
     let title: NSAttributedString
+    let summary: NSAttributedString
     let date: String
     let room: String?
     let talkColor: UIColor
     
     let heightUnit: DimensionUnit
     
-    init(identifier: String, title: String, date: String, room: String?, color: UIColor) {
+    init(identifier: String, title: String, summary: String, date: String, room: String?, color: UIColor) {
         self.identifier = identifier
-        let font = UIFont.systemFont(ofSize: 22, weight: UIFontWeightMedium)
-        let attributed = NSAttributedString(string: title, attributes: [NSFontAttributeName: font])
-        self.title = attributed
+        let titleFont = UIFont.systemFont(ofSize: 22, weight: UIFontWeightMedium)
+        let titleAttributed = NSAttributedString(string: title, attributes: [NSFontAttributeName: titleFont])
+        let summaryFont = UIFont.systemFont(ofSize: 15)
+        let summaryAttributed = NSAttributedString(string: summary, attributes: [NSFontAttributeName: summaryFont])
+        self.title = titleAttributed
+        self.summary = summaryAttributed
         self.date = date
         self.room = room
         self.talkColor = color
         heightUnit = DimensionUnit { size in
-            let reducedSize = CGSize(width: size.width - 44, height: size.height)
-            let frame = attributed.boundingRect(with: reducedSize, options: .usesLineFragmentOrigin, context: nil)
-            return frame.height + 76
+            let reducedSize = CGSize(width: size.width - 66, height: size.height)
+            let titleFrame = titleAttributed.boundingRect(with: reducedSize, options: .usesLineFragmentOrigin, context: nil)
+            let summaryFrame = summaryAttributed.boundingRect(with: reducedSize, options: .usesLineFragmentOrigin, context: nil)
+            return titleFrame.height + summaryFrame.height + 66
         }
     }
     
     func configure(innerView: Cell) {
         innerView.talkTitleLabel.attributedText = title
+        innerView.talkSummaryLabel.attributedText = summary
         innerView.talkTimeLabel.text = date
         innerView.talkRoomLabel.text = room
         innerView.talkTypeIndicatorView.backgroundColor = talkColor

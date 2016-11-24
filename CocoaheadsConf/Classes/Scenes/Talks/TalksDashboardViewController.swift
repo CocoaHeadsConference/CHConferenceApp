@@ -10,32 +10,39 @@ import UIKit
 
 class TalksDashboardViewController: UIViewController {
 
-    @IBOutlet var listView: TalksDashboardView?
+    var listView: TalksDashboardView? {
+        return self.view as? TalksDashboardView
+    }
     
+    var cache: Cache
     var displayTalkCallback: ((TalkModel)-> Void)?
+    
+    init(with cache: Cache) {
+        self.cache = cache
+        super.init(nibName: nil, bundle: nil)
+        self.automaticallyAdjustsScrollViewInsets = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.cache = Cache.default
+        super.init(coder: aDecoder)
+    }
+    
+    override func loadView() {
+        super.loadView()
+        self.view = TalksDashboardView(frame: UIScreen.main.bounds)
+        self.view.backgroundColor = UIColor(hexString: "004D40")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "CocoaheadsBR"
-        self.navigationController?.tabBarItem = UITabBarItem(title: "Palestras", image: nil, tag: 0)
+        self.navigationController?.tabBarItem = UITabBarItem(title: "Atividades", image: nil, tag: 0)
         listView?.didSelectTalkCallback = displayTalkCallback
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.updateListState()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let viewController = segue.destination as? TalkDetailViewController,
-            let talk = sender as? TalkModel else { return }
-        viewController.talkToShow = talk
+        updateListState()
     }
     
     func updateListState() {
-        if let listView = listView {
-            listView.state.talks = Array(Cache.default.talks.values)
-        }
+        listView?.state.talks = Array(cache.talks.values)
     }
     
 

@@ -14,11 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     lazy var mainScene: MainScene<LocalDataFetcher> = {
-        let talksScene = TalksScene()
-        let speakersScene = SpeakersScene()
-        let videosScene = VideosScene()
-        
-        return MainScene(with: [talksScene, speakersScene, videosScene])
+        let cache = Cache.default
+        let talksScene = TalksScene(cache: cache)
+        let speakersScene = SpeakersScene(cache: cache)
+        let sponsorsScene = SponsorsScene(cache: cache)
+        let videosScene = VideosScene(cache: cache, talksScene: talksScene)
+        return MainScene(with: [talksScene, speakersScene, sponsorsScene, videosScene])
     }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

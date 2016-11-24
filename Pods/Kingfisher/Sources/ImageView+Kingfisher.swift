@@ -57,19 +57,23 @@ extension Kingfisher where Base: ImageView {
                          progressBlock: DownloadProgressBlock? = nil,
                          completionHandler: CompletionHandler? = nil) -> RetrieveImageTask
     {
-        base.image = placeholder
-        
         guard let resource = resource else {
+            base.image = placeholder
             completionHandler?(nil, nil, .none, nil)
             return .empty
         }
         
+        var options = options ?? KingfisherEmptyOptionsInfo
+        
+        if !options.keepCurrentImageWhileLoading {
+            base.image = placeholder
+        }
+
         let maybeIndicator = indicator
         maybeIndicator?.startAnimatingView()
         
         setWebURL(resource.downloadURL)
-        
-        var options = options ?? KingfisherEmptyOptionsInfo
+
         if shouldPreloadAllGIF() {
             options.append(.preloadAllGIFData)
         }

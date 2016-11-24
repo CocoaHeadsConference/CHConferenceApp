@@ -8,22 +8,25 @@
 
 import UIKit
 
-struct SpeakersScene: Scene {
+class SpeakersScene: Scene {
 
-    let name = "Palestrantes"
-    let storyboard = UIStoryboard(name: "Speakers", bundle: nil)
+    let cache: Cache
     let initialViewController: UIViewController
     let rootViewController: SpeakersListViewController
     
-    init() {
-        rootViewController = storyboard.firstViewController()
+    init(cache: Cache) {
+        self.cache = cache
+        rootViewController = SpeakersListViewController(with: self.cache)
         initialViewController = NavigationViewController(rootViewController: rootViewController)
         initialViewController.tabBarItem = UITabBarItem(title: "Palestrantes", image: nil, tag: 0)
-        rootViewController.displaySpeakerCallback = self.displayDetail(for: in:)
+        rootViewController.displaySpeakerCallback = { [unowned self] speaker in
+            let viewController = self.viewController(for: speaker)
+            self.rootViewController.present(viewController, animated: true, completion: nil)
+        }
     }
     
-    func displayDetail(for speaker: SpeakerModel, in viewController: UIViewController) {
-        viewController.performSegue(withIdentifier: "showDetail", sender: speaker)
+    func viewController(for speaker: SpeakerModel)-> SpeakerDetailViewController {
+        return SpeakerDetailViewController(with: speaker, cache: cache)
     }
     
 }

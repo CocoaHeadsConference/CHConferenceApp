@@ -10,20 +10,14 @@ import UIKit
 import NibDesignable
 import Compose
 
-class TalkDetailView: NibDesignable {
-
-    @IBOutlet var listView: CollectionStackView! {
-        didSet {
-            listView.backgroundColor = UIColor.black.withAlphaComponent(0.75)
-        }
-    }
+class TalkDetailView: CollectionStackView {
     
     var didTapGoBackCallback: (()-> Void)?
     var didTapPlayCallback: (()-> Void)?
     var state: TalkDetailViewState = TalkDetailViewState() {
         didSet {
             self.backgroundColor = state.talk?.type.color
-            listView.container.state = ComposeTalkDetailView(with: state, goBackCallback: self.goBack, playVideoCallback: self.playVideo)
+            container.state = ComposeTalkDetailView(with: state, goBackCallback: self.goBack, playVideoCallback: self.playVideo)
         }
     }
     
@@ -42,10 +36,19 @@ func ComposeTalkDetailView(with state: TalkDetailViewState, goBackCallback: (()-
     let formatter = DateFormatter()
     formatter.dateFormat = "EEEE, HH:mm"
     var units: [ComposingUnit] = []
-    units.add(manyIfLet: state.talk) { talk in
+    guard let talk = state.talk else { return units }
+    units.add {
         let header = TalkDetailUnits.Header(for: talk, goBack: goBackCallback)
-        let desc = TalkDetailUnits.Description(for: talk, playHandler: playVideoCallback)
+        let desc = TalkDetailUnits.Description(for: talk)
         return [header, desc]
+    }
+    units.add(ifLet: talk.video) { _ in
+        return TalkDetailUnits.Play(playHandler: playVideoCallback)
+    }
+    units.add {
+        let spacer = TalkDetailUnits.Spacer(with: "upperSpacer")
+        let stats = TalkDetailUnits.Stats(for: talk)
+        return [spacer, stats]
     }
     return units
 }

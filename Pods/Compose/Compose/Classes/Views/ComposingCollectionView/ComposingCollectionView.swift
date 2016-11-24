@@ -8,58 +8,6 @@
 
 import UIKit
 
-/// Direction that collectionView will stack its units
-public enum ComposingContainerDirection: Equatable {
-    
-    /// display units in a vertical orientation
-    case vertical
-    
-    //Display units in a vertical orientation with {columns} items in each row
-    case verticalGrid(columns: Int)
-    
-    /// display units in a horizontal orientation
-    case horizontal
-    
-    //Display units in a horizontal orientation with {rows} items in each column
-    case horizontalGrid(rows: Int)
-    
-    var divisor: Int {
-        switch self {
-        case .vertical: fallthrough
-        case .horizontal:
-            return 1
-        case let .verticalGrid(number):
-            return number
-        case let .horizontalGrid(number):
-            return number
-        }
-    }
-    
-    var collectionDirection: UICollectionViewScrollDirection {
-        switch self {
-        case .vertical, .verticalGrid:
-            return .vertical
-        case .horizontal, .horizontalGrid:
-            return .horizontal
-        }
-    }
-    
-    public static func ==(lhs: ComposingContainerDirection, rhs: ComposingContainerDirection)-> Bool {
-        switch (lhs, rhs) {
-        case (.vertical, .vertical): return true
-        case (.horizontal, .horizontal): return true
-        case (.verticalGrid(let left), .verticalGrid(let right)) where left == right: return true
-        case (.horizontalGrid(let left), .horizontalGrid(let right)) where left == right: return true
-        case (.vertical, .verticalGrid(let columns)) where columns == 1: return true
-        case (.verticalGrid(let columns), .vertical) where columns == 1: return true
-        case (.horizontal, .horizontalGrid(let rows)) where rows == 1: return true
-        case (.horizontalGrid(let rows), .horizontal) where rows == 1: return true
-        default: return false
-        }
-    }
-    
-}
-
 /// CollectionView used to display units.
 @IBDesignable
 public class ComposingCollectionView: UICollectionView, ComposingContainer {
@@ -82,7 +30,9 @@ public class ComposingCollectionView: UICollectionView, ComposingContainer {
     /// Current state. On each update here we will use each's unit identifier and add/remove/update cell with animation
     public var state: [ComposingUnit] = [] {
         didSet {
-            let identifiers = state.map { $0.identifier }
+            let identifiers = state.map { unit in
+                return unit.identifier
+            }
             stateChangeDiff.updateSource(with: identifiers) { [unowned self] in
                 self.internalSource.state = self.state
             }
@@ -141,7 +91,9 @@ public class ComposingCollectionView: UICollectionView, ComposingContainer {
     
     private lazy var stateChangeDiff: CollectionViewDiffCalculator<String> = {
         let diff = CollectionViewDiffCalculator<String>(collectionView: self)
-        diff.finishReorderingCallback = self.didFinishReorderingItems(changedSet:)
+        diff.finishReorderingCallback = { set in
+            self.didFinishReorderingItems(changedSet: set)
+        }
         return diff
     }()
     
@@ -178,18 +130,19 @@ public class ComposingCollectionView: UICollectionView, ComposingContainer {
     }
     
     private func commonInit() {
-        self.translatesAutoresizingMaskIntoConstraints = false
         self.dataSource = composeDataSource
         self.delegate = composeDelegate
     }
 
     private func didFinishReorderingItems(changedSet: Set<Int>) {
-        self.visibleCells.flatMap { cell in
-            guard let indexPath = self.indexPath(for: cell), !changedSet.contains(indexPath.item) else { return nil }
+        let cellsWithIndexPath: [(UICollectionViewCell, Int)] = self.visibleCells.flatMap { cell in
+            guard let indexPath = self.indexPath(for: cell), !changedSet.contains(indexPath.row) else { return nil }
             return (cell, indexPath.item)
-        }.map { (cell, index) in
-            return (cell, self.internalSource.state[index])
-        }.forEach { (cell, unit) in
+        }
+        let cellsWithUnits: [(UICollectionViewCell, ComposingUnit)] = cellsWithIndexPath.flatMap { (cell, index) in
+            return (cell, self.internalSource[index])
+        }
+        cellsWithUnits.forEach { (cell, unit) in
             unit.configure(view: cell)
         }
     }

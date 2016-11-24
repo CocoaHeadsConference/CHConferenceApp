@@ -12,6 +12,7 @@ class SpeakerDetailSmallTalkCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var talkTimeLabel: UILabel!
     @IBOutlet var talkTitleLabel: UILabel!
+    @IBOutlet var talkSummaryLabel: UILabel!
     @IBOutlet var talkRoomLabel: UILabel!
     @IBOutlet var talkTypeIndicatorView: UIView!
     
