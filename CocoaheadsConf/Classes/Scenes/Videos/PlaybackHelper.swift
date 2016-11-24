@@ -17,6 +17,8 @@ struct PlaybackHelper {
         case urlNotFound
     }
     
+    let preferredTimeScale = Int32(NSEC_PER_SEC)
+    
     let video: VideoModel
     
     init(with video: VideoModel) {
@@ -72,11 +74,9 @@ struct PlaybackHelper {
         
         self.moviePlayer.player = player
         
-        let timeScale = Int32(NSEC_PER_SEC)
-        
         var timeObserver: Any!
         
-        timeObserver = player.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(5, timeScale), queue: nil) { time in
+        timeObserver = player.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(5, preferredTimeScale), queue: nil) { time in
             guard let duration = player.currentItem?.duration else { return }
             
             let position = CMTimeGetSeconds(time)
@@ -91,13 +91,40 @@ struct PlaybackHelper {
             }
         }
         
+        // position restoration
+        
+        let savedPosition = UserDefaults.standard.position(in: self.video.id)
+        
+        if savedPosition > 0 {
+            showContinuationOptions(with: player, position: savedPosition, from: controller)
+        } else {
+            showAndPlay(with: player, from: controller)
+        }
+    }
+    
+    private func showContinuationOptions(with player: AVPlayer, position: Float, from controller: UIViewController) {
+        let message = NSLocalizedString("Deseja assistir desde o início ou continuar assistindo?", comment: "Do you want to watch from the begining or continue watching? - alert message")
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+        
+        let continueTitle = NSLocalizedString("Continuar Assistindo", comment: "Continue from HH:mm:ss - button title (continue watching video)")
+        let continueAction = UIAlertAction(title: continueTitle, style: .default) { _ in
+            player.seek(to: CMTimeMakeWithSeconds(Float64(position), self.preferredTimeScale))
+            self.showAndPlay(with: player, from: controller)
+        }
+        
+        let restartTitle = NSLocalizedString("Assistir Desde o Início", comment: "Watch from the begining - button title (watch video form the begining)")
+        let restartAction = UIAlertAction(title: restartTitle, style: .destructive) { _ in
+            self.showAndPlay(with: player, from: controller)
+        }
+        
+        alert.addAction(continueAction)
+        alert.addAction(restartAction)
+        
+        controller.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showAndPlay(with player: AVPlayer, from controller: UIViewController) {
         controller.present(self.moviePlayer, animated: true) {
-            let savedPosition = UserDefaults.standard.position(in: self.video.id)
-            
-            if savedPosition > 0 {
-                player.seek(to: CMTimeMakeWithSeconds(Float64(savedPosition), timeScale))
-            }
-            
             player.play()
         }
     }
