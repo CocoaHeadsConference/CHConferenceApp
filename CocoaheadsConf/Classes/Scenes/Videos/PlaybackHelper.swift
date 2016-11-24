@@ -79,7 +79,6 @@ struct PlaybackHelper {
         player.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(5, timeScale), queue: nil) { time in
             let position = Float(CMTimeGetSeconds(time))
             UserDefaults.standard.set(position: position, in: self.videoId)
-            NSLog("Time: \(position)")
         }
         
         controller.present(self.moviePlayer, animated: true) {
