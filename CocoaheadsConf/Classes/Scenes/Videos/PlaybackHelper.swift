@@ -17,12 +17,12 @@ struct PlaybackHelper {
         case urlNotFound
     }
     
-    let videoUrl: URL
-    let videoId: Int
+    let preferredTimeScale = Int32(NSEC_PER_SEC)
     
-    init(with url: URL, id: Int) {
-        self.videoUrl = url
-        self.videoId = id
+    let video: VideoModel
+    
+    init(with video: VideoModel) {
+        self.video = video
     }
     
     private var moviePlayer: AVPlayerViewController = {
@@ -35,7 +35,7 @@ struct PlaybackHelper {
     }()
     
     func play(from controller: UIViewController) {
-        Youtube.h264videosWithYoutubeURL(videoUrl) { info, error in
+        Youtube.h264videosWithYoutubeURL(video.youTubeUrl) { info, error in
             guard error == nil else {
                 DispatchQueue.main.async {
                     self.show(error!, from: controller)
@@ -74,16 +74,68 @@ struct PlaybackHelper {
         
         self.moviePlayer.player = player
         
-        let timeScale = Int32(NSEC_PER_SEC)
+        var timeObserver: Any!
         
-        player.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(5, timeScale), queue: nil) { time in
-            let position = Float(CMTimeGetSeconds(time))
-            UserDefaults.standard.set(position: position, in: self.videoId)
+        timeObserver = player.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(5, preferredTimeScale), queue: nil) { time in
+            guard let duration = player.currentItem?.duration else { return }
+            
+            let position = CMTimeGetSeconds(time)
+            
+            if position >= CMTimeGetSeconds(duration) - 30 {
+                // reached end of video - 30 seconds: reset position
+                UserDefaults.standard.set(position: -1, in: self.video.id)
+                player.removeTimeObserver(timeObserver)
+            } else {
+                // update position
+                UserDefaults.standard.set(position: Float(position), in: self.video.id)
+            }
         }
         
+        // position restoration
+        
+        let savedPosition = UserDefaults.standard.position(in: self.video.id)
+        
+        if savedPosition > 0 {
+            showContinuationOptions(with: player, position: savedPosition, from: controller)
+        } else {
+            showAndPlay(with: player, from: controller)
+        }
+    }
+    
+    private func showContinuationOptions(with player: AVPlayer, position: Float, from controller: UIViewController) {
+        let message = NSLocalizedString("Deseja assistir desde o início ou continuar assistindo?", comment: "Do you want to watch from the begining or continue watching? - alert message")
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+        
+        let continueTitle: String
+        
+        if let timeStr = String(time: position) {
+            let format = NSLocalizedString("Continuar Assistindo aos %@", comment: "Continue at HH:mm:ss - button title (continue watching video - time specified)")
+            continueTitle = String(format: format, timeStr)
+        } else {
+            continueTitle = NSLocalizedString("Continuar Assistindo", comment: "Continue Watching - button title (continue watching video - time not specified)")
+        }
+        
+        let continueAction = UIAlertAction(title: continueTitle, style: .default) { _ in
+            player.seek(to: CMTimeMakeWithSeconds(Float64(position), self.preferredTimeScale))
+            self.showAndPlay(with: player, from: controller)
+        }
+        
+        let restartTitle = NSLocalizedString("Assistir Desde o Início", comment: "Watch from the begining - button title (watch video form the begining)")
+        let restartAction = UIAlertAction(title: restartTitle, style: .default) { _ in
+            self.showAndPlay(with: player, from: controller)
+        }
+        
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancelar", comment: "Cancel"), style: .cancel, handler: nil)
+        
+        alert.addAction(continueAction)
+        alert.addAction(restartAction)
+        alert.addAction(cancelAction)
+        
+        controller.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showAndPlay(with player: AVPlayer, from controller: UIViewController) {
         controller.present(self.moviePlayer, animated: true) {
-            let savedPosition = UserDefaults.standard.position(in: self.videoId)
-            player.seek(to: CMTimeMakeWithSeconds(Float64(savedPosition), timeScale))
             player.play()
         }
     }

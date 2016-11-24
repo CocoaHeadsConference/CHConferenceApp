@@ -38,15 +38,7 @@ func ComposeTalkDetailView(with state: TalkDetailViewState, playVideoCallback: (
         return [header, desc]
     }
     units.add(ifLet: talk.video) { video in
-        let title: String
-        
-        if UserDefaults.standard.position(in: video.id) > 0 {
-            title = NSLocalizedString("Continuar Assistindo", comment: "Continue Watching - button title to continue watching a video")
-        } else {
-            title = NSLocalizedString("Assistir Vídeo", comment: "Watch Video - button title to start watching a video")
-        }
-        
-        return TalkDetailUnits.Play(playHandler: playVideoCallback, title: title)
+        return TalkDetailUnits.Play(playHandler: playVideoCallback)
     }
     units.add {
         let spacer = TalkDetailUnits.Spacer(with: "upperSpacer")
