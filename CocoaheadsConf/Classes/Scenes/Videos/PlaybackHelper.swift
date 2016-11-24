@@ -17,12 +17,10 @@ struct PlaybackHelper {
         case urlNotFound
     }
     
-    let videoUrl: URL
-    let videoId: Int
+    let video: VideoModel
     
-    init(with url: URL, id: Int) {
-        self.videoUrl = url
-        self.videoId = id
+    init(with video: VideoModel) {
+        self.video = video
     }
     
     private var moviePlayer: AVPlayerViewController = {
@@ -35,7 +33,7 @@ struct PlaybackHelper {
     }()
     
     func play(from controller: UIViewController) {
-        Youtube.h264videosWithYoutubeURL(videoUrl) { info, error in
+        Youtube.h264videosWithYoutubeURL(video.youTubeUrl) { info, error in
             guard error == nil else {
                 DispatchQueue.main.async {
                     self.show(error!, from: controller)
@@ -76,14 +74,30 @@ struct PlaybackHelper {
         
         let timeScale = Int32(NSEC_PER_SEC)
         
-        player.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(5, timeScale), queue: nil) { time in
-            let position = Float(CMTimeGetSeconds(time))
-            UserDefaults.standard.set(position: position, in: self.videoId)
+        var timeObserver: Any!
+        
+        timeObserver = player.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(5, timeScale), queue: nil) { time in
+            guard let duration = player.currentItem?.duration else { return }
+            
+            let position = CMTimeGetSeconds(time)
+            
+            if position >= CMTimeGetSeconds(duration) - 30 {
+                // reached end of video - 30 seconds: reset position
+                UserDefaults.standard.set(position: -1, in: self.video.id)
+                player.removeTimeObserver(timeObserver)
+            } else {
+                // update position
+                UserDefaults.standard.set(position: Float(position), in: self.video.id)
+            }
         }
         
         controller.present(self.moviePlayer, animated: true) {
-            let savedPosition = UserDefaults.standard.position(in: self.videoId)
-            player.seek(to: CMTimeMakeWithSeconds(Float64(savedPosition), timeScale))
+            let savedPosition = UserDefaults.standard.position(in: self.video.id)
+            
+            if savedPosition > 0 {
+                player.seek(to: CMTimeMakeWithSeconds(Float64(savedPosition), timeScale))
+            }
+            
             player.play()
         }
     }
