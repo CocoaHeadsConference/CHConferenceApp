@@ -16,15 +16,21 @@ struct SpeakerDetailDescriptionUnit: TypedUnit {
     let identifier: String = "DescriptionUnit"
     
     let bio: NSAttributedString
+    let headline: NSAttributedString
     let heightUnit: DimensionUnit
     
-    init(bio: String, font: UIFont = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)) {
-        let text = NSAttributedString(string: bio, attributes: [NSFontAttributeName: font])
-        self.bio = text
+    init(headline: String, bio: String) {
+        let bioFont = UIFont.systemFont(ofSize: 15)
+        let headlineFont = UIFont.systemFont(ofSize: 17, weight: UIFontWeightMedium)
+        let bioText = NSAttributedString(string: bio, attributes: [NSFontAttributeName: bioFont])
+        let headlineText = NSAttributedString(string: headline, attributes: [NSFontAttributeName: headlineFont])
+        self.bio = bioText
+        self.headline = headlineText
         heightUnit = DimensionUnit { size in
             let reductedSize = CGSize(width: size.width - 32, height: size.height)
-            let frame = text.boundingRect(with: reductedSize, options: .usesLineFragmentOrigin, context: nil)
-            return round(frame.height) + 16
+            let frame = bioText.boundingRect(with: reductedSize, options: .usesLineFragmentOrigin, context: nil)
+            let headlineFrame = headlineText.boundingRect(with: reductedSize, options: .usesLineFragmentOrigin, context: nil)
+            return round(frame.height + headlineFrame.height) + 30
         }
     }
     
@@ -32,6 +38,7 @@ struct SpeakerDetailDescriptionUnit: TypedUnit {
     
     func configure(innerView: Cell) {
         innerView.bio = bio
+        innerView.headline = headline
     }
     
     func reuseIdentifier() -> String {

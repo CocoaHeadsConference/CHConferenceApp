@@ -21,7 +21,7 @@ class DetailHeaderCollectionViewCell: UICollectionViewCell {
         talkSpeakerImageView.layer.cornerRadius = 36
         talkSpeakerImageView.backgroundColor = UIColor(hexString: "004D40")
         talkSpeakerImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.7).cgColor
-        talkSpeakerImageView.layer.borderWidth = 3
+        talkSpeakerImageView.layer.borderWidth = 2
     }
 
 }

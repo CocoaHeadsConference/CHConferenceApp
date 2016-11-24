@@ -21,12 +21,14 @@ class SpeakersScene: Scene {
         initialViewController.tabBarItem = UITabBarItem(title: "Palestrantes", image: nil, tag: 0)
         rootViewController.displaySpeakerCallback = { [unowned self] speaker in
             let viewController = self.viewController(for: speaker)
-            self.rootViewController.present(viewController, animated: true, completion: nil)
+            self.rootViewController.navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
     func viewController(for speaker: SpeakerModel)-> SpeakerDetailViewController {
-        return SpeakerDetailViewController(with: speaker, cache: cache)
+        let viewController = SpeakerDetailViewController(with: speaker, cache: cache)
+        viewController.hidesBottomBarWhenPushed = true
+        return viewController
     }
     
 }

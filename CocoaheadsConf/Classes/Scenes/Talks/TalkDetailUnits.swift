@@ -39,7 +39,7 @@ struct TalkDetailUnits {
     
     static func Description(for talk: TalkModel)-> ComposingUnit {
         let summaryFont = UIFont.systemFont(ofSize: 22, weight: UIFontWeightMedium)
-        let descriptionFont = UIFont.systemFont(ofSize: 14)
+        let descriptionFont = UIFont.systemFont(ofSize: 15)
         let attributedSummary = NSAttributedString(string: talk.summary, attributes: [NSFontAttributeName: summaryFont])
         let attributedDescription = NSAttributedString(string: talk.fullDescription, attributes: [NSFontAttributeName: descriptionFont])
         let height = DimensionUnit { size in
