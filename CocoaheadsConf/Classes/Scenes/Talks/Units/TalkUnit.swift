@@ -32,11 +32,11 @@ struct TalkUnit: TypedUnit, SelectableUnit {
         self.titleAttributedText = title
         self.summaryAttributedText = summary
         self.heightUnit = DimensionUnit { size in
-            let reductedSize = CGSize(width: size.width - 92, height: size.height)
+            let reductedSize = CGSize(width: size.width - 100, height: size.height)
             let titleFrame = title.boundingRect(with: reductedSize, options: .usesLineFragmentOrigin, context: nil)
             
             let summaryFrame = summary.boundingRect(with: reductedSize, options: .usesLineFragmentOrigin, context: nil)
-            return round(titleFrame.height + summaryFrame.height) + 92
+            return round(titleFrame.height + summaryFrame.height) + 100
         }
         
     }
@@ -51,6 +51,7 @@ struct TalkUnit: TypedUnit, SelectableUnit {
         innerView.timeLabel.text = TalkDashboardUnits.timeDateFormatter.string(from: talk.date)
         innerView.talkColor = talk.type.color
         innerView.speakerImageView.isHidden = !talk.type.hasImage
+        innerView.videoImageView.isHidden = talk.video == nil
     }
     
     func reuseIdentifier() -> String {

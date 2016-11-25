@@ -23,7 +23,7 @@
                         <rect key="frame" x="76" y="0.0" width="244" height="150"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Minha palestra" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf3-nA-vpP">
-                                <rect key="frame" x="0.0" y="44" width="228" height="24"/>
+                                <rect key="frame" x="0.0" y="44" width="212" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" id="Kve-L1-Gmd"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auditório" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiU-4F-WZd">
-                                <rect key="frame" x="0.0" y="117" width="228" height="17"/>
+                                <rect key="frame" x="0.0" y="117" width="212" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="aox-6A-UTo"/>
                                 </constraints>
@@ -60,7 +60,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Esta minha palestra vai falar de muita coisa legal que voce" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5B-sc-QPP">
-                                <rect key="frame" x="0.0" y="72" width="228" height="33.5"/>
+                                <rect key="frame" x="0.0" y="72" width="212" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -80,12 +80,12 @@
                             <constraint firstItem="r5B-sc-QPP" firstAttribute="top" secondItem="Tf3-nA-vpP" secondAttribute="bottom" constant="4" id="ncf-KE-Hns"/>
                             <constraint firstItem="r5B-sc-QPP" firstAttribute="trailing" secondItem="Tf3-nA-vpP" secondAttribute="trailing" id="ope-ny-If8"/>
                             <constraint firstAttribute="trailing" secondItem="L9y-cr-cXR" secondAttribute="trailing" constant="8" id="te2-JX-LCO"/>
-                            <constraint firstAttribute="trailing" secondItem="Tf3-nA-vpP" secondAttribute="trailing" constant="16" id="tub-Pn-tU0"/>
+                            <constraint firstAttribute="trailing" secondItem="Tf3-nA-vpP" secondAttribute="trailing" constant="32" id="tub-Pn-tU0"/>
                             <constraint firstItem="r5B-sc-QPP" firstAttribute="leading" secondItem="Tf3-nA-vpP" secondAttribute="leading" id="voj-cU-puV"/>
                         </constraints>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GnG-2A-rF7">
-                        <rect key="frame" x="10" y="48" width="54" height="54"/>
+                        <rect key="frame" x="10" y="29" width="54" height="54"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="54" id="fa2-sF-Wps"/>
                             <constraint firstAttribute="width" secondItem="GnG-2A-rF7" secondAttribute="height" multiplier="1:1" id="odb-33-wyF"/>
@@ -98,17 +98,27 @@
                             <constraint firstAttribute="width" constant="2" id="e1D-bQ-riU"/>
                         </constraints>
                     </view>
+                    <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videos" translatesAutoresizingMaskIntoConstraints="NO" id="Il6-p9-m6b">
+                        <rect key="frame" x="27" y="116.5" width="20" height="20"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="WRI-tK-NY1"/>
+                            <constraint firstAttribute="height" constant="20" id="h0v-Sr-Nzd"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="Il6-p9-m6b" firstAttribute="centerY" secondItem="eiU-4F-WZd" secondAttribute="centerY" constant="1" id="2cw-Uj-hV0"/>
                 <constraint firstItem="aVL-mZ-C1E" firstAttribute="top" secondItem="zbb-Ea-10F" secondAttribute="top" id="6Un-Qy-EkY"/>
                 <constraint firstAttribute="bottom" secondItem="HXo-Fe-cVn" secondAttribute="bottom" id="Hru-co-Ei7"/>
+                <constraint firstItem="Il6-p9-m6b" firstAttribute="centerX" secondItem="GnG-2A-rF7" secondAttribute="centerX" id="Nuy-Uu-aKY"/>
                 <constraint firstItem="HXo-Fe-cVn" firstAttribute="leading" secondItem="GnG-2A-rF7" secondAttribute="trailing" constant="12" id="U8w-d9-Hw4"/>
                 <constraint firstItem="HXo-Fe-cVn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="aFE-wI-bAd"/>
                 <constraint firstItem="aVL-mZ-C1E" firstAttribute="bottom" secondItem="eiU-4F-WZd" secondAttribute="bottom" id="ax7-V4-XdU"/>
-                <constraint firstItem="GnG-2A-rF7" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="ddk-ab-FrS"/>
                 <constraint firstItem="GnG-2A-rF7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="je5-fS-wuL"/>
+                <constraint firstItem="GnG-2A-rF7" firstAttribute="centerY" secondItem="Tf3-nA-vpP" secondAttribute="centerY" id="s2r-p3-xae"/>
                 <constraint firstAttribute="trailing" secondItem="HXo-Fe-cVn" secondAttribute="trailing" id="tW1-Nu-2rn"/>
                 <constraint firstItem="GnG-2A-rF7" firstAttribute="width" secondItem="GnG-2A-rF7" secondAttribute="height" multiplier="1:1" id="yfI-vl-H0f"/>
                 <constraint firstItem="aVL-mZ-C1E" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="z7g-nY-w27"/>
@@ -122,8 +132,12 @@
                 <outlet property="talkSummaryLabel" destination="r5B-sc-QPP" id="M31-x3-6eb"/>
                 <outlet property="talkTitleLabel" destination="Tf3-nA-vpP" id="oYr-dj-i9F"/>
                 <outlet property="timeLabel" destination="L9y-cr-cXR" id="GI9-0C-qxd"/>
+                <outlet property="videoImageView" destination="Il6-p9-m6b" id="lHO-Dq-TKb"/>
             </connections>
             <point key="canvasLocation" x="55" y="-253"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="videos" width="34" height="25"/>
+    </resources>
 </document>

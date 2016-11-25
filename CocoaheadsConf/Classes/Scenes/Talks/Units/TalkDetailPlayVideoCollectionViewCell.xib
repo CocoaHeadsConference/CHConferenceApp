@@ -38,8 +38,8 @@
                 <constraint firstItem="3DZ-iR-s9T" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="425-mV-IqQ"/>
                 <constraint firstAttribute="trailing" secondItem="3DZ-iR-s9T" secondAttribute="trailing" constant="16" id="NmX-Ay-Sjf"/>
                 <constraint firstItem="q9e-0B-dpE" firstAttribute="centerY" secondItem="3DZ-iR-s9T" secondAttribute="centerY" id="Pw3-5J-lv7"/>
+                <constraint firstItem="3DZ-iR-s9T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="WT1-9A-8aB"/>
                 <constraint firstAttribute="bottom" secondItem="3DZ-iR-s9T" secondAttribute="bottom" constant="8" id="YdF-CK-jSt"/>
-                <constraint firstItem="3DZ-iR-s9T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="fDt-pu-HYY"/>
             </constraints>
             <size key="customSize" width="333" height="50"/>
             <connections>
