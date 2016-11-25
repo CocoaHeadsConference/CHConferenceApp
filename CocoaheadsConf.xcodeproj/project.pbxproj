@@ -23,13 +23,10 @@
 		1519A69D1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */; };
 		1519A69E1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */; };
 		15256C221DE6A1EA00263E92 /* String+Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256C211DE6A1EA00263E92 /* String+Capitalize.swift */; };
-		152F38C41DCD0BF800FE9ECF /* Place.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F38C31DCD0BF800FE9ECF /* Place.storyboard */; };
-		152F38C61DCD0C0300FE9ECF /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F38C51DCD0C0300FE9ECF /* Favorites.storyboard */; };
+		15256D151DE8E7E100263E92 /* EventScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D141DE8E7E100263E92 /* EventScene.swift */; };
 		152F38C81DCD0C1A00FE9ECF /* TalksScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38C71DCD0C1A00FE9ECF /* TalksScene.swift */; };
 		152F38CA1DCD0C2500FE9ECF /* SponsorsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38C91DCD0C2500FE9ECF /* SponsorsScene.swift */; };
 		152F38CC1DCD0C3100FE9ECF /* SpeakersScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38CB1DCD0C3100FE9ECF /* SpeakersScene.swift */; };
-		152F38CE1DCD0C3B00FE9ECF /* PlaceScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38CD1DCD0C3B00FE9ECF /* PlaceScene.swift */; };
-		152F38D01DCD0C4400FE9ECF /* FavoritesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38CF1DCD0C4400FE9ECF /* FavoritesScene.swift */; };
 		152F38D31DCD0C6B00FE9ECF /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38D21DCD0C6B00FE9ECF /* MainTabController.swift */; };
 		152F38D51DCD0C7D00FE9ECF /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38D41DCD0C7D00FE9ECF /* MainScene.swift */; };
 		152F38D71DCD0C8400FE9ECF /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38D61DCD0C8400FE9ECF /* Scene.swift */; };
@@ -134,13 +131,10 @@
 		1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkDetailDescriptionCollectionViewCell.xib; sourceTree = "<group>"; };
 		15256C211DE6A1EA00263E92 /* String+Capitalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Capitalize.swift"; sourceTree = "<group>"; };
-		152F38C31DCD0BF800FE9ECF /* Place.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Place.storyboard; sourceTree = "<group>"; };
-		152F38C51DCD0C0300FE9ECF /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		15256D141DE8E7E100263E92 /* EventScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScene.swift; sourceTree = "<group>"; };
 		152F38C71DCD0C1A00FE9ECF /* TalksScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalksScene.swift; sourceTree = "<group>"; };
 		152F38C91DCD0C2500FE9ECF /* SponsorsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorsScene.swift; sourceTree = "<group>"; };
 		152F38CB1DCD0C3100FE9ECF /* SpeakersScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersScene.swift; sourceTree = "<group>"; };
-		152F38CD1DCD0C3B00FE9ECF /* PlaceScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceScene.swift; sourceTree = "<group>"; };
-		152F38CF1DCD0C4400FE9ECF /* FavoritesScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesScene.swift; sourceTree = "<group>"; };
 		152F38D21DCD0C6B00FE9ECF /* MainTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		152F38D41DCD0C7D00FE9ECF /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		152F38D61DCD0C8400FE9ECF /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -287,6 +281,14 @@
 			name = TalkDescriptionUnit;
 			sourceTree = "<group>";
 		};
+		15256D131DE8E7D600263E92 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				15256D141DE8E7E100263E92 /* EventScene.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
 		152F38B11DCD0B5600FE9ECF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,33 +344,14 @@
 		152F38B51DCD0B5600FE9ECF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				15256D131DE8E7D600263E92 /* Event */,
 				152F38D11DCD0C4D00FE9ECF /* Main */,
-				152F38B61DCD0B5600FE9ECF /* Favorites */,
-				152F38B71DCD0B5600FE9ECF /* Place */,
 				152F38B81DCD0B5600FE9ECF /* Speakers */,
 				152F38B91DCD0B5600FE9ECF /* Sponsors */,
 				152F38BA1DCD0B5600FE9ECF /* Talks */,
 				DD3A5AE81DE60D000016882D /* Videos */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		152F38B61DCD0B5600FE9ECF /* Favorites */ = {
-			isa = PBXGroup;
-			children = (
-				152F38C51DCD0C0300FE9ECF /* Favorites.storyboard */,
-				152F38CF1DCD0C4400FE9ECF /* FavoritesScene.swift */,
-			);
-			path = Favorites;
-			sourceTree = "<group>";
-		};
-		152F38B71DCD0B5600FE9ECF /* Place */ = {
-			isa = PBXGroup;
-			children = (
-				152F38C31DCD0BF800FE9ECF /* Place.storyboard */,
-				152F38CD1DCD0C3B00FE9ECF /* PlaceScene.swift */,
-			);
-			path = Place;
 			sourceTree = "<group>";
 		};
 		152F38B81DCD0B5600FE9ECF /* Speakers */ = {
@@ -812,9 +795,7 @@
 				1515D1131DDA7913008690FD /* SpeakerDetailHeaderCollectionViewCell.xib in Resources */,
 				15BD91651DC95DF90088AEB4 /* Assets.xcassets in Resources */,
 				15BBD89E1DD9EA2D00A9A45F /* SpeakerHeroCollectionViewCell.xib in Resources */,
-				152F38C41DCD0BF800FE9ECF /* Place.storyboard in Resources */,
 				15DDF9331DD122E700AD4B93 /* LocalData.json in Resources */,
-				152F38C61DCD0C0300FE9ECF /* Favorites.storyboard in Resources */,
 				1515D11A1DDA9E34008690FD /* SpeakerDetailDescriptionCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -882,7 +863,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				15A761B51DE667220006333D /* VideosListViewUnits.swift in Sources */,
-				152F38D01DCD0C4400FE9ECF /* FavoritesScene.swift in Sources */,
 				152F38DF1DCD687300FE9ECF /* TalksDashboardView.swift in Sources */,
 				15DDF92C1DD11DAA00AD4B93 /* SpeakerModel.swift in Sources */,
 				152F38E21DD110F500FE9ECF /* NetworkFetcher.swift in Sources */,
@@ -925,7 +905,6 @@
 				1591645B1DDD370600995EC2 /* TalkDashboardUnits.swift in Sources */,
 				158F3E611DE3E8EA0076CDB6 /* TalkDetailStatsCollectionViewCell.swift in Sources */,
 				15DDF92A1DD11DA200AD4B93 /* TalkModel.swift in Sources */,
-				152F38CE1DCD0C3B00FE9ECF /* PlaceScene.swift in Sources */,
 				15BD91601DC95DF90088AEB4 /* ViewController.swift in Sources */,
 				1515D1161DDA9E21008690FD /* SpeakerDetailDescriptionUnit.swift in Sources */,
 				15A761B01DE65F7E0006333D /* VideosListView.swift in Sources */,
@@ -934,6 +913,7 @@
 				1515D1231DDCEF11008690FD /* UIColor+Hex.swift in Sources */,
 				152F38D51DCD0C7D00FE9ECF /* MainScene.swift in Sources */,
 				15F9E42D1DDF85E200C05ECC /* TalkDetailViewState.swift in Sources */,
+				15256D151DE8E7E100263E92 /* EventScene.swift in Sources */,
 				152F38CC1DCD0C3100FE9ECF /* SpeakersScene.swift in Sources */,
 				153313641DE5118100F5F2EA /* SponsorsListViewController.swift in Sources */,
 				152F38E41DD1113400FE9ECF /* URLSessionFetcher.swift in Sources */,
