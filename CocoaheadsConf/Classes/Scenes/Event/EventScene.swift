@@ -8,13 +8,22 @@
 
 import UIKit
 
-class EventScene: Scene {
+class EventScene: Scene, CacheUpdatable {
     
     let cache: Cache
-    let initialViewController = UIViewController()
+    let initialViewController: UIViewController
+    let rootViewController: EventMainViewController
     
     init(cache: Cache) {
         self.cache = cache
+        rootViewController = EventMainViewController(with: self.cache)
+        initialViewController = NavigationViewController(rootViewController: rootViewController)
+        initialViewController.tabBarItem = UITabBarItem(title: "Evento", image: #imageLiteral(resourceName: "speakers"), tag: 0)
+    }
+    
+    
+    func updateFromCache() {
+        rootViewController.updateListState()
     }
 
 }

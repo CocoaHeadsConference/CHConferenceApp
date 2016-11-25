@@ -1,4 +1,9 @@
 {
+	"event": {
+		"name":"Cocoaheads Conference 2016",
+		"startDate":"2016-12-02T16:30:00-0300",
+		"endDate":"2016-12-03T17:00:00-0300"
+	},
 	"sponsors":[
 		{
 			"id": 0,

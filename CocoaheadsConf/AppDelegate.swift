@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let speakersScene = SpeakersScene(cache: cache)
         let sponsorsScene = SponsorsScene(cache: cache)
         let videosScene = VideosScene(cache: cache, talksScene: talksScene)
-        return MainScene(with: [talksScene, speakersScene, sponsorsScene, videosScene])
+        let eventScene = EventScene(cache: cache)
+        return MainScene(with: [eventScene, talksScene, speakersScene, sponsorsScene, videosScene])
     }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
