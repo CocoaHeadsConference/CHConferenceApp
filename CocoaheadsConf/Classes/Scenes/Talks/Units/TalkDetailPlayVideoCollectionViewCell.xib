@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DZ-iR-s9T">
-                        <rect key="frame" x="40" y="0.0" width="277" height="32"/>
+                        <rect key="frame" x="48" y="0.0" width="269" height="32"/>
                         <color key="tintColor" red="0.88235294119999996" green="0.1019607843" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="Assistir vídeo"/>
                         <connections>
@@ -27,11 +27,11 @@
                         </connections>
                     </button>
                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="q9e-0B-dpE">
-                        <rect key="frame" x="40" y="6" width="20" height="20"/>
+                        <rect key="frame" x="48" y="6" width="20" height="20"/>
                         <color key="color" red="0.88235294119999996" green="0.1019607843" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                     </activityIndicatorView>
                     <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videos" translatesAutoresizingMaskIntoConstraints="NO" id="CwX-mI-Him">
-                        <rect key="frame" x="8" y="6" width="20" height="20"/>
+                        <rect key="frame" x="16" y="6" width="20" height="20"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="TSW-SH-ZHh"/>
@@ -44,11 +44,10 @@
             <constraints>
                 <constraint firstItem="q9e-0B-dpE" firstAttribute="leading" secondItem="3DZ-iR-s9T" secondAttribute="leading" id="0NA-km-FEZ"/>
                 <constraint firstItem="3DZ-iR-s9T" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="425-mV-IqQ"/>
-                <constraint firstItem="CwX-mI-Him" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="L67-ED-V9m"/>
+                <constraint firstItem="CwX-mI-Him" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="L67-ED-V9m"/>
                 <constraint firstAttribute="trailing" secondItem="3DZ-iR-s9T" secondAttribute="trailing" constant="16" id="NmX-Ay-Sjf"/>
                 <constraint firstItem="q9e-0B-dpE" firstAttribute="centerY" secondItem="3DZ-iR-s9T" secondAttribute="centerY" id="Pw3-5J-lv7"/>
                 <constraint firstAttribute="bottom" secondItem="3DZ-iR-s9T" secondAttribute="bottom" constant="8" id="YdF-CK-jSt"/>
-                <constraint firstItem="3DZ-iR-s9T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="40" id="fDt-pu-HYY"/>
                 <constraint firstItem="CwX-mI-Him" firstAttribute="centerY" secondItem="3DZ-iR-s9T" secondAttribute="centerY" id="wWn-D5-e1O"/>
                 <constraint firstItem="3DZ-iR-s9T" firstAttribute="leading" secondItem="CwX-mI-Him" secondAttribute="trailing" constant="12" id="yVc-vA-HK8"/>
             </constraints>
