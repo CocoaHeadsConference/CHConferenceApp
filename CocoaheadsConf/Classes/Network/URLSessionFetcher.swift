@@ -34,7 +34,7 @@ final class URLSessionFetcher: NetworkFetcher {
                 return onComplete(nil)
             }
             onComplete(json)
-        }
+        }.resume()
     }
     
 }
