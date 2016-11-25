@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DZ-iR-s9T">
-                        <rect key="frame" x="48" y="0.0" width="269" height="32"/>
+                        <rect key="frame" x="16" y="0.0" width="301" height="32"/>
                         <color key="tintColor" red="0.88235294119999996" green="0.1019607843" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="Assistir vídeo"/>
                         <connections>
@@ -27,40 +27,26 @@
                         </connections>
                     </button>
                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="q9e-0B-dpE">
-                        <rect key="frame" x="48" y="6" width="20" height="20"/>
+                        <rect key="frame" x="16" y="6" width="20" height="20"/>
                         <color key="color" red="0.88235294119999996" green="0.1019607843" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                     </activityIndicatorView>
-                    <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videos" translatesAutoresizingMaskIntoConstraints="NO" id="CwX-mI-Him">
-                        <rect key="frame" x="16" y="6" width="20" height="20"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="20" id="TSW-SH-ZHh"/>
-                            <constraint firstAttribute="height" constant="20" id="ZpC-Qy-Bmk"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="q9e-0B-dpE" firstAttribute="leading" secondItem="3DZ-iR-s9T" secondAttribute="leading" id="0NA-km-FEZ"/>
                 <constraint firstItem="3DZ-iR-s9T" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="425-mV-IqQ"/>
-                <constraint firstItem="CwX-mI-Him" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="L67-ED-V9m"/>
                 <constraint firstAttribute="trailing" secondItem="3DZ-iR-s9T" secondAttribute="trailing" constant="16" id="NmX-Ay-Sjf"/>
                 <constraint firstItem="q9e-0B-dpE" firstAttribute="centerY" secondItem="3DZ-iR-s9T" secondAttribute="centerY" id="Pw3-5J-lv7"/>
+                <constraint firstItem="3DZ-iR-s9T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="WT1-9A-8aB"/>
                 <constraint firstAttribute="bottom" secondItem="3DZ-iR-s9T" secondAttribute="bottom" constant="8" id="YdF-CK-jSt"/>
-                <constraint firstItem="CwX-mI-Him" firstAttribute="centerY" secondItem="3DZ-iR-s9T" secondAttribute="centerY" id="wWn-D5-e1O"/>
-                <constraint firstItem="3DZ-iR-s9T" firstAttribute="leading" secondItem="CwX-mI-Him" secondAttribute="trailing" constant="12" id="yVc-vA-HK8"/>
             </constraints>
             <size key="customSize" width="333" height="50"/>
             <connections>
                 <outlet property="playButton" destination="3DZ-iR-s9T" id="Kqv-bi-fcz"/>
                 <outlet property="spinner" destination="q9e-0B-dpE" id="FzH-J7-P2l"/>
-                <outlet property="videoImageView" destination="CwX-mI-Him" id="gMj-GV-h89"/>
             </connections>
             <point key="canvasLocation" x="-60" y="-10"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="videos" width="34" height="25"/>
-    </resources>
 </document>

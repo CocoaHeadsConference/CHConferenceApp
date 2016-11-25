@@ -11,12 +11,6 @@ import UIKit
 class TalkDetailPlayVideoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var playButton: UIButton!
-    @IBOutlet var videoImageView: UIImageView! {
-        didSet {
-            videoImageView.image = #imageLiteral(resourceName: "videos").withRenderingMode(.alwaysTemplate)
-            videoImageView.tintColor = .white
-        }
-    }
     @IBOutlet var spinner: UIActivityIndicatorView!
     
     var videoButtonCallback: (() -> Void)?
