@@ -79,7 +79,7 @@ struct TalkDetailUnits {
         let unit = ViewUnit<TalkDetailStatsCollectionViewCell>(id: id, traits: [.height(DimensionUnit(widthPercent: 0.5))]) { view in
             view.nameLabel.text = title
             view.valueLabel.text = value
-            view.backgroundColor = UIColor.black.withAlphaComponent(0.25)
+            view.backgroundColor = Theme.shared.shadowColor.withAlphaComponent(0.25)
         }
         return unit
     }

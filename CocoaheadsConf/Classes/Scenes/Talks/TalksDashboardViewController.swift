@@ -31,7 +31,7 @@ class TalksDashboardViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = TalksDashboardView(frame: UIScreen.main.bounds)
-        self.view.backgroundColor = UIColor(hexString: "004D40")
+        self.view.backgroundColor = Theme.shared.mainColor
     }
     
     override func viewDidLoad() {

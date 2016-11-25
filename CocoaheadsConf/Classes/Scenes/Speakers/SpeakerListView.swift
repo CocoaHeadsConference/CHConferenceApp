@@ -17,7 +17,7 @@ class SpeakerListView: CollectionStackView {
         super.init(frame: frame)
 //        container.sectionInset = UIEdgeInsets(top: -20, left: 2, bottom: 2, right: 0)
         container.lineSpace = 1
-        self.backgroundColor = UIColor(hexString: "004D40")
+        self.backgroundColor = Theme.shared.mainColor
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -21,7 +21,7 @@ class VideosListView: CollectionStackView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor(hexString: "004D40")
+        self.backgroundColor = Theme.shared.mainColor
         container.lineSpace = 1
     }
     

@@ -19,8 +19,8 @@ class DetailHeaderCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         talkSpeakerImageView.layer.cornerRadius = 36
-        talkSpeakerImageView.backgroundColor = UIColor(hexString: "004D40")
-        talkSpeakerImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.7).cgColor
+        talkSpeakerImageView.backgroundColor = Theme.shared.mainColor
+        talkSpeakerImageView.layer.borderColor = Theme.shared.shadowColor.withAlphaComponent(0.7).cgColor
         talkSpeakerImageView.layer.borderWidth = 2
     }
 

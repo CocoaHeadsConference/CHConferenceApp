@@ -15,9 +15,9 @@ class SpeakerDetailView: CollectionStackView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor(hexString: "004D40")
+        self.backgroundColor = Theme.shared.mainColor
         container.lineSpace = 0
-        container.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        container.backgroundColor = Theme.shared.shadowColor.withAlphaComponent(0.8)
     }
     
     required init?(coder aDecoder: NSCoder) {

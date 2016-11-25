@@ -28,7 +28,7 @@ class TalkDetailViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = TalkDetailView(frame: UIScreen.main.bounds)
-        detailView?.container.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+        detailView?.container.backgroundColor = Theme.shared.shadowColor.withAlphaComponent(0.75)
         detailView?.didTapPlayCallback = { [unowned self] in
             guard let video = self.talkToShow.video else { return }
             

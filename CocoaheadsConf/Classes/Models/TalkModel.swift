@@ -63,7 +63,7 @@ struct TalkModel: Unmarshaling {
         }
         
         var backgroundColor: UIColor {
-            return UIColor.black.withAlphaComponent(0.55)
+            return Theme.shared.shadowColor.withAlphaComponent(0.55)
         }
         
         var hasImage: Bool {

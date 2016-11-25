@@ -15,7 +15,7 @@ class TalkCollectionViewCell: UICollectionViewCell {
         didSet {
             speakerImageView.layer.cornerRadius = 27
             speakerImageView.layer.borderWidth = 2
-            speakerImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.8).cgColor
+            speakerImageView.layer.borderColor = Theme.shared.shadowColor.withAlphaComponent(0.8).cgColor
         }
     }
     @IBOutlet var speakerNameLabel: UILabel!
@@ -30,16 +30,6 @@ class TalkCollectionViewCell: UICollectionViewCell {
     var talkColor: UIColor? {
         didSet {
             kindIndicatorView.backgroundColor = talkColor
-            /*let color = talkColor
-            placeLabel.textColor = talkColor
-            timeLabel.textColor = talkColor
-            speakerNameLabel.textColor = talkColor
-            talkTitleLabel.textColor = talkColor
-            talkSummaryLabel.textColor = talkColor
-            speakerImageView.layer.borderColor = color?.cgColor
-            cardContainerView.layer.borderColor = talkColor?.withAlphaComponent(0.8).cgColor
-            cardContainerView.backgroundColor = .white// talkColor?.withAlphaComponent(0.25)
-             */
         }
     }
     
