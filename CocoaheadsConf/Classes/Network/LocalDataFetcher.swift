@@ -23,22 +23,17 @@ final class LocalDataFetcher: NetworkFetcher {
         fakeURL = Bundle.main.url(forResource: "LocalData", withExtension: "json")
     }
     
-    func fetchNewInfo(onComplete: () -> Void) {
-        do {
-            guard let url = fakeURL else {
-                throw FakeDataError.missingFile
+    func fetchJSON(onComplete: @escaping ((JSONDictionary?) -> Void)) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            guard let url = self.fakeURL else {
+                return onComplete(nil)
             }
-            let jsonData = try Data(contentsOf: url)
-            guard let json = try JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves) as? [String:Any] else {
-                throw FakeDataError.wrongData
+            guard let jsonData = try? Data(contentsOf: url),
+                let json = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves) as? JSONDictionary else {
+                return onComplete(nil)
             }
-            try cache.import(json: json)
-            onComplete()
+            onComplete(json)
         }
-        catch {
-            print("Error getting json: \(error)")
-        }
-        
     }
     
 }
