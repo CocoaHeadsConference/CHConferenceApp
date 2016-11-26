@@ -18,9 +18,15 @@ class EventScene: Scene, CacheUpdatable {
         self.cache = cache
         rootViewController = EventMainViewController(with: self.cache)
         initialViewController = NavigationViewController(rootViewController: rootViewController)
-        initialViewController.tabBarItem = UITabBarItem(title: "Evento", image: #imageLiteral(resourceName: "speakers"), tag: 0)
+        initialViewController.tabBarItem = UITabBarItem(title: "Evento", image: #imageLiteral(resourceName: "icon-event"), tag: 0)
+        rootViewController.didTapTwitterCallback = { [unowned self] event in
+            self.displayTwitter(for: event)
+        }
     }
     
+    func displayTwitter(for event: EventModel) {
+        DisplayTwitterHelper.display(twitter: event.twitterHandle, from: rootViewController)
+    }
     
     func updateFromCache() {
         rootViewController.updateListState()

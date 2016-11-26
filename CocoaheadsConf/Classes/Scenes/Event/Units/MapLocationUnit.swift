@@ -8,8 +8,9 @@
 
 import UIKit
 import Compose
+import MapKit
 
-struct MapLocationUnit: TypedUnit {
+struct MapLocationUnit: TypedUnit, SelectableUnit {
     
     typealias Cell = MapLocationCollectionViewCell
     
@@ -29,6 +30,20 @@ struct MapLocationUnit: TypedUnit {
     
     func register(in collectionView: UICollectionView) {
         Cell.register(in: collectionView)
+    }
+    
+    func didSelect() {
+        let regionDistance:CLLocationDistance = 1000
+        let coordinates = location.coordinate.coordinate
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = location.address
+        mapItem.openInMaps(launchOptions: options)
     }
     
 }

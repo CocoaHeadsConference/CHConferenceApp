@@ -16,6 +16,8 @@ class EventMainViewController: UIViewController {
         return self.view as? EventMainView
     }
     
+    var didTapTwitterCallback: ((EventModel)-> Void)?
+    
     init(with cache: Cache) {
         self.cache = cache
         super.init(nibName: nil, bundle: nil)
@@ -40,6 +42,9 @@ class EventMainViewController: UIViewController {
     func updateListState() {
         guard let event = cache.event else {
             return
+        }
+        self.eventView?.didTapTwitterCallback = { [unowned self] event in
+            self.didTapTwitterCallback?(event)
         }
         self.title = event.name
         self.navigationController?.tabBarItem.title = "Evento"

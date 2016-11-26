@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ocp-3i-THk">
-                        <rect key="frame" x="16" y="30" width="155.5" height="82"/>
+                        <rect key="frame" x="16" y="30" width="150.5" height="82"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3t-Qp-zmO">
-                                <rect key="frame" x="8" y="8" width="139.5" height="66"/>
+                                <rect key="frame" x="8" y="8" width="134.5" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -37,10 +38,10 @@
                         </constraints>
                     </view>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgA-6e-szC">
-                        <rect key="frame" x="203.5" y="30" width="155.5" height="82"/>
+                        <rect key="frame" x="208.5" y="30" width="150.5" height="82"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8X-8t-hPQ">
-                                <rect key="frame" x="8" y="8" width="139" height="66"/>
+                                <rect key="frame" x="8" y="8" width="134.5" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -55,7 +56,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4v-pa-6jl">
-                        <rect key="frame" x="16" y="8" width="155.5" height="18"/>
+                        <rect key="frame" x="16" y="8" width="150.5" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="xXA-2d-zrz"/>
                         </constraints>
@@ -64,19 +65,28 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Até" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbz-cx-vCU">
-                        <rect key="frame" x="203.5" y="8" width="155.5" height="18"/>
+                        <rect key="frame" x="208.5" y="8" width="150.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar-Time" translatesAutoresizingMaskIntoConstraints="NO" id="4Uj-B4-Pox">
+                        <rect key="frame" x="175" y="59" width="24" height="24"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="noO-HX-AEX"/>
+                            <constraint firstAttribute="width" secondItem="4Uj-B4-Pox" secondAttribute="height" multiplier="1:1" id="oJi-CV-RbQ"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="cgA-6e-szC" firstAttribute="top" secondItem="Xbz-cx-vCU" secondAttribute="bottom" constant="4" id="3pS-qW-Zeb"/>
                 <constraint firstAttribute="trailing" secondItem="cgA-6e-szC" secondAttribute="trailing" constant="16" id="41H-25-Oub"/>
+                <constraint firstItem="4Uj-B4-Pox" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="87o-hQ-GNT"/>
                 <constraint firstItem="v4v-pa-6jl" firstAttribute="leading" secondItem="Ocp-3i-THk" secondAttribute="leading" id="C2M-Pj-YuD"/>
                 <constraint firstAttribute="bottom" secondItem="cgA-6e-szC" secondAttribute="bottom" constant="8" id="DEh-8F-vQj"/>
-                <constraint firstItem="cgA-6e-szC" firstAttribute="leading" secondItem="Ocp-3i-THk" secondAttribute="trailing" constant="32" id="NLQ-id-i63"/>
+                <constraint firstItem="cgA-6e-szC" firstAttribute="leading" secondItem="Ocp-3i-THk" secondAttribute="trailing" constant="42" id="NLQ-id-i63"/>
                 <constraint firstItem="Xbz-cx-vCU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="PIK-79-hm2"/>
                 <constraint firstItem="cgA-6e-szC" firstAttribute="width" secondItem="Ocp-3i-THk" secondAttribute="width" id="R8Y-bx-M6F"/>
                 <constraint firstItem="Xbz-cx-vCU" firstAttribute="height" secondItem="v4v-pa-6jl" secondAttribute="height" id="RMZ-qg-94h"/>
@@ -86,6 +96,7 @@
                 <constraint firstAttribute="bottom" secondItem="Ocp-3i-THk" secondAttribute="bottom" constant="8" id="l91-bx-iSb"/>
                 <constraint firstItem="v4v-pa-6jl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="o1s-MB-Wxm"/>
                 <constraint firstItem="Ocp-3i-THk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="ted-NL-00b"/>
+                <constraint firstItem="4Uj-B4-Pox" firstAttribute="centerY" secondItem="Ocp-3i-THk" secondAttribute="centerY" id="yqW-LR-elh"/>
                 <constraint firstItem="Xbz-cx-vCU" firstAttribute="trailing" secondItem="cgA-6e-szC" secondAttribute="trailing" id="zur-5L-pmg"/>
             </constraints>
             <size key="customSize" width="259" height="50"/>
@@ -98,4 +109,7 @@
             <point key="canvasLocation" x="52.5" y="108"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="Calendar-Time" width="60" height="60"/>
+    </resources>
 </document>

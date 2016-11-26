@@ -9,28 +9,44 @@
 import UIKit
 import MapKit
 
-class MapLocationCollectionViewCell: UICollectionViewCell {
+class MapLocationCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
 
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var containerView: UIView!
-    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var mapView: MKMapView! {
+        didSet {
+            mapView.delegate = self
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.layer.cornerRadius = 4
-        containerView.layer.borderColor = UIColor.black.withAlphaComponent(0.8).cgColor
-        containerView.layer.borderWidth = 1
+        mapView.layer.cornerRadius = 4
     }
 
     var centerCoordinate: CoordinateModel? {
         didSet {
+            mapView.removeAnnotations(mapView.annotations)
             guard let center = centerCoordinate else {
                 return
             }
-            let span = 0.0100
+            let span = 0.0050
             let region = MKCoordinateRegionMake(center.coordinate, MKCoordinateSpanMake(span, span))
             mapView.setRegion(region, animated: false)
+            let annotation = EventLocationPin(coordinate: center.coordinate)
+            mapView.addAnnotation(annotation)
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is EventLocationPin {
+            let identifier = "event"
+            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView.image = #imageLiteral(resourceName: "map-pin")
+            return annotationView
+        }
+        return nil
     }
     
 }

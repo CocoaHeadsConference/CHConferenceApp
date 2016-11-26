@@ -43,10 +43,13 @@ class EventDateCollectionViewCell: UICollectionViewCell {
     }
     
     private func attributedText(from date: Date)-> NSAttributedString {
+        formatter.dateFormat = "EEEE\n"
+        let attributed = NSMutableAttributedString(string: formatter.string(from: date), attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 12)])
         formatter.dateFormat = "dd MMM"
-        let attributed = NSMutableAttributedString(string: formatter.string(from: date), attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 26, weight: UIFontWeightMedium)])
-        formatter.dateFormat = "\nEEEE"
-        let subline = NSAttributedString(string: formatter.string(from: date), attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16)])
+        let headline = NSMutableAttributedString(string: formatter.string(from: date), attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 24, weight: UIFontWeightMedium)])
+        formatter.dateFormat = "\nHH:mm"
+        let subline = NSAttributedString(string: formatter.string(from: date), attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 14)])
+        attributed.append(headline)
         attributed.append(subline)
         return attributed
     }

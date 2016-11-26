@@ -33,13 +33,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18X-eU-k9N">
+                                <rect key="frame" x="0.0" y="0.0" width="262" height="105"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BnD-AL-d1d" firstAttribute="leading" secondItem="JhT-bI-qQy" secondAttribute="leading" id="Fac-hv-gIm"/>
+                            <constraint firstItem="18X-eU-k9N" firstAttribute="bottom" secondItem="BnD-AL-d1d" secondAttribute="bottom" id="a2h-it-QkM"/>
+                            <constraint firstItem="18X-eU-k9N" firstAttribute="leading" secondItem="BnD-AL-d1d" secondAttribute="leading" id="a9v-t3-nMW"/>
+                            <constraint firstItem="18X-eU-k9N" firstAttribute="top" secondItem="BnD-AL-d1d" secondAttribute="top" id="c5x-p2-EAq"/>
                             <constraint firstItem="2WA-nU-mpG" firstAttribute="top" secondItem="BnD-AL-d1d" secondAttribute="bottom" constant="8" id="eQH-YL-If5"/>
                             <constraint firstAttribute="trailing" secondItem="2WA-nU-mpG" secondAttribute="trailing" constant="8" id="fbc-AD-Cc3"/>
                             <constraint firstAttribute="bottom" secondItem="2WA-nU-mpG" secondAttribute="bottom" constant="8" id="hk5-uc-6WQ"/>
+                            <constraint firstItem="18X-eU-k9N" firstAttribute="trailing" secondItem="BnD-AL-d1d" secondAttribute="trailing" id="ovi-mn-Jqb"/>
                             <constraint firstItem="2WA-nU-mpG" firstAttribute="leading" secondItem="JhT-bI-qQy" secondAttribute="leading" constant="8" id="pxe-Wi-eVw"/>
                             <constraint firstAttribute="trailing" secondItem="BnD-AL-d1d" secondAttribute="trailing" id="qBu-Mt-m0N"/>
                             <constraint firstItem="BnD-AL-d1d" firstAttribute="top" secondItem="JhT-bI-qQy" secondAttribute="top" id="weG-Yc-Djl"/>

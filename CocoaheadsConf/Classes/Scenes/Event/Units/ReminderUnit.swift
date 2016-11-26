@@ -8,6 +8,7 @@
 
 import UIKit
 import Compose
+import EventKitUI
 
 struct ReminderUnit: TypedUnit {
 

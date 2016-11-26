@@ -37,6 +37,13 @@
 		15256D381DE9FC4300263E92 /* EventDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D361DE9FC4300263E92 /* EventDateCollectionViewCell.swift */; };
 		15256D391DE9FC4300263E92 /* EventDateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15256D371DE9FC4300263E92 /* EventDateCollectionViewCell.xib */; };
 		15256D3B1DE9FC5000263E92 /* EventDateUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D3A1DE9FC5000263E92 /* EventDateUnit.swift */; };
+		15256D3E1DEA152700263E92 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15256D3C1DEA152700263E92 /* EventKit.framework */; };
+		15256D3F1DEA152700263E92 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15256D3D1DEA152700263E92 /* EventKitUI.framework */; };
+		15256D421DEA3BEF00263E92 /* EventFollowOnTwitterUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D411DEA3BEF00263E92 /* EventFollowOnTwitterUnit.swift */; };
+		15256D451DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D431DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.swift */; };
+		15256D461DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15256D441DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.xib */; };
+		15256D481DEA41CD00263E92 /* DisplayTwitterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D471DEA41CD00263E92 /* DisplayTwitterHelper.swift */; };
+		15256D4A1DEA44E200263E92 /* EventLocationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D491DEA44E200263E92 /* EventLocationPin.swift */; };
 		152F38C81DCD0C1A00FE9ECF /* TalksScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38C71DCD0C1A00FE9ECF /* TalksScene.swift */; };
 		152F38CA1DCD0C2500FE9ECF /* SponsorsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38C91DCD0C2500FE9ECF /* SponsorsScene.swift */; };
 		152F38CC1DCD0C3100FE9ECF /* SpeakersScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38CB1DCD0C3100FE9ECF /* SpeakersScene.swift */; };
@@ -158,6 +165,13 @@
 		15256D361DE9FC4300263E92 /* EventDateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDateCollectionViewCell.swift; sourceTree = "<group>"; };
 		15256D371DE9FC4300263E92 /* EventDateCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDateCollectionViewCell.xib; sourceTree = "<group>"; };
 		15256D3A1DE9FC5000263E92 /* EventDateUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDateUnit.swift; sourceTree = "<group>"; };
+		15256D3C1DEA152700263E92 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		15256D3D1DEA152700263E92 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		15256D411DEA3BEF00263E92 /* EventFollowOnTwitterUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFollowOnTwitterUnit.swift; sourceTree = "<group>"; };
+		15256D431DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFollowOnTwitterCollectionViewCell.swift; sourceTree = "<group>"; };
+		15256D441DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventFollowOnTwitterCollectionViewCell.xib; sourceTree = "<group>"; };
+		15256D471DEA41CD00263E92 /* DisplayTwitterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTwitterHelper.swift; sourceTree = "<group>"; };
+		15256D491DEA44E200263E92 /* EventLocationPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLocationPin.swift; sourceTree = "<group>"; };
 		152F38C71DCD0C1A00FE9ECF /* TalksScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalksScene.swift; sourceTree = "<group>"; };
 		152F38C91DCD0C2500FE9ECF /* SponsorsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorsScene.swift; sourceTree = "<group>"; };
 		152F38CB1DCD0C3100FE9ECF /* SpeakersScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakersScene.swift; sourceTree = "<group>"; };
@@ -247,6 +261,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15256D3E1DEA152700263E92 /* EventKit.framework in Frameworks */,
+				15256D3F1DEA152700263E92 /* EventKitUI.framework in Frameworks */,
 				1FB33EC6A0E4FD8A272779D7 /* Pods_CocoaheadsConf.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +346,7 @@
 		15256D1F1DE8ED6700263E92 /* Units */ = {
 			isa = PBXGroup;
 			children = (
+				15256D401DEA3BD500263E92 /* FollowOnTwitterUnit */,
 				15256D351DE9FC2B00263E92 /* EventDateUnit */,
 				15256D2E1DE9F26C00263E92 /* MapLocationUnit */,
 				15256D201DE8ED6E00263E92 /* ReminderUnit */,
@@ -353,6 +370,7 @@
 				15256D2F1DE9F28400263E92 /* MapLocationUnit.swift */,
 				15256D311DE9F29400263E92 /* MapLocationCollectionViewCell.swift */,
 				15256D321DE9F29400263E92 /* MapLocationCollectionViewCell.xib */,
+				15256D491DEA44E200263E92 /* EventLocationPin.swift */,
 			);
 			name = MapLocationUnit;
 			sourceTree = "<group>";
@@ -365,6 +383,16 @@
 				15256D371DE9FC4300263E92 /* EventDateCollectionViewCell.xib */,
 			);
 			name = EventDateUnit;
+			sourceTree = "<group>";
+		};
+		15256D401DEA3BD500263E92 /* FollowOnTwitterUnit */ = {
+			isa = PBXGroup;
+			children = (
+				15256D411DEA3BEF00263E92 /* EventFollowOnTwitterUnit.swift */,
+				15256D431DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.swift */,
+				15256D441DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.xib */,
+			);
+			name = FollowOnTwitterUnit;
 			sourceTree = "<group>";
 		};
 		152F38B11DCD0B5600FE9ECF /* Classes */ = {
@@ -652,6 +680,7 @@
 			isa = PBXGroup;
 			children = (
 				15D88FE31DD3741F0055F781 /* NavigationViewController.swift */,
+				15256D471DEA41CD00263E92 /* DisplayTwitterHelper.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -738,6 +767,8 @@
 		8ACE603013C1226D6844411D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				15256D3C1DEA152700263E92 /* EventKit.framework */,
+				15256D3D1DEA152700263E92 /* EventKitUI.framework */,
 				0668A8CC5476A35E0163F0B6 /* Pods_CocoaheadsConf.framework */,
 			);
 			name = Frameworks;
@@ -867,6 +898,7 @@
 				15D88FDF1DD35E420055F781 /* TimeDisplayCollectionViewCell.xib in Resources */,
 				15BD91681DC95DF90088AEB4 /* LaunchScreen.storyboard in Resources */,
 				1519A69E1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib in Resources */,
+				15256D461DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.xib in Resources */,
 				15A761AE1DE659010006333D /* TalkDetailPlayVideoCollectionViewCell.xib in Resources */,
 				15DDF9411DD1FB8600AD4B93 /* TalksDashboardView.xib in Resources */,
 				155BF1371DDD304200985B9F /* LabelCollectionViewCell.xib in Resources */,
@@ -947,6 +979,7 @@
 				15A761B51DE667220006333D /* VideosListViewUnits.swift in Sources */,
 				152F38DF1DCD687300FE9ECF /* TalksDashboardView.swift in Sources */,
 				15DDF92C1DD11DAA00AD4B93 /* SpeakerModel.swift in Sources */,
+				15256D4A1DEA44E200263E92 /* EventLocationPin.swift in Sources */,
 				152F38E21DD110F500FE9ECF /* NetworkFetcher.swift in Sources */,
 				15A761AD1DE659010006333D /* TalkDetailPlayVideoCollectionViewCell.swift in Sources */,
 				152F38C81DCD0C1A00FE9ECF /* TalksScene.swift in Sources */,
@@ -959,6 +992,7 @@
 				15256C221DE6A1EA00263E92 /* String+Capitalize.swift in Sources */,
 				15BBD8971DD9E6B000A9A45F /* SpeakersListState.swift in Sources */,
 				15DDF9381DD1284500AD4B93 /* Cache.swift in Sources */,
+				15256D481DEA41CD00263E92 /* DisplayTwitterHelper.swift in Sources */,
 				15256D381DE9FC4300263E92 /* EventDateCollectionViewCell.swift in Sources */,
 				155BF1331DDD302D00985B9F /* LabelUnit.swift in Sources */,
 				DD3A5AEF1DE60E130016882D /* VideosViewController.swift in Sources */,
@@ -987,6 +1021,7 @@
 				152F38CA1DCD0C2500FE9ECF /* SponsorsScene.swift in Sources */,
 				15F9E4271DDF7A4600C05ECC /* TalkDetailView.swift in Sources */,
 				15256D3B1DE9FC5000263E92 /* EventDateUnit.swift in Sources */,
+				15256D451DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.swift in Sources */,
 				1519A68E1DE287B50044EE8C /* DetailHeaderCollectionViewCell.swift in Sources */,
 				15256D191DE8E88B00263E92 /* EventMainView.swift in Sources */,
 				15BBD89A1DD9E9BD00A9A45F /* SpeakerHeroUnit.swift in Sources */,
@@ -999,6 +1034,7 @@
 				15D88FDB1DD35E330055F781 /* TimeDisplayUnit.swift in Sources */,
 				152F38DD1DCD144800FE9ECF /* TalksDashboardViewController.swift in Sources */,
 				1515D1231DDCEF11008690FD /* UIColor+Hex.swift in Sources */,
+				15256D421DEA3BEF00263E92 /* EventFollowOnTwitterUnit.swift in Sources */,
 				152F38D51DCD0C7D00FE9ECF /* MainScene.swift in Sources */,
 				15F9E42D1DDF85E200C05ECC /* TalkDetailViewState.swift in Sources */,
 				15256D151DE8E7E100263E92 /* EventScene.swift in Sources */,
