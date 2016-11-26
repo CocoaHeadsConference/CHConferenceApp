@@ -23,6 +23,8 @@
 		1519A69D1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */; };
 		1519A69E1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */; };
 		15256C221DE6A1EA00263E92 /* String+Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256C211DE6A1EA00263E92 /* String+Capitalize.swift */; };
+		15256D0E1DE7BCEA00263E92 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D0D1DE7BCEA00263E92 /* Theme.swift */; };
+		15256D121DE7C4EE00263E92 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D111DE7C4EE00263E92 /* UIImage+Color.swift */; };
 		152F38C41DCD0BF800FE9ECF /* Place.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F38C31DCD0BF800FE9ECF /* Place.storyboard */; };
 		152F38C61DCD0C0300FE9ECF /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F38C51DCD0C0300FE9ECF /* Favorites.storyboard */; };
 		152F38C81DCD0C1A00FE9ECF /* TalksScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38C71DCD0C1A00FE9ECF /* TalksScene.swift */; };
@@ -134,6 +136,8 @@
 		1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkDetailDescriptionCollectionViewCell.xib; sourceTree = "<group>"; };
 		15256C211DE6A1EA00263E92 /* String+Capitalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Capitalize.swift"; sourceTree = "<group>"; };
+		15256D0D1DE7BCEA00263E92 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		15256D111DE7C4EE00263E92 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		152F38C31DCD0BF800FE9ECF /* Place.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Place.storyboard; sourceTree = "<group>"; };
 		152F38C51DCD0C0300FE9ECF /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		152F38C71DCD0C1A00FE9ECF /* TalksScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalksScene.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				1519A6961DE33A3B0044EE8C /* ConferenceStyleKit.swift */,
+				15256D0D1DE7BCEA00263E92 /* Theme.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				15256C211DE6A1EA00263E92 /* String+Capitalize.swift */,
 				DDABFB101DE72AEC00351DA8 /* UserDefaults+CHConf.swift */,
 				DD86972B1DE76A3D0034DAE8 /* String+CMTime.swift */,
+				15256D111DE7C4EE00263E92 /* UIImage+Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -894,6 +900,7 @@
 				158F3E5A1DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.swift in Sources */,
 				1515D11E1DDCE47A008690FD /* SpeakerDetailSocialCollectionViewCell.swift in Sources */,
 				15256C221DE6A1EA00263E92 /* String+Capitalize.swift in Sources */,
+				15256D0E1DE7BCEA00263E92 /* Theme.swift in Sources */,
 				15BBD8971DD9E6B000A9A45F /* SpeakersListState.swift in Sources */,
 				15DDF9381DD1284500AD4B93 /* Cache.swift in Sources */,
 				155BF1331DDD302D00985B9F /* LabelUnit.swift in Sources */,
@@ -920,6 +927,7 @@
 				DD3A5B141DE633500016882D /* PlaybackHelper.swift in Sources */,
 				152F38CA1DCD0C2500FE9ECF /* SponsorsScene.swift in Sources */,
 				15F9E4271DDF7A4600C05ECC /* TalkDetailView.swift in Sources */,
+				15256D121DE7C4EE00263E92 /* UIImage+Color.swift in Sources */,
 				1519A68E1DE287B50044EE8C /* DetailHeaderCollectionViewCell.swift in Sources */,
 				15BBD89A1DD9E9BD00A9A45F /* SpeakerHeroUnit.swift in Sources */,
 				1591645B1DDD370600995EC2 /* TalkDashboardUnits.swift in Sources */,

@@ -35,7 +35,7 @@ class SpeakerDetailHeaderCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        speakerImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.8).cgColor
+        speakerImageView.layer.borderColor = Theme.shared.shadowColor.withAlphaComponent(0.8).cgColor
         speakerImageView.layer.borderWidth = 2
         speakerImageView.layer.cornerRadius = 40
     }

@@ -26,7 +26,7 @@ struct MainScene<NF: NetworkFetcher>: Scene {
     
     func fetchNewData() {
         self.networkFetcher.fetchNewInfo {
-            scenesToDisplay.forEach({ scene in
+            self.scenesToDisplay.forEach({ scene in
                 if let cachableScene = scene as? CacheUpdatable {
                     cachableScene.updateFromCache()
                 }

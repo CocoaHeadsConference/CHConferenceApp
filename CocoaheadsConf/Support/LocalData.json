@@ -1,4 +1,7 @@
 {
+	"theme": {
+		"mainColor": "004D40"
+	},
 	"sponsors":[
 		{
 			"id": 0,
