@@ -11,7 +11,11 @@ import Compose
 
 class EventMainView: CollectionStackView {
 
-    var state: EventMainState = EventMainState()
+    var state: EventMainState = EventMainState() {
+        didSet {
+            self.container.state = ComposeEventView(with: state)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,4 +27,23 @@ class EventMainView: CollectionStackView {
         super.init(coder: aDecoder)
     }
 
+}
+
+func ComposeEventView(with state: EventMainState)-> [ComposingUnit] {
+    var units: [ComposingUnit] = []
+    guard let event = state.event else {
+        return units
+    }
+    let now = Date()
+    units.add {
+        let headline = LabelUnit(id: "headline", text: event.headline, font: UIFont.systemFont(ofSize: 20, weight: UIFontWeightMedium), color: .white, verticalSpace: 16)
+        let subline = LabelUnit(id: "subline", text: event.subline, font: UIFont.systemFont(ofSize: 15), color: .white, verticalSpace: 8)
+        let mapUnit = MapLocationUnit(location: event.location)
+        let dateUnit = EventDateUnit(event: event)
+        return [headline, subline, mapUnit, dateUnit]
+    }
+    units.add(if: now.compare(event.startDate) == .orderedAscending) {
+        return ReminderUnit(event: event)
+    }
+    return units
 }

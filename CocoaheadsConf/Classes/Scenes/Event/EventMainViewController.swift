@@ -42,6 +42,7 @@ class EventMainViewController: UIViewController {
             return
         }
         self.title = event.name
+        self.navigationController?.tabBarItem.title = "Evento"
         self.eventView?.state.event = event
     }
     

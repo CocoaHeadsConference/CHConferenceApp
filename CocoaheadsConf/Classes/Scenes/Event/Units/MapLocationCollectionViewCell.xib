@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MapLocationCollectionViewCell" customModule="CocoaheadsConf" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="294" height="157"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="294" height="157"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhT-bI-qQy">
+                        <rect key="frame" x="16" y="8" width="262" height="141"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnD-AL-d1d">
+                                <rect key="frame" x="0.0" y="0.0" width="262" height="105"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WA-nU-mpG">
+                                <rect key="frame" x="8" y="113" width="246" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Y1H-6y-CRw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BnD-AL-d1d" firstAttribute="leading" secondItem="JhT-bI-qQy" secondAttribute="leading" id="Fac-hv-gIm"/>
+                            <constraint firstItem="2WA-nU-mpG" firstAttribute="top" secondItem="BnD-AL-d1d" secondAttribute="bottom" constant="8" id="eQH-YL-If5"/>
+                            <constraint firstAttribute="trailing" secondItem="2WA-nU-mpG" secondAttribute="trailing" constant="8" id="fbc-AD-Cc3"/>
+                            <constraint firstAttribute="bottom" secondItem="2WA-nU-mpG" secondAttribute="bottom" constant="8" id="hk5-uc-6WQ"/>
+                            <constraint firstItem="2WA-nU-mpG" firstAttribute="leading" secondItem="JhT-bI-qQy" secondAttribute="leading" constant="8" id="pxe-Wi-eVw"/>
+                            <constraint firstAttribute="trailing" secondItem="BnD-AL-d1d" secondAttribute="trailing" id="qBu-Mt-m0N"/>
+                            <constraint firstItem="BnD-AL-d1d" firstAttribute="top" secondItem="JhT-bI-qQy" secondAttribute="top" id="weG-Yc-Djl"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="JhT-bI-qQy" secondAttribute="bottom" constant="8" id="Hhz-68-Udo"/>
+                <constraint firstItem="JhT-bI-qQy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="NO2-zP-C2w"/>
+                <constraint firstAttribute="trailing" secondItem="JhT-bI-qQy" secondAttribute="trailing" constant="16" id="oQd-iK-kiZ"/>
+                <constraint firstItem="JhT-bI-qQy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="tlE-bE-WNF"/>
+            </constraints>
+            <size key="customSize" width="294" height="157"/>
+            <connections>
+                <outlet property="addressLabel" destination="2WA-nU-mpG" id="Q9V-df-jKY"/>
+                <outlet property="containerView" destination="JhT-bI-qQy" id="Nfm-cq-wRW"/>
+                <outlet property="mapView" destination="BnD-AL-d1d" id="ybB-sU-66M"/>
+            </connections>
+            <point key="canvasLocation" x="85" y="45.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
