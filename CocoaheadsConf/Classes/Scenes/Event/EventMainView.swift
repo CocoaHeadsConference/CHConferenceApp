@@ -35,7 +35,8 @@ class EventMainView: CollectionStackView {
 func ComposeEventView(with state: EventMainState, safariCallback: ((URL)-> Void)?)-> [ComposingUnit] {
     var units: [ComposingUnit] = []
     guard let event = state.event else {
-        return units
+        let empty = EmptyUnit(identifier: "noEvent", text: "Nenhum evento encontrado. \n\nAguarde enquanto estamos atualizando nossos dados.")
+        return [empty]
     }
     units.add {
         let headline = LabelUnit(id: "headline", text: event.headline, font: UIFont.systemFont(ofSize: 20, weight: UIFontWeightMedium), color: .white, verticalSpace: 16)
@@ -46,7 +47,7 @@ func ComposeEventView(with state: EventMainState, safariCallback: ((URL)-> Void)
     }
     units.add(manyIfLet: event.twitterHandle) { twitter in
         let topSpacer = ViewUnit<UIView>(id:"twitter-top", traits:[.height(8)])
-        let bottomSpacer = ViewUnit<UIView>(id:"twitter-bottom", traits:[.height(8)])
+        let bottomSpacer = ViewUnit<UIView>(id:"twitter-bottom", traits:[.height(4)])
         let twitterUnit = EventFollowOnTwitterUnit(color: Theme.shared.actionColor, twitter: twitter) {
             guard let url = URL(string:"https://twitter.com/\(twitter)") else {
                 return
@@ -56,8 +57,8 @@ func ComposeEventView(with state: EventMainState, safariCallback: ((URL)-> Void)
         return [topSpacer, twitterUnit, bottomSpacer]
     }
     units.add(manyIfLet: event.codeOfConductURL) { url in
-        let topSpacer = ViewUnit<UIView>(id:"codeConduct-top", traits:[.height(8)])
-        let bottomSpacer = ViewUnit<UIView>(id:"codeConduct-bottom", traits:[.height(8)])
+        let topSpacer = ViewUnit<UIView>(id:"codeConduct-top", traits:[.height(4)])
+        let bottomSpacer = ViewUnit<UIView>(id:"codeConduct-bottom", traits:[.height(4)])
         let codeConductUnit = CodeOfConductUnit(color:Theme.shared.actionColor) {
             safariCallback?(url)
         }

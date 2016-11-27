@@ -27,13 +27,7 @@ struct VideosListViewUnits {
     }
     
     static func Empty()-> ComposingUnit {
-        return ViewUnit<UILabel>(id: "NoVideo", traits: [ .height(DimensionUnit(minusHeight: 132)), .insets(UIEdgeInsets(horizontal: 16)) ]) { label in
-            label.textColor = .white
-            label.font = UIFont.systemFont(ofSize: 17, weight: UIFontWeightMedium)
-            label.numberOfLines = 0
-            label.textAlignment = .center
-            label.text = "Nenhum vídeo disponível no momento.\n As palestras serão adicionadas assim que for possível."
-        }
+        return EmptyUnit(identifier: "NoVideo", text: "Nenhum vídeo disponível no momento.\n As palestras serão adicionadas assim que for possível.")
     }
     
 }

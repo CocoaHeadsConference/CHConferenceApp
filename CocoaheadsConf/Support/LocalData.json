@@ -19,7 +19,13 @@
 		"main": "004D40",
 		"action": "1abc9c",
 		"contrasting": "FFFFFF",
-		"shadow": "000000"
+		"shadow": "000000",
+		"talk":"D84315",
+		"workshop":"00838F",
+		"opening":"AD1457",
+		"closing":"AD1457",
+		"breaktime":"F9A825",
+		"setup":"9E9D24"
 	},
 	"sponsors":[
 		{
@@ -94,7 +100,7 @@
 			"title": "LEAD DEVELOPER, MOVILE",
 			"bio": "Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
 			"citation": "",
-			"twitterHandle": "@fpg1503",
+			"twitterHandle": "fpg1503",
 			"linkedinHandler": "fpg1503",
 			"githubHandler": "fpg1503"
 		},
@@ -105,7 +111,7 @@
 			"title": "LEAD DEVELOPER, VIVAREAL",			
 			"bio": "Manauara, desenvolvedor iOS no VivaReal, desenvolvedor e co-fundador do Meatless. Além de casas, apartamentos e comida vegetariana, não vive sem música e fotografia.",
 			"citation": "",
-			"twitterHandle": "@rdgborges",
+			"twitterHandle": "rdgborges",
 			"linkedinHandler": "rdgborges",
 			"githubHandler": "rdgborges"
 		},
@@ -116,7 +122,7 @@
 			"title": "MOBILE TECH LEAD",
 			"bio": "Trabalha com iOS desde 2008; Realizou projetos para empresas Fortune 500; Foi CEO de uma empresa de mobile development por 4 anos; Atualmente trabalha como Mobile Tech Lead para uma empresa de São Francisco - CA.",
 			"citation": "",
-			"twitterHandle": "@fcbunn",
+			"twitterHandle": "fcbunn",
 			"linkedinHandler": "fcbunn",
 			"githubHandler": "Bunn"
 		},
@@ -127,7 +133,7 @@
 			"title": "LEAD DEVELOPER",
 			"bio": "Na comunidade desde 2009, trabalhou em uma ad network e seu código pertubou os usuários com anúncios em mais de 200 milhões de devices. Foi um dos desenvolvedores do app 99Taxis e passou por novos projetos na Movile e Nubank. Nas horas vagas gera entropia na organização do CocoaHeadsSP e escreve no Invariante.com.",
 			"citation": "",
-			"twitterHandle": "@diogot",
+			"twitterHandle": "diogot",
 			"linkedinHandler": "diogot",
 			"githubHandler": "diogot"
 		},
@@ -138,7 +144,7 @@
 			"title": "LEAD DEVELOPER",
 			"bio": "Criador do famoso app da WWDC para macOS, trabalha há alguns anos com desenvolvimento para Mac e iOS, possuí atualmente 6 apps publicados e diversos projetos open-source.",
 			"citation": "",
-			"twitterHandle": "@_inside",
+			"twitterHandle": "_inside",
 			"linkedinHandler": "guilherme-rambo-78506425",
 			"githubHandler": "insidegui"
 		},
@@ -149,7 +155,7 @@
 			"title": "LEAD DEVELOPER, VIVAREAL",
 			"bio": "Desenvolvedor iOS desde o iPhoneOS 3, adora desenvolver frameworks como Compose. Programação funcional, Value Types, imutabilidade e Lego também estão constantemente em seu dia a dia.",
 			"citation": "Sempre crie código como se a pessoa que desse manutenção nele fosse um psicopata violento que sabe onde você mora.",
-			"twitterHandle": "@bgondim",
+			"twitterHandle": "bgondim",
 			"linkedinHandler": "brunogb",
 			"githubHandler": "brunogb"
 		},
@@ -160,7 +166,7 @@
 			"title": "LEAD DEVELOPER",
 			"bio": "Membro do core team das APIs de Swift Server da Apple. Criador do Zewo, Venice e GraphQLSwift.",
 			"citation": "",
-			"twitterHandle": "@paulofariarl",
+			"twitterHandle": "paulofariarl",
 			"linkedinHandler": "",
 			"githubHandler": "paulofaria"
 		},
@@ -171,7 +177,7 @@
 			"title": "LEAD DEVELOPER",
 			"bio": "Desenvolvedor iOS desde quando a contagem de referências era manual e Xcode e Interface Builder eram apps distintos. Gosta de contribuir em projetos open-source sempre que possível.",
 			"citation": "",
-			"twitterHandle": "@marcelofabri_",
+			"twitterHandle": "marcelofabri_",
 			"linkedinHandler": "marcelofabri",
 			"githubHandler": "marcelofabri"
 		},
@@ -182,7 +188,7 @@
 			"title": "TECH EVANGELIST",
 			"bio": "Evangelista Técnica na Microsoft, curadora da Mobile Summit Brazil e idealizadora do WoMakersCode, um projeto focado em capacitação e empoderamento feminino e de minorias na TI e atua, também, como coordenadora do WoMoz (Women & Mozilla). É apaixonada open source e nas horas vagas, cria projetos e iniciativas que possam contribuir para o fortalecimento das mulheres no mercado de trabalho e comunidades de tecnologia.",
 			"citation": "",
-			"twitterHandle": "@cynthiazanoni",
+			"twitterHandle": "cynthiazanoni",
 			"linkedinHandler": "cynthiazanoni",
 			"githubHandler": ""
 		},
@@ -193,7 +199,7 @@
 			"title": "CHAPTER LEADER, CONCRETE SOLUTIONS",
 			"bio": "Mestre em computação pelo IME-USP, é desenvolvedor C desde 2003 e iOS desde 2010. Organizador do CocoaHeads SP e sócio-fundador da Newt Labs. Atualmente é iOS Chapter Leader na Concrete Solutions.",
 			"citation": "",
-			"twitterHandle": "@talesp",
+			"twitterHandle": "talesp",
 			"linkedinHandler": "talespinheiro",
 			"githubHandler": ""
 		},
@@ -204,7 +210,7 @@
 			"title": "MOBILE PRODUCTS LEAD, ABACOMM",
 			"bio": "Desenvolvedor iOS desde 2008. Fundador do XT3 Studios, Advanced e Arapuka Antivirus. É Mobile Products Lead na Abacomm. Também atua como Community Manager & Podcaster do @CocoaHeadsBR.",
 			"citation": "",
-			"twitterHandle": "@DougDiskin",
+			"twitterHandle": "DougDiskin",
 			"linkedinHandler": "dougdiskin",
 			"githubHandler": "DougFischer"
 		},
@@ -215,7 +221,7 @@
 			"title": "MOBILE DEVELOPER, CONCRETE SOLUTIONS",
 			"bio": "Se envolveu com a comunidade iOS no final de 2014 e nunca mais saiu. É líder do CocoaHeads Brasil em Fortaleza e participante do Devbeers Fortaleza. Entusiasta de Ruby e biker.",
 			"citation": "",
-			"twitterHandle": "@viniciusc70",
+			"twitterHandle": "viniciusc70",
 			"linkedinHandler": "viniciuscarvalhomarques",
 			"githubHandler": "Viniciuscarvalho"
 		},
@@ -226,7 +232,7 @@
 			"title": "IOS DEVELOPER, IFOOD",
 			"bio": "Formada em Análise de Sistemas pela PUC-Campinas, foi premiada duas vezes com uma bolsa de estudos da WWDC nos anos de 2015 e 2016. Estudou no BEPID e é também Android Developer. Hoje trabalha como iOS Developer no iFood.",
 			"citation": "",
-			"twitterHandle": "@jusalt",
+			"twitterHandle": "jusalt",
 			"linkedinHandler": "julianasalgado",
 			"githubHandler": ""
 		},
@@ -644,71 +650,5 @@
 			"type": "workshop"
 		}
 	],
-	"videos": [
-		{
-			"id": 0,
-			"talk": 2,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		},
-		{
-			"id": 1,
-			"talk": 3,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		},
-		{
-			"id": 2,
-			"talk": 5,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		},
-		{
-			"id": 3,
-			"talk": 6,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		},
-		{
-			"id": 4,
-			"talk": 10,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		},
-		{
-			"id": 5,
-			"talk": 11,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		},
-		{
-			"id": 6,
-			"talk": 12,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		},
-		{
-			"id": 7,
-			"talk": 13,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		},
-		{
-			"id": 8,
-			"talk": 14,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		},
-		{
-			"id": 9,
-			"talk": 16,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		},
-		{
-			"id": 10,
-			"talk": 17,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		},
-		{
-			"id": 11,
-			"talk": 18,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		},
-		{
-			"id": 12,
-			"talk": 19,
-			"youtube_url": "https://www.youtube.com/watch?v=vN4U5FqrOdQ"
-		}
-	]
+	"videos": [ ]
 }

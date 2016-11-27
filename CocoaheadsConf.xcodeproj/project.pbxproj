@@ -26,6 +26,7 @@
 		1520BD0F1DEA5C250080DF4A /* CodeOfConductUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520BD0E1DEA5C250080DF4A /* CodeOfConductUnit.swift */; };
 		1520BD121DEA5C570080DF4A /* CodeOfConductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520BD101DEA5C570080DF4A /* CodeOfConductCollectionViewCell.swift */; };
 		1520BD131DEA5C570080DF4A /* CodeOfConductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1520BD111DEA5C570080DF4A /* CodeOfConductCollectionViewCell.xib */; };
+		1520BD171DEA64700080DF4A /* EmptyUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520BD161DEA64700080DF4A /* EmptyUnit.swift */; };
 		15256C221DE6A1EA00263E92 /* String+Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256C211DE6A1EA00263E92 /* String+Capitalize.swift */; };
 		15256D0E1DE7BCEA00263E92 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D0D1DE7BCEA00263E92 /* Theme.swift */; };
 		15256D121DE7C4EE00263E92 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D111DE7C4EE00263E92 /* UIImage+Color.swift */; };
@@ -159,6 +160,7 @@
 		1520BD0E1DEA5C250080DF4A /* CodeOfConductUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeOfConductUnit.swift; sourceTree = "<group>"; };
 		1520BD101DEA5C570080DF4A /* CodeOfConductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeOfConductCollectionViewCell.swift; sourceTree = "<group>"; };
 		1520BD111DEA5C570080DF4A /* CodeOfConductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeOfConductCollectionViewCell.xib; sourceTree = "<group>"; };
+		1520BD161DEA64700080DF4A /* EmptyUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyUnit.swift; sourceTree = "<group>"; };
 		15256C211DE6A1EA00263E92 /* String+Capitalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Capitalize.swift"; sourceTree = "<group>"; };
 		15256D0D1DE7BCEA00263E92 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		15256D111DE7C4EE00263E92 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
@@ -733,6 +735,7 @@
 				155BF1321DDD302D00985B9F /* LabelUnit.swift */,
 				155BF1341DDD304200985B9F /* LabelCollectionViewCell.swift */,
 				155BF1351DDD304200985B9F /* LabelCollectionViewCell.xib */,
+				1520BD161DEA64700080DF4A /* EmptyUnit.swift */,
 			);
 			path = Unit;
 			sourceTree = "<group>";
@@ -1045,6 +1048,7 @@
 				15DDF9351DD126CA00AD4B93 /* LocalDataFetcher.swift in Sources */,
 				DD3A5B141DE633500016882D /* PlaybackHelper.swift in Sources */,
 				152F38CA1DCD0C2500FE9ECF /* SponsorsScene.swift in Sources */,
+				1520BD171DEA64700080DF4A /* EmptyUnit.swift in Sources */,
 				15F9E4271DDF7A4600C05ECC /* TalkDetailView.swift in Sources */,
 				15256D3B1DE9FC5000263E92 /* EventDateUnit.swift in Sources */,
 				15256D451DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.swift in Sources */,

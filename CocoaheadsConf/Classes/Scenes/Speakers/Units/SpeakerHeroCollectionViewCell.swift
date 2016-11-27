@@ -29,7 +29,7 @@ class SpeakerHeroCollectionViewCell: UICollectionViewCell {
     
     var speakerTwitter: String? {
         didSet {
-            speakerTwitterLabel.text = speakerTwitter
+            speakerTwitterLabel.text = "@\(speakerTwitter ?? "")"
         }
     }
     
