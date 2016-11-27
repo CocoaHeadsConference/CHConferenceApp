@@ -13,7 +13,7 @@ class MainTabController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.barTintColor = Theme.shared.mainColor
-        self.tabBar.tintColor = Theme.shared.constrastingColor
+        self.tabBar.tintColor = Theme.shared.contrastingColor
         self.tabBar.unselectedItemTintColor = Theme.shared.shadowColor.withAlphaComponent(0.8)
     }
 

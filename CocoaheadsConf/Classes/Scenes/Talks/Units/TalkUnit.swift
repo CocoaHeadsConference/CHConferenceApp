@@ -44,8 +44,8 @@ struct TalkUnit: TypedUnit, SelectableUnit {
     func configure(innerView: Cell) {
         innerView.backgroundColor = talk.type.backgroundColor
         innerView.speakerImageURL = talk.speaker?.imageURL
-        innerView.placeLabel.text = talk.room?.title ?? "Não definido"
-        innerView.speakerNameLabel.text = talk.speaker?.name ?? "Não definido"
+        innerView.placeLabel.text = talk.room?.title ?? ""
+        innerView.speakerNameLabel.text = talk.speaker?.name ?? ""
         innerView.talkTitleLabel.text = talk.title
         innerView.talkSummaryLabel.text = talk.summary
         innerView.timeLabel.text = TalkDashboardUnits.timeDateFormatter.string(from: talk.date)

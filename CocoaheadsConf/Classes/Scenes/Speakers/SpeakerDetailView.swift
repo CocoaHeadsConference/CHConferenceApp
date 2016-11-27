@@ -13,6 +13,8 @@ import NibDesignable
 @IBDesignable
 class SpeakerDetailView: CollectionStackView {
 
+    var didTapSafariCallback: ((URL)-> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = Theme.shared.mainColor
@@ -26,14 +28,14 @@ class SpeakerDetailView: CollectionStackView {
     
     var state: SpeakerDetailViewState = SpeakerDetailViewState() {
         didSet {
-            container.state = ComposeSpeakerDetailView(with: state)
+            container.state = ComposeSpeakerDetailView(with: state, urlCallback: didTapSafariCallback)
         }
     }    
     
 }
 
 
-func ComposeSpeakerDetailView(with state: SpeakerDetailViewState)-> [ComposingUnit] {
+func ComposeSpeakerDetailView(with state: SpeakerDetailViewState, urlCallback:((URL)-> Void)?)-> [ComposingUnit] {
     
     guard let speaker = state.speaker else { return [] }
 
@@ -52,12 +54,16 @@ func ComposeSpeakerDetailView(with state: SpeakerDetailViewState)-> [ComposingUn
         return talks.map { SpeakerDetailSmallTalkUnit(identifier: String($0.id), title: $0.title, summary: $0.summary, date: timeDateFormatter.string(from: $0.date).capitalized, room: $0.room?.title, color: $0.type.color) }
     }
     
-    let validTwitterHandle = speaker.twitterHandle.characters.count > 0
-    let validLinkedInHandle = speaker.linkedInHandle.characters.count > 0
-    let validGithubHandle = speaker.githubHandle.characters.count > 0
-    units.add(manyIf: validTwitterHandle || validLinkedInHandle || validGithubHandle) {
-        let spacer = ViewUnit<UIView>(id:"bottomSpacer", traits: [.height(4)])
-        return [spacer, SpeakerDetailAllSocialUnit(twitter: speaker.twitterHandle, linkedIn: speaker.linkedInHandle, github: speaker.githubHandle)]
+    units.add(manyIf: speaker.twitterHandle.characters.count > 0) {
+        let topSpacer = ViewUnit<UIView>(id:"twitter-top", traits: [.height(8)])
+        let bottomSpacer = ViewUnit<UIView>(id:"twitter-bottom", traits: [.height(8)])
+        let unit = EventFollowOnTwitterUnit(color: Theme.shared.actionColor, twitter: speaker.twitterHandle) {
+            guard let url = URL(string:"https://twitter.com/\(speaker.twitterHandle)") else {
+                return
+            }
+            urlCallback?(url)
+        }
+        return [topSpacer, unit, bottomSpacer]
     }
     
     return units

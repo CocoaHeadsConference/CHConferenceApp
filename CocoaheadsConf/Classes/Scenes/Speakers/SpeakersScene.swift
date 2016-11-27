@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SpeakersScene: Scene {
+class SpeakersScene: Scene, CacheUpdatable {
 
     let cache: Cache
     let initialViewController: UIViewController
@@ -23,6 +23,10 @@ class SpeakersScene: Scene {
             let viewController = self.viewController(for: speaker)
             self.rootViewController.navigationController?.pushViewController(viewController, animated: true)
         }
+    }
+    
+    func updateFromCache() {
+        rootViewController.navigationController?.navigationBar.barTintColor = Theme.shared.mainColor
     }
     
     func viewController(for speaker: SpeakerModel)-> SpeakerDetailViewController {

@@ -8,30 +8,38 @@
 
 import UIKit
 
-struct MainScene<NF: NetworkFetcher>: Scene {
+struct MainScene<NF: NetworkFetcher>: Scene, CacheUpdatable {
     
     let name = "Main"
     
     let scenesToDisplay: [Scene]
     let networkFetcher: NF
+    let mainViewController: MainTabController
     let initialViewController: UIViewController
     
     init(with scenes:[Scene], networkFetcher: NF = NF(cacheService: Cache.default)) {
         self.scenesToDisplay = scenes
         self.networkFetcher = networkFetcher
-        let viewController = MainTabController()
-        viewController.setViewControllers(scenesToDisplay.map{ $0.initialViewController }, animated: false)
-        initialViewController = viewController
+        mainViewController = MainTabController()
+        mainViewController.setViewControllers(scenesToDisplay.map{ $0.initialViewController }, animated: false)
+        initialViewController = mainViewController
     }
     
     func fetchNewData() {
         self.networkFetcher.fetchNewInfo {
+            self.updateFromCache()
             self.scenesToDisplay.forEach({ scene in
                 if let cachableScene = scene as? CacheUpdatable {
                     cachableScene.updateFromCache()
                 }
             })
         }
+    }
+    
+    func updateFromCache() {
+        mainViewController.tabBar.barTintColor = Theme.shared.mainColor
+        mainViewController.tabBar.tintColor = Theme.shared.contrastingColor
+        mainViewController.tabBar.unselectedItemTintColor = Theme.shared.shadowColor.withAlphaComponent(0.8)
     }
     
 }

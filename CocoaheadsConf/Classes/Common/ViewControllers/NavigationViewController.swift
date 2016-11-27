@@ -20,7 +20,7 @@ class NavigationViewController: UINavigationController {
         self.navigationBar.barTintColor = Theme.shared.mainColor
         self.navigationBar.isTranslucent = false
         self.navigationBar.shadowImage = UIImage(color: Theme.shared.mainColor)
-        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Theme.shared.constrastingColor]
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Theme.shared.contrastingColor]
     }
     
 

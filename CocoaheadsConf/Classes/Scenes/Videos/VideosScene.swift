@@ -26,6 +26,7 @@ class VideosScene: Scene, CacheUpdatable {
     }
     
     func updateFromCache() {
+        rootViewController.navigationController?.navigationBar.barTintColor = Theme.shared.mainColor
         rootViewController.updateList()
     }
     
