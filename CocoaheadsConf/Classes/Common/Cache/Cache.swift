@@ -60,6 +60,8 @@ class Cache: NSObject {
         let allVideos: [VideoModel] = try json.value(for: "videos")
         allVideos.forEach({ videos[$0.id] = $0 })
         event = try json.value(for: "event")
+        let theme: Theme = try json.value(for: "theme")
+        Theme.shared.apply(theme: theme)
     }
     
 }

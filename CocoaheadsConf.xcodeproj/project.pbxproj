@@ -22,7 +22,13 @@
 		1519A6991DE341160044EE8C /* TalkDetailUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A6981DE341160044EE8C /* TalkDetailUnits.swift */; };
 		1519A69D1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */; };
 		1519A69E1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */; };
+		1520BD0C1DEA5A5B0080DF4A /* SFSafariViewController+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520BD0B1DEA5A5B0080DF4A /* SFSafariViewController+URL.swift */; };
+		1520BD0F1DEA5C250080DF4A /* CodeOfConductUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520BD0E1DEA5C250080DF4A /* CodeOfConductUnit.swift */; };
+		1520BD121DEA5C570080DF4A /* CodeOfConductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520BD101DEA5C570080DF4A /* CodeOfConductCollectionViewCell.swift */; };
+		1520BD131DEA5C570080DF4A /* CodeOfConductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1520BD111DEA5C570080DF4A /* CodeOfConductCollectionViewCell.xib */; };
 		15256C221DE6A1EA00263E92 /* String+Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256C211DE6A1EA00263E92 /* String+Capitalize.swift */; };
+		15256D0E1DE7BCEA00263E92 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D0D1DE7BCEA00263E92 /* Theme.swift */; };
+		15256D121DE7C4EE00263E92 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D111DE7C4EE00263E92 /* UIImage+Color.swift */; };
 		15256D151DE8E7E100263E92 /* EventScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D141DE8E7E100263E92 /* EventScene.swift */; };
 		15256D171DE8E83C00263E92 /* EventMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D161DE8E83C00263E92 /* EventMainViewController.swift */; };
 		15256D191DE8E88B00263E92 /* EventMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D181DE8E88B00263E92 /* EventMainView.swift */; };
@@ -42,7 +48,6 @@
 		15256D421DEA3BEF00263E92 /* EventFollowOnTwitterUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D411DEA3BEF00263E92 /* EventFollowOnTwitterUnit.swift */; };
 		15256D451DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D431DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.swift */; };
 		15256D461DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15256D441DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.xib */; };
-		15256D481DEA41CD00263E92 /* DisplayTwitterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D471DEA41CD00263E92 /* DisplayTwitterHelper.swift */; };
 		15256D4A1DEA44E200263E92 /* EventLocationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15256D491DEA44E200263E92 /* EventLocationPin.swift */; };
 		152F38C81DCD0C1A00FE9ECF /* TalksScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38C71DCD0C1A00FE9ECF /* TalksScene.swift */; };
 		152F38CA1DCD0C2500FE9ECF /* SponsorsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F38C91DCD0C2500FE9ECF /* SponsorsScene.swift */; };
@@ -150,7 +155,13 @@
 		1519A6981DE341160044EE8C /* TalkDetailUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailUnits.swift; sourceTree = "<group>"; };
 		1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkDetailDescriptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		1520BD0B1DEA5A5B0080DF4A /* SFSafariViewController+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SFSafariViewController+URL.swift"; sourceTree = "<group>"; };
+		1520BD0E1DEA5C250080DF4A /* CodeOfConductUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeOfConductUnit.swift; sourceTree = "<group>"; };
+		1520BD101DEA5C570080DF4A /* CodeOfConductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeOfConductCollectionViewCell.swift; sourceTree = "<group>"; };
+		1520BD111DEA5C570080DF4A /* CodeOfConductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeOfConductCollectionViewCell.xib; sourceTree = "<group>"; };
 		15256C211DE6A1EA00263E92 /* String+Capitalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Capitalize.swift"; sourceTree = "<group>"; };
+		15256D0D1DE7BCEA00263E92 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		15256D111DE7C4EE00263E92 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		15256D141DE8E7E100263E92 /* EventScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScene.swift; sourceTree = "<group>"; };
 		15256D161DE8E83C00263E92 /* EventMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMainViewController.swift; sourceTree = "<group>"; };
 		15256D181DE8E88B00263E92 /* EventMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMainView.swift; sourceTree = "<group>"; };
@@ -170,7 +181,6 @@
 		15256D411DEA3BEF00263E92 /* EventFollowOnTwitterUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFollowOnTwitterUnit.swift; sourceTree = "<group>"; };
 		15256D431DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFollowOnTwitterCollectionViewCell.swift; sourceTree = "<group>"; };
 		15256D441DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventFollowOnTwitterCollectionViewCell.xib; sourceTree = "<group>"; };
-		15256D471DEA41CD00263E92 /* DisplayTwitterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTwitterHelper.swift; sourceTree = "<group>"; };
 		15256D491DEA44E200263E92 /* EventLocationPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLocationPin.swift; sourceTree = "<group>"; };
 		152F38C71DCD0C1A00FE9ECF /* TalksScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalksScene.swift; sourceTree = "<group>"; };
 		152F38C91DCD0C2500FE9ECF /* SponsorsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorsScene.swift; sourceTree = "<group>"; };
@@ -310,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				1519A6961DE33A3B0044EE8C /* ConferenceStyleKit.swift */,
+				15256D0D1DE7BCEA00263E92 /* Theme.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -321,6 +332,16 @@
 				1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */,
 			);
 			name = TalkDescriptionUnit;
+			sourceTree = "<group>";
+		};
+		1520BD0D1DEA5C170080DF4A /* CodeOfConductUnit */ = {
+			isa = PBXGroup;
+			children = (
+				1520BD0E1DEA5C250080DF4A /* CodeOfConductUnit.swift */,
+				1520BD101DEA5C570080DF4A /* CodeOfConductCollectionViewCell.swift */,
+				1520BD111DEA5C570080DF4A /* CodeOfConductCollectionViewCell.xib */,
+			);
+			name = CodeOfConductUnit;
 			sourceTree = "<group>";
 		};
 		15256D131DE8E7D600263E92 /* Event */ = {
@@ -346,6 +367,7 @@
 		15256D1F1DE8ED6700263E92 /* Units */ = {
 			isa = PBXGroup;
 			children = (
+				1520BD0D1DEA5C170080DF4A /* CodeOfConductUnit */,
 				15256D401DEA3BD500263E92 /* FollowOnTwitterUnit */,
 				15256D351DE9FC2B00263E92 /* EventDateUnit */,
 				15256D2E1DE9F26C00263E92 /* MapLocationUnit */,
@@ -431,6 +453,8 @@
 				15256C211DE6A1EA00263E92 /* String+Capitalize.swift */,
 				DDABFB101DE72AEC00351DA8 /* UserDefaults+CHConf.swift */,
 				DD86972B1DE76A3D0034DAE8 /* String+CMTime.swift */,
+				15256D111DE7C4EE00263E92 /* UIImage+Color.swift */,
+				1520BD0B1DEA5A5B0080DF4A /* SFSafariViewController+URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -680,7 +704,6 @@
 			isa = PBXGroup;
 			children = (
 				15D88FE31DD3741F0055F781 /* NavigationViewController.swift */,
-				15256D471DEA41CD00263E92 /* DisplayTwitterHelper.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -905,6 +928,7 @@
 				158F3E621DE3E8EA0076CDB6 /* TalkDetailStatsCollectionViewCell.xib in Resources */,
 				15256D261DE8ED9F00263E92 /* ReminderCollectionViewCell.xib in Resources */,
 				1515D1131DDA7913008690FD /* SpeakerDetailHeaderCollectionViewCell.xib in Resources */,
+				1520BD131DEA5C570080DF4A /* CodeOfConductCollectionViewCell.xib in Resources */,
 				15BD91651DC95DF90088AEB4 /* Assets.xcassets in Resources */,
 				15BBD89E1DD9EA2D00A9A45F /* SpeakerHeroCollectionViewCell.xib in Resources */,
 				15DDF9331DD122E700AD4B93 /* LocalData.json in Resources */,
@@ -990,9 +1014,10 @@
 				158F3E5A1DE3CB0E0076CDB6 /* SpeakerDetailSmallTalkCollectionViewCell.swift in Sources */,
 				1515D11E1DDCE47A008690FD /* SpeakerDetailSocialCollectionViewCell.swift in Sources */,
 				15256C221DE6A1EA00263E92 /* String+Capitalize.swift in Sources */,
+				15256D0E1DE7BCEA00263E92 /* Theme.swift in Sources */,
 				15BBD8971DD9E6B000A9A45F /* SpeakersListState.swift in Sources */,
 				15DDF9381DD1284500AD4B93 /* Cache.swift in Sources */,
-				15256D481DEA41CD00263E92 /* DisplayTwitterHelper.swift in Sources */,
+				1520BD0C1DEA5A5B0080DF4A /* SFSafariViewController+URL.swift in Sources */,
 				15256D381DE9FC4300263E92 /* EventDateCollectionViewCell.swift in Sources */,
 				155BF1331DDD302D00985B9F /* LabelUnit.swift in Sources */,
 				DD3A5AEF1DE60E130016882D /* VideosViewController.swift in Sources */,
@@ -1001,6 +1026,7 @@
 				15BBD8A71DDA414200A9A45F /* SpeakerDetailView.swift in Sources */,
 				15A761AA1DE658E40006333D /* TalkDetailPlayVideoUnit.swift in Sources */,
 				15BBD89D1DD9EA2D00A9A45F /* SpeakerHeroCollectionViewCell.swift in Sources */,
+				1520BD0F1DEA5C250080DF4A /* CodeOfConductUnit.swift in Sources */,
 				DD86972C1DE76A3D0034DAE8 /* String+CMTime.swift in Sources */,
 				15BBD8A51DDA413600A9A45F /* SpeakerDetailViewController.swift in Sources */,
 				15D88FDE1DD35E420055F781 /* TimeDisplayCollectionViewCell.swift in Sources */,
@@ -1022,6 +1048,7 @@
 				15F9E4271DDF7A4600C05ECC /* TalkDetailView.swift in Sources */,
 				15256D3B1DE9FC5000263E92 /* EventDateUnit.swift in Sources */,
 				15256D451DEA3C9900263E92 /* EventFollowOnTwitterCollectionViewCell.swift in Sources */,
+				15256D121DE7C4EE00263E92 /* UIImage+Color.swift in Sources */,
 				1519A68E1DE287B50044EE8C /* DetailHeaderCollectionViewCell.swift in Sources */,
 				15256D191DE8E88B00263E92 /* EventMainView.swift in Sources */,
 				15BBD89A1DD9E9BD00A9A45F /* SpeakerHeroUnit.swift in Sources */,
@@ -1052,6 +1079,7 @@
 				15BBD8AB1DDA415900A9A45F /* SpeakerDetailViewState.swift in Sources */,
 				15DDF9301DD11E9300AD4B93 /* RoomModel.swift in Sources */,
 				15BD915E1DC95DF90088AEB4 /* AppDelegate.swift in Sources */,
+				1520BD121DEA5C570080DF4A /* CodeOfConductCollectionViewCell.swift in Sources */,
 				15BBD8931DD64ABE00A9A45F /* SpeakerListView.swift in Sources */,
 				15256D331DE9F29400263E92 /* MapLocationCollectionViewCell.swift in Sources */,
 				15DDF93A1DD1298800AD4B93 /* Date+Marshal.swift in Sources */,
@@ -1204,6 +1232,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.cocoaheads.CocoaheadsConf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1219,6 +1248,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.cocoaheads.CocoaheadsConf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class SponsorsScene: Scene {
+class SponsorsScene: Scene, CacheUpdatable {
 
     let name = "Patrocinadores"
     let initialViewController: UIViewController
@@ -22,6 +22,10 @@ class SponsorsScene: Scene {
         rootViewController.didSelectSponsor = { [unowned self] sponsor in
             self.present(sponsor: sponsor)
         }
+    }
+    
+    func updateFromCache() {
+        rootViewController.navigationController?.navigationBar.barTintColor = Theme.shared.mainColor
     }
     
     func present(sponsor: SponsorModel) {

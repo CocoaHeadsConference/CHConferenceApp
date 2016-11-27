@@ -16,9 +16,8 @@ class TalksDashboardView: CollectionStackView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor(hexString: "004D40")
+        self.backgroundColor = Theme.shared.mainColor
         self.container.lineSpace = 1
-        self.container.sectionInset = UIEdgeInsets(bottom: 48)
     }
     
     required init?(coder aDecoder: NSCoder) {

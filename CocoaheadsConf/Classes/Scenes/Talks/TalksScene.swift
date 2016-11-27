@@ -32,6 +32,7 @@ class TalksScene: Scene, CacheUpdatable {
     }
     
     func updateFromCache() {
+        rootViewController.navigationController?.navigationBar.barTintColor = Theme.shared.mainColor
         rootViewController.updateListState()
     }
     

@@ -1,5 +1,5 @@
 //
-//  DisplayTwitterHelper.swift
+//  SFSafariViewController+URL.swift
 //  CocoaheadsConf
 //
 //  Created by Bruno Bilescky on 26/11/16.
@@ -9,16 +9,9 @@
 import UIKit
 import SafariServices
 
-class DisplayTwitterHelper {
+extension SFSafariViewController {
 
-    private init() {
-        
-    }
-    
-    static func display(twitter: String, from viewController:UIViewController) {
-        guard let url = URL(string:"https://twitter.com/\(twitter)") else {
-            return
-        }
+    static func display(url: URL, from viewController:UIViewController) {
         let safariViewController = SFSafariViewController(url: url)
         viewController.present(safariViewController, animated: true, completion: nil)
     }

@@ -36,7 +36,7 @@ class SpeakerHeroCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         speakerImageView.tintColor = .white
-        self.speakerImageView.layer.borderColor = UIColor.black.withAlphaComponent(0.8).cgColor
+        self.speakerImageView.layer.borderColor = Theme.shared.shadowColor.withAlphaComponent(0.8).cgColor
         self.speakerImageView.layer.borderWidth = 1
         self.speakerImageView.layer.cornerRadius = 32
     }

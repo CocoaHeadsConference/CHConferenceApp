@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class EventScene: Scene, CacheUpdatable {
     
@@ -19,16 +20,17 @@ class EventScene: Scene, CacheUpdatable {
         rootViewController = EventMainViewController(with: self.cache)
         initialViewController = NavigationViewController(rootViewController: rootViewController)
         initialViewController.tabBarItem = UITabBarItem(title: "Evento", image: #imageLiteral(resourceName: "icon-event"), tag: 0)
-        rootViewController.didTapTwitterCallback = { [unowned self] event in
-            self.displayTwitter(for: event)
+        rootViewController.didTapSafariCallback = { [unowned self] url in
+            self.display(url: url)
         }
     }
     
-    func displayTwitter(for event: EventModel) {
-        DisplayTwitterHelper.display(twitter: event.twitterHandle, from: rootViewController)
+    func display(url: URL) {
+        SFSafariViewController.display(url: url, from: rootViewController)
     }
     
     func updateFromCache() {
+        rootViewController.navigationController?.navigationBar.barTintColor = Theme.shared.mainColor
         rootViewController.updateListState()
     }
 

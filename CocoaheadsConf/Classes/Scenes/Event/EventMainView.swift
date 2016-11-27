@@ -13,17 +13,17 @@ class EventMainView: CollectionStackView {
 
     var state: EventMainState = EventMainState() {
         didSet {
-            self.container.state = ComposeEventView(with: state, twitterCallback: self.didTapTwitterCallback)
+            self.container.state = ComposeEventView(with: state, safariCallback: self.didTapSafariCallback)
         }
     }
 
-    var didTapTwitterCallback: ((EventModel)-> Void)?
+    var didTapSafariCallback: ((URL)-> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         container.lineSpace = 1
         self.container.alwaysBounceVertical = true
-        self.backgroundColor = UIColor(hexString: "004D40")
+        self.backgroundColor = Theme.shared.mainColor
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,7 +32,7 @@ class EventMainView: CollectionStackView {
 
 }
 
-func ComposeEventView(with state: EventMainState, twitterCallback: ((EventModel)-> Void)?)-> [ComposingUnit] {
+func ComposeEventView(with state: EventMainState, safariCallback: ((URL)-> Void)?)-> [ComposingUnit] {
     var units: [ComposingUnit] = []
     guard let event = state.event else {
         return units
@@ -42,11 +42,26 @@ func ComposeEventView(with state: EventMainState, twitterCallback: ((EventModel)
         let subline = LabelUnit(id: "subline", text: event.subline, font: UIFont.systemFont(ofSize: 15), color: .white, verticalSpace: 8)
         let mapUnit = MapLocationUnit(location: event.location)
         let dateUnit = EventDateUnit(event: event)
-        let spaceForTwitter = ViewUnit<UIView>(id:"twitter-separator", traits:[.height(8)])
-        let twitterUnit = EventFollowOnTwitterUnit(color: UIColor(hexString: "1abc9c"), twitter: event.twitterHandle) {
-            twitterCallback?(event)
+        return [headline, subline, mapUnit, dateUnit]
+    }
+    units.add(manyIfLet: event.twitterHandle) { twitter in
+        let topSpacer = ViewUnit<UIView>(id:"twitter-top", traits:[.height(8)])
+        let bottomSpacer = ViewUnit<UIView>(id:"twitter-bottom", traits:[.height(8)])
+        let twitterUnit = EventFollowOnTwitterUnit(color: Theme.shared.actionColor, twitter: twitter) {
+            guard let url = URL(string:"https://twitter.com/\(twitter)") else {
+                return
+            }
+            safariCallback?(url)
         }
-        return [headline, subline, mapUnit, dateUnit, spaceForTwitter, twitterUnit]
+        return [topSpacer, twitterUnit, bottomSpacer]
+    }
+    units.add(manyIfLet: event.codeOfConductURL) { url in
+        let topSpacer = ViewUnit<UIView>(id:"codeConduct-top", traits:[.height(8)])
+        let bottomSpacer = ViewUnit<UIView>(id:"codeConduct-bottom", traits:[.height(8)])
+        let codeConductUnit = CodeOfConductUnit(color:Theme.shared.actionColor) {
+            safariCallback?(url)
+        }
+        return [topSpacer, codeConductUnit, bottomSpacer]
     }
     return units
 }

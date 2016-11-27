@@ -16,7 +16,7 @@ class EventMainViewController: UIViewController {
         return self.view as? EventMainView
     }
     
-    var didTapTwitterCallback: ((EventModel)-> Void)?
+    var didTapSafariCallback: ((URL)-> Void)?
     
     init(with cache: Cache) {
         self.cache = cache
@@ -43,12 +43,13 @@ class EventMainViewController: UIViewController {
         guard let event = cache.event else {
             return
         }
-        self.eventView?.didTapTwitterCallback = { [unowned self] event in
-            self.didTapTwitterCallback?(event)
+        self.eventView?.didTapSafariCallback = { [unowned self] url in
+            self.didTapSafariCallback?(url)
         }
         self.title = event.name
         self.navigationController?.tabBarItem.title = "Evento"
         self.eventView?.state.event = event
+        self.eventView?.backgroundColor = Theme.shared.mainColor
     }
     
 }

@@ -17,8 +17,9 @@ struct EventModel: Unmarshaling {
     let subline: String
     let startDate: Date
     let endDate: Date
-    let twitterHandle: String
+    let twitterHandle: String?
     let location: LocationModel
+    let codeOfConductURL: URL?
     
     init(object: MarshaledObject) throws {
         name = try object.value(for: "name")
@@ -27,7 +28,8 @@ struct EventModel: Unmarshaling {
         startDate = try object.value(for: "startDate")
         endDate = try object.value(for: "endDate")
         location = try object.value(for: "location")
-        twitterHandle = try object.value(for: "twitter")
+        twitterHandle = try? object.value(for: "twitter")
+        codeOfConductURL = try? object.value(for: "codeOfConduct")
     }
     
 }

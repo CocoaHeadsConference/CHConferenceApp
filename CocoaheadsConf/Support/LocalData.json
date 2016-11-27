@@ -5,6 +5,7 @@
 		"subline": "Reunindo mais de 150 desenvolvedores, com muito conteúdo sobre iOS, watchOS, macOS e tvOS. Venha fazer parte!",
 		"startDate":"2016-12-02T16:30:00-0300",
 		"twitter": "cocoaheadsconf",
+		"codeOfConduct":"https://github.com/CocoaHeadsConference/CocoaHeadsConferenceCodigoDeConduta/blob/master/README.md",
 		"endDate":"2016-12-03T17:00:00-0300",
 		"location": {
 			"address":"Avenida Das Nações Unidas, 3007 \nOsasco - SP",
@@ -14,69 +15,75 @@
 			}
 		}
 	},
+	"theme": {
+		"main": "004D40",
+		"action": "1abc9c",
+		"contrasting": "FFFFFF",
+		"shadow": "000000"
+	},
 	"sponsors":[
 		{
 			"id": 0,
 			"title": "iFood",
 			"url": "https://www.ifood.com.br/",
 			"image": "http://cocoaheadsconference.com.br/images/sponsors/6.png",
-			"type": "",
+			"type": ""
 		},
 		{
 			"id": 1,
 			"title": "Twitter",
 			"url": "http://www.twitter.com/",
 			"image": "http://cocoaheadsconference.com.br/images/sponsors/7.png",
-			"type": "",
+			"type": ""
 		},
 		{
 			"id": 2,
 			"title": "Work&Co",
 			"url": "http://work.co",
 			"image": "http://cocoaheadsconference.com.br/images/sponsors/8.png",
-			"type": "",
+			"type": ""
 		},
 		{
 			"id": 3,
 			"title": "AvenueCode",
 			"url": "http://www.avenuecode.com/",
 			"image": "http://cocoaheadsconference.com.br/images/sponsors/9.png",
-			"type": "",
+			"type": ""
 		},
 		{
 			"id": 4,
 			"title": "Sympla",
 			"url": "http://www.sympla.com.br/",
 			"image": "http://cocoaheadsconference.com.br/images/sponsors/1.png",
-			"type": "",
+			"type": ""
 		},
 		{
 			"id": 5,
 			"title": "Abacomm",
 			"url": "http://abacomm.com.br/",
 			"image": "http://cocoaheadsconference.com.br/images/sponsors/2.png",
-			"type": "",
+			"type": ""
 		},
 		{
 			"id": 6,
 			"title": "iMasters",
 			"url": "http://imasters.com.br/",
 			"image": "http://cocoaheadsconference.com.br/images/sponsors/3.png",
-			"type": "",
+			"type": ""
 		},
 		{
 			"id": 7,
 			"title": "Mercado Livre",
 			"url": "http://www.mercadolivre.com.br/",
 			"image": "http://cocoaheadsconference.com.br/images/sponsors/4.png",
-			"type": "",
+			"type": ""
 		},
 		{
 			"id": 8,
 			"title": "Concrete Solutions",
 			"url": "http://www.concretesolutions.com.br/",
 			"image": "http://cocoaheadsconference.com.br/images/sponsors/5.png",
-			"type": "",
+			"type": ""
 		}
 	],
 	"speakers":[
