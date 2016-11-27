@@ -18,7 +18,7 @@ class TalksScene: Scene, CacheUpdatable {
         self.cache = cache
         rootViewController = TalksDashboardViewController(with: self.cache)
         initialViewController = NavigationViewController(rootViewController: rootViewController)
-        
+        initialViewController.tabBarItem = UITabBarItem(title: "Atividades", image: #imageLiteral(resourceName: "schedule"), tag: 0)
         rootViewController.displayTalkCallback = { [unowned self] talk in
             let viewController = self.viewController(for: talk)
             self.rootViewController.navigationController?.pushViewController(viewController, animated: true)
