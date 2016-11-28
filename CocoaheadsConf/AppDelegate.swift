@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    lazy var mainScene: MainScene<URLSessionFetcher> = {
+    lazy var mainScene: MainScene<LocalDataFetcher> = {
         let cache = Cache.default
         let talksScene = TalksScene(cache: cache)
         let speakersScene = SpeakersScene(cache: cache)

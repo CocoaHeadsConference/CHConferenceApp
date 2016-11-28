@@ -42,12 +42,12 @@ struct TalkModel: Unmarshaling {
         
         var color: UIColor {
             switch self {
-            case .talk: return UIColor(hexString: "D84315")
-            case .workshop: return UIColor(hexString: "00838F")
-            case .opening: return UIColor(hexString: "AD1457")
-            case .closing: return UIColor(hexString: "AD1457")
-            case .breaktime: return UIColor(hexString: "F9A825")
-            case .setup: return UIColor(hexString: "9E9D24")
+            case .talk: return Theme.shared.talkColor
+            case .workshop: return Theme.shared.workshopColor
+            case .opening: return Theme.shared.openingColor
+            case .closing: return Theme.shared.closingColor
+            case .breaktime: return Theme.shared.breaktimeColor
+            case .setup: return Theme.shared.setupColor
             }
         }
         
