@@ -39,7 +39,9 @@ struct MainScene<NF: NetworkFetcher>: Scene, CacheUpdatable {
     func updateFromCache() {
         mainViewController.tabBar.barTintColor = Theme.shared.mainColor
         mainViewController.tabBar.tintColor = Theme.shared.contrastingColor
-        mainViewController.tabBar.unselectedItemTintColor = Theme.shared.shadowColor.withAlphaComponent(0.8)
+        if #available(iOS 10.0, *) {
+            mainViewController.tabBar.unselectedItemTintColor = Theme.shared.shadowColor.withAlphaComponent(0.8)
+        }
     }
     
 }

@@ -17,10 +17,10 @@ struct SpeakerDetailHeaderUnit: TypedUnit {
     
     let imageURL: URL
     let name: String
-    let twitter: String
+    let twitter: String?
     let heightUnit: DimensionUnit
     
-    init(imageURL: URL, name: String, twitter: String) {
+    init(imageURL: URL, name: String, twitter: String?) {
         self.imageURL = imageURL
         self.name = name
         self.twitter = twitter

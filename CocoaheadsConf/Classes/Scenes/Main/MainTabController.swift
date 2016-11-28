@@ -14,7 +14,9 @@ class MainTabController: UITabBarController {
         super.viewDidLoad()
         self.tabBar.barTintColor = Theme.shared.mainColor
         self.tabBar.tintColor = Theme.shared.contrastingColor
-        self.tabBar.unselectedItemTintColor = Theme.shared.shadowColor.withAlphaComponent(0.8)
+        if #available(iOS 10.0, *) {
+            self.tabBar.unselectedItemTintColor = Theme.shared.shadowColor.withAlphaComponent(0.8)
+        }
     }
 
 }

@@ -238,23 +238,22 @@
 		},
 		{
 			"id": 14,
-			"name": "Edson(Mercado Livre)",
-			"image": "",
-			"title": "Mercado Livre",
+			"name": "Henrique Leite",
+			"image": "images/team/henrique-leite.png",
+			"title": "Engenheiro de Software Sr no MercadoPago.com",
 			"bio": "",
 			"citation": "",
-			"twitterHandle": "",
 			"linkedinHandler": "",
 			"githubHandler": ""
 		},
 		{
 			"id": 15,
 			"name": "John Calistro",
-			"image": "",
-			"title": "",
-			"bio": "",
+			"image": "images/team/john-calistro.png",
+			"title": "Branch Evangelist",
+			"bio": "Evangelista da Branch, co-organizador das comunidades CocoaHeads, Twitter Developers, FB Developers Circle e Mobile Growth, empreendedor, formado em contabilidade e processamento de dados, graduando em Sistemas da Informação, GTD e IoT entusiasta, desenvolvedor de software a mais de 3 décadas, nas horas vagas gosta de brincar com sua filha (humana) e seu filho (canino), sair com a esposa e assistir séries de tv.",
 			"citation": "",
-			"twitterHandle": "",
+			"twitterHandle": "johncalistro",
 			"linkedinHandler": "",
 			"githubHandler": ""
 		},
@@ -272,33 +271,43 @@
 		{
 			"id": 17,
 			"name": "Fellipe Caetano",
-			"image": "images/team/fellipecaetano.png",
+			"image": "images/team/fellipe-caetano.jpg",
 			"title": "Não Definido",
 			"bio": "Não definido",
 			"citation": "",
-			"twitterHandle": "bgondim",
-			"linkedinHandler": "",
-			"githubHandler": ""
-		},
-		{
-			"id": 18,
-			"name": "Raffa Bhaktin",
-			"image": "images/team/raffabhaktin.png",
-			"title": "Não definido",
-			"bio": "Não definido",
-			"citation": "",
-			"twitterHandle": "bgondim",
 			"linkedinHandler": "",
 			"githubHandler": ""
 		},
 		{
 			"id": 19,
 			"name": "João Paulo Ros",
-			"image": "images/team/joaopauloros.png",
+			"image": "images/team/joao-paulo-ros.png",
 			"title": "Não definido",
 			"bio": "Não definido",
 			"citation": "",
-			"twitterHandle": "bgondim",
+			"twitterHandle": "jpros",
+			"linkedinHandler": "",
+			"githubHandler": ""
+		},
+		{
+			"id": 20,
+			"name": "Cristiano Pio",
+			"image": "images/team/cristiano-pio.png",
+			"title": "Product Owner @Sympla.",
+			"bio": "Não definido",
+			"citation": "",
+			"twitterHandle": "orsipio",
+			"linkedinHandler": "",
+			"githubHandler": ""
+		},
+		{
+			"id": 21,
+			"name": "Thiago Holanda",
+			"image": "images/team/thiago-holanda.png",
+			"title": "Não Definido",
+			"bio": "Não definido",
+			"citation": "",
+			"twitterHandle": "tholanda",
 			"linkedinHandler": "",
 			"githubHandler": ""
 		}
@@ -316,22 +325,22 @@
 		},
 		{
 			"id":2,
-			"title": "Sala Workshop1",
+			"title": "Sala Workshop 1",
 			"capacity": 8
 		},
 		{
 			"id":3,
-			"title": "Sala Workshop2",
+			"title": "Sala Workshop 2",
 			"capacity": 6
 		},
 		{
 			"id":5,
-			"title": "Sala Workshop3",
+			"title": "CodeLab",
 			"capacity": 8
 		},
 		{
 			"id":6,
-			"title": "Sala Workshop4",
+			"title": "Sala Cocoaheads",
 			"capacity": 6
 		},
 		{
@@ -370,8 +379,8 @@
 			"room": 1,
 			"date": "2016-12-02T17:30:00-0300",
 			"duration": 30,
-			"summary": "",
-			"description": "",
+			"summary": "Uma brilhante mente da equipe de Desenvolvimento do Mercado Pago sugeriu o desenvolvimento de um app de ofertas, vésperas da Black Friday!",
+			"description": "Sem a contratação de uma agência, tivemos que \"meter as caras\" no mundo dos apps. Venha saber os desafios e aprendizados do desenvolvimento da solução do iOS com SWIFT 3.0 e toda a arquitetura bolada em menos de 2 meses da Black Friday.",
 			"type": "talk"
 		},
 		{
@@ -398,24 +407,24 @@
 		},
 		{
 			"id": 5,
-			"title": "Sympla & Mobile Apps",
-			"speaker": 0,
+			"title": "Lessons Learned",
+			"speaker": 20,
 			"room": 1,
 			"date": "2016-12-02T19:30:00-0300",
 			"duration": 40,
-			"summary": "(atividade aguardando confirmação)",
-			"description": "Talk reservada para equipe técnica da Sympla. Atividade aguardando confirmação..",
+			"summary": "Lições aprendendidas no desenvolvimento do app da Sympla",
+			"description": "Contarei um pouco do que aprendemos no desenvolvimento dos aplicativos iOS da Sympla, passando pela decisão de internalizar o desenvolvimento até a consolidação de um processo de gestão de produto aplicado ao mobile.  ",
 			"type": "talk"
 		},
 		{
 			"id": 6,
-			"title": "Branch - Deep Links",
-			"speaker": 0,
+			"title": "Deep Links",
+			"speaker": 15,
 			"room": 1,
 			"date": "2016-12-02T20:10:00-0300",
 			"duration": 30,
 			"summary": "Entendendo deep links e como facilitar sua vida usando o Branch.io",
-			"description": "A Branch.io envia um de seus engenheiros mobile para o Brasil para falar sobre Deep Links. Esse recurso tão útil e ainda tão pouco utilizado pelos apps nacionais!",
+			"description": "Entendendo deep links e como facilitar sua vida usando o Branch.io",
 			"type": "talk"
 		},
 		{
@@ -609,22 +618,22 @@
 			"id": 24,
 			"title": "SiriKit",
 			"speaker": 19,
-			"room": 3,
-			"date": "2016-12-03T13:00:00-0300",
-			"duration": 30,
+			"room": 2,
+			"date": "2016-12-03T11:30:00-0300",
+			"duration": 60,
 			"summary": "Integre seu app com sua voz!",
 			"description": "Workshop mostrando, na prática, como suportar comandos de voz da Siri dentro do seu app.",
 			"type": "workshop"
 		},
 		{
 			"id": 25,
-			"title": "SiriKit",
-			"speaker": 19,
-			"room": 3,
-			"date": "2016-12-03T14:00:00-0300",
-			"duration": 30,
-			"summary": "Integre seu app com sua voz!",
-			"description": "Workshop mostrando, na prática, como suportar comandos de voz da Siri dentro do seu app.",
+			"title": "Arquitetura Clean",
+			"speaker": 7,
+			"room": 2,
+			"date": "2016-12-03T12:30:00-0300",
+			"duration": 60,
+			"summary": "Arquitetura Clean",
+			"description": "Arquitetura Clean",
 			"type": "workshop"
 		},
 		{
@@ -640,13 +649,35 @@
 		},
 		{
 			"id": 27,
-			"title": "HomeKit",
-			"speaker": 18,
-			"room": 1,
+			"title": "Clean Interfaces - Como foi construido o app da Conferência",
+			"speaker": 6,
+			"room": 2,
+			"date": "2016-12-03T13:30:00-0300",
+			"duration": 60,
+			"summary": "Venha descobrir como foi construído o aplicativo da conferência e o porquê das escolhas feitas",
+			"description": "Neste workshop, Bruno irá mostrar como foi desenvolvido o aplicativo da conferência, desde a arquitetura adotada, até a criação das interfaces com XIB + códigos",
+			"type": "workshop"
+		},
+		{
+			"id": 28,
+			"title": "Backend com Zewo - REST",
+			"speaker": 7,
+			"room": 2,
+			"date": "2016-12-03T14:30:00-0300",
+			"duration": 60,
+			"summary": "Backend com Zewo - REST",
+			"description": "Backend com Zewo - REST",
+			"type": "workshop"
+		},
+		{
+			"id": 29,
+			"title": "Backend com Zewo - GraphQL",
+			"speaker": 21,
+			"room": 2,
 			"date": "2016-12-03T15:30:00-0300",
-			"duration": 30,
-			"summary": "Integre seu app com sua casa!",
-			"description": "Workshop mostrando, na prática, como desenvolver um app que utiliza as API's do HomeKit. Atividade aguardando confirmação.",
+			"duration": 60,
+			"summary": "Backend com Zewo - GraphQL",
+			"description": "Backend com Zewo - GraphQL",
 			"type": "workshop"
 		}
 	],

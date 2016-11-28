@@ -54,11 +54,11 @@ func ComposeSpeakerDetailView(with state: SpeakerDetailViewState, urlCallback:((
         return talks.map { SpeakerDetailSmallTalkUnit(identifier: String($0.id), title: $0.title, summary: $0.summary, date: timeDateFormatter.string(from: $0.date).capitalized, room: $0.room?.title, color: $0.type.color) }
     }
     
-    units.add(manyIf: speaker.twitterHandle.characters.count > 0) {
+    units.add(manyIfLet: speaker.twitterHandle) { twitter in
         let topSpacer = ViewUnit<UIView>(id:"twitter-top", traits: [.height(8)])
         let bottomSpacer = ViewUnit<UIView>(id:"twitter-bottom", traits: [.height(8)])
-        let unit = EventFollowOnTwitterUnit(color: Theme.shared.actionColor, twitter: speaker.twitterHandle) {
-            guard let url = URL(string:"https://twitter.com/\(speaker.twitterHandle)") else {
+        let unit = EventFollowOnTwitterUnit(color: Theme.shared.actionColor, twitter: twitter) {
+            guard let url = URL(string:"https://twitter.com/\(twitter)") else {
                 return
             }
             urlCallback?(url)

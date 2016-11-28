@@ -18,9 +18,9 @@ struct SpeakerModel: Unmarshaling {
     let headline: String
     let citation: String
     let bio: String
-    let twitterHandle: String
-    let linkedInHandle: String
-    let githubHandle: String
+    let twitterHandle: String?
+    let linkedInHandle: String?
+    let githubHandle: String?
     let imageHandle: String
     
     init(object: MarshaledObject) throws {
@@ -31,9 +31,9 @@ struct SpeakerModel: Unmarshaling {
         citation = try object.value(for: "citation")
         imageHandle = try object.value(for: "image")
         
-        twitterHandle = try object.value(for: "twitterHandle")
-        linkedInHandle = try object.value(for: "linkedinHandler")
-        githubHandle = try object.value(for: "githubHandler")
+        twitterHandle = try? object.value(for: "twitterHandle")
+        linkedInHandle = try? object.value(for: "linkedinHandler")
+        githubHandle = try? object.value(for: "githubHandler")
     }
     
     var imageURL: URL {

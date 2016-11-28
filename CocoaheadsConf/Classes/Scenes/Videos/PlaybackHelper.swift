@@ -29,7 +29,9 @@ struct PlaybackHelper {
         let p = AVPlayerViewController()
         
         p.allowsPictureInPicturePlayback = true
-        p.updatesNowPlayingInfoCenter = true
+        if #available(iOS 10.0, *) {
+            p.updatesNowPlayingInfoCenter = true
+        }
         
         return p
     }()

@@ -29,7 +29,12 @@ class SpeakerHeroCollectionViewCell: UICollectionViewCell {
     
     var speakerTwitter: String? {
         didSet {
-            speakerTwitterLabel.text = "@\(speakerTwitter ?? "")"
+            if let twitter = speakerTwitter {
+                speakerTwitterLabel.text =  "@\(twitter)"
+            }
+            else {
+                speakerTwitterLabel.text =  ""
+            }
         }
     }
     
