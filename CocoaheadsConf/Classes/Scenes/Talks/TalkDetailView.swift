@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import NibDesignable
 import Compose
 
+@IBDesignable
 class TalkDetailView: CollectionStackView {
     
     var didTapPlayCallback: (()-> Void)?

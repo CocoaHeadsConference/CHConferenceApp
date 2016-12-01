@@ -8,7 +8,6 @@
 
 import UIKit
 import Compose
-import NibDesignable
 
 @IBDesignable
 class SpeakerDetailView: CollectionStackView {
@@ -38,7 +37,7 @@ class SpeakerDetailView: CollectionStackView {
 func ComposeSpeakerDetailView(with state: SpeakerDetailViewState, urlCallback:((URL)-> Void)?)-> [ComposingUnit] {
     
     guard let speaker = state.speaker else { return [] }
-
+    
     let header = SpeakerDetailHeaderUnit(imageURL: speaker.imageURL, name: speaker.name, twitter: speaker.twitterHandle)
     
     let desc = SpeakerDetailDescriptionUnit(headline: speaker.headline, bio: speaker.bio)
