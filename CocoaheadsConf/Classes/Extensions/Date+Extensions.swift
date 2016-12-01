@@ -28,8 +28,9 @@ extension Date {
     
     static func remote(dateString: String)-> Date? {
         let formatter = DateFormatter()
-        formatter.locale = Locale.current
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        formatter.locale = Locale(identifier: "pt_BR")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
         return formatter.date(from: dateString)
     }
     
