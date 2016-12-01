@@ -20,7 +20,7 @@
 		"action": "1abc9c",
 		"contrasting": "FFFFFF",
 		"shadow": "000000",
-		"talk":"D84315",
+		"talk":"00c300",
 		"workshop":"00838F",
 		"opening":"AD1457",
 		"closing":"AD1457",
@@ -310,6 +310,17 @@
 			"twitterHandle": "tholanda",
 			"linkedinHandler": "",
 			"githubHandler": ""
+		},
+		{
+			"id": 22,
+			"name": "Arthur Cançado",
+			"image": "images/team/arthur-cancado.png",
+			"title": "Não Definido",
+			"bio": "Não definido",
+			"citation": "",
+			"twitterHandle": "ajcancado",
+			"linkedinHandler": "",
+			"githubHandler": ""
 		}
 	],
 	"rooms":[
@@ -596,9 +607,9 @@
 			"id": 22,
 			"title": "Redux Para IOS",
 			"speaker": 17,
-			"room": 2,
-			"date": "2016-12-03T09:00:00-0300",
-			"duration": 30,
+			"room": 3,
+			"date": "2016-12-03T09:30:00-0300",
+			"duration": 60,
 			"summary": "Containers previsíveis de estado e fluxos unidirecionais de dados e… oi?",
 			"description": "Código que mantém estado é um saco. É complexo. Tende a bugs. E ainda assim, é o destino inevitável do desenvolvedor de UIs. Aprenda, na prática, como usar os princípios e técnicas do famoso Redux para controlar o estado de sua aplicação iOS, de forma previsível e controlada.",
 			"type": "workshop"
@@ -607,9 +618,9 @@
 			"id": 23,
 			"title": "Redux Para IOS",
 			"speaker": 17,
-			"room": 2,
-			"date": "2016-12-03T10:00:00-0300",
-			"duration": 30,
+			"room": 3,
+			"date": "2016-12-03T14:30:00-0300",
+			"duration": 60,
 			"summary": "Containers previsíveis de estado e fluxos unidirecionais de dados e… oi?",
 			"description": "Código que mantém estado é um saco. É complexo. Tende a bugs. E ainda assim, é o destino inevitável do desenvolvedor de UIs. Aprenda, na prática, como usar os princípios e técnicas do famoso Redux para controlar o estado de sua aplicação iOS, de forma previsível e controlada.",
 			"type": "workshop"
@@ -678,6 +689,17 @@
 			"duration": 60,
 			"summary": "Backend com Zewo - GraphQL",
 			"description": "Backend com Zewo - GraphQL",
+			"type": "workshop"
+		},
+		{
+			"id": 30,
+			"title": "Core Data / Realm",
+			"speaker": 22,
+			"room": 3,
+			"date": "2016-12-03T10:30:00-0300",
+			"duration": 60,
+			"summary": "Core Data / Realm",
+			"description": "Core Data / Realm",
 			"type": "workshop"
 		}
 	],
