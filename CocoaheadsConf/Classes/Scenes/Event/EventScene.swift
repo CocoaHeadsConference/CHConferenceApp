@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class EventScene: Scene, CacheUpdatable {
     
