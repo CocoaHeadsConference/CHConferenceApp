@@ -26,7 +26,7 @@ class EventScene: Scene, CacheUpdatable {
     }
     
     func display(url: URL) {
-        SFSafariViewController.display(url: url, from: rootViewController)
+        rootViewController.open(url: url, failureTitle: "Atenção", failureMessage: "Não foi possível abrir o link desejado")
     }
     
     func updateFromCache() {

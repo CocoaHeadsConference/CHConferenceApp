@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class SpeakerDetailViewController: UIViewController {
 
@@ -44,10 +43,9 @@ class SpeakerDetailViewController: UIViewController {
         self.title = "Detalhes"
         let talks = cache.talks(for: speakerToDisplay)
         speakerDetailView?.didTapSafariCallback = { url in
-            SFSafariViewController.display(url: url, from: self)
+            self.open(url: url, failureTitle: "Atenção", failureMessage: "Não foi possível abrir o link desejado")
         }
         speakerDetailView?.state = SpeakerDetailViewState(speaker: speakerToDisplay, talks: talks)
         
     }
-
 }
