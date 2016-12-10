@@ -28,7 +28,7 @@ class SponsorsScene: Scene, CacheUpdatable {
     }
     
     func present(sponsor: SponsorModel) {
-        rootViewController.open(url: sponsor.url, failureTitle: "Atenção", failureMessage: "Não foi possível abrir o link desejado")
+        rootViewController.open(url: sponsor.url, failure: nil)
     }
     
 }

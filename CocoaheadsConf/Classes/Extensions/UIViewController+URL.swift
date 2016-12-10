@@ -9,16 +9,25 @@
 import UIKit
 
 extension UIViewController {
-    func open(url: URL, failureTitle: String, failureMessage: String) {
+    func open(url: URL, failure: (title: String, message: String)?) {
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.openURL(url)
         } else {
-            showAlert(title: failureTitle, message: failureMessage)
+            showAlert(title: failure?.title, message: failure?.message)
         }
     }
     
-    func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    func showAlert(title: String?, message: String?) {
+        var finalTitle = "Atenção"
+        var finalMessage = "Não foi possível abrir o link desejado"
+        
+        if let ttl = title,
+        let msg = message {
+            finalTitle = ttl
+            finalMessage = msg
+        }
+        
+        let alertController = UIAlertController(title: finalTitle, message: finalMessage, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
         
         alertController.addAction(action)

@@ -25,7 +25,7 @@ class EventScene: Scene, CacheUpdatable {
     }
     
     func display(url: URL) {
-        rootViewController.open(url: url, failureTitle: "Atenção", failureMessage: "Não foi possível abrir o link desejado")
+        rootViewController.open(url: url, failure: nil)
     }
     
     func updateFromCache() {
