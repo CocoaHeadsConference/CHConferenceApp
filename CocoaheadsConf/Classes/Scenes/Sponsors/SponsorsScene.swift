@@ -28,7 +28,7 @@ class SponsorsScene: Scene, CacheUpdatable {
     }
     
     func present(sponsor: SponsorModel) {
-        rootViewController.open(url: sponsor.url, failure: nil)
+        rootViewController.open(url: sponsor.url)
     }
     
 }

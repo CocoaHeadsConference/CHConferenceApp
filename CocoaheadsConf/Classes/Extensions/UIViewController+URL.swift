@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    func open(url: URL, failure: (title: String, message: String)?) {
+    func open(url: URL, failure: (title: String, message: String)? = nil) {
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.openURL(url)
         } else {

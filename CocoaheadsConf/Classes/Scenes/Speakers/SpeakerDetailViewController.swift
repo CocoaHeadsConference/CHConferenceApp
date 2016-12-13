@@ -43,7 +43,7 @@ class SpeakerDetailViewController: UIViewController {
         self.title = "Detalhes"
         let talks = cache.talks(for: speakerToDisplay)
         speakerDetailView?.didTapSafariCallback = { url in
-            self.open(url: url, failure: nil)
+            self.open(url: url)
         }
         speakerDetailView?.state = SpeakerDetailViewState(speaker: speakerToDisplay, talks: talks)
         

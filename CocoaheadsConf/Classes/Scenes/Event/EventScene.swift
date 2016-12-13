@@ -25,7 +25,7 @@ class EventScene: Scene, CacheUpdatable {
     }
     
     func display(url: URL) {
-        rootViewController.open(url: url, failure: nil)
+        rootViewController.open(url: url)
     }
     
     func updateFromCache() {
