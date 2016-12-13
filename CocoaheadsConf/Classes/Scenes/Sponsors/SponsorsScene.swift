@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class SponsorsScene: Scene, CacheUpdatable {
 
@@ -29,8 +28,7 @@ class SponsorsScene: Scene, CacheUpdatable {
     }
     
     func present(sponsor: SponsorModel) {
-        let safariViewController = SFSafariViewController(url: sponsor.url)
-        rootViewController.present(safariViewController, animated: true, completion: nil)
+        rootViewController.open(url: sponsor.url)
     }
     
 }

@@ -22,7 +22,7 @@
 		1519A6991DE341160044EE8C /* TalkDetailUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A6981DE341160044EE8C /* TalkDetailUnits.swift */; };
 		1519A69D1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */; };
 		1519A69E1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */; };
-		1520BD0C1DEA5A5B0080DF4A /* SFSafariViewController+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520BD0B1DEA5A5B0080DF4A /* SFSafariViewController+URL.swift */; };
+		1520BD0C1DEA5A5B0080DF4A /* UIViewController+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520BD0B1DEA5A5B0080DF4A /* UIViewController+URL.swift */; };
 		1520BD0F1DEA5C250080DF4A /* CodeOfConductUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520BD0E1DEA5C250080DF4A /* CodeOfConductUnit.swift */; };
 		1520BD121DEA5C570080DF4A /* CodeOfConductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520BD101DEA5C570080DF4A /* CodeOfConductCollectionViewCell.swift */; };
 		1520BD131DEA5C570080DF4A /* CodeOfConductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1520BD111DEA5C570080DF4A /* CodeOfConductCollectionViewCell.xib */; };
@@ -156,7 +156,7 @@
 		1519A6981DE341160044EE8C /* TalkDetailUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailUnits.swift; sourceTree = "<group>"; };
 		1519A69B1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDetailDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		1519A69C1DE347E60044EE8C /* TalkDetailDescriptionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkDetailDescriptionCollectionViewCell.xib; sourceTree = "<group>"; };
-		1520BD0B1DEA5A5B0080DF4A /* SFSafariViewController+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SFSafariViewController+URL.swift"; sourceTree = "<group>"; };
+		1520BD0B1DEA5A5B0080DF4A /* UIViewController+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+URL.swift"; sourceTree = "<group>"; };
 		1520BD0E1DEA5C250080DF4A /* CodeOfConductUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeOfConductUnit.swift; sourceTree = "<group>"; };
 		1520BD101DEA5C570080DF4A /* CodeOfConductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeOfConductCollectionViewCell.swift; sourceTree = "<group>"; };
 		1520BD111DEA5C570080DF4A /* CodeOfConductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeOfConductCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -456,7 +456,7 @@
 				DDABFB101DE72AEC00351DA8 /* UserDefaults+CHConf.swift */,
 				DD86972B1DE76A3D0034DAE8 /* String+CMTime.swift */,
 				15256D111DE7C4EE00263E92 /* UIImage+Color.swift */,
-				1520BD0B1DEA5A5B0080DF4A /* SFSafariViewController+URL.swift */,
+				1520BD0B1DEA5A5B0080DF4A /* UIViewController+URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -882,7 +882,6 @@
 				TargetAttributes = {
 					15BD91591DC95DF90088AEB4 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = TBUC49Z9VX;
 						ProvisioningStyle = Automatic;
 					};
 					15BD916D1DC95DF90088AEB4 = {
@@ -1020,7 +1019,7 @@
 				15256D0E1DE7BCEA00263E92 /* Theme.swift in Sources */,
 				15BBD8971DD9E6B000A9A45F /* SpeakersListState.swift in Sources */,
 				15DDF9381DD1284500AD4B93 /* Cache.swift in Sources */,
-				1520BD0C1DEA5A5B0080DF4A /* SFSafariViewController+URL.swift in Sources */,
+				1520BD0C1DEA5A5B0080DF4A /* UIViewController+URL.swift in Sources */,
 				15256D381DE9FC4300263E92 /* EventDateCollectionViewCell.swift in Sources */,
 				155BF1331DDD302D00985B9F /* LabelUnit.swift in Sources */,
 				DD3A5AEF1DE60E130016882D /* VideosViewController.swift in Sources */,
@@ -1229,7 +1228,7 @@
 			baseConfigurationReference = A19881DAEC2FFA8E5C75DC4B /* Pods-CocoaheadsConf.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TBUC49Z9VX;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CocoaheadsConf/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1245,7 +1244,7 @@
 			baseConfigurationReference = 6D327FD898FBF26989AC9F44 /* Pods-CocoaheadsConf.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TBUC49Z9VX;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CocoaheadsConf/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

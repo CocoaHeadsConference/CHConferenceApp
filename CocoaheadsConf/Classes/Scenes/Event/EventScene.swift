@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class EventScene: Scene, CacheUpdatable {
     
@@ -26,7 +25,7 @@ class EventScene: Scene, CacheUpdatable {
     }
     
     func display(url: URL) {
-        SFSafariViewController.display(url: url, from: rootViewController)
+        rootViewController.open(url: url)
     }
     
     func updateFromCache() {
