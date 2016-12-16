@@ -1,707 +1,707 @@
 {
-	"event": {
-		"name":"Cocoaheads Conference 2016",
-		"headline":"O primeiro evento nacional do CocoaHeads Brasil.",
-		"subline": "Reunindo mais de 150 desenvolvedores, com muito conteúdo sobre iOS, watchOS, macOS e tvOS. Venha fazer parte!",
-		"startDate":"2016-12-02T16:30:00-0300",
-		"twitter": "cocoaheadsconf",
-		"codeOfConduct":"https://github.com/CocoaHeadsConference/CocoaHeadsConferenceCodigoDeConduta/blob/master/README.md",
-		"endDate":"2016-12-03T17:00:00-0300",
-		"location": {
-			"address":"Avenida Das Nações Unidas, 3007 \nOsasco - SP",
-			"coordinate": {
-				"lat": -23.524087,
-				"long": -46.760567
-			}
-		}
-	},
-	"theme": {
-		"main": "004D40",
-		"action": "1abc9c",
-		"contrasting": "FFFFFF",
-		"shadow": "000000",
-		"talk":"00c300",
-		"workshop":"00838F",
-		"opening":"AD1457",
-		"closing":"AD1457",
-		"breaktime":"F9A825",
-		"setup":"9E9D24"
-	},
-	"sponsors":[
-		{
-			"id": 0,
-			"title": "iFood",
-			"url": "https://www.ifood.com.br/",
-			"image": "http://cocoaheadsconference.com.br/images/sponsors/6.png",
-			"type": ""
-		},
-		{
-			"id": 1,
-			"title": "Twitter",
-			"url": "http://www.twitter.com/",
-			"image": "http://cocoaheadsconference.com.br/images/sponsors/7.png",
-			"type": ""
-		},
-		{
-			"id": 2,
-			"title": "Work&Co",
-			"url": "http://work.co",
-			"image": "http://cocoaheadsconference.com.br/images/sponsors/8.png",
-			"type": ""
-		},
-		{
-			"id": 3,
-			"title": "AvenueCode",
-			"url": "http://www.avenuecode.com/",
-			"image": "http://cocoaheadsconference.com.br/images/sponsors/9.png",
-			"type": ""
-		},
-		{
-			"id": 4,
-			"title": "Sympla",
-			"url": "http://www.sympla.com.br/",
-			"image": "http://cocoaheadsconference.com.br/images/sponsors/1.png",
-			"type": ""
-		},
-		{
-			"id": 5,
-			"title": "Abacomm",
-			"url": "http://abacomm.com.br/",
-			"image": "http://cocoaheadsconference.com.br/images/sponsors/2.png",
-			"type": ""
-		},
-		{
-			"id": 6,
-			"title": "iMasters",
-			"url": "http://imasters.com.br/",
-			"image": "http://cocoaheadsconference.com.br/images/sponsors/3.png",
-			"type": ""
-		},
-		{
-			"id": 7,
-			"title": "Mercado Livre",
-			"url": "http://www.mercadolivre.com.br/",
-			"image": "http://cocoaheadsconference.com.br/images/sponsors/4.png",
-			"type": ""
-		},
-		{
-			"id": 8,
-			"title": "Concrete Solutions",
-			"url": "http://www.concretesolutions.com.br/",
-			"image": "http://cocoaheadsconference.com.br/images/sponsors/5.png",
-			"type": ""
-		}
-	],
-	"speakers":[
-		{
-			"id": 1,
-			"name": "Francesco Perrotti",
-			"image": "images/team/francesco-perrotti.jpg",
-			"title": "LEAD DEVELOPER, MOVILE",
-			"bio": "Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
-			"citation": "",
-			"twitterHandle": "fpg1503",
-			"linkedinHandler": "fpg1503",
-			"githubHandler": "fpg1503"
-		},
-		{
-			"id": 2,
-			"name": "Rodrigo Borges",
-			"image": "images/team/rodrigo-borges.jpg",
-			"title": "LEAD DEVELOPER, VIVAREAL",			
-			"bio": "Manauara, desenvolvedor iOS no VivaReal, desenvolvedor e co-fundador do Meatless. Além de casas, apartamentos e comida vegetariana, não vive sem música e fotografia.",
-			"citation": "",
-			"twitterHandle": "rdgborges",
-			"linkedinHandler": "rdgborges",
-			"githubHandler": "rdgborges"
-		},
-		{
-			"id": 3,
-			"name": "Fernando Bunn",
-			"image": "images/team/fernando-bunn.jpg",
-			"title": "MOBILE TECH LEAD",
-			"bio": "Trabalha com iOS desde 2008; Realizou projetos para empresas Fortune 500; Foi CEO de uma empresa de mobile development por 4 anos; Atualmente trabalha como Mobile Tech Lead para uma empresa de São Francisco - CA.",
-			"citation": "",
-			"twitterHandle": "fcbunn",
-			"linkedinHandler": "fcbunn",
-			"githubHandler": "Bunn"
-		},
-		{
-			"id": 4,
-			"name": "Diogo Tridapalli",
-			"image": "images/team/diogo-tridapalli.jpg",
-			"title": "LEAD DEVELOPER",
-			"bio": "Na comunidade desde 2009, trabalhou em uma ad network e seu código pertubou os usuários com anúncios em mais de 200 milhões de devices. Foi um dos desenvolvedores do app 99Taxis e passou por novos projetos na Movile e Nubank. Nas horas vagas gera entropia na organização do CocoaHeadsSP e escreve no Invariante.com.",
-			"citation": "",
-			"twitterHandle": "diogot",
-			"linkedinHandler": "diogot",
-			"githubHandler": "diogot"
-		},
-		{
-			"id": 5,
-			"name": "Guilherme Rambo",
-			"image": "images/team/guilherme-rambo.jpg",
-			"title": "LEAD DEVELOPER",
-			"bio": "Criador do famoso app da WWDC para macOS, trabalha há alguns anos com desenvolvimento para Mac e iOS, possuí atualmente 6 apps publicados e diversos projetos open-source.",
-			"citation": "",
-			"twitterHandle": "_inside",
-			"linkedinHandler": "guilherme-rambo-78506425",
-			"githubHandler": "insidegui"
-		},
-		{
-			"id": 6,
-			"name": "Bruno Bilescky",
-			"image": "images/team/bruno-bilescky.jpg",
-			"title": "LEAD DEVELOPER, VIVAREAL",
-			"bio": "Desenvolvedor iOS desde o iPhoneOS 3, adora desenvolver frameworks como Compose. Programação funcional, Value Types, imutabilidade e Lego também estão constantemente em seu dia a dia.",
-			"citation": "Sempre crie código como se a pessoa que desse manutenção nele fosse um psicopata violento que sabe onde você mora.",
-			"twitterHandle": "bgondim",
-			"linkedinHandler": "brunogb",
-			"githubHandler": "brunogb"
-		},
-		{
-			"id": 7,
-			"name": "Paulo Faria",
-			"image": "images/team/paulo-faria.jpg",
-			"title": "LEAD DEVELOPER",
-			"bio": "Membro do core team das APIs de Swift Server da Apple. Criador do Zewo, Venice e GraphQLSwift.",
-			"citation": "",
-			"twitterHandle": "paulofariarl",
-			"linkedinHandler": "",
-			"githubHandler": "paulofaria"
-		},
-		{
-			"id": 8,
-			"name": "Marcelo Fabri",
-			"image": "images/team/marcelo-fabri.jpg",
-			"title": "LEAD DEVELOPER",
-			"bio": "Desenvolvedor iOS desde quando a contagem de referências era manual e Xcode e Interface Builder eram apps distintos. Gosta de contribuir em projetos open-source sempre que possível.",
-			"citation": "",
-			"twitterHandle": "marcelofabri_",
-			"linkedinHandler": "marcelofabri",
-			"githubHandler": "marcelofabri"
-		},
-		{
-			"id": 9,
-			"name": "Cynthia Zanoni",
-			"image": "images/team/cynthia-zanoni.jpg",
-			"title": "TECH EVANGELIST",
-			"bio": "Evangelista Técnica na Microsoft, curadora da Mobile Summit Brazil e idealizadora do WoMakersCode, um projeto focado em capacitação e empoderamento feminino e de minorias na TI e atua, também, como coordenadora do WoMoz (Women & Mozilla). É apaixonada open source e nas horas vagas, cria projetos e iniciativas que possam contribuir para o fortalecimento das mulheres no mercado de trabalho e comunidades de tecnologia.",
-			"citation": "",
-			"twitterHandle": "cynthiazanoni",
-			"linkedinHandler": "cynthiazanoni",
-			"githubHandler": ""
-		},
-		{
-			"id": 10,
-			"name": "Tales Pinheiro",
-			"image": "images/team/tales-pinheiro.jpg",
-			"title": "CHAPTER LEADER, CONCRETE SOLUTIONS",
-			"bio": "Mestre em computação pelo IME-USP, é desenvolvedor C desde 2003 e iOS desde 2010. Organizador do CocoaHeads SP e sócio-fundador da Newt Labs. Atualmente é iOS Chapter Leader na Concrete Solutions.",
-			"citation": "",
-			"twitterHandle": "talesp",
-			"linkedinHandler": "talespinheiro",
-			"githubHandler": ""
-		},
-		{
-			"id": 11,
-			"name": "Douglas Fischer",
-			"image": "images/team/douglas-fischer.jpg",
-			"title": "MOBILE PRODUCTS LEAD, ABACOMM",
-			"bio": "Desenvolvedor iOS desde 2008. Fundador do XT3 Studios, Advanced e Arapuka Antivirus. É Mobile Products Lead na Abacomm. Também atua como Community Manager & Podcaster do @CocoaHeadsBR.",
-			"citation": "",
-			"twitterHandle": "DougDiskin",
-			"linkedinHandler": "dougdiskin",
-			"githubHandler": "DougFischer"
-		},
-		{
-			"id": 12,
-			"name": "Vinícius Carvalho",
-			"image": "images/team/vinicius-carvalho.jpg",
-			"title": "MOBILE DEVELOPER, CONCRETE SOLUTIONS",
-			"bio": "Se envolveu com a comunidade iOS no final de 2014 e nunca mais saiu. É líder do CocoaHeads Brasil em Fortaleza e participante do Devbeers Fortaleza. Entusiasta de Ruby e biker.",
-			"citation": "",
-			"twitterHandle": "viniciusc70",
-			"linkedinHandler": "viniciuscarvalhomarques",
-			"githubHandler": "Viniciuscarvalho"
-		},
-		{
-			"id": 13,
-			"name": "Juliana Salgado",
-			"image": "images/team/juliana-salgado.jpg",
-			"title": "IOS DEVELOPER, IFOOD",
-			"bio": "Formada em Análise de Sistemas pela PUC-Campinas, foi premiada duas vezes com uma bolsa de estudos da WWDC nos anos de 2015 e 2016. Estudou no BEPID e é também Android Developer. Hoje trabalha como iOS Developer no iFood.",
-			"citation": "",
-			"twitterHandle": "jusalt",
-			"linkedinHandler": "julianasalgado",
-			"githubHandler": ""
-		},
-		{
-			"id": 14,
-			"name": "Henrique Leite",
-			"image": "images/team/henrique-leite.png",
-			"title": "Engenheiro de Software Sr no MercadoPago.com",
-			"bio": "",
-			"citation": "",
-			"linkedinHandler": "",
-			"githubHandler": ""
-		},
-		{
-			"id": 15,
-			"name": "John Calistro",
-			"image": "images/team/john-calistro.png",
-			"title": "Branch Evangelist",
-			"bio": "Evangelista da Branch, co-organizador das comunidades CocoaHeads, Twitter Developers, FB Developers Circle e Mobile Growth, empreendedor, formado em contabilidade e processamento de dados, graduando em Sistemas da Informação, GTD e IoT entusiasta, desenvolvedor de software a mais de 3 décadas, nas horas vagas gosta de brincar com sua filha (humana) e seu filho (canino), sair com a esposa e assistir séries de tv.",
-			"citation": "",
-			"twitterHandle": "johncalistro",
-			"linkedinHandler": "",
-			"githubHandler": ""
-		},
-		{
-			"id": 16,
-			"name": "Igor Ferreira",
-			"image": "images/team/igor-ferreira.jpg",
-			"title": "iOS Frameworks Developer",
-			"bio": "Desenvolvedor mobile com experiência em Android, iOS, Unity, wearable e IoT (protocolo MQTT, Arduino e RaspberryPie). Com projetos desenvolvidos para Apple Watch e Android Wear, com utilização de mapa, Game Kit, Google Play e as principais frameworks.",
-			"citation": "",
-			"twitterHandle": "icastanheda",
-			"linkedinHandler": "igorcferreira",
-			"githubHandler": ""
-		},
-		{
-			"id": 17,
-			"name": "Fellipe Caetano",
-			"image": "images/team/fellipe-caetano.jpg",
-			"title": "Não Definido",
-			"bio": "Não definido",
-			"citation": "",
-			"linkedinHandler": "",
-			"githubHandler": ""
-		},
-		{
-			"id": 19,
-			"name": "João Paulo Ros",
-			"image": "images/team/joao-paulo-ros.png",
-			"title": "Não definido",
-			"bio": "Não definido",
-			"citation": "",
-			"twitterHandle": "jpros",
-			"linkedinHandler": "",
-			"githubHandler": ""
-		},
-		{
-			"id": 20,
-			"name": "Cristiano Pio",
-			"image": "images/team/cristiano-pio.png",
-			"title": "Product Owner @Sympla.",
-			"bio": "Não definido",
-			"citation": "",
-			"twitterHandle": "orsipio",
-			"linkedinHandler": "",
-			"githubHandler": ""
-		},
-		{
-			"id": 21,
-			"name": "Thiago Holanda",
-			"image": "images/team/thiago-holanda.png",
-			"title": "Não Definido",
-			"bio": "Não definido",
-			"citation": "",
-			"twitterHandle": "tholanda",
-			"linkedinHandler": "",
-			"githubHandler": ""
-		},
-		{
-			"id": 22,
-			"name": "Arthur Cançado",
-			"image": "images/team/arthur-cancado.png",
-			"title": "Não Definido",
-			"bio": "Não definido",
-			"citation": "",
-			"twitterHandle": "ajcancado",
-			"linkedinHandler": "",
-			"githubHandler": ""
-		}
-	],
-	"rooms":[
-		{
-			"id":0,
-			"title": "Recepção",
-			"capacity": 0
-		},
-		{
-			"id":1,
-			"title": "Auditório",
-			"capacity": 200
-		},
-		{
-			"id":2,
-			"title": "Sala Workshop 1",
-			"capacity": 8
-		},
-		{
-			"id":3,
-			"title": "Sala Workshop 2",
-			"capacity": 6
-		},
-		{
-			"id":5,
-			"title": "CodeLab",
-			"capacity": 8
-		},
-		{
-			"id":6,
-			"title": "Sala Cocoaheads",
-			"capacity": 6
-		},
-		{
-			"id":4,
-			"title": "Área comum",
-			"capacity": 0
-		}
-	],
-	"talks":[
-		{
-			"id": 0,
-			"title": "Credenciamento",
-			"speaker": 0,
-			"room": 0,
-			"date": "2016-12-02T16:30:00-0300",
-			"duration": 45,
-			"summary": "Pegue seu crachá e material do evento.",
-			"description": "Aproveite esse momento para se apresentar aos participantes, conhecer aquela pessoa que você conversa apenas pela internet e postar sobre o evento nas redes sociais.",
-			"type": "setup"
-		},
-		{
-			"id": 1,
-			"title": "Abertura Do Evento",
-			"speaker": 15,
-			"room": 1,
-			"date": "2016-12-02T17:15:00-0300",
-			"duration": 15,
-			"summary": "Declaramos aberta a 1º CocoaHeads Conference.",
-			"description": "O momento tão esperado por todos: A abertura do primeiro evento nacional do CocoaHeads Brasil! Um momento muito emocionante e um marco para toda a comunidade iOS.",
-			"type": "opening"
-		},
-		{
-			"id": 2,
-			"title": "A Black Friday da minha vida",
-			"speaker": 14,
-			"room": 1,
-			"date": "2016-12-02T17:30:00-0300",
-			"duration": 30,
-			"summary": "Uma brilhante mente da equipe de Desenvolvimento do Mercado Pago sugeriu o desenvolvimento de um app de ofertas, vésperas da Black Friday!",
-			"description": "Sem a contratação de uma agência, tivemos que \"meter as caras\" no mundo dos apps. Venha saber os desafios e aprendizados do desenvolvimento da solução do iOS com SWIFT 3.0 e toda a arquitetura bolada em menos de 2 meses da Black Friday.",
-			"type": "talk"
-		},
-		{
-			"id": 3,
-			"title": "Modelos De Concorrência E Swift No Servidor",
-			"speaker": 7,
-			"room": 1,
-			"date": "2016-12-02T18:00:00-0300",
-			"duration": 60,
-			"summary": "Desmistificando modelos de concorrência e suas aplicações em Swift no servidor.",
-			"description": "O Paulo Faria, fundador do famoso projeto Zewo e hoje membro do Core Team de API's Swift Server da Apple irá explicar como usufruir do Swift para aplicações web.",
-			"type": "talk"
-		},
-		{
-			"id": 4,
-			"title": "Coffeebreak & Networking",
-			"speaker": 0,
-			"room": 4,
-			"date": "2016-12-02T19:00:00-0300",
-			"duration": 30,
-			"summary": "Pausa para um lanche!",
-			"description": "Um intervalo para passear pela área comum do local, tomar um café e claro, bater papo com todos os incríveis participantes. Aproveite esse momento para ficar de olho na programação do Sábado.",
-			"type": "breaktime"
-		},
-		{
-			"id": 5,
-			"title": "Lessons Learned",
-			"speaker": 20,
-			"room": 1,
-			"date": "2016-12-02T19:30:00-0300",
-			"duration": 40,
-			"summary": "Lições aprendendidas no desenvolvimento do app da Sympla",
-			"description": "Contarei um pouco do que aprendemos no desenvolvimento dos aplicativos iOS da Sympla, passando pela decisão de internalizar o desenvolvimento até a consolidação de um processo de gestão de produto aplicado ao mobile.  ",
-			"type": "talk"
-		},
-		{
-			"id": 6,
-			"title": "Deep Links",
-			"speaker": 15,
-			"room": 1,
-			"date": "2016-12-02T20:10:00-0300",
-			"duration": 30,
-			"summary": "Entendendo deep links e como facilitar sua vida usando o Branch.io",
-			"description": "Entendendo deep links e como facilitar sua vida usando o Branch.io",
-			"type": "talk"
-		},
-		{
-			"id": 7,
-			"title": "Sorteios & Encerramento",
-			"speaker": 12,
-			"room": 1,
-			"date": "2016-12-02T20:40:00-0300",
-			"duration": 20,
-			"summary": "Agradecimento, sorteio, encerramento e feedback!",
-			"description": "Vinicius irá sortear alguns brindes cedidos pelos apoiadores do evento e o primeiro dia de evento chega ao fim!",
-			"type": "closing"
-		},
-		{
-			"id": 8,
-			"title": "Credenciamento & Coffee-Break",
-			"speaker": 0,
-			"room": 0,
-			"date": "2016-12-03T07:00:00-0300",
-			"duration": 60,
-			"summary": "Se for seu primeiro dia, pegue seu crachá!",
-			"description": "Aproveite esse momento para se informar sobre os workshops e demais atividades de cada sala. Converse com os participantes e tome um café.",
-			"type": "setup"
-		},
-		{
-			"id": 9,
-			"title": "Abertura Do Segundo Dia De Evento",
-			"speaker": 11,
-			"room": 1,
-			"date": "2016-12-03T08:00:00-0300",
-			"duration": 20,
-			"summary": "E breve recado dos apoiadores!",
-			"description": "Cerimônia de abertura do segundo dia de evento, com breve palavra das empresas apoiadoras e apresentação das atividades do dia.",
-			"type": "opening"
-		},
-		{
-			"id": 10,
-			"title": "Notificações No IOS 10",
-			"speaker": 2,
-			"room": 1,
-			"date": "2016-12-03T08:20:00-0300",
-			"duration": 40,
-			"summary": "Rich Notifications.",
-			"description": "O iOS 10 trouxe muitas mudanças, mas uma das mais impactantes no dia a dia dos devs é relacionada as API's de Push Notifications. Vamos entender o que você precisa fazer para tirar o maior proveito das Rich Notifications.",
-			"type": "talk"
-		},
-		{
-			"id": 11,
-			"title": "Good Code",
-			"speaker": 1,
-			"room": 1,
-			"date": "2016-12-03T09:00:00-0300",
-			"duration": 40,
-			"summary": "O que é e como fazer!",
-			"description": "Escrever código bom não é uma tarefa simples. Vamos abordar como reconhecer melhorias e aplicadas em nossos códigos e quais features de Swift e bibliotecas podem nos auxiliar nessa tarefa.",
-			"type": "talk"
-		},
-		{
-			"id": 12,
-			"title": "Azure SDK Para Apps IOS Nativos",
-			"speaker": 9,
-			"room": 1,
-			"date": "2016-12-03T09:40:00-0300",
-			"duration": 35,
-			"summary": "Ainda orfão do Parse?",
-			"description": "Azure SDK para apps iOS nativos.",
-			"type": "talk"
-		},
-		{
-			"id": 13,
-			"title": "Dando Valor Para \"Value Types\"",
-			"speaker": 6,
-			"room": 1,
-			"date": "2016-12-03T10:15:00-0300",
-			"duration": 45,
-			"summary": "Structs, Enums, Protocolos, Imutabilidade, Programação funcional, Testes",
-			"description": "Structs, Enums, Protocolos, Imutabilidade, Programação funcional, Testes",
-			"type": "talk"
-		},
-		{
-			"id": 14,
-			"title": "Acessibilidade Em Alto E Bom Som",
-			"speaker": 13,
-			"room": 1,
-			"date": "2016-12-03T11:00:00-0300",
-			"duration": 30,
-			"summary": "Dando voz aos seus aplicativos",
-			"description": "Juliana oferece uma visão geral dos recursos de acessibilidade existentes que os desenvolvedores podem (e devem) explorar. Será apresentado como tornar o seu aplicativo acessível aos deficientes visuais através de um case real do app iFood.",
-			"type": "talk"
-		},
-		{
-			"id": 15,
-			"title": "Almoço & Networking",
-			"speaker": 0,
-			"room": 4,
-			"date": "2016-12-03T11:30:00-0300",
-			"duration": 90,
-			"summary": "Hora de comer!",
-			"description": "O almoço é servido no restaurante do Mercado Livre e fica disponível até as 14:00.",
-			"type": "breaktime"
-		},
-		{
-			"id": 16,
-			"title": "Debugging Tricks",
-			"speaker": 3,
-			"room": 1,
-			"date": "2016-12-03T13:00:00-0300",
-			"duration": 45,
-			"summary": "LLDB é seu amigo.",
-			"description": "LLDB é aquele cara tímido que gosta de aparecer quando seu app da crash. Vamos ver algumas dicas e truques de como usar o LLDB para facilitar a sua vida, quem sabe ele te ajuda a remover alguns NSLogs, códigos de teste (aquele que acaba indo pro cliente) ou até mesmo evitar build and runs desnecessários.",
-			"type": "talk"
-		},
-		{
-			"id": 17,
-			"title": "Geração de Código",
-			"speaker": 8,
-			"room": 1,
-			"date": "2016-12-03T13:45:00-0300",
-			"duration": 45,
-			"summary": "👍 ou 👎?",
-			"description": "O que é? Por que fazer? É bom ou ruim? Onde vive? Do que se alimenta? Dia 03, no Globo Repórter na palestra do Fabri.",
-			"type": "talk"
-		},
-		{
-			"id": 18,
-			"title": "IOS Architecture",
-			"speaker": 4,
-			"room": 1,
-			"date": "2016-12-03T14:30:00-0300",
-			"duration": 45,
-			"summary": "Adapt to survive!",
-			"description": "MVC+MVVM+Coordinator+Other stuffs.",
-			"type": "talk"
-		},
-		{
-			"id": 19,
-			"title": "Mind: Blown!",
-			"speaker": 5,
-			"room": 1,
-			"date": "2016-12-03T15:15:00-0300",
-			"duration": 45,
-			"summary": "Três conceitos que farão a diferença nos seus apps.",
-			"description": "Nesta talk Guilherme irá apresentar três padrões que adotou e que mudaram significativamente a qualidade dos seus apps: Abstrair a internet dos seus view controllers; calcular diferenças entre coleções de models e lidar com navegação entre telas.",
-			"type": "talk"
-		},
-		{
-			"id": 20,
-			"title": "Coffeebreak & Networking",
-			"speaker": 0,
-			"room": 4,
-			"date": "2016-12-03T16:00:00-0300",
-			"duration": 30,
-			"summary": "Pausa pra mais um lanche e networking",
-			"description": "Um intervalo para passear pela área comum do local, tomar um café e claro, bater papo com todos os incríveis participantes.",
-			"type": "breaktime"
-		},
-		{
-			"id": 21,
-			"title": "Sorteios & Encerramento",
-			"speaker": 10,
-			"room": 1,
-			"date": "2016-12-03T16:30:00-0300",
-			"duration": 30,
-			"summary": "Hora de dar tchau!",
-			"description": "Iremos realizar alguns sorteios de coisinhas gentilmente cedidas pelas empresas apoiadoras e encerrar o evento!",
-			"type": "closing"
-		},
-		{
-			"id": 22,
-			"title": "Redux Para IOS",
-			"speaker": 17,
-			"room": 3,
-			"date": "2016-12-03T09:30:00-0300",
-			"duration": 60,
-			"summary": "Containers previsíveis de estado e fluxos unidirecionais de dados e… oi?",
-			"description": "Código que mantém estado é um saco. É complexo. Tende a bugs. E ainda assim, é o destino inevitável do desenvolvedor de UIs. Aprenda, na prática, como usar os princípios e técnicas do famoso Redux para controlar o estado de sua aplicação iOS, de forma previsível e controlada.",
-			"type": "workshop"
-		},
-		{
-			"id": 23,
-			"title": "Redux Para IOS",
-			"speaker": 17,
-			"room": 3,
-			"date": "2016-12-03T14:30:00-0300",
-			"duration": 60,
-			"summary": "Containers previsíveis de estado e fluxos unidirecionais de dados e… oi?",
-			"description": "Código que mantém estado é um saco. É complexo. Tende a bugs. E ainda assim, é o destino inevitável do desenvolvedor de UIs. Aprenda, na prática, como usar os princípios e técnicas do famoso Redux para controlar o estado de sua aplicação iOS, de forma previsível e controlada.",
-			"type": "workshop"
-		},
-		{
-			"id": 24,
-			"title": "SiriKit",
-			"speaker": 19,
-			"room": 2,
-			"date": "2016-12-03T11:30:00-0300",
-			"duration": 60,
-			"summary": "Integre seu app com sua voz!",
-			"description": "Workshop mostrando, na prática, como suportar comandos de voz da Siri dentro do seu app.",
-			"type": "workshop"
-		},
-		{
-			"id": 25,
-			"title": "Arquitetura Clean",
-			"speaker": 7,
-			"room": 2,
-			"date": "2016-12-03T12:30:00-0300",
-			"duration": 60,
-			"summary": "Arquitetura Clean",
-			"description": "Arquitetura Clean",
-			"type": "workshop"
-		},
-		{
-			"id": 26,
-			"title": "Frameworks",
-			"speaker": 16,
-			"room": 2,
-			"date": "2016-12-03T10:30:00-0300",
-			"duration": 30,
-			"summary": "Crie o seu!",
-			"description": "Igor vem trabalhando os últimos meses exclusivamente na criação de frameworks. Nesse workshop ele dará os caminhos das pedras para você criar o seu próprio framework. E é claro, uma descrição melhor será publicada nos próximos dias.",
-			"type": "workshop"
-		},
-		{
-			"id": 27,
-			"title": "Clean Interfaces - Como foi construido o app da Conferência",
-			"speaker": 6,
-			"room": 2,
-			"date": "2016-12-03T13:30:00-0300",
-			"duration": 60,
-			"summary": "Venha descobrir como foi construído o aplicativo da conferência e o porquê das escolhas feitas",
-			"description": "Neste workshop, Bruno irá mostrar como foi desenvolvido o aplicativo da conferência, desde a arquitetura adotada, até a criação das interfaces com XIB + códigos",
-			"type": "workshop"
-		},
-		{
-			"id": 28,
-			"title": "Backend com Zewo - REST",
-			"speaker": 7,
-			"room": 2,
-			"date": "2016-12-03T14:30:00-0300",
-			"duration": 60,
-			"summary": "Backend com Zewo - REST",
-			"description": "Backend com Zewo - REST",
-			"type": "workshop"
-		},
-		{
-			"id": 29,
-			"title": "Backend com Zewo - GraphQL",
-			"speaker": 21,
-			"room": 2,
-			"date": "2016-12-03T15:30:00-0300",
-			"duration": 60,
-			"summary": "Backend com Zewo - GraphQL",
-			"description": "Backend com Zewo - GraphQL",
-			"type": "workshop"
-		},
-		{
-			"id": 30,
-			"title": "Core Data / Realm",
-			"speaker": 22,
-			"room": 3,
-			"date": "2016-12-03T10:30:00-0300",
-			"duration": 60,
-			"summary": "Core Data / Realm",
-			"description": "Core Data / Realm",
-			"type": "workshop"
-		}
-	],
-	"videos": [ ]
+"event": {
+"name": "Cocoaheads Conference 2016",
+"headline": "O primeiro evento nacional do CocoaHeads Brasil.",
+"subline": "Reunindo mais de 150 desenvolvedores, com muito conteúdo sobre iOS, watchOS, macOS e tvOS. Venha fazer parte!",
+"startDate": "2016-12-02T16:30:00-0300",
+"twitter": "cocoaheadsconf",
+"codeOfConduct": "https://github.com/CocoaHeadsConference/CocoaHeadsConferenceCodigoDeConduta/blob/master/README.md",
+"endDate": "2016-12-03T17:00:00-0300",
+"location": {
+"address": "Avenida Das Nações Unidas, 3007 \nOsasco - SP",
+"coordinate": {
+"lat": -23.524087,
+"long": -46.760567
+}
+}
+},
+"theme": {
+"main": "004D40",
+"action": "1abc9c",
+"contrasting": "FFFFFF",
+"shadow": "000000",
+"talk": "00c300",
+"workshop": "00838F",
+"opening": "AD1457",
+"closing": "AD1457",
+"breaktime": "F9A825",
+"setup": "9E9D24"
+},
+"sponsors": [
+{
+"id": 0,
+"title": "iFood",
+"url": "https://www.ifood.com.br/",
+"image": "http://cocoaheadsconference.com.br/images/sponsors/6.png",
+"type": ""
+},
+{
+"id": 1,
+"title": "Twitter",
+"url": "http://www.twitter.com/",
+"image": "http://cocoaheadsconference.com.br/images/sponsors/7.png",
+"type": ""
+},
+{
+"id": 2,
+"title": "Work&Co",
+"url": "http://work.co",
+"image": "http://cocoaheadsconference.com.br/images/sponsors/8.png",
+"type": ""
+},
+{
+"id": 3,
+"title": "AvenueCode",
+"url": "http://www.avenuecode.com/",
+"image": "http://cocoaheadsconference.com.br/images/sponsors/9.png",
+"type": ""
+},
+{
+"id": 4,
+"title": "Sympla",
+"url": "http://www.sympla.com.br/",
+"image": "http://cocoaheadsconference.com.br/images/sponsors/1.png",
+"type": ""
+},
+{
+"id": 5,
+"title": "Abacomm",
+"url": "http://abacomm.com.br/",
+"image": "http://cocoaheadsconference.com.br/images/sponsors/2.png",
+"type": ""
+},
+{
+"id": 6,
+"title": "iMasters",
+"url": "http://imasters.com.br/",
+"image": "http://cocoaheadsconference.com.br/images/sponsors/3.png",
+"type": ""
+},
+{
+"id": 7,
+"title": "Mercado Livre",
+"url": "http://www.mercadolivre.com.br/",
+"image": "http://cocoaheadsconference.com.br/images/sponsors/4.png",
+"type": ""
+},
+{
+"id": 8,
+"title": "Concrete Solutions",
+"url": "http://www.concretesolutions.com.br/",
+"image": "http://cocoaheadsconference.com.br/images/sponsors/5.png",
+"type": ""
+}
+],
+"speakers": [
+{
+"id": 1,
+"name": "Francesco Perrotti",
+"image": "images/team/francesco-perrotti.jpg",
+"title": "LEAD DEVELOPER, MOVILE",
+"bio": "Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
+"citation": "",
+"twitterHandle": "fpg1503",
+"linkedinHandler": "fpg1503",
+"githubHandler": "fpg1503"
+},
+{
+"id": 2,
+"name": "Rodrigo Borges",
+"image": "images/team/rodrigo-borges.jpg",
+"title": "LEAD DEVELOPER, VIVAREAL",
+"bio": "Manauara, desenvolvedor iOS no VivaReal, desenvolvedor e co-fundador do Meatless. Além de casas, apartamentos e comida vegetariana, não vive sem música e fotografia.",
+"citation": "",
+"twitterHandle": "rdgborges",
+"linkedinHandler": "rdgborges",
+"githubHandler": "rdgborges"
+},
+{
+"id": 3,
+"name": "Fernando Bunn",
+"image": "images/team/fernando-bunn.jpg",
+"title": "MOBILE TECH LEAD",
+"bio": "Trabalha com iOS desde 2008; Realizou projetos para empresas Fortune 500; Foi CEO de uma empresa de mobile development por 4 anos; Atualmente trabalha como Mobile Tech Lead para uma empresa de São Francisco - CA.",
+"citation": "",
+"twitterHandle": "fcbunn",
+"linkedinHandler": "fcbunn",
+"githubHandler": "Bunn"
+},
+{
+"id": 4,
+"name": "Diogo Tridapalli",
+"image": "images/team/diogo-tridapalli.jpg",
+"title": "LEAD DEVELOPER",
+"bio": "Na comunidade desde 2009, trabalhou em uma ad network e seu código pertubou os usuáriOS com anúnciOS em mais de 200 milhões de devices. Foi um dos desenvolvedores do app 99Taxis e passou por novos projetos na Movile e Nubank. Nas horas vagas gera entropia na organização do CocoaHeadsSP e escreve no Invariante.com.",
+"citation": "",
+"twitterHandle": "diogot",
+"linkedinHandler": "diogot",
+"githubHandler": "diogot"
+},
+{
+"id": 5,
+"name": "Guilherme Rambo",
+"image": "images/team/guilherme-rambo.jpg",
+"title": "LEAD DEVELOPER",
+"bio": "Criador do famoso app da WWDC para macOS, trabalha há alguns anos com desenvolvimento para Mac e iOS, possuí atualmente 6 apps publicados e diversos projetos open-source.",
+"citation": "",
+"twitterHandle": "_inside",
+"linkedinHandler": "guilherme-rambo-78506425",
+"githubHandler": "insidegui"
+},
+{
+"id": 6,
+"name": "Bruno Bilescky",
+"image": "images/team/bruno-bilescky.jpg",
+"title": "LEAD DEVELOPER, VIVAREAL",
+"bio": "Desenvolvedor iOS desde o iPhoneOS 3, adora desenvolver frameworks como Compose. Programação funcional, Value Types, imutabilidade e Lego também estão constantemente em seu dia a dia.",
+"citation": "Sempre crie código como se a pessoa que desse manutenção nele fosse um psicopata violento que sabe onde você mora.",
+"twitterHandle": "bgondim",
+"linkedinHandler": "brunogb",
+"githubHandler": "brunogb"
+},
+{
+"id": 7,
+"name": "Paulo Faria",
+"image": "images/team/paulo-faria.jpg",
+"title": "LEAD DEVELOPER",
+"bio": "Membro do core team das APIs de Swift Server da Apple. Criador do Zewo, Venice e GraphQLSwift.",
+"citation": "",
+"twitterHandle": "paulofariarl",
+"linkedinHandler": "",
+"githubHandler": "paulofaria"
+},
+{
+"id": 8,
+"name": "Marcelo Fabri",
+"image": "images/team/marcelo-fabri.jpg",
+"title": "LEAD DEVELOPER",
+"bio": "Desenvolvedor iOS desde quando a contagem de referências era manual e Xcode e Interface Builder eram apps distintos. Gosta de contribuir em projetos open-source sempre que possível.",
+"citation": "",
+"twitterHandle": "marcelofabri_",
+"linkedinHandler": "marcelofabri",
+"githubHandler": "marcelofabri"
+},
+{
+"id": 9,
+"name": "Cynthia Zanoni",
+"image": "images/team/cynthia-zanoni.jpg",
+"title": "TECH EVANGELIST",
+"bio": "Evangelista Técnica na Microsoft, curadora da Mobile Summit Brazil e idealizadora do WoMakersCode, um projeto focado em capacitação e empoderamento feminino e de minorias na TI e atua, também, como coordenadora do WoMoz (Women & Mozilla). É apaixonada open source e nas horas vagas, cria projetos e iniciativas que possam contribuir para o fortalecimento das mulheres no mercado de trabalho e comunidades de tecnologia.",
+"citation": "",
+"twitterHandle": "cynthiazanoni",
+"linkedinHandler": "cynthiazanoni",
+"githubHandler": ""
+},
+{
+"id": 10,
+"name": "Tales Pinheiro",
+"image": "images/team/tales-pinheiro.jpg",
+"title": "CHAPTER LEADER, CONCRETE SOLUTIONS",
+"bio": "Mestre em computação pelo IME-USP, é desenvolvedor C desde 2003 e iOS desde 2010. Organizador do CocoaHeads SP e sócio-fundador da Newt Labs. Atualmente é iOS Chapter Leader na Concrete Solutions.",
+"citation": "",
+"twitterHandle": "talesp",
+"linkedinHandler": "talespinheiro",
+"githubHandler": ""
+},
+{
+"id": 11,
+"name": "Douglas Fischer",
+"image": "images/team/douglas-fischer.jpg",
+"title": "MOBILE PRODUCTS LEAD, ABACOMM",
+"bio": "Desenvolvedor iOS desde 2008. Fundador do XT3 StudiOS, Advanced e Arapuka Antivirus. É Mobile Products Lead na Abacomm. Também atua como Community Manager & Podcaster do @CocoaHeadsBR.",
+"citation": "",
+"twitterHandle": "DougDiskin",
+"linkedinHandler": "dougdiskin",
+"githubHandler": "DougFischer"
+},
+{
+"id": 12,
+"name": "Vinícius Carvalho",
+"image": "images/team/vinicius-carvalho.jpg",
+"title": "MOBILE DEVELOPER, CONCRETE SOLUTIONS",
+"bio": "Se envolveu com a comunidade iOS no final de 2014 e nunca mais saiu. É líder do CocoaHeads Brasil em Fortaleza e participante do Devbeers Fortaleza. Entusiasta de Ruby e biker.",
+"citation": "",
+"twitterHandle": "viniciusc70",
+"linkedinHandler": "viniciuscarvalhomarques",
+"githubHandler": "Viniciuscarvalho"
+},
+{
+"id": 13,
+"name": "Juliana Salgado",
+"image": "images/team/juliana-salgado.jpg",
+"title": "iOS DEVELOPER, IFOOD",
+"bio": "Formada em Análise de Sistemas pela PUC-Campinas, foi premiada duas vezes com uma bolsa de estudos da WWDC nos anos de 2015 e 2016. Estudou no BEPID e é também Android Developer. Hoje trabalha como iOS Developer no iFood.",
+"citation": "",
+"twitterHandle": "jusalt",
+"linkedinHandler": "julianasalgado",
+"githubHandler": ""
+},
+{
+"id": 14,
+"name": "Henrique Leite",
+"image": "images/team/henrique-leite.png",
+"title": "Engenheiro de Software Sr no MercadoPago.com",
+"bio": "",
+"citation": "",
+"linkedinHandler": "",
+"githubHandler": ""
+},
+{
+"id": 15,
+"name": "John Calistro",
+"image": "images/team/john-calistro.png",
+"title": "Branch Evangelist",
+"bio": "Evangelista da Branch, co-organizador das comunidades CocoaHeads, Twitter Developers, FB Developers Circle e Mobile Growth, empreendedor, formado em contabilidade e processamento de dados, graduando em Sistemas da Informação, GTD e IoT entusiasta, desenvolvedor de software a mais de 3 décadas, nas horas vagas gosta de brincar com sua filha (humana) e seu filho (canino), sair com a esposa e assistir séries de tv.",
+"citation": "",
+"twitterHandle": "johncalistro",
+"linkedinHandler": "",
+"githubHandler": ""
+},
+{
+"id": 16,
+"name": "Igor Ferreira",
+"image": "images/team/igor-ferreira.jpg",
+"title": "iOS Frameworks Developer",
+"bio": "Desenvolvedor mobile com experiência em Android, iOS, Unity, wearable e IoT (protocolo MQTT, Arduino e RaspberryPie). Com projetos desenvolvidos para Apple Watch e Android Wear, com utilização de mapa, Game Kit, Google Play e as principais frameworks.",
+"citation": "",
+"twitterHandle": "icastanheda",
+"linkedinHandler": "igorcferreira",
+"githubHandler": ""
+},
+{
+"id": 17,
+"name": "Fellipe Caetano",
+"image": "images/team/fellipe-caetano.jpg",
+"title": "Não Definido",
+"bio": "Não definido",
+"citation": "",
+"linkedinHandler": "",
+"githubHandler": ""
+},
+{
+"id": 19,
+"name": "João Paulo Ros",
+"image": "images/team/joao-paulo-ros.png",
+"title": "Não definido",
+"bio": "Não definido",
+"citation": "",
+"twitterHandle": "jpros",
+"linkedinHandler": "",
+"githubHandler": ""
+},
+{
+"id": 20,
+"name": "Cristiano Pio",
+"image": "images/team/cristiano-pio.png",
+"title": "Product Owner @Sympla.",
+"bio": "Não definido",
+"citation": "",
+"twitterHandle": "orsipio",
+"linkedinHandler": "",
+"githubHandler": ""
+},
+{
+"id": 21,
+"name": "Thiago Holanda",
+"image": "images/team/thiago-holanda.png",
+"title": "Não Definido",
+"bio": "Não definido",
+"citation": "",
+"twitterHandle": "tholanda",
+"linkedinHandler": "",
+"githubHandler": ""
+},
+{
+"id": 22,
+"name": "Arthur Cançado",
+"image": "images/team/arthur-cancado.png",
+"title": "Não Definido",
+"bio": "Não definido",
+"citation": "",
+"twitterHandle": "ajcancado",
+"linkedinHandler": "",
+"githubHandler": ""
+}
+],
+"rooms": [
+{
+"id": 0,
+"title": "Recepção",
+"capacity": 0
+},
+{
+"id": 1,
+"title": "Auditório",
+"capacity": 200
+},
+{
+"id": 2,
+"title": "Sala Workshop 1",
+"capacity": 8
+},
+{
+"id": 3,
+"title": "Sala Workshop 2",
+"capacity": 6
+},
+{
+"id": 5,
+"title": "CodeLab",
+"capacity": 8
+},
+{
+"id": 6,
+"title": "Sala Cocoaheads",
+"capacity": 6
+},
+{
+"id": 4,
+"title": "Área comum",
+"capacity": 0
+}
+],
+"talks": [
+{
+"id": 0,
+"title": "Credenciamento",
+"speaker": 0,
+"room": 0,
+"date": "2016-12-02T16:30:00-0300",
+"duration": 45,
+"summary": "Pegue seu crachá e material do evento.",
+"description": "Aproveite esse momento para se apresentar aos participantes, conhecer aquela pessoa que você conversa apenas pela internet e postar sobre o evento nas redes sociais.",
+"type": "setup"
+},
+{
+"id": 1,
+"title": "Abertura Do Evento",
+"speaker": 15,
+"room": 1,
+"date": "2016-12-02T17:15:00-0300",
+"duration": 15,
+"summary": "Declaramos aberta a 1º CocoaHeads Conference.",
+"description": "O momento tão esperado por todos: A abertura do primeiro evento nacional do CocoaHeads Brasil! Um momento muito emocionante e um marco para toda a comunidade iOS.",
+"type": "opening"
+},
+{
+"id": 2,
+"title": "A Black Friday da minha vida",
+"speaker": 14,
+"room": 1,
+"date": "2016-12-02T17:30:00-0300",
+"duration": 30,
+"summary": "Uma brilhante mente da equipe de Desenvolvimento do Mercado Pago sugeriu o desenvolvimento de um app de ofertas, vésperas da Black Friday!",
+"description": "Sem a contratação de uma agência, tivemos que \"meter as caras\" no mundo dos apps. Venha saber os desafiOS e aprendizados do desenvolvimento da solução do iOS com SWIFT 3.0 e toda a arquitetura bolada em menos de 2 meses da Black Friday.",
+"type": "talk"
+},
+{
+"id": 3,
+"title": "Modelos De Concorrência E Swift No Servidor",
+"speaker": 7,
+"room": 1,
+"date": "2016-12-02T18:00:00-0300",
+"duration": 60,
+"summary": "Desmistificando modelos de concorrência e suas aplicações em Swift no servidor.",
+"description": "O Paulo Faria, fundador do famoso projeto Zewo e hoje membro do Core Team de API's Swift Server da Apple irá explicar como usufruir do Swift para aplicações web.",
+"type": "talk"
+},
+{
+"id": 4,
+"title": "Coffeebreak & Networking",
+"speaker": 0,
+"room": 4,
+"date": "2016-12-02T19:00:00-0300",
+"duration": 30,
+"summary": "Pausa para um lanche!",
+"description": "Um intervalo para passear pela área comum do local, tomar um café e claro, bater papo com todos os incríveis participantes. Aproveite esse momento para ficar de olho na programação do Sábado.",
+"type": "breaktime"
+},
+{
+"id": 5,
+"title": "Lessons Learned",
+"speaker": 20,
+"room": 1,
+"date": "2016-12-02T19:30:00-0300",
+"duration": 40,
+"summary": "Lições aprendendidas no desenvolvimento do app da Sympla",
+"description": "Contarei um pouco do que aprendemos no desenvolvimento dos aplicativos iOS da Sympla, passando pela decisão de internalizar o desenvolvimento até a consolidação de um processo de gestão de produto aplicado ao mobile.  ",
+"type": "talk"
+},
+{
+"id": 6,
+"title": "Deep Links",
+"speaker": 15,
+"room": 1,
+"date": "2016-12-02T20:10:00-0300",
+"duration": 30,
+"summary": "Entendendo deep links e como facilitar sua vida usando o Branch.io",
+"description": "Entendendo deep links e como facilitar sua vida usando o Branch.io",
+"type": "talk"
+},
+{
+"id": 7,
+"title": "SorteiOS & Encerramento",
+"speaker": 12,
+"room": 1,
+"date": "2016-12-02T20:40:00-0300",
+"duration": 20,
+"summary": "Agradecimento, sorteio, encerramento e feedback!",
+"description": "Vinicius irá sortear alguns brindes cedidos pelos apoiadores do evento e o primeiro dia de evento chega ao fim!",
+"type": "closing"
+},
+{
+"id": 8,
+"title": "Credenciamento & Coffee-Break",
+"speaker": 0,
+"room": 0,
+"date": "2016-12-03T07:00:00-0300",
+"duration": 60,
+"summary": "Se for seu primeiro dia, pegue seu crachá!",
+"description": "Aproveite esse momento para se informar sobre os workshops e demais atividades de cada sala. Converse com os participantes e tome um café.",
+"type": "setup"
+},
+{
+"id": 9,
+"title": "Abertura Do Segundo Dia De Evento",
+"speaker": 11,
+"room": 1,
+"date": "2016-12-03T08:00:00-0300",
+"duration": 20,
+"summary": "E breve recado dos apoiadores!",
+"description": "Cerimônia de abertura do segundo dia de evento, com breve palavra das empresas apoiadoras e apresentação das atividades do dia.",
+"type": "opening"
+},
+{
+"id": 10,
+"title": "Notificações No iOS 10",
+"speaker": 2,
+"room": 1,
+"date": "2016-12-03T08:20:00-0300",
+"duration": 40,
+"summary": "Rich Notifications.",
+"description": "O iOS 10 trouxe muitas mudanças, mas uma das mais impactantes no dia a dia dos devs é relacionada as API's de Push Notifications. Vamos entender o que você precisa fazer para tirar o maior proveito das Rich Notifications.",
+"type": "talk"
+},
+{
+"id": 11,
+"title": "Good Code",
+"speaker": 1,
+"room": 1,
+"date": "2016-12-03T09:00:00-0300",
+"duration": 40,
+"summary": "O que é e como fazer!",
+"description": "Escrever código bom não é uma tarefa simples. Vamos abordar como reconhecer melhorias e aplicadas em nossos códigos e quais features de Swift e bibliotecas podem nos auxiliar nessa tarefa.",
+"type": "talk"
+},
+{
+"id": 12,
+"title": "Azure SDK Para Apps iOS Nativos",
+"speaker": 9,
+"room": 1,
+"date": "2016-12-03T09:40:00-0300",
+"duration": 35,
+"summary": "Ainda orfão do Parse?",
+"description": "Azure SDK para apps iOS nativos.",
+"type": "talk"
+},
+{
+"id": 13,
+"title": "Dando Valor Para \"Value Types\"",
+"speaker": 6,
+"room": 1,
+"date": "2016-12-03T10:15:00-0300",
+"duration": 45,
+"summary": "Structs, Enums, Protocolos, Imutabilidade, Programação funcional, Testes",
+"description": "Structs, Enums, Protocolos, Imutabilidade, Programação funcional, Testes",
+"type": "talk"
+},
+{
+"id": 14,
+"title": "Acessibilidade Em Alto E Bom Som",
+"speaker": 13,
+"room": 1,
+"date": "2016-12-03T11:00:00-0300",
+"duration": 30,
+"summary": "Dando voz aos seus aplicativos",
+"description": "Juliana oferece uma visão geral dos recursos de acessibilidade existentes que os desenvolvedores podem (e devem) explorar. Será apresentado como tornar o seu aplicativo acessível aos deficientes visuais através de um case real do app iFood.",
+"type": "talk"
+},
+{
+"id": 15,
+"title": "Almoço & Networking",
+"speaker": 0,
+"room": 4,
+"date": "2016-12-03T11:30:00-0300",
+"duration": 90,
+"summary": "Hora de comer!",
+"description": "O almoço é servido no restaurante do Mercado Livre e fica disponível até as 14:00.",
+"type": "breaktime"
+},
+{
+"id": 16,
+"title": "Debugging Tricks",
+"speaker": 3,
+"room": 1,
+"date": "2016-12-03T13:00:00-0300",
+"duration": 45,
+"summary": "LLDB é seu amigo.",
+"description": "LLDB é aquele cara tímido que gosta de aparecer quando seu app da crash. Vamos ver algumas dicas e truques de como usar o LLDB para facilitar a sua vida, quem sabe ele te ajuda a remover alguns NSLogs, códigos de teste (aquele que acaba indo pro cliente) ou até mesmo evitar build and runs desnecessáriOS.",
+"type": "talk"
+},
+{
+"id": 17,
+"title": "Geração de Código",
+"speaker": 8,
+"room": 1,
+"date": "2016-12-03T13:45:00-0300",
+"duration": 45,
+"summary": "👍 ou 👎?",
+"description": "O que é? Por que fazer? É bom ou ruim? Onde vive? Do que se alimenta? Dia 03, no Globo Repórter na palestra do Fabri.",
+"type": "talk"
+},
+{
+"id": 18,
+"title": "iOS Architecture",
+"speaker": 4,
+"room": 1,
+"date": "2016-12-03T14:30:00-0300",
+"duration": 45,
+"summary": "Adapt to survive!",
+"description": "MVC+MVVM+Coordinator+Other stuffs.",
+"type": "talk"
+},
+{
+"id": 19,
+"title": "Mind: Blown!",
+"speaker": 5,
+"room": 1,
+"date": "2016-12-03T15:15:00-0300",
+"duration": 45,
+"summary": "Três conceitos que farão a diferença nos seus apps.",
+"description": "Nesta talk Guilherme irá apresentar três padrões que adotou e que mudaram significativamente a qualidade dos seus apps: Abstrair a internet dos seus view controllers; calcular diferenças entre coleções de models e lidar com navegação entre telas.",
+"type": "talk"
+},
+{
+"id": 20,
+"title": "Coffeebreak & Networking",
+"speaker": 0,
+"room": 4,
+"date": "2016-12-03T16:00:00-0300",
+"duration": 30,
+"summary": "Pausa pra mais um lanche e networking",
+"description": "Um intervalo para passear pela área comum do local, tomar um café e claro, bater papo com todos os incríveis participantes.",
+"type": "breaktime"
+},
+{
+"id": 21,
+"title": "SorteiOS & Encerramento",
+"speaker": 10,
+"room": 1,
+"date": "2016-12-03T16:30:00-0300",
+"duration": 30,
+"summary": "Hora de dar tchau!",
+"description": "Iremos realizar alguns sorteiOS de coisinhas gentilmente cedidas pelas empresas apoiadoras e encerrar o evento!",
+"type": "closing"
+},
+{
+"id": 22,
+"title": "Redux Para iOS",
+"speaker": 17,
+"room": 3,
+"date": "2016-12-03T09:30:00-0300",
+"duration": 60,
+"summary": "Containers previsíveis de estado e fluxos unidirecionais de dados e… oi?",
+"description": "Código que mantém estado é um saco. É complexo. Tende a bugs. E ainda assim, é o destino inevitável do desenvolvedor de UIs. Aprenda, na prática, como usar os princípiOS e técnicas do famoso Redux para controlar o estado de sua aplicação iOS, de forma previsível e controlada.",
+"type": "workshop"
+},
+{
+"id": 23,
+"title": "Redux Para iOS",
+"speaker": 17,
+"room": 3,
+"date": "2016-12-03T14:30:00-0300",
+"duration": 60,
+"summary": "Containers previsíveis de estado e fluxos unidirecionais de dados e… oi?",
+"description": "Código que mantém estado é um saco. É complexo. Tende a bugs. E ainda assim, é o destino inevitável do desenvolvedor de UIs. Aprenda, na prática, como usar os princípiOS e técnicas do famoso Redux para controlar o estado de sua aplicação iOS, de forma previsível e controlada.",
+"type": "workshop"
+},
+{
+"id": 24,
+"title": "SiriKit",
+"speaker": 19,
+"room": 2,
+"date": "2016-12-03T11:30:00-0300",
+"duration": 60,
+"summary": "Integre seu app com sua voz!",
+"description": "Workshop mostrando, na prática, como suportar comandos de voz da Siri dentro do seu app.",
+"type": "workshop"
+},
+{
+"id": 25,
+"title": "Arquitetura Clean",
+"speaker": 7,
+"room": 2,
+"date": "2016-12-03T12:30:00-0300",
+"duration": 60,
+"summary": "Arquitetura Clean",
+"description": "Arquitetura Clean",
+"type": "workshop"
+},
+{
+"id": 26,
+"title": "Frameworks",
+"speaker": 16,
+"room": 2,
+"date": "2016-12-03T10:30:00-0300",
+"duration": 30,
+"summary": "Crie o seu!",
+"description": "Igor vem trabalhando os últimos meses exclusivamente na criação de frameworks. Nesse workshop ele dará os caminhos das pedras para você criar o seu próprio framework. E é claro, uma descrição melhor será publicada nos próximos dias.",
+"type": "workshop"
+},
+{
+"id": 27,
+"title": "Clean Interfaces - Como foi construido o app da Conferência",
+"speaker": 6,
+"room": 2,
+"date": "2016-12-03T13:30:00-0300",
+"duration": 60,
+"summary": "Venha descobrir como foi construído o aplicativo da conferência e o porquê das escolhas feitas",
+"description": "Neste workshop, Bruno irá mostrar como foi desenvolvido o aplicativo da conferência, desde a arquitetura adotada, até a criação das interfaces com XIB + códigos",
+"type": "workshop"
+},
+{
+"id": 28,
+"title": "Backend com Zewo - REST",
+"speaker": 7,
+"room": 2,
+"date": "2016-12-03T14:30:00-0300",
+"duration": 60,
+"summary": "Backend com Zewo - REST",
+"description": "Backend com Zewo - REST",
+"type": "workshop"
+},
+{
+"id": 29,
+"title": "Backend com Zewo - GraphQL",
+"speaker": 21,
+"room": 2,
+"date": "2016-12-03T15:30:00-0300",
+"duration": 60,
+"summary": "Backend com Zewo - GraphQL",
+"description": "Backend com Zewo - GraphQL",
+"type": "workshop"
+},
+{
+"id": 30,
+"title": "Core Data / Realm",
+"speaker": 22,
+"room": 3,
+"date": "2016-12-03T10:30:00-0300",
+"duration": 60,
+"summary": "Core Data / Realm",
+"description": "Core Data / Realm",
+"type": "workshop"
+}
+],
+"videos": []
 }
