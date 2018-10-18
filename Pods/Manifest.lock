@@ -10,6 +10,12 @@ DEPENDENCIES:
   - Marshal
   - YoutubeSourceParserKit (from `https://github.com/lennet/YoutubeSourceParserKit.git`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Compose
+    - Kingfisher
+    - Marshal
+
 EXTERNAL SOURCES:
   YoutubeSourceParserKit:
     :git: https://github.com/lennet/YoutubeSourceParserKit.git
@@ -27,4 +33,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 09687f734426ebcd9f4753889d361c3c372ac543
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.5.3
