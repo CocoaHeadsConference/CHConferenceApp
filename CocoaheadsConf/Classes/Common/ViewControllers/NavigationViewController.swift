@@ -21,6 +21,8 @@ class NavigationViewController: UINavigationController {
         self.navigationBar.isTranslucent = false
         self.navigationBar.shadowImage = UIImage(color: Theme.shared.mainColor)
         self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Theme.shared.contrastingColor]
+        navigationBar.prefersLargeTitles = true
+        navigationBar.largeTitleTextAttributes = [NSForegroundColorAttributeName: Theme.shared.contrastingColor]
     }
     
 
