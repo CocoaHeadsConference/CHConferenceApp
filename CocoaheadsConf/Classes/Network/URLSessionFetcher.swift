@@ -20,7 +20,7 @@ final class URLSessionFetcher: NetworkFetcher {
     
     init(cacheService: Cache) {
         cache = cacheService
-        jsonURL = URL(string: "http://cocoaheadsconference.com.br/app/data.json")!
+        jsonURL = URL(string: "http://cocoaheadsconference.com.br/app/2018.json")!
         session = URLSession.shared
     }
     
