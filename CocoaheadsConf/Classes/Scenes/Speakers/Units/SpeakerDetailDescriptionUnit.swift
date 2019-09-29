@@ -21,9 +21,9 @@ struct SpeakerDetailDescriptionUnit: TypedUnit {
     
     init(headline: String, bio: String) {
         let bioFont = UIFont.systemFont(ofSize: 15)
-        let headlineFont = UIFont.systemFont(ofSize: 17, weight: UIFontWeightMedium)
-        let bioText = NSAttributedString(string: bio, attributes: [NSFontAttributeName: bioFont])
-        let headlineText = NSAttributedString(string: headline, attributes: [NSFontAttributeName: headlineFont])
+        let headlineFont = UIFont.systemFont(ofSize: 17, weight: .medium)
+        let bioText = NSAttributedString(string: bio, attributes: [.font: bioFont])
+        let headlineText = NSAttributedString(string: headline, attributes: [.font: headlineFont])
         self.bio = bioText
         self.headline = headlineText
         heightUnit = DimensionUnit { size in

@@ -23,10 +23,10 @@ struct SpeakerDetailSmallTalkUnit: TypedUnit {
     
     init(identifier: String, title: String, summary: String, date: String, room: String?, color: UIColor) {
         self.identifier = identifier
-        let titleFont = UIFont.systemFont(ofSize: 22, weight: UIFontWeightMedium)
-        let titleAttributed = NSAttributedString(string: title, attributes: [NSFontAttributeName: titleFont])
+        let titleFont = UIFont.systemFont(ofSize: 22, weight: .medium)
+        let titleAttributed = NSAttributedString(string: title, attributes: [NSAttributedString.Key.font: titleFont])
         let summaryFont = UIFont.systemFont(ofSize: 15)
-        let summaryAttributed = NSAttributedString(string: summary, attributes: [NSFontAttributeName: summaryFont])
+        let summaryAttributed = NSAttributedString(string: summary, attributes: [NSAttributedString.Key.font: summaryFont])
         self.title = titleAttributed
         self.summary = summaryAttributed
         self.date = date

@@ -1,36 +1,34 @@
 PODS:
-  - Compose (1.0.2)
-  - Kingfisher (3.2.1)
-  - Marshal (1.0.0)
+  - Compose (2.0.0)
+  - Marshal (1.2.7)
   - YoutubeSourceParserKit (0.2.4)
 
 DEPENDENCIES:
-  - Compose
-  - Kingfisher
+  - Compose (from `/Users/resource/Documents/Douglas/Github/Compose`)
   - Marshal
-  - YoutubeSourceParserKit (from `https://github.com/lennet/YoutubeSourceParserKit.git`)
+  - YoutubeSourceParserKit (from `https://github.com/douglastaquary/YoutubeSourceParserKit.git`, branch `support_swift5`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Compose
-    - Kingfisher
     - Marshal
 
 EXTERNAL SOURCES:
+  Compose:
+    :path: "/Users/resource/Documents/Douglas/Github/Compose"
   YoutubeSourceParserKit:
-    :git: https://github.com/lennet/YoutubeSourceParserKit.git
+    :branch: support_swift5
+    :git: https://github.com/douglastaquary/YoutubeSourceParserKit.git
 
 CHECKOUT OPTIONS:
   YoutubeSourceParserKit:
-    :commit: 98f3bcf9886c20eefd82249a6cfbb3068ad86b80
-    :git: https://github.com/lennet/YoutubeSourceParserKit.git
+    :commit: bdd2effb1db151146582ecdbe654e46d41da3621
+    :git: https://github.com/douglastaquary/YoutubeSourceParserKit.git
 
 SPEC CHECKSUMS:
-  Compose: 8affbe6e5263f8d851d92ecd5757bd9dcca89fe3
-  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
-  Marshal: a3c5c5dbd388112edf3cdabb718f2b4cfe48658a
+  Compose: 9d3958e8f5b0eaa0a648a21139eb34fc46b22125
+  Marshal: ef480864a6af10a63f67be7e55bb5d8fe67a16d9
   YoutubeSourceParserKit: d1506222a62718ed41f18ab52ebbc1b1d9ecabcc
 
-PODFILE CHECKSUM: 09687f734426ebcd9f4753889d361c3c372ac543
+PODFILE CHECKSUM: 3124589f5e0fc4af5b5e3aad570abe3ef389bd9d
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

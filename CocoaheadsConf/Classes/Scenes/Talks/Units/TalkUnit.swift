@@ -27,8 +27,8 @@ struct TalkUnit: TypedUnit, SelectableUnit {
     init(talk: TalkModel, callback:((TalkModel)-> Void)?) {
         self.talk = talk
         self.callback = callback
-        let title = NSAttributedString(string: talk.title, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 20, weight: UIFontWeightBold)])
-        let summary = NSAttributedString(string: self.talk.summary, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 15)])
+        let title = NSAttributedString(string: talk.title, attributes: [.font : UIFont.systemFont(ofSize: 20, weight: .bold)])
+        let summary = NSAttributedString(string: self.talk.summary, attributes: [.font: UIFont.systemFont(ofSize: 15)])
         self.titleAttributedText = title
         self.summaryAttributedText = summary
         self.heightUnit = DimensionUnit { size in

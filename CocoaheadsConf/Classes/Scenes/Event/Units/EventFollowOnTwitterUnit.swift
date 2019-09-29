@@ -18,7 +18,7 @@ struct EventFollowOnTwitterUnit: TypedUnit, SelectableUnit {
     
     let color: UIColor
     let twitter: String
-    var callback: ((Void)-> Void)?
+    var callback: (()-> Void)?
     
     func configure(innerView: Cell) {
         innerView.mainColor = color

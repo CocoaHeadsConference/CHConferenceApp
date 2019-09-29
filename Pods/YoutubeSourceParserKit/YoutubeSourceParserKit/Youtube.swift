@@ -66,7 +66,7 @@ open class Youtube: NSObject {
      @param youtubeURL the the complete youtube video url, either youtu.be or youtube.com
      @return string with desired youtube id
      */
-    open static func youtubeIDFromYoutubeURL(_ youtubeURL: URL) -> String? {
+    public static func youtubeIDFromYoutubeURL(_ youtubeURL: URL) -> String? {
         guard let youtubeHost = youtubeURL.host else {
             return nil
         }
@@ -96,7 +96,7 @@ open class Youtube: NSObject {
      @return dictionary with the available formats for the selected video
      
      */
-    open static func h264videosWithYoutubeID(_ youtubeID: String) -> [String: Any]? {
+    public static func h264videosWithYoutubeID(_ youtubeID: String) -> [String: Any]? {
         guard let parts = loadVideoInfos(youtubeID: youtubeID), parts.count > 0 else {
             return nil
         }
@@ -167,7 +167,7 @@ open class Youtube: NSObject {
      @param completeBlock the block which is called on completion
      
      */
-    open static func h264videosWithYoutubeURL(_ youtubeURL: URL,completion: ((
+    public static func h264videosWithYoutubeURL(_ youtubeURL: URL,completion: ((
         _ videoInfo: [String: Any]?, _ error: NSError?) -> Void)?) {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async{
             if let youtubeID = self.youtubeIDFromYoutubeURL(youtubeURL), let videoInformation = self.h264videosWithYoutubeID(youtubeID) {

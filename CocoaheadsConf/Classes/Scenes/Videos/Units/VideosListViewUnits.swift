@@ -12,8 +12,8 @@ import Compose
 struct VideosListViewUnits {
 
     static func Video(video: VideoModel, callback:((VideoModel)-> Void)?)-> ComposingUnit {
-        let font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
-        let attributed = NSAttributedString(string: video.talk?.title ?? "", attributes: [NSFontAttributeName: font])
+        let font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        let attributed = NSAttributedString(string: video.talk?.title ?? "", attributes: [ .font: font])
         var unit = ViewUnit<UILabel>(id: "\(video.id)", traits: [.height(80), .insets(UIEdgeInsets(horizontal: 16))]) { label in
             label.attributedText = attributed
             label.numberOfLines = 0

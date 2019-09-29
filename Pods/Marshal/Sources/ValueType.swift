@@ -37,52 +37,104 @@ extension ValueType {
 extension String: ValueType {}
 extension Int: ValueType {}
 extension UInt: ValueType {}
-extension Float: ValueType {}
-extension Double: ValueType {}
 extension Bool: ValueType {}
+
+extension Float: ValueType {
+    public static func value(from object: Any) throws -> Float {
+        guard let value = object as? NSNumber else {
+            throw MarshalError.typeMismatch(expected: NSNumber.self, actual: type(of: object))
+        }
+        return value.floatValue
+    }
+}
+
+extension Double: ValueType {
+    public static func value(from object: Any) throws -> Double {
+        guard let value = object as? NSNumber else {
+            throw MarshalError.typeMismatch(expected: NSNumber.self, actual: type(of: object))
+        }
+        return value.doubleValue
+    }
+}
 
 extension Int64: ValueType {
     public static func value(from object: Any) throws -> Int64 {
-        guard let value = object as? NSNumber else { throw MarshalError.typeMismatch(expected: NSNumber.self, actual: type(of: object)) }
+        guard let value = object as? NSNumber else {
+            throw MarshalError.typeMismatch(expected: NSNumber.self, actual: type(of: object)) }
         return value.int64Value
     }
 }
 
 extension Array where Element: ValueType {
-    public static func value(from object: Any) throws -> [Element] {
-        guard let anyArray = object as? [AnyObject] else {
+    public static func value(from object: Any, discardingErrors: Bool = false) throws -> [Element] {
+        guard let anyArray = object as? [Any] else {
             throw MarshalError.typeMismatch(expected: self, actual: type(of: object))
         }
-        return try anyArray.map {
-            let value = try Element.value(from: $0)
+        
+        if discardingErrors {
+            return anyArray.compactMap {
+                let value = try? Element.value(from: $0)
+                guard let element = value as? Element else {
+                    return nil
+                }
+                return element
+            }
+        }
+        else {
+            return try anyArray.map {
+                let value = try Element.value(from: $0)
+                guard let element = value as? Element else {
+                    throw MarshalError.typeMismatch(expected: Element.self, actual: type(of: value))
+                }
+                return element
+            }
+        }
+    }
+
+    public static func value(from object: Any) throws -> [Element?] {
+        guard let anyArray = object as? [Any] else {
+            throw MarshalError.typeMismatch(expected: self, actual: type(of: object))
+        }
+        return anyArray.map {
+            let value = try? Element.value(from: $0)
             guard let element = value as? Element else {
-                throw MarshalError.typeMismatch(expected: Element.self, actual: type(of: value))
+                return nil
             }
             return element
         }
     }
 }
 
-extension Dictionary: ValueType {
-    public static func value(from object: Any) throws -> [Key: Value] {
-        guard let objectValue = object as? [Key: Value] else {
+extension Dictionary where Value: ValueType {
+    public static func value(from object: Any) throws -> Dictionary<Key, Value> {
+        guard let objectValue = object as? [Key: Any] else {
             throw MarshalError.typeMismatch(expected: self, actual: type(of: object))
         }
-        return objectValue
+        var result: [Key: Value] = [:]
+        for (k, v) in objectValue {
+            guard let value = try Value.value(from: v) as? Value else {
+                throw MarshalError.typeMismatch(expected: Value.self, actual: type(of: any))
+            }
+            result[k] = value
+        }
+        return result
     }
 }
 
 extension Set where Element: ValueType {
     public static func value(from object: Any) throws -> Set<Element> {
-        let elementArray = try [Element].value(from: object)
+        let elementArray: [Element] = try [Element].value(from: object)
         return Set<Element>(elementArray)
     }
 }
 
 extension URL: ValueType {
     public static func value(from object: Any) throws -> URL {
-        guard let urlString = object as? String, let objectValue = URL(string: urlString) else {
-            throw MarshalError.typeMismatch(expected: self, actual: type(of: object))
+        guard let urlString = object as? String else {
+            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
+        }
+        guard let objectValue = URL(string: urlString) else {
+            throw MarshalError.typeMismatch(expected: "valid URL", actual: urlString)
         }
         return objectValue
     }
@@ -154,3 +206,14 @@ extension Character: ValueType {
         return Character(value)
     }
 }
+
+#if swift(>=4.1)
+#else
+    extension Collection {
+        func compactMap<ElementOfResult>(
+            _ transform: (Element) throws -> ElementOfResult?
+            ) rethrows -> [ElementOfResult] {
+            return try flatMap(transform)
+        }
+    }
+#endif

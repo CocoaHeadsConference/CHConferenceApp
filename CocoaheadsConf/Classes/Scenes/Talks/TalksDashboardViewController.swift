@@ -53,7 +53,7 @@ class TalksDashboardViewController: UIViewController {
     }
     
     
-    func updateFromSegmentedControl(segmentedControl: UISegmentedControl) {
+    @objc func updateFromSegmentedControl(segmentedControl: UISegmentedControl) {
         listView?.changeTalkDisplayType(segmentedControl: segmentedControl)
     }
 

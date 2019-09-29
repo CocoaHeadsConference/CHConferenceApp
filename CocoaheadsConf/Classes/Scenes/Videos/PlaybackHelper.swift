@@ -78,7 +78,7 @@ struct PlaybackHelper {
         
         var timeObserver: Any!
         
-        timeObserver = player.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(5, preferredTimeScale), queue: nil) { time in
+        timeObserver = player.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(5, preferredTimescale: preferredTimeScale), queue: nil) { time in
             guard let duration = player.currentItem?.duration else { return }
             
             let position = CMTimeGetSeconds(time)
@@ -118,7 +118,7 @@ struct PlaybackHelper {
         }
         
         let continueAction = UIAlertAction(title: continueTitle, style: .default) { _ in
-            player.seek(to: CMTimeMakeWithSeconds(Float64(position), self.preferredTimeScale))
+            player.seek(to: CMTimeMakeWithSeconds(Float64(position), preferredTimescale: self.preferredTimeScale))
             self.showAndPlay(with: player, from: controller)
         }
         

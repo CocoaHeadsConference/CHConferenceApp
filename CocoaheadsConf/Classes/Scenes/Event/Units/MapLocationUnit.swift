@@ -35,7 +35,9 @@ struct MapLocationUnit: TypedUnit, SelectableUnit {
     func didSelect() {
         let regionDistance:CLLocationDistance = 1000
         let coordinates = location.coordinate.coordinate
-        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        let regionSpan = MKCoordinateRegion(center: coordinates,
+                                            latitudinalMeters: regionDistance,
+                                            longitudinalMeters: regionDistance)
         let options = [
             MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
             MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)

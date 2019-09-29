@@ -21,8 +21,8 @@ struct TalkDetailUnits {
     static func Header(for talk: TalkModel)-> ComposingUnit {
         let height = DimensionUnit { size in
             let reducedSize = CGSize(width: size.width - 112, height: size.height)
-            let font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)
-            let attributed = NSAttributedString(string: talk.title, attributes: [NSFontAttributeName: font])
+            let font = UIFont.systemFont(ofSize: 18, weight: .bold)
+            let attributed = NSAttributedString(string: talk.title, attributes: [.font: font])
             let frame = attributed.boundingRect(with: reducedSize, options: .usesLineFragmentOrigin, context: nil)
             return frame.height + 80
         }
@@ -31,17 +31,17 @@ struct TalkDetailUnits {
             view.talkTimeLabel.text = formatter.string(from: talk.date)
             view.talkLocationLabel.text = talk.room?.title
             view.talkIndicatorView.backgroundColor = talk.type.color
-            view.talkSpeakerImageView.kf.setImage(with: talk.speaker?.imageURL, placeholder: ConferenceStyleKit.imageOfCocoaHeadsLogo, options: nil, progressBlock: nil, completionHandler: nil)
+            view.talkSpeakerImageView.kf.setImage(with: talk.speaker?.imageURL, placeholder: ConferenceStyleKit.imageOfCocoaHeadsLogo, options: nil, progressBlock: nil) { _ in }
             view.talkSpeakerImageView.isHidden = !talk.type.hasImage
         }
         return header
     }
     
     static func Description(for talk: TalkModel)-> ComposingUnit {
-        let summaryFont = UIFont.systemFont(ofSize: 22, weight: UIFontWeightMedium)
+        let summaryFont = UIFont.systemFont(ofSize: 22, weight: .medium)
         let descriptionFont = UIFont.systemFont(ofSize: 15)
-        let attributedSummary = NSAttributedString(string: talk.summary, attributes: [NSFontAttributeName: summaryFont])
-        let attributedDescription = NSAttributedString(string: talk.fullDescription, attributes: [NSFontAttributeName: descriptionFont])
+        let attributedSummary = NSAttributedString(string: talk.summary, attributes: [.font: summaryFont])
+        let attributedDescription = NSAttributedString(string: talk.fullDescription, attributes: [.font: descriptionFont])
         let height = DimensionUnit { size in
             let reducedSize = CGSize(width: size.width - 32, height: size.height)
             let summaryFrame = attributedSummary.boundingRect(with: reducedSize, options: .usesLineFragmentOrigin, context: nil)

@@ -12,9 +12,9 @@ import Compose
 
 func SpeakerDetailAllSocialUnit(twitter: String, linkedIn: String, github: String)-> ComposingUnit {
     var units: [ComposingUnit] = []
-    units.add(if: twitter.characters.count > 0) { SpeakerDetailSocialUnit(socialType: .Twitter, handler: twitter) }
-    units.add(if: linkedIn.characters.count > 0) { SpeakerDetailSocialUnit(socialType: .LinkedIn, handler: linkedIn) }
-    units.add(if: github.characters.count > 0) { SpeakerDetailSocialUnit(socialType: .Github, handler: github) }
+    units.add(if: twitter.count > 0) { SpeakerDetailSocialUnit(socialType: .Twitter, handler: twitter) }
+    units.add(if: linkedIn.count > 0) { SpeakerDetailSocialUnit(socialType: .LinkedIn, handler: linkedIn) }
+    units.add(if: github.count > 0) { SpeakerDetailSocialUnit(socialType: .Github, handler: github) }
     
     return CollectionStackUnit(identifier: "social", direction: .verticalGrid(columns: units.count), traits: [], units: units) { (collectionView) in
         guard units.count > 1, let item = units[1] as? SpeakerDetailSocialUnit else { return }

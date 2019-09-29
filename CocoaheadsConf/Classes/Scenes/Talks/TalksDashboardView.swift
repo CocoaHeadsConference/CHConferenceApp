@@ -41,19 +41,19 @@ func composeTalkDashboardView(with state: TalkDashboardViewState, didSelectCallb
     var units: [ComposingUnit] = []
     var groupedTalks = groupByDate(talks: state.filteredTalks)
     groupedTalks.keys.sorted().forEach { (date) in
-        units.add(manyIfLet:groupedTalks[date]) { talks in
-            var dateUnits: [ComposingUnit] = [TalkDashboardUnits.TimeUnit(with: date, hideUpperLine: units.count == 0)]
-            dateUnits.add(manyIfLet: talks) { talks in
-                let sortedTalks = talks.sorted(by: { (first, second) in
-                    let compare = first.date.compare(second.date)
-                    return compare == ComparisonResult.orderedAscending
-                })
-                return sortedTalks.map { talk in
-                    return TalkDashboardUnits.EntryUnit(for: talk, filtered: false, callback: didSelectCallback)
-                }
-            }
-            return dateUnits
-        }
+//        units.add(manyIfLet:groupedTalks[date]) { talks in
+//            var dateUnits: [ComposingUnit] = [TalkDashboardUnits.TimeUnit(with: date, hideUpperLine: units.count == 0)]
+//            dateUnits.add(manyIfLet: talks) { talks in
+//                let sortedTalks = talks.sorted(by: { (first, second) in
+//                    let compare = first.date.compare(second.date)
+//                    return compare == ComparisonResult.orderedAscending
+//                })
+//                return sortedTalks.map { talk in
+//                    return TalkDashboardUnits.EntryUnit(for: talk, filtered: false, callback: didSelectCallback)
+//                }
+//            }
+//            return dateUnits
+//        }
     }
     return units
 }

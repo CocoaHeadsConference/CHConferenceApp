@@ -17,7 +17,7 @@ struct CodeOfConductUnit: TypedUnit, SelectableUnit {
     let heightUnit: DimensionUnit = 48
     
     let color: UIColor
-    var callback: ((Void)-> Void)?
+    var callback: (()-> Void)?
     
     func configure(innerView: Cell) {
         innerView.mainColor = color

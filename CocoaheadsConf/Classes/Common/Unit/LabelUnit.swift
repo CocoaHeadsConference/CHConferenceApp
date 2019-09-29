@@ -19,7 +19,7 @@ struct LabelUnit: TypedUnit {
     
     init(id: String, text: String, font: UIFont, color: UIColor, verticalSpace: CGFloat) {
         self.identifier = id
-        let attributedText = NSAttributedString(string: text, attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: font])
+        let attributedText = NSAttributedString(string: text, attributes: [.foregroundColor: color, .font: font])
         self.attributedText = attributedText
         self.heightUnit = DimensionUnit { size in
             let reductedSize = CGSize(width: size.width - 32, height: size.height)

@@ -17,7 +17,7 @@ class SpeakerDetailHeaderCollectionViewCell: UICollectionViewCell {
     
     var imageURL: URL? {
         didSet {
-            speakerImageView.kf.setImage(with: imageURL, placeholder: ConferenceStyleKit.imageOfCocoaHeadsLogo, options: nil, progressBlock: nil, completionHandler: nil)
+            speakerImageView.kf.setImage(with: imageURL, placeholder: ConferenceStyleKit.imageOfCocoaHeadsLogo, options: nil, progressBlock: nil) { _ in }
         }
     }
     

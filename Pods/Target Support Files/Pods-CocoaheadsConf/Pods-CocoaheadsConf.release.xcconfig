@@ -1,10 +1,10 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Compose" "${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher" "${PODS_CONFIGURATION_BUILD_DIR}/Marshal" "${PODS_CONFIGURATION_BUILD_DIR}/YoutubeSourceParserKit"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Compose" "${PODS_CONFIGURATION_BUILD_DIR}/Marshal" "${PODS_CONFIGURATION_BUILD_DIR}/YoutubeSourceParserKit"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Compose/Compose.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Marshal/Marshal.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/YoutubeSourceParserKit/YoutubeSourceParserKit.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Compose/Compose.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Marshal/Marshal.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/YoutubeSourceParserKit/YoutubeSourceParserKit.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Compose" -framework "Kingfisher" -framework "Marshal" -framework "YoutubeSourceParserKit"
-OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+OTHER_LDFLAGS = $(inherited) -framework "Compose" -framework "Marshal" -framework "UIKit" -framework "YoutubeSourceParserKit"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

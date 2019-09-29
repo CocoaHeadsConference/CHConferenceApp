@@ -43,7 +43,7 @@ class TalkCollectionViewCell: UICollectionViewCell {
     
     var speakerImageURL: URL? {
         didSet {
-            speakerImageView.kf.setImage(with: speakerImageURL, placeholder: #imageLiteral(resourceName: "cocoaheads_teammember"), options: nil, progressBlock: nil, completionHandler: nil)
+            speakerImageView.kf.setImage(with: speakerImageURL, placeholder: #imageLiteral(resourceName: "cocoaheads_teammember"), options: nil, progressBlock: nil) { _ in }
         }
     }
     

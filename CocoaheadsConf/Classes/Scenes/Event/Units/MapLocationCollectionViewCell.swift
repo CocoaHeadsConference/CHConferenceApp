@@ -31,8 +31,8 @@ class MapLocationCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
             guard let center = centerCoordinate else {
                 return
             }
-            let span = 0.0050
-            let region = MKCoordinateRegionMake(center.coordinate, MKCoordinateSpanMake(span, span))
+            //let span = 0.0050
+            let region = MKCoordinateRegion(center: center.coordinate, span: MKCoordinateSpan(latitudeDelta: center.latitude, longitudeDelta: center.longitude))
             mapView.setRegion(region, animated: false)
             let annotation = EventLocationPin(coordinate: center.coordinate)
             mapView.addAnnotation(annotation)
