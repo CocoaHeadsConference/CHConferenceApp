@@ -2,7 +2,6 @@
 //  SceneDelegate.swift
 //  NSBrazilConf
 //
-//  Created by resource on 30/09/19.
 //  Copyright © 2019 Cocoaheadsbr. All rights reserved.
 //
 
@@ -25,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = UIHostingController(rootView: HomeTabBar())
             self.window = window
             window.makeKeyAndVisible()
         }

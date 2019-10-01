@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  NSBrazilConf
 //
-//  Created by resource on 30/09/19.
 //  Copyright © 2019 Cocoaheadsbr. All rights reserved.
 //
 
