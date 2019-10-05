@@ -2,49 +2,42 @@
 import SwiftUI
 
 struct TalkDetail: View {
-    
-    var title = "SwiftUI"
-    var text = "@twiiter"
-    var image = "Illustration1"
+    var talk: TalkModel?
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: 16) {
                     HStack(spacing: 16) {
-                      Image(image)
+                        Image(talk?.speakerImage ?? "ic_logo_nsbrazil")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 80, height: 80)
                         .background(Color("background"))
                         .cornerRadius(40)
                         VStack(spacing: 8) {
-                            Text(title)
+                            Text(talk?.title ?? "")
                                 .font(.title)
                                 .fontWeight(.heavy)
+                                .lineLimit(4)
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                            Text(text)
+                            Text(talk?.speaker ?? "")
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                                .lineLimit(nil)
+                                .lineLimit(2)
                         }
                     }
+                
+                Text(talk?.summary ?? "")
+                    .font(.body)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    .lineLimit(nil)
                     
-                    Text("Titulo da talk")
-                        .font(.headline)
-                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                        .lineLimit(nil)
+                Text("\(talk?.date ?? "")")
+                    .font(.body)
+                    .foregroundColor(Color.gray)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    .lineLimit(nil)
                     
-                    Text("[Descrição] - The Text view shows read-only text that can be modified in many ways. It wraps automatically. If you want to limit the text wrapping")
-                        .font(.body)
-                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                        .lineLimit(nil)
-                    
-                    Text("Dia e Hora")
-                        .font(.body)
-                        .foregroundColor(Color.gray)
-                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                        .lineLimit(nil)
-                    
-                    Text("Idioma")
+                Text(talk?.idioma ?? "")
                     .font(.body)
                     .foregroundColor(Color.gray)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
@@ -53,7 +46,7 @@ struct TalkDetail: View {
                     Spacer()
                     
                 }
-            .padding(30)
+            .padding(24)
         }
     }
 }

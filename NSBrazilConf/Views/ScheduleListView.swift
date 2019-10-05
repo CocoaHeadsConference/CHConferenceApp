@@ -8,30 +8,21 @@
 
 import SwiftUI
 
-import SwiftUI
 
 struct ScheduleListView: View {
-    var updates = updateData
-    @ObservedObject var store = UpdateStore()
+
+    @ObservedObject var store = NSBrazilStore()
     
     @State var showSetting = false
     
-
-    func move(from source: IndexSet, to destination: Int) {
-        store.updates.swapAt(source.first!, destination)
-    }
-
     var body: some View {
         NavigationView {
             List{
-                ForEach(store.updates) { item in
+                ForEach(store.confMock.schedule[0].talks) { talk in
                     NavigationLink(destination:
-                    TalkDetail(
-                        title: item.title,
-                        text: item.text,
-                        image: item.image)) {
+                    TalkDetail(talk: talk)) {
                             HStack(spacing: 12.0) {
-                                Image(item.image)
+                                Image(talk.speakerImage)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
@@ -39,16 +30,16 @@ struct ScheduleListView: View {
                                 .cornerRadius(40)
                                 
                                 VStack(alignment: .leading) {
-                                    Text(item.title)
+                                    Text(talk.title)
                                         .font(.headline)
                                         
-                                    Text(item.text)
+                                    Text(talk.speaker)
                                         .lineLimit(3)
                                         .font(.system(size: 15))
                                         .lineSpacing(4)
                                         .frame(height: 50)
                                     
-                                    Text(item.date)
+                                    Text("\(talk.date)")
                                         .font(.caption)
                                         .fontWeight(.bold)
                                         .foregroundColor(.gray)
@@ -58,7 +49,6 @@ struct ScheduleListView: View {
                     .padding(.vertical, 8.0)
                     
                 }
-                .onMove(perform: move)
                 
             }
             .navigationBarTitle(Text("Schedule"))
@@ -71,12 +61,3 @@ struct ScheduleListView_Previews: PreviewProvider {
         ScheduleListView()
     }
 }
-
-struct Update: Identifiable {
-    var id = UUID()
-    var image: String
-    var title: String
-    var text: String
-    var date: String
-}
-

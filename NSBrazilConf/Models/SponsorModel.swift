@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SponsorModel: Codable {
+struct SponsorModel: Codable, Identifiable {
 
     let id: Int
     let title: String

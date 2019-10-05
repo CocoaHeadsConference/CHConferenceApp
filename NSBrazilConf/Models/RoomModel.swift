@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct RoomModel: Codable {
+struct RoomModel: Codable, Identifiable {
 
     let id: Int
     let title: String

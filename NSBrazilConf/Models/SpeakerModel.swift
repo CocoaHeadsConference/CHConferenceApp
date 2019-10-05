@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct SpeakerModel: Codable {
+struct SpeakerModel: Codable, Identifiable {
     
     private static let serverURL: URL = URL(string:"http://cocoaheadsconference.com.br")!
     

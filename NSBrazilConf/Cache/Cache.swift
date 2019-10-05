@@ -18,7 +18,7 @@ class Cache: NSObject {
     var sponsors: [SponsorModel] = []
     var videos: [Int:VideoModel] = [:]
     
-    var event: EventModel?
+    var event: FeedModel?
     
     func talk(with id: Int)-> TalkModel? {
         return talks[id]
@@ -44,7 +44,7 @@ class Cache: NSObject {
         return videos.compactMap({ $0.1 }).filter({ $0.talk?.id == talk }).first
     }
     
-    func `import`(json: [String:Any]) throws {
+    func `import`(store: NSBrazilData) throws {
 //        let allSpeakers: [SpeakerModel] = try json.value(for: "speakers")
 //        allSpeakers.forEach { speakers[$0.id] = $0 }
 //        let allRooms: [RoomModel] = try json.value(for: "rooms")

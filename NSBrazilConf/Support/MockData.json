@@ -1,0 +1,232 @@
+{
+   "feed":[
+      {
+         "id":0,
+         "type":"eventCountdown",
+         "location":{
+            "address":"Alameda Vicente Pinzon,54\nVila Olímpia - SP",
+            "coordinate":{
+               "lat":-23.524087,
+               "long":-46.760567
+            }
+         },
+         "twitter": "nsbrazilconf",
+         "startDate":"2019-11-09T09:00:00-0300",
+         "endDate":"2019-11-10T17:00:00-0300",
+         "codeOfConduct":"https://github.com/CocoaHeadsConference/CocoaHeadsConferenceCodigoDeConduta/blob/master/README.md",
+         "place":"CUBO Itaú"
+
+      },
+      {
+         "id":1,
+         "type":"map",
+         "location":{
+            "address":"Avenida Das Nações Unidas, 3007 \nVila Olímpia - SP",
+            "coordinate":{
+               "lat":-23.524087,
+               "long":-46.760567
+            }
+         },
+         "twitter": "nsbrazilconf",
+         "startDate":"2019-11-09T09:00:00-0300",
+         "endDate":"2019-11-10T17:00:00-0300",
+         "codeOfConduct":"https://github.com/CocoaHeadsConference/CocoaHeadsConferenceCodigoDeConduta/blob/master/README.md",
+         "place":"Cubo - Itaú"
+      }
+   ],
+   "sponsors":[
+      {
+         "id":0,
+         "title":"Itaú",
+         "url":"https://www.itau.com.br/",
+         "image":"ic_itau",
+         "type":""
+      },
+      {
+         "id":1,
+         "title":"AirBuddy",
+         "url":"https://gumroad.com/l/airbuddy",
+         "image":"ic_airbuddy",
+         "type":""
+      },
+      {
+         "id":2,
+         "title":"Banco Inter",
+         "url":"https://www.bancointer.com.br",
+         "image":"ic_banco_inter",
+         "type":""
+      },
+      {
+         "id":3,
+         "title":"Sympla",
+         "url":"http://www.sympla.com.br/",
+         "image":"http://cocoaheadsconference.com.br/images/sponsors/1.png",
+         "type":""
+      },
+      {
+         "id":4,
+         "title":"Mercado Livre",
+         "url":"http://www.mercadolivre.com.br/",
+         "image":"http://cocoaheadsconference.com.br/images/sponsors/4.png",
+         "type":""
+      }
+   ],
+   "schedule":[
+      {
+         "date":"2019-11-09T09:00:00-0300",
+         "talks":[
+            {
+               "id":0,
+               "title":"Credenciamento",
+               "speaker":"Pegue seu crachá e material do evento.",
+               "speakerImage":"ic_logo_nsbrazil",
+               "speakerTitle":"LEAD DEVELOPER, MOVILE",
+               "bio":"Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
+               "twitterHandle":"fpg1503",
+               "linkedinHandler":"fpg1503",
+               "githubHandler":"fpg1503",
+               "room":"",
+               "date":"2016-12-02T16:30:00-0300",
+               "duration":45,
+               "summary":"Pegue seu crachá e material do evento.",
+               "description":"Aproveite esse momento para se apresentar aos participantes, conhecer aquela pessoa que você conversa apenas pela internet e postar sobre o evento nas redes sociais.",
+               "type":"setup",
+               "idioma": "EN"
+            },
+            {
+               "id":1,
+               "title":"Abertura Do Evento",
+               "speaker":"Declaramos aberta a 1º CocoaHeads Conference.",
+               "speakerImage":"ic_logo_nsbrazil",
+               "speakerTitle":"LEAD DEVELOPER, MOVILE",
+               "bio":"Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
+               "twitterHandle":"fpg1503",
+               "linkedinHandler":"fpg1503",
+               "githubHandler":"fpg1503",
+               "room": "",
+               "date":"2016-12-02T17:15:00-0300",
+               "duration":15,
+               "summary":"Declaramos aberta a 1º CocoaHeads Conference.",
+               "description":"O momento tão esperado por todos: A abertura do primeiro evento nacional do CocoaHeads Brasil! Um momento muito emocionante e um marco para toda a comunidade iOS.",
+               "type":"opening",
+               "idioma": "EN"
+            },
+            {
+               "id":2,
+               "title":"Talk do Pato",
+               "speaker":"Francesco Perrotti",
+               "speakerImage":"ic_logo_nsbrazil",
+               "speakerTitle":"LEAD DEVELOPER, MOVILE",
+               "bio":"Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
+               "twitterHandle":"fpg1503",
+               "linkedinHandler":"fpg1503",
+               "githubHandler":"fpg1503",
+               "room":"",
+               "date":"2019-11-09T09:00:00-0300",
+               "duration":45,
+               "summary":"",
+               "type":"talk",
+               "idioma": "EN"
+            },
+            {
+               "id":3,
+               "title":"Sorteios & Encerramento",
+               "speaker":"",
+               "speakerImage":"ic_logo_nsbrazil",
+               "speakerTitle":"",
+               "bio":"Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
+               "twitterHandle":"fpg1503",
+               "linkedinHandler":"fpg1503",
+               "githubHandler":"fpg1503",
+               "room":"",
+               "date":"2016-12-02T20:40:00-0300",
+               "duration":20,
+               "summary":"Agradecimento, sorteio, encerramento e feedback!",
+               "description":"Vinicius irá sortear alguns brindes cedidos pelos apoiadores do evento e o primeiro dia de evento chega ao fim!",
+               "type":"closing",
+               "idioma": "EN"
+            }
+         ]
+      },
+      {
+         "date":"2019-11-10T09:00:00-0300",
+         "talks":[
+            {
+               "id":4,
+               "title":"Credenciamento & Coffee-Break",
+               "speaker":"",
+               "speakerImage":"ic_logo_nsbrazil",
+               "speakerTitle":"",
+               "bio":"Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
+               "twitterHandle":"fpg1503",
+               "linkedinHandler":"fpg1503",
+               "githubHandler":"fpg1503",
+               "room":"",
+               "date":"2016-12-03T07:00:00-0300",
+               "duration":60,
+               "summary":"Se for seu primeiro dia, pegue seu crachá!",
+               "description":"Aproveite esse momento para se informar sobre os workshops e demais atividades de cada sala. Converse com os participantes e tome um café.",
+               "type":"setup",
+               "idioma": "EN"
+            },
+            {
+               "id":5,
+               "title":"Clean Interfaces - Como foi construido o app da Conferência",
+               "speaker":"Felipe Souza",
+               "speakerImage":"ic_logo_nsbrazil",
+               "speakerTitle":"",
+               "bio":"Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
+               "twitterHandle":"fpg1503",
+               "linkedinHandler":"fpg1503",
+               "githubHandler":"fpg1503",
+               "room":"Sala 10",
+               "date":"2016-12-03T13:30:00-0300",
+               "duration":60,
+               "summary":"Venha descobrir como foi construído o aplicativo da conferência e o porquê das escolhas feitas",
+               "description":"Neste workshop, Bruno irá mostrar como foi desenvolvido o aplicativo da conferência, desde a arquitetura adotada, até a criação das interfaces com XIB + códigos",
+               "type":"workshop",
+               "idioma": "EN"
+            },
+            {
+               "id":6,
+               "title":"Talk do Pato",
+               "speaker":"Francesco Perrotti",
+               "speakerImage":"ic_logo_nsbrazil",
+               "speakerTitle":"LEAD DEVELOPER, MOVILE",
+               "bio":"Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
+               "twitterHandle":"fpg1503",
+               "linkedinHandler":"fpg1503",
+               "githubHandler":"fpg1503",
+               "room":"",
+               "date":"2019-11-09T09:00:00-0300",
+               "duration":45,
+               "summary":"",
+               "type":"talk",
+               "idioma": "BR"
+            },
+            {
+              "id":7,
+               "title":"Sorteios & Encerramento",
+               "speaker":"",
+               "speakerImage":"ic_logo_nsbrazil",
+               "speakerTitle":"",
+               "bio":"Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
+               "twitterHandle":"fpg1503",
+               "linkedinHandler":"fpg1503",
+               "githubHandler":"fpg1503",
+               "room": "",
+               "date":"2016-12-02T20:40:00-0300",
+               "duration":20,
+               "summary":"Agradecimento, sorteio, encerramento e feedback!",
+               "description":"Vinicius irá sortear alguns brindes cedidos pelos apoiadores do evento e o primeiro dia de evento chega ao fim!",
+               "type":"closing",
+               "idioma": "EN"
+            }
+         ]
+      }
+   ],
+   "videos":[
+
+   ]
+}
+

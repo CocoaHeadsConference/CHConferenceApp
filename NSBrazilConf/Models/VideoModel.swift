@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct VideoModel: Codable {
+struct VideoModel: Codable, Identifiable {
     
     enum VideoError: Error {
         case missingYouTubeUrl, missingTalkId
