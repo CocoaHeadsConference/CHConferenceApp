@@ -50,6 +50,7 @@
 		1D589C6323457856003D95D8 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D589C6223457856003D95D8 /* MockData.json */; };
 		1D589C65234916A7003D95D8 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D589C64234916A7003D95D8 /* Schedule.swift */; };
 		1D5CF9EE2344358500999A51 /* NSBrazilData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5CF9ED2344358500999A51 /* NSBrazilData.swift */; };
+		1DDBD506234A3B3900A1CDBC /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDBD505234A3B3900A1CDBC /* FeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		1D589C6223457856003D95D8 /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
 		1D589C64234916A7003D95D8 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		1D5CF9ED2344358500999A51 /* NSBrazilData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBrazilData.swift; sourceTree = "<group>"; };
+		1DDBD505234A3B3900A1CDBC /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		1D0A95292342E87500B2C582 /* NSBrazilConf */ = {
 			isa = PBXGroup;
 			children = (
+				1DDBD504234A3B1300A1CDBC /* ViewModels */,
 				1D589C5F2345778E003D95D8 /* Storage */,
 				1D0A956B2342EB3800B2C582 /* Extensions */,
 				1D0A958E2342F35E00B2C582 /* Theme */,
@@ -242,6 +245,14 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		1DDBD504234A3B1300A1CDBC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1DDBD505234A3B3900A1CDBC /* FeedViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,6 +350,7 @@
 				1D0A954E2342E8F400B2C582 /* Home.swift in Sources */,
 				1D0A95522342E8F400B2C582 /* HomeList.swift in Sources */,
 				1D0A95652342EAF500B2C582 /* UIImage+Color.swift in Sources */,
+				1DDBD506234A3B3900A1CDBC /* FeedViewModel.swift in Sources */,
 				1D0A95882342F0F800B2C582 /* FeedModel.swift in Sources */,
 				1D0A95922342F35E00B2C582 /* Theme.swift in Sources */,
 				1D0A955A2342E8F400B2C582 /* SponsorsRow.swift in Sources */,

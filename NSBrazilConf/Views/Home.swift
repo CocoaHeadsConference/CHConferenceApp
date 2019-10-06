@@ -3,14 +3,14 @@ import SwiftUI
 
 struct Home: View {
     var menu = menuData
-    
+    var feedViewModel: FeedViewModel
     @State var show = false
     @State var showProfile = false
     
     var body: some View {
         ZStack {
             
-            HomeList()
+            HomeList(feedViewModel: feedViewModel)
                 .blur(radius: show ? 20 : 0)
                 .scaleEffect(showProfile ? 0.95 : 1)
                 .animation(.default)
@@ -28,7 +28,7 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        Home(feedViewModel: FeedViewModel())
     }
 }
 

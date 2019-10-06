@@ -9,7 +9,7 @@ struct HomeTabBar: View {
     
     var body: some View {
         TabView {
-            Home().tabItem ({
+            Home(feedViewModel: FeedViewModel()).tabItem ({
                 VStack {
                     Image("IconHome")
                     Text("Home")

@@ -3,15 +3,15 @@ import SwiftUI
 
 struct DayDateCardView: View {
     
-    @ObservedObject var feed = NSBrazilStore()
+    var viewModel: FeedViewModel
     
     var body: some View {
         
         HStack(spacing: 56) {
-            DateDayView(dateText: feed.confMock.feed[0].startDateText,
-                        dayHourText: feed.confMock.feed[0].startEventHourText)
-            DateDayView(dateText: feed.confMock.feed[0].endDateText,
-                        dayHourText: feed.confMock.feed[0].endEventHourText)
+            DateDayView(dateText: viewModel.startDate,
+                        dayHourText: viewModel.eventHourFirstDay)
+            DateDayView(dateText: viewModel.endDate,
+                        dayHourText: viewModel.eventHourSecondDay)
         }
         .frame(maxWidth: .infinity, minHeight: 88)
         .background(Color.white)
@@ -24,7 +24,7 @@ struct DayDateCardView: View {
 
 struct ConfInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        DayDateCardView()
+        DayDateCardView(viewModel: FeedViewModel())
     }
 }
 

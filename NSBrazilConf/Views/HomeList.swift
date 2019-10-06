@@ -3,6 +3,8 @@ import SwiftUI
 
 struct HomeList: View {
     var schedules = schedulesData
+    var feedViewModel: FeedViewModel
+    
     @State var showContent = false
     
     var body: some View {
@@ -10,8 +12,8 @@ struct HomeList: View {
             EllipseHeaderView()
             VStack(spacing: 24) {
                 CocoaHeadsTitleView()
-                DayDateCardView()
-                MapCardView()
+                DayDateCardView(viewModel: feedViewModel)
+                MapCardView(viewModel: feedViewModel)
                 TitleHeaderView()
                     .padding(.leading, 20)
                     .padding(.bottom, 16)
@@ -50,7 +52,7 @@ struct HomeList: View {
 
 struct HomeList_Previews: PreviewProvider {
     static var previews: some View {
-        HomeList()
+        HomeList(feedViewModel: FeedViewModel())
     }
 }
 

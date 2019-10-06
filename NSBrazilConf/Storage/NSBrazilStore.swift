@@ -17,7 +17,7 @@ public enum FetchError: Error {
     }
 }
 
-final class NSBrazilStore:ObservableObject, Store {
+public final class NSBrazilStore: ObservableObject, Store {
     
     private var cancellable: AnyCancellable?
     
@@ -25,7 +25,7 @@ final class NSBrazilStore:ObservableObject, Store {
     let session: URLSession = URLSession.shared
     let jsonURL: URL = URL(string: "http://cocoaheadsconference.com.br/app/2018.json")!
     
-    init() {
+    public init() {
         //self.fetchInfo()
     }
     
@@ -47,7 +47,7 @@ final class NSBrazilStore:ObservableObject, Store {
     }()
     
 
-    func fetchInfo() {
+    public func fetchInfo() {
         self.cancellable = session.dataTaskPublisher(for: jsonURL)
             .map { $0.data }
             .decode(type: NSBrazilData.self, decoder: JSONDecoder())
