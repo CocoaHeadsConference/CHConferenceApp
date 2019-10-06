@@ -2,14 +2,15 @@
 import SwiftUI
 
 struct MapCardView: View {
+    
+    @ObservedObject var infos = NSBrazilStore()
+
     var body: some View {
         VStack(alignment: .leading) {
-            MapView()
+            MapView(location: infos.confMock.feed[0].location)
             VStack(alignment: .leading, spacing: 4) {
-                Text("CUBO Itaú - Alameda Vicente Pinzon,54")
+                Text("\(infos.confMock.feed[0].place) - \(infos.confMock.feed[0].location.address)")
                     .font(.headline)
-                Text("Vila Olímpia - SP")
-                    .font(.subheadline)
             }
             .padding(.leading, 16)
             .padding(.bottom, 8)
@@ -24,6 +25,8 @@ struct MapCardView: View {
 }
 
 struct MapCardView_Previews: PreviewProvider {
+    var feed: FeedModel?
+    
     static var previews: some View {
         MapCardView()
     }

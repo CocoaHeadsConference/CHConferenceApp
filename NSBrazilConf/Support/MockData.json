@@ -4,10 +4,10 @@
          "id":0,
          "type":"eventCountdown",
          "location":{
-            "address":"Alameda Vicente Pinzon,54\nVila Olímpia - SP",
+            "address":"Alameda Vicente Pinzon, 54\nVila Olímpia - SP",
             "coordinate":{
-               "lat":-23.524087,
-               "long":-46.760567
+               "lat":-23.5965911,
+               "long":-46.6867937
             }
          },
          "twitter": "nsbrazilconf",
