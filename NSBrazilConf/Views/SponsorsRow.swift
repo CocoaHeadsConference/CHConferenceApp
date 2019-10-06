@@ -32,7 +32,7 @@ struct CertificateRow_Previews: PreviewProvider {
     }
 }
 
-struct Sponsor: Identifiable {
+struct SponsorViewModel: Identifiable {
     var id = UUID()
     var title: String
     var image: String
@@ -44,7 +44,7 @@ struct Sponsor: Identifiable {
 
 
 let sponsorsData = [
-    Sponsor(title: "", image: "ic_itau", color: Color("Orange"), width: 220, height: 120, titleColor: Color.white),
-    Sponsor(title: "AirBuddy", image: "ic_airbuddy", color: Color.white, width: 120, height: 120, titleColor: Color.black),
-    Sponsor(title: "", image: "ic_banco_inter", color: Color.white, width: 340, height: 236, titleColor: Color.white)
+    SponsorViewModel(title: "", image: "ic_itau", color: Color("Orange"), width: 220, height: 120, titleColor: Color.white),
+    SponsorViewModel(title: "AirBuddy", image: "ic_airbuddy", color: Color.white, width: 120, height: 120, titleColor: Color.black),
+    SponsorViewModel(title: "", image: "ic_banco_inter", color: Color.white, width: 340, height: 236, titleColor: Color.white)
 ]

@@ -3,7 +3,7 @@
 import SwiftUI
 
 struct SponsorCard: View {
-    var item = Sponsor(title: "Banco Itaú", image: "ic_itau", color: Color("Orange"), width: 220, height: 120, titleColor: Color.white)
+    var item = SponsorViewModel(title: "Banco Itaú", image: "ic_itau", color: Color("Orange"), width: 220, height: 120, titleColor: Color.white)
     
     var body: some View {
         return VStack {
