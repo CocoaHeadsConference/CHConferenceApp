@@ -35,7 +35,7 @@ struct ScheduleListView: View {
                                         
                                     Text(talk.speaker)
                                         .lineLimit(3)
-                                        .font(.system(size: 15))
+                                        .font(.system(size: 14))
                                         .lineSpacing(4)
                                         .frame(height: 50)
                                     

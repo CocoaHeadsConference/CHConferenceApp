@@ -20,7 +20,7 @@ struct TalkDetail: View {
                                 .lineLimit(4)
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             Text(talk?.speaker ?? "")
-                                .font(.caption)
+                                .font(.system(size: 14))
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                 .lineLimit(2)
                         }
