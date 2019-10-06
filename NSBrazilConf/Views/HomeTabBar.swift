@@ -17,7 +17,7 @@ struct HomeTabBar: View {
             })
             .tag(1)
             
-            ScheduleListView().tabItem({
+            ScheduleListView(scheduleViewModel: ScheduleListViewModel()).tabItem({
                 VStack {
                     Image("IconCards")
                     Text("Schedule")

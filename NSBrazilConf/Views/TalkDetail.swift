@@ -16,11 +16,11 @@ struct TalkDetail: View {
                         .cornerRadius(40)
                         VStack(spacing: 8) {
                             Text(talk?.title ?? "")
-                                .font(.title)
-                                .fontWeight(.heavy)
+                                .font(.headline)
                                 .lineLimit(4)
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             Text(talk?.speaker ?? "")
+                                .font(.caption)
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                 .lineLimit(2)
                         }

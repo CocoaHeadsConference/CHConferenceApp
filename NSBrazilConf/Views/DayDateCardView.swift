@@ -35,6 +35,7 @@ struct DateDayView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(dateText)
+                .foregroundColor(.primary)
                 .font(.title)
                 .fontWeight(.semibold)
             

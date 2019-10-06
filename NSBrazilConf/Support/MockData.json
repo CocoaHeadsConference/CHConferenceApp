@@ -113,9 +113,9 @@
             },
             {
                "id":2,
-               "title":"Talk do Pato",
-               "speaker":"Francesco Perrotti",
-               "speakerImage":"ic_logo_nsbrazil",
+               "title":"10 dicas para apersentar uma Tech Talk. Você não vai acreditar na n°6! & Feature flag all things",
+               "speaker":"Aline Borges",
+               "speakerImage":"https://nsbrazil.com/images/team/aline-borges.png",
                "speakerTitle":"LEAD DEVELOPER, MOVILE",
                "bio":"Desenvolvedor iOS. Programa desde os 12 anos e nos últimos 6 está cada vez mas envolvido com iOS. Swift mudou sua maneira de ver o mundo e de como programar em outras linguagens. Adora gatos e nas horas vagas gosta de viajar, cozinhar e tirar fotos.",
                "twitterHandle":"fpg1503",

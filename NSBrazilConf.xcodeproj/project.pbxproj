@@ -51,6 +51,7 @@
 		1D589C65234916A7003D95D8 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D589C64234916A7003D95D8 /* Schedule.swift */; };
 		1D5CF9EE2344358500999A51 /* NSBrazilData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5CF9ED2344358500999A51 /* NSBrazilData.swift */; };
 		1DDBD506234A3B3900A1CDBC /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDBD505234A3B3900A1CDBC /* FeedViewModel.swift */; };
+		1DF60633234A4FF100C93AF3 /* ScheduleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF60632234A4FF100C93AF3 /* ScheduleListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		1D589C64234916A7003D95D8 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		1D5CF9ED2344358500999A51 /* NSBrazilData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBrazilData.swift; sourceTree = "<group>"; };
 		1DDBD505234A3B3900A1CDBC /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		1DF60632234A4FF100C93AF3 /* ScheduleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				1DDBD505234A3B3900A1CDBC /* FeedViewModel.swift */,
+				1DF60632234A4FF100C93AF3 /* ScheduleListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				1D0A955C2342E8F400B2C582 /* SponsorCard.swift in Sources */,
 				1D0A958D2342F24F00B2C582 /* Cache.swift in Sources */,
 				1D0A956D2342EB5B00B2C582 /* Bundle+NSBrazilConf.swift in Sources */,
+				1DF60633234A4FF100C93AF3 /* ScheduleListViewModel.swift in Sources */,
 				1D0A958A2342F0F800B2C582 /* SponsorModel.swift in Sources */,
 				1D0A95582342E8F400B2C582 /* ContentView.swift in Sources */,
 				1D0A95542342E8F400B2C582 /* EllipseHeaderView.swift in Sources */,

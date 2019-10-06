@@ -11,14 +11,14 @@ import SwiftUI
 
 struct ScheduleListView: View {
 
-    @ObservedObject var store = NSBrazilStore()
+    let scheduleViewModel: ScheduleListViewModel
     
     @State var showSetting = false
     
     var body: some View {
         NavigationView {
             List{
-                ForEach(store.confMock.schedule[0].talks) { talk in
+                ForEach(scheduleViewModel.talksFirstDay) { talk in
                     NavigationLink(destination:
                     TalkDetail(talk: talk)) {
                             HStack(spacing: 12.0) {
@@ -58,6 +58,6 @@ struct ScheduleListView: View {
 
 struct ScheduleListView_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleListView()
+        ScheduleListView(scheduleViewModel: ScheduleListViewModel())
     }
 }

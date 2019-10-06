@@ -1,26 +1,26 @@
 
 import UIKit
 
-struct TalkModel: Codable, Identifiable {
+public struct TalkModel: Codable, Identifiable {
 
-    let id: Int
-    let title: String
-    let speaker: String
-    let speakerImage: String
-    let speakerTitle: String
-    let twitterHandle: String
-    let linkedinHandler: String
-    let githubHandler: String
-    let room: String
-    let date: String
-    let bio: String
-    let summary: String
-    let type: TalkType
-    let duration: Int
-    let idioma: String
+    public let id: Int
+    public let title: String
+    public let speaker: String
+    public let speakerImage: String
+    public let speakerTitle: String
+    public let twitterHandle: String
+    public let linkedinHandler: String
+    public let githubHandler: String
+    public let room: String
+    public let date: String
+    public let bio: String
+    public let summary: String
+    public let type: TalkType
+    public let duration: Int
+    public let idioma: String
 }
 
-enum TalkType: String, Codable {
+public enum TalkType: String, Codable {
         case talk, workshop, opening, closing, breaktime, setup
 
         var title: String {
@@ -65,7 +65,7 @@ extension TalkType {
         case unknownValue
     }
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let rawValue = try decoder.singleValueContainer().decode(String.self)
         switch rawValue {
         case "talk":

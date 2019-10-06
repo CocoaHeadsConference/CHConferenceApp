@@ -30,9 +30,7 @@ struct HomeList: View {
                                         color: item.color,
                                         shadowColor: item.shadowColor
                                     )
-                                        .rotation3DEffect(Angle(degrees:
-                                            Double(geometry.frame(in: .global).minX - 40) / -20
-                                        ), axis: (x: 0, y: 10.0, z: 0))
+                                        .rotation3DEffect(Angle(degrees: Double((geometry.frame(in: .global).minX - 40) / -30)), axis: (x: 0, y: 10, z: 0))
                                         .sheet(isPresented: self.$showContent) { ContentView() }
                                 }
                                 .frame(width: 246, height: 360)
@@ -43,6 +41,7 @@ struct HomeList: View {
                     Spacer()
                 }
                 .frame(height: 416)
+                
                 SponsorsRow()
             }
             .padding(.top, 56)
