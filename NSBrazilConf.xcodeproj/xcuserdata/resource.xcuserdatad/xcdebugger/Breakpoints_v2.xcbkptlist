@@ -3,4 +3,54 @@
    uuid = "740B2420-9508-43A8-B327-04755298F525"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DADF00B3-B346-46AF-9C3D-CE014103B28B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NSBrazilConf/Models/FeedModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "startDateText"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "DADF00B3-B346-46AF-9C3D-CE014103B28B - 895f9a1c64d48eca"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NSBrazilConf.FeedModel.CodingKeys.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;NSBrazilConf.FeedModel.CodingKeys&gt;"
+                  moduleName = "NSBrazilConf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/resource/Documents/Douglas/Github/NSBrazilConf/NSBrazilConf/Models/FeedModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "DADF00B3-B346-46AF-9C3D-CE014103B28B - 3910d56bf4ea8d95"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NSBrazilConf.FeedModel.CodingKeys.rawValue.getter : Swift.String"
+                  moduleName = "NSBrazilConf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/resource/Documents/Douglas/Github/NSBrazilConf/NSBrazilConf/Models/FeedModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

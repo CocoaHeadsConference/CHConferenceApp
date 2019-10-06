@@ -39,7 +39,7 @@ final class NSBrazilStore:ObservableObject, Store {
         do {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
+            decoder.dateDecodingStrategy = .iso8601
             return try JSONDecoder().decode(NSBrazilData.self, from: data)
         } catch {
             fatalError("Failed to load demo content: \(String(describing: error))")

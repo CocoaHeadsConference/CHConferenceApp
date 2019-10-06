@@ -2,11 +2,16 @@
 import SwiftUI
 
 struct DayDateCardView: View {
+    
+    @ObservedObject var feed = NSBrazilStore()
+    
     var body: some View {
         
         HStack(spacing: 56) {
-            DateDayView(dateText: "09 NOV", dayHourText: "Sábado - 09:00h")
-            DateDayView(dateText: "10 NOV", dayHourText: "Domingo - 09:00h")
+            DateDayView(dateText: feed.confMock.feed[0].startDateText,
+                        dayHourText: feed.confMock.feed[0].startEventHourText)
+            DateDayView(dateText: feed.confMock.feed[0].endDateText,
+                        dayHourText: feed.confMock.feed[0].endEventHourText)
         }
         .frame(maxWidth: .infinity, minHeight: 88)
         .background(Color.white)
