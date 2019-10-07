@@ -1,0 +1,136 @@
+{
+    "version": 1,
+    "feed": [
+        {
+            "type": "text",
+            "textStyle": "header",
+            "text": "O evento nacional do CocoaHeads Brasil"
+        },
+        {
+            "type": "date",
+            "dates": [
+                "2019-11-09T09:00:00-0300",
+                "2019-11-10T09:00:00-0300"
+            ]
+        },
+        {
+            "type": "map",
+            "lat": -23.5965911,
+            "lng": -46.6867937,
+            "span": {
+                "latDelta": 0.01,
+                "lngDelta": 0.01
+            },
+            "title": "CUBO Itaú - Alameda Vicente Pinzon,54",
+            "subtitle": "Vila Olímpia - SP"
+        },
+        {
+            "type": "videos",
+            "title": "Enquanto a NSBrazil não chega",
+            "subtitle": "Assista os vídeos das edições anteriores",
+            "videos": [
+                {
+                    "title": "GraphQL no iOS na prática",
+                    "speaker": "Felipe Lefèvre Marino",
+                    "background": "https://google.com",
+                    "link": "https://nsbrazil.com/talks"
+                },
+                {
+                    "title": "Migrando seu app para SwiftUI + Combine",
+                    "speaker": "Fernando Nazario Sousa",
+                    "background": "https://google.com",
+                    "link": "https://nsbrazil.com/talks"
+                },
+                {
+                    "title": "The Roots of Metal",
+                    "speaker": "Ricardo Rachaus",
+                    "background": "https://google.com",
+                    "link": "https://nsbrazil.com/talks"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "textStyle": "header",
+            "text": "A NSBrazil é apoiada por"
+        },
+        {
+            "type": "sponsors",
+            "platinum": [
+                {
+                    "name": "MercadoLivre",
+                    "link": "https://mercadolivre.com.br",
+                    "image": "https://google.com",
+                    "backgroundColor": "#yellow"
+                },
+                {
+                    "name": "Banco Inter",
+                    "link": "https://bancointer.com.br",
+                    "image": "https://google.com",
+                    "backgroundColor": "#bancoLaranja"
+                }
+            ],
+            "gold": [
+                {
+                    "name": "iFood",
+                    "link": "https://ifood.com.br",
+                    "image": "https://google.com",
+                    "backgroundColor": "#ifoodRed"
+                }
+            ],
+            "silver": [
+                {
+                    "name": "AirBuddy",
+                    "link": "https://airbuddy.app",
+                    "image": "https://google.com",
+                    "backgroundColor": "#ramboBlue"
+                }
+            ]
+        }
+    ],
+    "schedule": [
+        {
+            "type": "filterFeed",
+            "feeds": [
+                {
+                    "title": "Sábado",
+                    "feedItems": [
+                        {
+                            "type": "talk",
+                            "date": "2019-11-09T09:00:00",
+                            "name": "Credenciamento e Café da Manhã",
+                            "speaker": "Organização NSBrazil",
+                            "image": "https://google.com"
+                        },
+                        {
+                            "type": "talk",
+                            "date": "2019-11-09T10:00:00",
+                            "name": "Keynote de Abertura",
+                            "speaker": "Organização NSBrazil",
+                            "image": "https://google.com"
+                        }
+                    ]
+                },
+                {
+                    "title": "Domingo",
+                    "feedItems": [
+                        {
+                            "type": "talk",
+                            "date": "2019-11-10T10:00:00",
+                            "name": "Credenciamento",
+                            "speaker": "Organização NSBrazil",
+                            "image": "https://google.com"
+                        },
+                        {
+                            "type": "talk",
+                            "date": "2019-11-10T10:00:00",
+                            "name": "Colocaram Swift na minha UI",
+                            "speaker": "Txai Wieser",
+                            "image": "https://google.com"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

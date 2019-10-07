@@ -12,6 +12,10 @@ struct HomeList: View {
             EllipseHeaderView()
             VStack(spacing: 24) {
                 CocoaHeadsTitleView()
+                ForEach(0..<feedViewModel.feed.count) { feedIndex in
+                    FeedBuilder.view(for: self.feedViewModel.feed[feedIndex])
+                }
+
                 DayDateCardView(viewModel: feedViewModel)
                 MapCardView(viewModel: feedViewModel)
                 TitleHeaderView()
