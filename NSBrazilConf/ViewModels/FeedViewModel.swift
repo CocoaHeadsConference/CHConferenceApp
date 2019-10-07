@@ -39,6 +39,10 @@ public struct FeedViewModel {
         let address = store.confMock.feed[0].location.address
         return "\(place) - \(address)"
     }
+
+    var feed: [FeedItem] {
+        return store.newData.feed.feedItems
+    }
     
 
 }

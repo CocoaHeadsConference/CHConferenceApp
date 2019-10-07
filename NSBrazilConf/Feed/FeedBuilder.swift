@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import SwiftUI
+
+protocol FeedViewProtocol {
+    init?(feedItem: FeedItem)
+}
 
 struct FeedBuilder {
     static let typeDictionary: [FeedItemType: FeedItem.Type] = [
@@ -18,4 +23,25 @@ struct FeedBuilder {
         .talk: TalkFeedItem.self,
         .filterFeed: FilterFeedItem.self,
     ]
+
+    static func view(for item: FeedItem) -> AnyView {
+        switch item.type {
+        case .text:
+            return AnyView(EmptyView())
+        case .date:
+            return AnyView(DateFeedView(feedItem: item))
+        case .map:
+            return AnyView(EmptyView())
+        case .videos:
+            return AnyView(EmptyView())
+        case .sponsors:
+            return AnyView(EmptyView())
+        case .talk:
+            return AnyView(EmptyView())
+        case .unknown:
+            return AnyView(EmptyView())
+        case .filterFeed:
+            return AnyView(EmptyView())
+        }
+    }
 }

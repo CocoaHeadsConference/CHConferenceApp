@@ -9,7 +9,7 @@
 import Foundation
 
 final class DateFeedItem: FeedItem {
-    let dates: [String]
+    let dates: [Date]
 
     private enum CodingKeys: String, CodingKey {
         case dates
@@ -17,7 +17,7 @@ final class DateFeedItem: FeedItem {
 
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.dates = try container.decode([String].self, forKey: .dates)
+        self.dates = try container.decode([Date].self, forKey: .dates)
         try super.init(from: decoder)
     }
 }

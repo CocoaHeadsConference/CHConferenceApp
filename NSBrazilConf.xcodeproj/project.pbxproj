@@ -67,6 +67,8 @@
 		B4106AE9234A9025007F0F74 /* FeedDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106AE8234A9025007F0F74 /* FeedDecoder.swift */; };
 		B4106AEB234A903A007F0F74 /* UnknownItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106AEA234A903A007F0F74 /* UnknownItem.swift */; };
 		B4106AED234A904E007F0F74 /* HomeFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106AEC234A904E007F0F74 /* HomeFeed.swift */; };
+		B48254A0234AB9810008A035 /* 2019.json in Resources */ = {isa = PBXBuildFile; fileRef = B482549F234AB9810008A035 /* 2019.json */; };
+		B48254A2234ABC130008A035 /* DateFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48254A1234ABC130008A035 /* DateFeedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +134,8 @@
 		B4106AE8234A9025007F0F74 /* FeedDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDecoder.swift; sourceTree = "<group>"; };
 		B4106AEA234A903A007F0F74 /* UnknownItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownItem.swift; sourceTree = "<group>"; };
 		B4106AEC234A904E007F0F74 /* HomeFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeed.swift; sourceTree = "<group>"; };
+		B482549F234AB9810008A035 /* 2019.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2019.json; sourceTree = "<group>"; };
+		B48254A1234ABC130008A035 /* DateFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,7 @@
 				1D0A95482342E8F300B2C582 /* TalkDetail.swift */,
 				1D0A95932342FCF400B2C582 /* ScheduleListView.swift */,
 				1D0A95952342FF5400B2C582 /* CocoaHeadsTitleView.swift */,
+				B48254A1234ABC130008A035 /* DateFeedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				1D0A955E2342E92E00B2C582 /* PaintCodeStyle.pcvd */,
 				1D0A955F2342E92E00B2C582 /* LocalData.json */,
 				1D589C6223457856003D95D8 /* MockData.json */,
+				B482549F234AB9810008A035 /* 2019.json */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -376,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D0A95372342E87700B2C582 /* LaunchScreen.storyboard in Resources */,
+				B48254A0234AB9810008A035 /* 2019.json in Resources */,
 				1D0A95612342E92E00B2C582 /* LocalData.json in Resources */,
 				1D0A95342342E87700B2C582 /* Preview Assets.xcassets in Resources */,
 				1D0A95602342E92E00B2C582 /* PaintCodeStyle.pcvd in Resources */,
@@ -432,6 +439,7 @@
 				B4106ACC234A8E85007F0F74 /* FeedItem.swift in Sources */,
 				1D0A95512342E8F400B2C582 /* DayDateCardView.swift in Sources */,
 				1D0A95862342F0F800B2C582 /* RoomModel.swift in Sources */,
+				B48254A2234ABC130008A035 /* DateFeedView.swift in Sources */,
 				B4106AE7234A9017007F0F74 /* FeedBuilder.swift in Sources */,
 				B4106AE4234A8FE4007F0F74 /* TalkFeedItem.swift in Sources */,
 				1D0A955B2342E8F400B2C582 /* BlurView.swift in Sources */,

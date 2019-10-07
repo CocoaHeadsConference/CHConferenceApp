@@ -45,6 +45,18 @@ public final class NSBrazilStore: ObservableObject, Store {
             fatalError("Failed to load demo content: \(String(describing: error))")
         }
     }()
+
+    @Published var newData: HomeFeed = {
+        guard let url = Bundle.nsbrazilConf.url(forResource: "2019", withExtension: "json") else { fatalError("deu ruim") }
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            return try decoder.decode(HomeFeed.self, from: data)
+        } catch {
+            fatalError("deu ruim mesmo")
+        }
+    }()
     
 
     public func fetchInfo() {

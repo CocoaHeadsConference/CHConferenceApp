@@ -8,7 +8,8 @@
 
 import Foundation
 
-class FeedItem: Codable {
+class FeedItem: Codable, Identifiable {
+    let id = UUID()
     let type: FeedItemType
 
     required init(from decoder: Decoder) throws {
