@@ -69,6 +69,7 @@
 		B4106AED234A904E007F0F74 /* HomeFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106AEC234A904E007F0F74 /* HomeFeed.swift */; };
 		B48254A0234AB9810008A035 /* 2019.json in Resources */ = {isa = PBXBuildFile; fileRef = B482549F234AB9810008A035 /* 2019.json */; };
 		B48254A2234ABC130008A035 /* DateFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48254A1234ABC130008A035 /* DateFeedView.swift */; };
+		B4A54FFD234BDBC9003CFEFA /* MapFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A54FFC234BDBC9003CFEFA /* MapFeedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		B4106AEC234A904E007F0F74 /* HomeFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeed.swift; sourceTree = "<group>"; };
 		B482549F234AB9810008A035 /* 2019.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2019.json; sourceTree = "<group>"; };
 		B48254A1234ABC130008A035 /* DateFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFeedView.swift; sourceTree = "<group>"; };
+		B4A54FFC234BDBC9003CFEFA /* MapFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 				1D0A95932342FCF400B2C582 /* ScheduleListView.swift */,
 				1D0A95952342FF5400B2C582 /* CocoaHeadsTitleView.swift */,
 				B48254A1234ABC130008A035 /* DateFeedView.swift */,
+				B4A54FFC234BDBC9003CFEFA /* MapFeedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				B4106AED234A904E007F0F74 /* HomeFeed.swift in Sources */,
 				1D0A95652342EAF500B2C582 /* UIImage+Color.swift in Sources */,
 				B4106AD2234A8ED3007F0F74 /* DateFeedItem.swift in Sources */,
+				B4A54FFD234BDBC9003CFEFA /* MapFeedView.swift in Sources */,
 				B4106AD8234A8F15007F0F74 /* VideoFeedItem.swift in Sources */,
 				1DDBD506234A3B3900A1CDBC /* FeedViewModel.swift in Sources */,
 				1D0A95882342F0F800B2C582 /* FeedModel.swift in Sources */,

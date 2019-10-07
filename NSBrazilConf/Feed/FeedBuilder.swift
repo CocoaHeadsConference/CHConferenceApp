@@ -31,7 +31,7 @@ struct FeedBuilder {
         case .date:
             return AnyView(DateFeedView(feedItem: item))
         case .map:
-            return AnyView(EmptyView())
+            return AnyView(MapFeedView(feedItem: item))
         case .videos:
             return AnyView(EmptyView())
         case .sponsors:

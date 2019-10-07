@@ -15,9 +15,6 @@ struct HomeList: View {
                 ForEach(0..<feedViewModel.feed.count) { feedIndex in
                     FeedBuilder.view(for: self.feedViewModel.feed[feedIndex])
                 }
-
-                DayDateCardView(viewModel: feedViewModel)
-                MapCardView(viewModel: feedViewModel)
                 TitleHeaderView()
                     .padding(.leading, 20)
                     .padding(.bottom, 16)
