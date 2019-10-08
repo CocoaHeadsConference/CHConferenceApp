@@ -7,7 +7,6 @@ struct MapCardView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            MapView(location: viewModel.coordinate)
             VStack(alignment: .leading, spacing: 4) {
                 Text(viewModel.placeNameAndAdress)
                     .font(.headline)
@@ -31,3 +30,4 @@ struct MapCardView_Previews: PreviewProvider {
         MapCardView(viewModel: FeedViewModel())
     }
 }
+
