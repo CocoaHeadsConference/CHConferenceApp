@@ -41,3 +41,4 @@ struct DateFeedView: View, FeedViewProtocol {
         return AnyView(DateDayView(dateText: dateText, dayHourText: dayHourText))
     }
 }
+

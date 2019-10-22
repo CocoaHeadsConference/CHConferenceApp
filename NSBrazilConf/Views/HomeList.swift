@@ -17,7 +17,7 @@ struct HomeList: View {
                 }
                 TitleHeaderView()
                     .padding(.leading, 20)
-                    .padding(.bottom, 16)
+                    .padding(.bottom, 24)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 30) {
@@ -43,9 +43,13 @@ struct HomeList: View {
                 }
                 .frame(height: 416)
                 
-                SponsorsRow()
+                SponsorHeaderView()
+                
+                PlatinumSponsorsRow()
+                GoldSponsorsRow()
+                SilverSponsorsRow()
             }
-            .padding(.top, 56)
+            .padding(.bottom, 124)
         }
     }
 }
@@ -135,3 +139,20 @@ let schedulesData = [
 
 ]
 
+
+struct SponsorHeaderView: View {
+    var body: some View {
+        ZStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("NSBrazil é apoiada por")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .lineLimit(2)
+            }
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+        .padding(.leading, 24)
+
+    }
+
+}

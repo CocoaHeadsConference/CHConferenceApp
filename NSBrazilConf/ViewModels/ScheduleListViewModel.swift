@@ -18,6 +18,9 @@ public struct ScheduleListViewModel {
     }
     
 
+//    var schudele: [] {
+//        return store.newData.feed.feedItems
+//    }
     
 
 }

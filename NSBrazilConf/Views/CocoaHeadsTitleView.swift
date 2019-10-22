@@ -11,13 +11,11 @@ import SwiftUI
 struct CocoaHeadsTitleView: View {
     var body: some View {
         ZStack(alignment: .leading) {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 8) {
                 Text("O Evento nacional do\nCocoaHeads Brasil")
-                    .font(.title)
+                    .font(.largeTitle)
                     .fontWeight(.bold)
                     .lineLimit(2)
-                Text("Auditório Itáu")
-                    .foregroundColor(.gray)
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)

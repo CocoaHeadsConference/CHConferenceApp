@@ -4,17 +4,21 @@ import SwiftUI
 struct TitleHeaderView: View {
     var body: some View {
         ZStack(alignment: .leading) {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 8) {
                 Text("Enquanto a NSBrazil não chega")
                     .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .lineLimit(4)
+                    .fontWeight(.bold)
+                    .lineLimit(2)
                 Text("Assista os vídeos das edições anteriores")
+                    .font(.title)
                     .foregroundColor(.gray)
             }
-            .frame(maxWidth: .infinity, minHeight: 160)
         }
+        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+        .padding(.leading, 24)
+
     }
+
 }
 
 struct TitleHeaderView_Previews: PreviewProvider {
