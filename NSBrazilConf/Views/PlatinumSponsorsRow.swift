@@ -12,13 +12,12 @@ struct PlatinumSponsorsRow: View {
                     .padding(.leading, 24)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
+                    HStack(spacing: 48) {
                         ForEach(sponsors) { item in
                             PlatinumSponsorCard(item: item)
                         }
                     }
-                    .padding(20)
-
+                    .padding(.leading, 24)
                 }
         }
         
@@ -43,6 +42,6 @@ struct SponsorViewModel: Identifiable {
 
 
 let sponsorsData = [
-    SponsorViewModel(title: "", image: "ic_mercado_livre", color: Color.white, width: 312, height: 158, titleColor: Color.clear),
-    SponsorViewModel(title: "", image: "ic_banco_inter", color: Color.white, width: 340, height: 212, titleColor: Color.white)
+    SponsorViewModel(title: "", image: "ic_mercado_livre", color: Color.white, width: 164, height: 124, titleColor: Color.clear),
+    SponsorViewModel(title: "", image: "ic_banco_inter", color: Color.white, width: 196, height: 124, titleColor: Color.white)
 ]

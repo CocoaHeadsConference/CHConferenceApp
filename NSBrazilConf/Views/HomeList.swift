@@ -10,7 +10,7 @@ struct HomeList: View {
     var body: some View {
         ScrollView {
             EllipseHeaderView()
-            VStack(spacing: 24) {
+            VStack(alignment: .leading ,spacing: 24) {
                 CocoaHeadsTitleView()
                 ForEach(0..<feedViewModel.feed.count) { feedIndex in
                     FeedBuilder.view(for: self.feedViewModel.feed[feedIndex])
@@ -44,10 +44,15 @@ struct HomeList: View {
                 .frame(height: 416)
                 
                 SponsorHeaderView()
-                
-                PlatinumSponsorsRow()
-                GoldSponsorsRow()
-                SilverSponsorsRow()
+                VStack(alignment: .leading, spacing: 24) {
+                    PlatinumSponsorsRow()
+                    HStack {
+                        GoldSponsorsRow()
+                        SilverSponsorsRow()
+
+                        Spacer()
+                    }
+                }
             }
             .padding(.bottom, 124)
         }

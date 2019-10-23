@@ -13,22 +13,15 @@ struct GoldSponsorCard: View {
     var item = SponsorViewModel(title: "Banco Itaú", image: "ic_itau", color: Color("Orange"), width: 196, height: 102, titleColor: Color.white)
     
     var body: some View {
-        ZStack(alignment: .center) {
-            Text(item.title)
-                .font(.title)
-                .fontWeight(.heavy)
-                .foregroundColor(item.titleColor)
-                .padding()
-
+        ZStack(alignment: .leading) {
                 Image(item.image)
                     .resizable()
                     .frame(width: CGFloat(item.width), height: CGFloat(item.height))
         }
-        .frame(width: 64, height: 64)
+        .frame(width: 48, height: 48)
         .padding(24)
         .background(item.color)
         .cornerRadius(10)
-        .shadow(radius: 10)
         
     }
 }

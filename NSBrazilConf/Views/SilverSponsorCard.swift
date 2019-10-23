@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SilverSponsorCard: View {
     
-    var item = SponsorViewModel(title: "Banco Itaú", image: "ic_itau", color: Color("Orange"), width: 196, height: 102, titleColor: Color.white)
+    var item = SponsorViewModel(title: "Banco Itaú", image: "ic_airbuddy", color: Color("Orange"), width: 96, height: 96, titleColor: Color.white)
     
     var body: some View {
         ZStack(alignment: .center) {
@@ -24,11 +24,10 @@ struct SilverSponsorCard: View {
                         .resizable()
                         .frame(width: CGFloat(item.width), height: CGFloat(item.height))
                 }
-                .frame(width: 64, height: 64)
+                .frame(width: 48, height: 48)
                 .padding(24)
-                .background(item.color)
+                .background(Color.black)
                 .cornerRadius(10)
-                .shadow(radius: 10)
         
     }
 }

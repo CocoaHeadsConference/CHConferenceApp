@@ -15,19 +15,18 @@ struct SilverSponsorsRow: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("Silver")
-                    .font(.system(size: 26))
-                    .fontWeight(.medium)
-                    .padding(.leading, 24)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        ForEach(silverSponsors) { item in
-                            SilverSponsorCard(item: item)
-                        }
+                .font(.system(size: 26))
+                .fontWeight(.medium)
+                .padding(.leading, 24)
+                
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(silverSponsors) { item in
+                        SilverSponsorCard(item: item)
                     }
-                    .padding(24)
-
                 }
-                .padding(.bottom, 4)
+            }
+            .padding(.leading, 24)
         }
     }
 }
@@ -40,5 +39,5 @@ struct SilverSponsorsRow_Previews: PreviewProvider {
 
 
 let silverSponsorsData = [
-    SponsorViewModel(title: "AirBuddy", image: "ic_airbuddy", color: Color.white, width: 96, height: 88, titleColor: Color.black)
+    SponsorViewModel(title: "AirBuddy", image: "ic_airbuddy", color: Color.white, width: 80, height: 80, titleColor: Color.black)
 ]

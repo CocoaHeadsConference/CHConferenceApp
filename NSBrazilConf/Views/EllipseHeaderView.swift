@@ -16,7 +16,7 @@ struct EllipseHeaderView: View {
                     .fontWeight(.heavy)
                     .foregroundColor(Color.white)
                 Text("Conference 2019")
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color.yellow)
             }
             .padding(.leading, 24)
             .padding(.top, 88)

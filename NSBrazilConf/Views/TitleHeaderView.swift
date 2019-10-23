@@ -10,7 +10,7 @@ struct TitleHeaderView: View {
                     .fontWeight(.bold)
                     .lineLimit(2)
                 Text("Assista os vídeos das edições anteriores")
-                    .font(.title)
+                    .font(.body)
                     .foregroundColor(.gray)
             }
         }

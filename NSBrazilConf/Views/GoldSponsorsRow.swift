@@ -15,20 +15,19 @@ struct GoldSponsorsRow: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("Gold")
-                    .font(.system(size: 26))
-                    .fontWeight(.medium)
-                    .padding(.leading, 24)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        ForEach(goldSponsors) { item in
-                            GoldSponsorCard(item: item)
-                        }
+                .font(.system(size: 26))
+                .fontWeight(.medium)
+                .padding(.leading, 24)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(goldSponsors) { item in
+                        GoldSponsorCard(item: item)
                     }
-                    .padding(24)
-
                 }
-                .padding(.bottom, 4)
+            }
+            .padding(.leading, 24)
         }
+        .frame(maxWidth: .some(158), minHeight: 124)
     }
 }
 
@@ -40,5 +39,5 @@ struct GoldSponsorsRow_Previews: PreviewProvider {
 
 
 let goldSponsorsData = [
-    SponsorViewModel(title: "", image: "ic_ifood", color: Color.white, width: 88, height: 72, titleColor: Color.white)
+    SponsorViewModel(title: "", image: "ic_ifood", color: Color("iFoodColor"), width: 72, height: 48, titleColor: Color.white)
 ]

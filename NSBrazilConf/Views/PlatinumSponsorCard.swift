@@ -17,11 +17,10 @@ struct PlatinumSponsorCard: View {
                     .resizable()
                     .frame(width: CGFloat(item.width), height: CGFloat(item.height))
         }
-        .frame(width: 196, height: 102)
+        .frame(width: 64, height: 64)
         .padding(24)
         .background(item.color)
         .cornerRadius(10)
-        .shadow(radius: 10)
         
     }
 }
