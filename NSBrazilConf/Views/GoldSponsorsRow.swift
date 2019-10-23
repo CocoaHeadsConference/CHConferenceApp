@@ -27,7 +27,7 @@ struct GoldSponsorsRow: View {
             }
             .padding(.leading, 24)
         }
-        .frame(maxWidth: .some(158), minHeight: 124)
+        .frame(maxWidth: .some(158), minHeight: 124)//Tive que deixar um hardcode pq eu não consegui alinhar os 4 sponsors no forma de um quandrado 🤷🏻‍♂️
     }
 }
 
