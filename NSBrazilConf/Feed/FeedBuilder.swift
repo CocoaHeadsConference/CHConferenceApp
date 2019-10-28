@@ -16,6 +16,7 @@ protocol FeedViewProtocol {
 struct FeedBuilder {
     static let typeDictionary: [FeedItemType: FeedItem.Type] = [
         .text: TextFeedItem.self,
+        .subtitle: SubtitleFeedItem.self,
         .date: DateFeedItem.self,
         .map: MapFeedItem.self,
         .videos: VideoFeedItem.self,
@@ -27,15 +28,17 @@ struct FeedBuilder {
     static func view(for item: FeedItem) -> AnyView {
         switch item.type {
         case .text:
-            return AnyView(EmptyView())
+            return AnyView(CocoaHeadsTitleView(feedItem: item))
+        case .subtitle:
+            return AnyView(TitleHeaderView(feedItem: item))
         case .date:
             return AnyView(DateFeedView(feedItem: item))
         case .map:
             return AnyView(MapFeedView(feedItem: item))
         case .videos:
-            return AnyView(EmptyView())
+            return AnyView(PastVideosViewSection(feedItem: item))
         case .sponsors:
-            return AnyView(EmptyView())
+            return AnyView(SponsorsViewSection(feedItem: item))
         case .talk:
             return AnyView(EmptyView())
         case .unknown:

@@ -25,6 +25,12 @@
             "subtitle": "Vila Olímpia - SP"
         },
         {
+            "type": "subtitle",
+            "textStyle": "header",
+            "text": "Enquanto a NSBrazil não chega",
+            "subtext": "Assista os vídeos das edições anteriores"
+        },
+        {
             "type": "videos",
             "title": "Enquanto a NSBrazil não chega",
             "subtitle": "Assista os vídeos das edições anteriores",
@@ -60,30 +66,30 @@
                 {
                     "name": "MercadoLivre",
                     "link": "https://mercadolivre.com.br",
-                    "image": "https://google.com",
-                    "backgroundColor": "#yellow"
+                    "image": "https://upload.wikimedia.org/wikipedia/pt/0/04/Logotipo_MercadoLivre.png",
+                    "backgroundColor": "#FEE801"
                 },
                 {
                     "name": "Banco Inter",
                     "link": "https://bancointer.com.br",
-                    "image": "https://google.com",
-                    "backgroundColor": "#bancoLaranja"
+                    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Bancointer_oficial.png",
+                    "backgroundColor": "#F1CAAD"
                 }
             ],
             "gold": [
                 {
                     "name": "iFood",
                     "link": "https://ifood.com.br",
-                    "image": "https://google.com",
-                    "backgroundColor": "#ifoodRed"
+                    "image": "https://logodownload.org/wp-content/uploads/2017/05/ifood-logo-3.png",
+                    "backgroundColor": "#ED1722"
                 }
             ],
             "silver": [
                 {
                     "name": "AirBuddy",
                     "link": "https://airbuddy.app",
-                    "image": "https://google.com",
-                    "backgroundColor": "#ramboBlue"
+                    "image": "ic_airbuddy",
+                    "backgroundColor": "#C0EFFE"
                 }
             ]
         }

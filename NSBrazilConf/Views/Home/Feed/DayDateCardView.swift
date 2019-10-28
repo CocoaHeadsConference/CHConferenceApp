@@ -18,7 +18,7 @@ struct DayDateCardView: View {
         .cornerRadius(4)
         .padding(.leading, 24)
         .padding(.trailing, 24)
-        .shadow(radius: 10)
+        .shadow(color: Color.gray.opacity(0.3), radius: 10, x: 0, y: 6)
     }
 }
 

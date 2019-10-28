@@ -15,7 +15,7 @@ struct Home: View {
                 .scaleEffect(showProfile ? 0.95 : 1)
                 .animation(.default)
             
-            ContentView()
+            VideoView()
                 .background(Color.white)
                 .cornerRadius(30)
                 .shadow(radius: 20)
