@@ -1,5 +1,5 @@
 
-import UIKit
+import Foundation
 
 struct ScheduleModel: Codable {
     let date: String

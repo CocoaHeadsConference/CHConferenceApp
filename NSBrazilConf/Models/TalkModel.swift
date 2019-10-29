@@ -1,5 +1,5 @@
 
-import UIKit
+import Foundation
 
 public struct TalkModel: Codable, Identifiable {
 
@@ -8,6 +8,7 @@ public struct TalkModel: Codable, Identifiable {
     public let speaker: String
     public let speakerImage: String
     public let speakerTitle: String
+    public let description: String?
     public let twitterHandle: String
     public let linkedinHandler: String
     public let githubHandler: String
@@ -18,6 +19,25 @@ public struct TalkModel: Codable, Identifiable {
     public let type: TalkType
     public let duration: Int
     public let idioma: String
+    
+    var beginTime: Date {
+        return Date()
+    }
+    
+    var intervalDescription: String {
+        let dateIntervalFormatter = DateIntervalFormatter()
+        dateIntervalFormatter.dateStyle = .none
+        dateIntervalFormatter.timeStyle = .short
+        return dateIntervalFormatter.string(from: beginTime, to: beginTime.addingTimeInterval(TimeInterval(duration)))
+    }
+
+    var dateDescription: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.doesRelativeDateFormatting = true
+        return dateFormatter.string(from: beginTime)
+    }
+    
 }
 
 public enum TalkType: String, Codable {

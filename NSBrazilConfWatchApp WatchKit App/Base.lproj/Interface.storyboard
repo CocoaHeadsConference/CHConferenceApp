@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15400" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3mp-fW-waa">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15400"/>
+    </dependencies>
+    <scenes>
+        <!--Hosting Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <hostingController id="3mp-fW-waa" customClass="HostingController" customModule="NSBrazilConfWatchApp_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="121" y="31"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.36862745098039218" green="0.80392156862745101" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+</document>
