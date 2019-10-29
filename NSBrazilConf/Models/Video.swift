@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct Video: Codable {
+struct Video: Codable, Identifiable {
+    let id = UUID()
     let title: String
     let speaker: String
     let background: URL
     let link: URL
+    
+    var backgroundColor: Color {
+        return Color("background10")
+    }
 }

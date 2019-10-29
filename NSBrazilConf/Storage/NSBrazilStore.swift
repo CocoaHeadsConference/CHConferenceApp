@@ -10,7 +10,7 @@ public enum FetchError: Error {
     var localizedDescription: String {
         switch self {
         case .parse(let key):
-            return String(format: NSLocalizedString("Unable to parse key %@ from activity", comment: "Unable to parse user activity error"), key)
+            return String(format: NSLocalizedString("Unable to parse key %@ from json", comment: "Unable to parse fetch activity error"), key)
         case .unknown(let error):
             return String(format: NSLocalizedString("Unable to find info with identifier %@", comment: "info not found error"), error.localizedDescription)
         }
@@ -22,8 +22,8 @@ public final class NSBrazilStore: ObservableObject, Store {
     private var cancellable: AnyCancellable?
     
     let cache: Cache = Cache()
-    let session: URLSession = URLSession.shared
-    let jsonURL: URL = URL(string: "http://cocoaheadsconference.com.br/app/2018.json")!
+    public let session: URLSession = URLSession.shared
+    let jsonURL: URL = URL(string: "https://nsbrazil.com/app/2019.json")!
     
     public init() {
         //self.fetchInfo()
@@ -76,6 +76,7 @@ public final class NSBrazilStore: ObservableObject, Store {
             })
     
     }
+
 }
 
 

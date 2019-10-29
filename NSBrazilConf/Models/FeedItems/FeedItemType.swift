@@ -9,5 +9,5 @@
 import Foundation
 
 enum FeedItemType: String, Codable {
-    case text, date, map, videos, sponsors, talk, unknown, filterFeed
+    case text, subtitle, date, map, videos, sponsors, talk, unknown, filterFeed
 }

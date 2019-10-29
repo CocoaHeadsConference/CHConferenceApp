@@ -16,8 +16,5 @@ public struct ScheduleListViewModel {
         let talksSecondDayArray = store.confMock.schedule[1].talks
         return talksSecondDayArray
     }
-    
-
-    
 
 }
