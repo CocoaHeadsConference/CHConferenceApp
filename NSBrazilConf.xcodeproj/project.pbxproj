@@ -161,6 +161,7 @@
 		B4106AEC234A904E007F0F74 /* HomeFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeed.swift; sourceTree = "<group>"; };
 		B482549F234AB9810008A035 /* 2019.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2019.json; sourceTree = "<group>"; };
 		B48254A1234ABC130008A035 /* DateFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFeedView.swift; sourceTree = "<group>"; };
+		B48E24C82367A24100193834 /* NSBrazilConf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NSBrazilConf.entitlements; sourceTree = "<group>"; };
 		B4A54FFC234BDBC9003CFEFA /* MapFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +195,7 @@
 		1D0A95292342E87500B2C582 /* NSBrazilConf */ = {
 			isa = PBXGroup;
 			children = (
+				B48E24C82367A24100193834 /* NSBrazilConf.entitlements */,
 				B4106AE5234A900B007F0F74 /* Feed */,
 				1DDBD504234A3B1300A1CDBC /* ViewModels */,
 				1D589C5F2345778E003D95D8 /* Storage */,
@@ -688,8 +690,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NSBrazilConf/NSBrazilConf.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"NSBrazilConf/Preview Content\"";
+				DEVELOPMENT_TEAM = 7N9Z7384YN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NSBrazilConf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -698,6 +703,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.cocoaheads.CocoaheadsConf.NSBrazilConf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -707,8 +713,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NSBrazilConf/NSBrazilConf.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"NSBrazilConf/Preview Content\"";
+				DEVELOPMENT_TEAM = 7N9Z7384YN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NSBrazilConf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -717,6 +726,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.cocoaheads.CocoaheadsConf.NSBrazilConf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

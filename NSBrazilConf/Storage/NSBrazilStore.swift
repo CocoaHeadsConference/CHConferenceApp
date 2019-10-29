@@ -23,7 +23,7 @@ public final class NSBrazilStore: ObservableObject, Store {
     
     let cache: Cache = Cache()
     public let session: URLSession = URLSession.shared
-    let jsonURL: URL = URL(string: "http://cocoaheadsconference.com.br/app/2019.json")!
+    let jsonURL: URL = URL(string: "https://nsbrazil.com/app/2019.json")!
     
     public init() {
         //self.fetchInfo()
