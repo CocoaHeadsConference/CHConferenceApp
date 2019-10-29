@@ -4,7 +4,7 @@ import SwiftUI
 struct VideoView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    var videoUrl = URL(string: "https://www.cocoaheads.com.br/videos/detalhes/20")!
+    var videoUrl: URL
     
     @State var isPresented = false
     
@@ -31,7 +31,7 @@ struct VideoView: View {
 #if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoView()
+        VideoView(videoUrl: URL(string: "https://google.com")!)
     }
 }
 #endif

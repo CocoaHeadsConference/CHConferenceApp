@@ -28,7 +28,7 @@
             "type": "subtitle",
             "textStyle": "header",
             "text": "Enquanto a NSBrazil não chega",
-            "subtext": "Assista os vídeos das edições anteriores"
+            "subtext": "Assista vídeos das edições anteriores e dos meetups que rolam pelo país"
         },
         {
             "type": "videos",
@@ -36,22 +36,52 @@
             "subtitle": "Assista os vídeos das edições anteriores",
             "videos": [
                 {
-                    "title": "GraphQL no iOS na prática",
-                    "speaker": "Felipe Lefèvre Marino",
-                    "background": "https://google.com",
-                    "link": "https://nsbrazil.com/talks"
+                    "title": "Como portar seu app iOS para o Mac",
+                    "speaker": "Guilherme Rambo",
+                    "background": "https://nsbrazil.com/images/talks/dicas-macOS.jpg",
+                    "link": "https://nsbrazil.com/talks/dicas-macOS/"
                 },
                 {
                     "title": "Migrando seu app para SwiftUI + Combine",
                     "speaker": "Fernando Nazario Sousa",
                     "background": "https://google.com",
-                    "link": "https://nsbrazil.com/talks"
+                    "link": "https://cocoaheads.com.br/videos/detalhes/19"
+                },
+                {
+                    "title": "GraphQL no iOS na prática",
+                    "speaker": "Felipe Lefèvre Marino",
+                    "background": "https://google.com",
+                    "link": "https://cocoaheads.com.br/videos/detalhes/16"
+                },
+                {
+                    "title": "Desacoplando fluxos com Coordinators e Rotas",
+                    "speaker": "Francesco Perrotti-Garcia",
+                    "background": "https://google.com",
+                    "link": "https://cocoaheads.com.br/videos/detalhes/16"
+                },
+                {
+                    "title": "Acessibilidade além do código",
+                    "speaker": "Freddy de Paola",
+                    "background": "https://google.com",
+                    "link": "https://cocoaheads.com.br/videos/detalhes/13"
                 },
                 {
                     "title": "The Roots of Metal",
                     "speaker": "Ricardo Rachaus",
                     "background": "https://google.com",
-                    "link": "https://nsbrazil.com/talks"
+                    "link": "https://cocoaheads.com.br/videos/detalhes/20"
+                },
+                {
+                    "title": "Compartilhando Código Através do Oceano",
+                    "speaker": "Rodrigo Borges",
+                    "background": "https://google.com",
+                    "link": "https://cocoaheads.com.br/videos/detalhes/17"
+                },
+                {
+                    "title": "Automação com CI + Fastlane",
+                    "speaker": "Renato Medina Gomes Burlamaqui",
+                    "background": "https://google.com",
+                    "link": "https://cocoaheads.com.br/videos/detalhes/14"
                 }
             ]
         },

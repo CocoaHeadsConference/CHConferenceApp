@@ -12,33 +12,43 @@ struct PastEditionCardView: View {
     let video: Video
     
     var body: some View {
-        VStack(alignment: .center) {
+        VStack(alignment: .leading, spacing: 10) {
             Text(video.title)
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(Color.white)
-                .padding(.top, 24)
-                .padding()
+                .padding(.horizontal, 10)
+                .padding(.top, 10)
                 .lineLimit(4)
-                .frame(width: 240)
+                .shadow(radius: 1)
             Text(video.speaker)
                 .font(.headline)
                 .fontWeight(.bold)
                 .foregroundColor(Color.white)
-                .padding()
+                .padding(.horizontal, 10)
                 .lineLimit(1)
+                .shadow(radius: 1)
             Spacer()
-            Image("ic_play")
+            HStack {
+                Spacer()
+                Image("ic_play")
                 .resizable()
                 .renderingMode(.original)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 96, height: 96)
                 .padding()
+                Spacer()
+            }
             Spacer()
+            .fixedSize()
+            .frame(width: nil, height: 30)
             
         }
+        .background(
+            ImageViewContainer(imageURL: video.background, hasPadding: false, contentMode: .fill)
+        )
         .background(video.backgroundColor)
-        .cornerRadius(30)
+        .cornerRadius(15)
         .frame(width: 246, height: 360)
         .shadow(color: Color.gray.opacity(0.5), radius: 10, x: 0, y: 0)
     }
@@ -47,6 +57,6 @@ struct PastEditionCardView: View {
 struct PastEditionCardView_Previews: PreviewProvider {
 
     static var previews: some View {
-        PastEditionCardView(video: Video(title: "GraphQL no iOS na Prática", speaker: "Felipe Lefèvre Marino", background: URL(string: "https://google.com")!, link: URL(string: "https://www.cocoaheads.com.br/videos/detalhes/20")!))
+        PastEditionCardView(video: Video(title: "The roots", speaker: "Felipe Lefèvre Marino", background: URL(string: "https://google.com")!, link: URL(string: "https://www.cocoaheads.com.br/videos/detalhes/20")!))
     }
 }
