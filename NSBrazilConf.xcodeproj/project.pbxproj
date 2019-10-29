@@ -85,7 +85,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D0A95272342E87500B2C582 /* NSBrazilConf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSBrazilConf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D0A95272342E87500B2C582 /* NSBrazil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSBrazil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D0A952A2342E87500B2C582 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D0A952C2342E87600B2C582 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1D0A95302342E87700B2C582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		1D0A95282342E87500B2C582 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D0A95272342E87500B2C582 /* NSBrazilConf.app */,
+				1D0A95272342E87500B2C582 /* NSBrazil.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -429,7 +429,7 @@
 			);
 			name = NSBrazilConf;
 			productName = NSBrazilConf;
-			productReference = 1D0A95272342E87500B2C582 /* NSBrazilConf.app */;
+			productReference = 1D0A95272342E87500B2C582 /* NSBrazil.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -697,12 +697,13 @@
 				DEVELOPMENT_TEAM = 7N9Z7384YN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NSBrazilConf/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.cocoaheads.CocoaheadsConf.NSBrazilConf;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NSBrazil;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -720,12 +721,13 @@
 				DEVELOPMENT_TEAM = 7N9Z7384YN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NSBrazilConf/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.cocoaheads.CocoaheadsConf.NSBrazilConf;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NSBrazil;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
