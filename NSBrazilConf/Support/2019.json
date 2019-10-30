@@ -25,6 +25,12 @@
             "subtitle": "Vila Olímpia - SP"
         },
         {
+            "type": "subtitle",
+            "textStyle": "header",
+            "text": "Enquanto a NSBrazil não chega",
+            "subtext": "Assista os vídeos das edições anteriores"
+        },
+        {
             "type": "videos",
             "title": "Enquanto a NSBrazil não chega",
             "subtitle": "Assista os vídeos das edições anteriores",
@@ -60,30 +66,18 @@
                 {
                     "name": "MercadoLivre",
                     "link": "https://mercadolivre.com.br",
-                    "image": "https://google.com",
-                    "backgroundColor": "#yellow"
-                },
-                {
-                    "name": "Banco Inter",
-                    "link": "https://bancointer.com.br",
-                    "image": "https://google.com",
-                    "backgroundColor": "#bancoLaranja"
+                    "image": "https://nsbrazil.com/images/app/meli-logo.png",
+                    "backgroundColor": "#FEE801"
                 }
             ],
             "gold": [
-                {
-                    "name": "iFood",
-                    "link": "https://ifood.com.br",
-                    "image": "https://google.com",
-                    "backgroundColor": "#ifoodRed"
-                }
             ],
             "silver": [
                 {
                     "name": "AirBuddy",
                     "link": "https://airbuddy.app",
-                    "image": "https://google.com",
-                    "backgroundColor": "#ramboBlue"
+                    "image": "ic_airbuddy",
+                    "backgroundColor": "#C0EFFE"
                 }
             ]
         }
@@ -100,14 +94,14 @@
                             "date": "2019-11-09T09:00:00",
                             "name": "Credenciamento e Café da Manhã",
                             "speaker": "Organização NSBrazil",
-                            "image": "https://google.com"
+                            "image": "ic_logo_nsbrazil"
                         },
                         {
                             "type": "talk",
                             "date": "2019-11-09T10:00:00",
                             "name": "Keynote de Abertura",
                             "speaker": "Organização NSBrazil",
-                            "image": "https://google.com"
+                            "image": "ic_logo_nsbrazil"
                         }
                     ]
                 },
@@ -119,14 +113,14 @@
                             "date": "2019-11-10T10:00:00",
                             "name": "Credenciamento",
                             "speaker": "Organização NSBrazil",
-                            "image": "https://google.com"
+                            "image": "ic_logo_nsbrazil"
                         },
                         {
                             "type": "talk",
                             "date": "2019-11-10T10:00:00",
                             "name": "Colocaram Swift na minha UI",
                             "speaker": "Txai Wieser",
-                            "image": "https://google.com"
+                            "image": "ic_logo_nsbrazil"
                         }
                     ]
                 }
