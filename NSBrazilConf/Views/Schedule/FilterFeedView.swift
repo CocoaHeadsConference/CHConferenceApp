@@ -20,25 +20,58 @@ struct FilterFeedView: View {
 
     @State var selectedFeed: Int = 0
 
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+
     var body: some View {
-        VStack {
-            Picker("", selection: $selectedFeed) {
-                ForEach(0..<self.feedItem.feeds.count) { index in
-                    Text(self.feedItem.feeds[index].title).tag(index)
+        if horizontalSizeClass == .regular {
+            return AnyView(
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(0..<feedItem.feeds.count) { index in
+                            ScrollView (.vertical) {
+                                VStack {
+                                    Text(self.feedItem.feeds[index].title)
+                                    .font(.largeTitle)
+                                    .fontWeight(.bold)
+                                    .padding(2)
+                                    .padding([.leading, .trailing], 8)
+                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+
+                                    ForEach(self.feedItem.feeds[index].decoder.feedItems) { item in
+                                        FeedBuilder.view(for: item)
+                                    }
+                                }
+                            }
+                            if (index != self.feedItem.feeds.count - 1) {
+                                Divider()
+                            }
+                        }
+                    }.frame(width: 1400)
+                        .padding([.leading, .trailing], 20)
                 }
-            }.pickerStyle(SegmentedPickerStyle())
-                .padding([.leading, .trailing], 10)
+            )
+        } else {
+            return AnyView(
+                VStack {
+                Picker("", selection: $selectedFeed) {
+                    ForEach(0..<self.feedItem.feeds.count) { index in
+                        Text(self.feedItem.feeds[index].title).tag(index)
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+                    .padding([.leading, .trailing], 10)
 
-            Text(self.feedItem.feeds[self.selectedFeed].title)
-            .font(.largeTitle)
-            .fontWeight(.bold)
-            .padding(2)
-            .padding([.leading, .trailing], 8)
-            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                Text(self.feedItem.feeds[self.selectedFeed].title)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(2)
+                .padding([.leading, .trailing], 8)
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
 
-            List(self.feedItem.feeds[selectedFeed].decoder.feedItems) { item in
-                FeedBuilder.view(for: item)
+                List(self.feedItem.feeds[selectedFeed].decoder.feedItems) { item in
+                    FeedBuilder.view(for: item)
+                }
             }
+        )
         }
     }
 }
