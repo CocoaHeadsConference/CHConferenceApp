@@ -40,11 +40,11 @@ struct FeedBuilder {
         case .sponsors:
             return AnyView(SponsorsViewSection(feedItem: item))
         case .talk:
-            return AnyView(EmptyView())
+            return AnyView(TalkView(feedItem: item))
         case .unknown:
             return AnyView(EmptyView())
         case .filterFeed:
-            return AnyView(EmptyView())
+            return AnyView(FilterFeedView(feedItem: item))
         }
     }
 }

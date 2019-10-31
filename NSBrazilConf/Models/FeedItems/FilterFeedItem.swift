@@ -10,7 +10,12 @@ import Foundation
 
 struct FilteredFeed: Codable {
     let title: String
-    let feedItems: FeedDecoder
+    let decoder: FeedDecoder
+
+    enum CodingKeys: String, CodingKey {
+        case title
+        case decoder = "feedItems"
+    }
 }
 
 final class FilterFeedItem: FeedItem {
@@ -25,4 +30,11 @@ final class FilterFeedItem: FeedItem {
         self.feeds = try container.decode([FilteredFeed].self, forKey: .feeds)
         try super.init(from: decoder)
     }
+
+    #if DEBUG
+    init(feeds: [FilteredFeed]) {
+        self.feeds = feeds
+        super.init(type: .filterFeed)
+    }
+    #endif
 }
