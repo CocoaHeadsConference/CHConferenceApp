@@ -50,7 +50,7 @@ struct PastEditionCardView: View {
         .background(video.backgroundColor)
         .cornerRadius(15)
         .frame(width: 246, height: 360)
-        .shadow(color: Color.gray.opacity(0.5), radius: 10, x: 0, y: 0)
+        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 0)
     }
 }
 
