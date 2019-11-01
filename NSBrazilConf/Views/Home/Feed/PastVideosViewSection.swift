@@ -10,13 +10,12 @@ import SwiftUI
 
 struct PastVideosViewSection: View {
     init?(feedItem: FeedItem) {
-           guard let item = feedItem as? VideoFeedItem else { return nil }
-           self.feedItem = item
-       }
+        guard let item = feedItem as? VideoFeedItem else { return nil }
+        self.feedItem = item
+    }
 
-       var feedItem: VideoFeedItem
-    
-    
+    var feedItem: VideoFeedItem
+
     @State var showContent = false
     
     var body: some View {
@@ -38,7 +37,6 @@ struct PastVideosViewSection: View {
             .padding(24)
         }
         .frame(height: 416)
-        .padding()
     }
 }
 

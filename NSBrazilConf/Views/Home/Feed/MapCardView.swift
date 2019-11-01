@@ -18,8 +18,7 @@ struct MapCardView: View {
         .cornerRadius(4)
         .frame(maxWidth: .infinity, minHeight: 286)
         .shadow(color: Color.gray.opacity(0.3), radius: 10, x: 0, y: 6)
-        .padding(.leading, 24)
-        .padding(.trailing, 24)
+        .padding(.horizontal, 10)
     }
 }
 

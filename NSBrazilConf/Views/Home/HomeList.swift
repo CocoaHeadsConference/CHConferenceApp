@@ -8,13 +8,13 @@ struct HomeList: View {
     
     var body: some View {
         ScrollView {
-            EllipseHeaderView()
-            VStack(alignment: .leading ,spacing: 24) {
+            HeaderView().frame(height: 100)
+            VStack(alignment: .leading ,spacing: 15) {
                 ForEach(0..<feedViewModel.feed.count) { feedIndex in
                     FeedBuilder.view(for: self.feedViewModel.feed[feedIndex])
                 }
             }
-            .padding(.bottom, 124)
+            .padding(.bottom, 200)
         }
     }
 }
