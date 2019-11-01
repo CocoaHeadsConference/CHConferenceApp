@@ -100,8 +100,8 @@
                 {
                     "name": "AirBuddy",
                     "link": "https://airbuddy.app",
-                    "image": "ic_airbuddy",
-                    "backgroundColor": "#C0EFFE"
+                    "image": "https://nsbrazil.com/images/sponsors/airbuddy.png",
+                    "backgroundColor": "#333333"
                 }
             ]
         }
