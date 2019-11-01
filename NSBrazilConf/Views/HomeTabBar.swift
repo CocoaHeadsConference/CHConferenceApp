@@ -27,7 +27,7 @@ struct HomeTabBar: View {
         }
         .navigationBarTitle("NSBrazil")
         .edgesIgnoringSafeArea(.top)
-        .accentColor(Color("chColor"))
+        .accentColor(Color(UIColor.label))
         
     }
 }
