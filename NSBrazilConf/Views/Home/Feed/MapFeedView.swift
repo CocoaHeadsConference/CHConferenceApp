@@ -7,29 +7,38 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct MapFeedView: View, FeedViewProtocol {
     init?(feedItem: FeedItem) {
-           guard let item = feedItem as? MapFeedItem else { return nil }
-           self.feedItem = item
-       }
+       guard let item = feedItem as? MapFeedItem else { return nil }
+       self.feedItem = item
+   }
 
-       var feedItem: MapFeedItem
+   var feedItem: MapFeedItem
 
     var body: some View {
-        VStack(alignment: HorizontalAlignment.leading) {
-            MapView(location: feedItem.location, annotationTitle: feedItem.title, span: feedItem.span)
-            VStack(alignment: .leading, spacing: 4) {
-                Text("\(feedItem.title) \(feedItem.subtitle)")
-                    .font(.headline)
+        CardView{
+            VStack(alignment: HorizontalAlignment.leading) {
+                MapView(location: self.feedItem.location, annotationTitle: self.feedItem.title, span: self.feedItem.span)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("\(self.feedItem.title) \(self.feedItem.subtitle)")
+                        .font(.headline)
+                }
+                .padding(.leading, 16)
+                .padding(.bottom, 8)
             }
-            .padding(.leading, 16)
-            .padding(.bottom, 8)
         }
-        .background(Color.white)
-        .cornerRadius(4)
         .frame(maxWidth: .infinity, minHeight: 286)
-        .shadow(color: Color.gray.opacity(0.4), radius: 8, x: 0, y: 6)
-        .padding(.horizontal, 10)
+    }
+}
+
+struct MapFeedView_Previews: PreviewProvider {
+    static var previews: some View {
+        MapFeedView(feedItem: MapFeedItem(location: CLLocationCoordinate2D(),
+                                          span: MKCoordinateSpan(),
+                                          title: "CUBO",
+                                          subtitle: "Itaú")
+        ).previewDevice(.iPhone11)
     }
 }

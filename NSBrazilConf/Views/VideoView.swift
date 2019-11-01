@@ -35,31 +35,3 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 #endif
-
-struct CardView: View {
-    var body: some View {
-        VStack {
-            Text("Card back")
-        }
-        .frame(width: 340, height: 220)
-        .background(Color.blue)
-        .cornerRadius(10)
-        .shadow(radius: 20)
-    }
-}
-
-struct TitleView: View {
-    var body: some View {
-        VStack {
-            HStack {
-                Text("Video")
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                Spacer()
-            }
-            Image("Illustration5")
-            Spacer()
-        }.padding()
-    }
-}
-
