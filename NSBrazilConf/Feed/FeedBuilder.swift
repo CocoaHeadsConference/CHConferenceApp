@@ -28,7 +28,7 @@ struct FeedBuilder {
     static func view(for item: FeedItem) -> AnyView {
         switch item.type {
         case .text:
-            return AnyView(CocoaHeadsTitleView(feedItem: item))
+            return AnyView(TitleView(feedItem: item))
         case .subtitle:
             return AnyView(TitleHeaderView(feedItem: item))
         case .date:

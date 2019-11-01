@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CocoaHeadsTitleView: View {
+struct TitleView: View {
     init?(feedItem: FeedItem) {
         guard let item = feedItem as? TextFeedItem else { return nil }
         self.text = item.text
@@ -35,6 +35,6 @@ struct CocoaHeadsTitleView: View {
 
 struct CocoaHeadsTitleView_Previews: PreviewProvider {
     static var previews: some View {
-        CocoaHeadsTitleView(text: "O evento nacional do CocoaHeads Brasil")
+        TitleView(text: "O evento nacional do CocoaHeads Brasil")
     }
 }
