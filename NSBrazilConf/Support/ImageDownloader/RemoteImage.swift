@@ -9,12 +9,22 @@ class RemoteImage: ObservableObject {
     let imageCache = NSCache<NSString, NSData>()
     
     @Published var image: UIImage?
+
+    convenience init(imageURL: String, placeholder: String = "ic_logo_nsbrazil") {
+        self.init(imageURL: URL(string: imageURL), placeholder: placeholder)
+    }
     
+    init(imageURL: URL?, placeholder: String = "ic_logo_nsbrazil") {
+        self.image = UIImage(named: placeholder)
+        load(imageUrl: imageURL)
+    }
+
     init(imageURL: URL) {
         load(imageUrl: imageURL)
     }
     
-    func load(imageUrl: URL) {
+    func load(imageUrl: URL?) {
+        guard let imageUrl = imageUrl else { return }
         let key = imageUrl.absoluteString as NSString
         // check cached image
         if let cachedData = imageCache.object(forKey: key) {
@@ -27,8 +37,9 @@ class RemoteImage: ObservableObject {
     }
     
     private func apply(data: NSData) {
-        let image = UIImage(data: data as Data)
-        self.image = image
+        if let image = UIImage(data: (data as Data)) {
+            self.image = image
+        }
     }
     
     func loadUrl(url: URL) {

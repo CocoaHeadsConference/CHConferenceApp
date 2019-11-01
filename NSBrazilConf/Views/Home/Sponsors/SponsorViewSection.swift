@@ -15,16 +15,37 @@ struct SponsorsViewSection: View, FeedViewProtocol {
            self.feedItem = item
        }
 
-       var feedItem: SponsorFeedItem
+    var feedItem: SponsorFeedItem
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 24) {
-            PlatinumSponsorsRow(sponsor: feedItem)
-            HStack {
-                GoldSponsorsRow(sponsor: feedItem)
-                SilverSponsorsRow(sponsor: feedItem)
-                Spacer()
+        VStack(alignment: .center, spacing: 10) {
+            if !feedItem.platinumSponsors.isEmpty {
+                SponsorRow(title: "Platinum", sponsors: feedItem.platinumSponsors).frame(height: 250)
             }
+            if !feedItem.goldSponsors.isEmpty {
+                SponsorRow(title: "Gold", sponsors: feedItem.goldSponsors).frame(height: 200)
+            }
+            if !feedItem.silverSponsors.isEmpty {
+                SponsorRow(title: "Silver", sponsors: feedItem.silverSponsors).frame(height: 150)
+            }
+        }
+    }
+}
+
+struct SponsorsViewSection_Preview: PreviewProvider {
+    static var previews: some View {
+        let sponsor = Sponsor(name: "Mercado Livre",
+                              link: URL(string: "https://mercadolivre.com")!,
+                              image: URL(string: "https://nsbrazil.com/images/app/meli-logo.png")!,
+                              backgroundColor: "#BABACA")
+        let platinum = [sponsor, sponsor]
+        let gold = [sponsor]
+
+        let item = SponsorFeedItem(platinum: platinum, gold: gold, silver: gold)
+
+        return Group {
+            SponsorsViewSection(feedItem: item).previewDevice(.iPhone11)
+            SponsorsViewSection(feedItem: item).previewDevice(.iPhoneSE)
         }
     }
 }

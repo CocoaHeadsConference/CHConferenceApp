@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FeedItem: Codable, Identifiable {
+class FeedItem: Codable, Identifiable { 
     let id = UUID()
     let type: FeedItemType
 
@@ -16,4 +16,10 @@ class FeedItem: Codable, Identifiable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.type = try container.decode(FeedItemType.self, forKey: .type)
     }
+
+    #if DEBUG
+    init(type: FeedItemType) {
+        self.type = type
+    }
+    #endif
 }

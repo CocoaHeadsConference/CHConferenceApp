@@ -9,21 +9,31 @@
 import Foundation
 
 class TalkFeedItem: FeedItem {
-    let date: String
+    let date: Date
     let name: String
     let speaker: String
-    let image: URL
+    let image: String
 
     private enum CodingKeys: String, CodingKey {
         case date, name, speaker, image
     }
 
+    #if DEBUG
+    init(date: Date, name: String, speaker: String, image: String) {
+        self.date = date
+        self.name = name
+        self.speaker = speaker
+        self.image = image
+        super.init(type: .talk)
+    }
+    #endif
+
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.date = try container.decode(String.self, forKey: .date)
+        self.date = try container.decode(Date.self, forKey: .date)
         self.name = try container.decode(String.self, forKey: .name)
         self.speaker = try container.decode(String.self, forKey: .speaker)
-        self.image = try container.decode(URL.self, forKey: .image)
+        self.image = try container.decode(String.self, forKey: .image)
         try super.init(from: decoder)
     }
 }

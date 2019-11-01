@@ -8,6 +8,7 @@ public struct ScheduleListViewModel {
     public init() { }
     
     public var talksFirstDay: [TalkModel] {
+
         let talksFirstDayArray = store.confMock.schedule[0].talks
         return talksFirstDayArray
     }
@@ -15,6 +16,10 @@ public struct ScheduleListViewModel {
     public var talksSecondDay: [TalkModel] {
         let talksSecondDayArray = store.confMock.schedule[1].talks
         return talksSecondDayArray
+    }
+
+    var feed: [FeedItem] {
+        return store.newData.schedule.feedItems
     }
 
 }
