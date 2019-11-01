@@ -111,41 +111,284 @@
             "type": "filterFeed",
             "feeds": [
                 {
-                    "title": "Sábado",
+                    "title": "Sexta",
                     "feedItems": [
                         {
-                            "type": "talk",
-                            "date": "2019-11-09T09:00:00",
-                            "name": "Credenciamento e Café da Manhã",
-                            "speaker": "Organização NSBrazil",
-                            "image": "ic_logo_nsbrazil"
+                           "type":"talk",
+                           "date":"2019-11-08T09:00:00-0300",
+                           "speaker":"Daniel Steinberg",
+                           "name":"Intro to SwiftUI Workshop",
+                           "image":"https://nsbrazil.com/images/team/daniel-steinberg.jpg"
                         },
                         {
-                            "type": "talk",
-                            "date": "2019-11-09T10:00:00",
-                            "name": "Keynote de Abertura",
-                            "speaker": "Organização NSBrazil",
-                            "image": "ic_logo_nsbrazil"
+                           "type":"talk",
+                           "date":"2019-11-08T14:00:00-0300",
+                           "speaker":"Daniel Steinberg",
+                           "name":"Intro to SwiftUI Workshop",
+                           "image":"https://nsbrazil.com/images/team/daniel-steinberg.jpg"
                         }
                     ]
                 },
                 {
+                    "title": "Sábado",
+                    "feedItems": [
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T09:00:00-0300",
+                          "speaker":"NSBrazil",
+                          "name":"Credenciamento e Welcome Coffee",
+                          "image":""
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T09:30:00-0300",
+                          "speaker":"NSBrazil",
+                          "name":"Abertura",
+                          "image":""
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T09:45:00-0300",
+                          "speaker":"Henrique Prudêncio e Felipe Sprovieri",
+                          "name":"Experiência de criar um App com dezenas de equipes distribuidas",
+                          "image":"https://nsbrazil.com/images/team/felipe-henrique.png"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T10:15:00-0300",
+                          "speaker":"Igor Ferreira",
+                          "name":"Localização e internacionalização - Adaptando seu app para onde a zoeira tem limite!",
+                          "image":"https://nsbrazil.com/images/team/igor-castanheda.png"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T10:45:00-0300",
+                          "speaker":"Douglas Ferreira",
+                          "name":"Colocando SwiftUI em produção!",
+                          "image":"https://nsbrazil.com/images/team/douglas-ferreira.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T11:15:00-0300",
+                          "speaker":"Victor Augusto Borges Dias de Almeida",
+                          "name":"Ideias Inspiradoras em Realidade Aumentada",
+                          "image":"https://nsbrazil.com/images/team/victor-almeida.png"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T11:25:00-0300",
+                          "speaker":"Aline Borges",
+                          "name":"10 dicas para apresentar uma Tech Talk. Você não vai acreditar na n 6!",
+                          "image":"https://nsbrazil.com/images/team/aline-borges.png"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T11:40:00-0300",
+                          "speaker":"Henrique Morbin e Rafael Machado",
+                          "name":"Você já testou os seus testes?",
+                          "image":"https://nsbrazil.com/images/team/henrique-rafael.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T12:10:00-0300",
+                          "speaker":"-",
+                          "name":"Almoço",
+                          "image":""
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T13:30:00-0300",
+                          "speaker":"Renê Xavier",
+                          "name":"Você não sabe migrar um banco CoreData",
+                          "image":"https://nsbrazil.com/images/team/rene-xavier.png"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T14:00:00-0300",
+                          "speaker":"Bruno Rocha",
+                          "name":"Creating iOS apps with Buck without working in the Valley",
+                          "image":"https://nsbrazil.com/images/team/bruno-rocha.jpeg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T14:30:00-0300",
+                          "speaker":"André Gimenez Faria",
+                          "name":"Memory Management in Swift - 101",
+                          "image":"https://nsbrazil.com/images/team/andre-faria.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T15:00:00-0300",
+                          "speaker":"Carlos Henrique",
+                          "name":"Arquitetura de apps na plataforma da Globo.com",
+                          "image":"https://nsbrazil.com/images/team/carlos-henrique.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T15:30:00-0300",
+                          "speaker":"-",
+                          "name":"Coffee Break",
+                          "image":""
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T16:00:00-0300",
+                          "speaker":"Daniel Steinberg",
+                          "name":"A Feel for Combine",
+                          "image":"https://nsbrazil.com/images/team/daniel-steinberg.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T16:30:00-0300",
+                          "speaker":"Daniel Bonates",
+                          "name":"Pare de apertar parafuso",
+                          "image":"https://nsbrazil.com/images/team/daniel-bonates.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T17:00:00-0300",
+                          "speaker":"Ronan Rodrigo Nunes",
+                          "name":"Testes: A que será que se destina?",
+                          "image":"https://nsbrazil.com/images/team/ronan-nunes.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T17:30:00-0300",
+                          "speaker":"Marlon Burnett",
+                          "name":"Serverless: Explorando seu potencial para o desenvolvimento de apps",
+                          "image":"https://nsbrazil.com/images/team/marlon-burnett.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T18:00:00-0300",
+                          "speaker":"NSBrazil",
+                          "name":"Encerramento",
+                          "image":""
+                       }
+                    ],
+                },
+                {
                     "title": "Domingo",
                     "feedItems": [
-                        {
-                            "type": "talk",
-                            "date": "2019-11-10T10:00:00",
-                            "name": "Credenciamento",
-                            "speaker": "Organização NSBrazil",
-                            "image": "ic_logo_nsbrazil"
-                        },
-                        {
-                            "type": "talk",
-                            "date": "2019-11-10T10:00:00",
-                            "name": "Colocaram Swift na minha UI",
-                            "speaker": "Txai Wieser",
-                            "image": "ic_logo_nsbrazil"
-                        }
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T09:00:00-0300",
+                          "speaker":"NSBrazil",
+                          "name":"Credenciamento e Welcome Coffee",
+                          "image":""
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T10:00:00-0300",
+                          "speaker":"NSBrazil",
+                          "name":"Abertura",
+                          "image":""
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T10:20:00-0300",
+                          "speaker":"Ândriu Felipe Coelho e Vinicius Campos Garcia",
+                          "name":"Design Patterns - Melhore a qualidade do seu código",
+                          "image":"https://nsbrazil.com/images/team/andriu-vinicius.png"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T10:50:00-0300",
+                          "speaker":"Roberth Diorges ",
+                          "name":"Auditoria de performance com Xcode Instruments",
+                          "image":"https://nsbrazil.com/images/team/roberth-diorges.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T11:20:00-0300",
+                          "speaker":"A definir",
+                          "name":"Talk Patrocinada",
+                          "image":""
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T11:50:00-0300",
+                          "speaker":"Charles Lima e Rodrigo Longhi Guimarães",
+                          "name":"Deep dive em segurança para aplicativos iOS",
+                          "image":"https://nsbrazil.com/images/team/rodrigo-charles.png"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T12:00:00-0300",
+                          "speaker":"Aline Borges",
+                          "name":"Feature flag all things",
+                          "image":"https://nsbrazil.com/images/team/aline-borges.png"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T12:40:00-0300",
+                          "speaker":"",
+                          "name":"Almoço",
+                          "image":""
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T14:00:00-0300",
+                          "speaker":"Frederico De Paola",
+                          "name":"Acessibilidade além do código com Swift",
+                          "image":"https://nsbrazil.com/images/team/freddy-paola.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T14:30:00-0300",
+                          "speaker":"Walmyr Carvalho e Caio Mariano",
+                          "name":"Indo além do Keychain: Boas práticas e técnicas modernas de segurança para aplicações iOS",
+                          "image":"https://nsbrazil.com/images/team/walmyr-caio.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T15:00:00-0300",
+                          "speaker":"Bruno Delgado",
+                          "name":"Modularizando o seu aplicativo",
+                          "image":"https://nsbrazil.com/images/team/bruno-delgado.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T15:30:00-0300",
+                          "speaker":"",
+                          "name":"Coffee Break",
+                          "image":""
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T16:20:00-0300",
+                          "speaker":"Mercado Livre",
+                          "name":"Talk Patrocinada",
+                          "image":""
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T16:30:00-0300",
+                          "speaker":"Michel Bueno e Larissa Barra",
+                          "name":"Advanced debugging in XCode",
+                          "image":"https://nsbrazil.com/images/team/larissa-michel.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T17:00:00-0300",
+                          "speaker":"Txai Wieser",
+                          "name":"Quem botou Swift na minha UI?",
+                          "image":"https://nsbrazil.com/images/team/txai-wieser.jpg"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T17:30:00-0300",
+                          "speaker":"Ricardo Rachaus",
+                          "name":"The Roots of Metal",
+                          "image":"https://nsbrazil.com/images/team/ricardo-rachaus.JPG"
+                       },
+                       {
+                          "type":"talk",
+                          "date":"2019-11-09T18:00:00-0300",
+                          "speaker":"NSBrazil",
+                          "name":"Encerramento",
+                          "image":""
+                       }
                     ]
                 }
             ]
