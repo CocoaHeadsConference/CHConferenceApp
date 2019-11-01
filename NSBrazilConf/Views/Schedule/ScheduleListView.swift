@@ -16,43 +16,11 @@ struct ScheduleListView: View {
     @State var showSetting = false
     
     var body: some View {
-        NavigationView {
-            List{
-                ForEach(scheduleViewModel.talksFirstDay) { talk in
-                    NavigationLink(destination:
-                    TalkDetail(talk: talk)) {
-                            HStack(spacing: 12.0) {
-                                Image(talk.speakerImage)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
-                                .background(Color("background"))
-                                .cornerRadius(40)
-                                
-                                VStack(alignment: .leading) {
-                                    Text(talk.title)
-                                        .font(.headline)
-                                        
-                                    Text(talk.speaker)
-                                        .lineLimit(3)
-                                        .font(.system(size: 14))
-                                        .lineSpacing(4)
-                                        .frame(height: 50)
-                                    
-                                    Text("\(talk.date)")
-                                        .font(.caption)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.gray)
-                                }
-                            }
-                        }
-                    .padding(.vertical, 8.0)
-                    
+            VStack {
+                ForEach(0..<scheduleViewModel.feed.count) { feedIndex in
+                    FeedBuilder.view(for: self.scheduleViewModel.feed[feedIndex])
                 }
-                
             }
-            .navigationBarTitle(Text("Schedule"))
-        }
     }
 }
 
