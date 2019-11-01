@@ -16,10 +16,7 @@ struct MapCardView: View {
         }
         .background(Color.white)
         .cornerRadius(4)
-        .frame(maxWidth: .infinity, minHeight: 286)
-        .shadow(color: Color.gray.opacity(0.3), radius: 10, x: 0, y: 6)
-        .padding(.leading, 24)
-        .padding(.trailing, 24)
+        .padding(.horizontal, 10)
     }
 }
 
@@ -27,7 +24,7 @@ struct MapCardView_Previews: PreviewProvider {
     var feed: FeedModel?
     
     static var previews: some View {
-        MapCardView(viewModel: FeedViewModel())
+        MapCardView(viewModel: FeedViewModel()).previewLayout(.sizeThatFits)
     }
 }
 

@@ -32,7 +32,6 @@ struct PastVideosViewSection: View {
             .padding(24)
         }
         .frame(height: 416)
-        .padding()
     }
 
     private func cardView(for index: Int) -> AnyView {

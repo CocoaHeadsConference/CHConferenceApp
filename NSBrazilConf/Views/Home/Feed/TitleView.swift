@@ -8,32 +8,33 @@
 
 import SwiftUI
 
-struct CocoaHeadsTitleView: View {
+struct TitleView: View {
     init?(feedItem: FeedItem) {
-           guard let item = feedItem as? TextFeedItem else { return nil }
-           self.feedItem = item
-       }
+        guard let item = feedItem as? TextFeedItem else { return nil }
+        self.text = item.text
+    }
 
-       var feedItem: TextFeedItem
+    init(text: String) {
+        self.text = text
+    }
+
+    var text: String
     
     var body: some View {
         ZStack(alignment: .leading) {
             VStack(alignment: .leading, spacing: 8) {
-                Text(feedItem.text)
+                Text(text)
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .lineLimit(2)
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-        .padding(.leading, 24)
-        .padding(.trailing, 24)
-
+        .padding(.horizontal, 10)
     }
 }
-//
-//struct CocoaHeadsTitleView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CocoaHeadsTitleView(feedItem: Fee)
-//    }
-//}
+
+struct CocoaHeadsTitleView_Previews: PreviewProvider {
+    static var previews: some View {
+        TitleView(text: "O evento nacional do CocoaHeads Brasil")
+    }
+}

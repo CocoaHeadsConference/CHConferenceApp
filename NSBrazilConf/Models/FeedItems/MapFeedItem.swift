@@ -40,4 +40,12 @@ final class MapFeedItem: FeedItem {
         self.subtitle = try container.decode(String.self, forKey: .subtitle)
         try super.init(from: decoder)
     }
+
+    init(location: CLLocationCoordinate2D, span: MKCoordinateSpan, title: String, subtitle: String) {
+        self.location = location
+        self.span = span
+        self.title = title
+        self.subtitle = subtitle
+        super.init(type: .map)
+    }
 }
