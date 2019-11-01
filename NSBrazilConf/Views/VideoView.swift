@@ -14,7 +14,7 @@ struct VideoView: View {
                     ZStack(alignment: .topTrailing) {
                         Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
                             Text("Voltar")
-                                .fontWeight(.heavy)
+                                .fontWeight(.bold)
                                 .foregroundColor(Color(UIColor.label))
                         }
                     }
