@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FeedItem: Codable, Identifiable {
+class FeedItem: Codable, Identifiable { 
     let id = UUID()
     let type: FeedItemType
 

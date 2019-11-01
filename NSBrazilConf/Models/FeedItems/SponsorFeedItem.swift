@@ -24,4 +24,11 @@ final class SponsorFeedItem: FeedItem {
         self.silverSponsors = try container.decode([Sponsor].self, forKey: .silver)
         try super.init(from: decoder)
     }
+
+    init(platinum: [Sponsor], gold: [Sponsor], silver: [Sponsor]) {
+        platinumSponsors = platinum
+        goldSponsors = gold
+        silverSponsors = silver
+        super.init(type: .sponsors)
+    }
 }
