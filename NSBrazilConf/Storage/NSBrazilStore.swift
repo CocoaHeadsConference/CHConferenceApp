@@ -43,9 +43,12 @@ public final class NSBrazilStore: ObservableObject, Store {
     
 
     public func fetchInfo() {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
         self.cancellable = session.dataTaskPublisher(for: jsonURL)
             .map { $0.data }
-            .decode(type: HomeFeed.self, decoder: JSONDecoder())
+            .decode(type: HomeFeed.self, decoder: decoder)
             .mapError { error -> FetchError in
                 switch error {
                     case is DecodingError: return FetchError.parse(error.localizedDescription)
