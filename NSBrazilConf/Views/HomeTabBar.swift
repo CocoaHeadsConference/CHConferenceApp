@@ -12,7 +12,7 @@ struct HomeTabBar: View {
     var body: some View {
         Group {
             if viewModel.isEmpty {
-                Text("view model did not load")
+                RetryView()
             } else {
                 TabView {
                     HomeList(feedViewModel: self.viewModel).tabItem ({
