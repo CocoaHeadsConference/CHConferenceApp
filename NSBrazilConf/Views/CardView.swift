@@ -21,7 +21,7 @@ struct CardView<Content>: View where Content: View {
         Group {
             content()
         }
-        .background(Color.white)
+        .background(Color(UIColor.tertiarySystemBackground))
         .cornerRadius(8)
         .padding()
         .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 0)

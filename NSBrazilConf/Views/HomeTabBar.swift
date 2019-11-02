@@ -11,7 +11,7 @@ struct HomeTabBar: View {
         TabView {
             HomeList(feedViewModel: FeedViewModel()).tabItem ({
                 VStack {
-                    Image("IconHome")
+                    Image("IconHome").renderingMode(.template).accentColor(Color(UIColor.label))
                     Text("Home")
                 }
             })
@@ -19,7 +19,7 @@ struct HomeTabBar: View {
             
             ScheduleListView(scheduleViewModel: ScheduleListViewModel()).tabItem({
                 VStack {
-                    Image("IconCards")
+                    Image("IconCards").renderingMode(.template).accentColor(Color(UIColor.label))
                     Text("Schedule")
                 }
             })
@@ -27,7 +27,7 @@ struct HomeTabBar: View {
         }
         .navigationBarTitle("NSBrazil")
         .edgesIgnoringSafeArea(.top)
-        .accentColor(Color("chColor"))
+        .accentColor(Color(UIColor.label))
         
     }
 }
