@@ -10,8 +10,8 @@ struct HomeList: View {
         ScrollView {
             HeaderView().frame(height: 100)
             VStack(alignment: .leading ,spacing: 15) {
-                ForEach(0..<feedViewModel.feed.count) { feedIndex in
-                    FeedBuilder.view(for: self.feedViewModel.feed[feedIndex])
+                ForEach(0..<feedViewModel.homeFeed.count) { feedIndex in
+                    FeedBuilder.view(for: self.feedViewModel.homeFeed[feedIndex])
                 }
             }
             .padding(.bottom, 200)

@@ -26,27 +26,10 @@ public final class NSBrazilStore: ObservableObject, Store {
     let jsonURL: URL = URL(string: "https://nsbrazil.com/app/2019.json")!
     
     public init() {
-        //self.fetchInfo()
+        self.fetchInfo()
     }
-    
-    @Published var conf: NSBrazilData?
-        
-    @Published var confMock: NSBrazilData = {
-        guard let url = Bundle.nsbrazilConf.url(forResource: "MockData", withExtension: "json") else {
-            fatalError("CocoaheadsConf MockData.json from NSBrazilConf resources")
-        }
 
-        do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            return try JSONDecoder().decode(NSBrazilData.self, from: data)
-        } catch {
-            fatalError("Failed to load demo content: \(String(describing: error))")
-        }
-    }()
-
-    @Published var newData: HomeFeed = {
+    @Published var data: HomeFeed? = {
         guard let url = Bundle.nsbrazilConf.url(forResource: "2019", withExtension: "json") else { fatalError("deu ruim") }
         do {
             let data = try Data(contentsOf: url)
@@ -54,15 +37,18 @@ public final class NSBrazilStore: ObservableObject, Store {
             decoder.dateDecodingStrategy = .iso8601
             return try decoder.decode(HomeFeed.self, from: data)
         } catch {
-            fatalError("deu ruim mesmo")
+            return nil
         }
     }()
     
 
     public func fetchInfo() {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
         self.cancellable = session.dataTaskPublisher(for: jsonURL)
             .map { $0.data }
-            .decode(type: NSBrazilData.self, decoder: JSONDecoder())
+            .decode(type: HomeFeed.self, decoder: decoder)
             .mapError { error -> FetchError in
                 switch error {
                     case is DecodingError: return FetchError.parse(error.localizedDescription)
@@ -72,9 +58,8 @@ public final class NSBrazilStore: ObservableObject, Store {
             .sink(receiveCompletion: { (completion) in
                 print(".sink() received the completion: ", String(describing: completion))
             }, receiveValue: { infos in
-                self.conf = infos
+                self.data = infos
             })
-    
     }
 
 }
