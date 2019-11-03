@@ -61,6 +61,11 @@
 		1D97A1AB236000060024812F /* SponsorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D97A1AA236000060024812F /* SponsorView.swift */; };
 		1DDBD506234A3B3900A1CDBC /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDBD505234A3B3900A1CDBC /* FeedViewModel.swift */; };
 		1DF60633234A4FF100C93AF3 /* ScheduleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF60632234A4FF100C93AF3 /* ScheduleListViewModel.swift */; };
+		3DD10CA12360D95900A74997 /* SponsorViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10CA02360D95900A74997 /* SponsorViewSection.swift */; };
+		3DD10CA32360D9D500A74997 /* PastVideosViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10CA22360D9D500A74997 /* PastVideosViewSection.swift */; };
+		3DD10CA52360DB6700A74997 /* PastEditionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10CA42360DB6700A74997 /* PastEditionCardView.swift */; };
+		76579BAC236BBBF6003A25F2 /* 2019.json in Resources */ = {isa = PBXBuildFile; fileRef = B482549F234AB9810008A035 /* 2019.json */; };
+		76579BB0236BC0A3003A25F2 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76579BAF236BC0A3003A25F2 /* Schedule.swift */; };
 		765CF5312367C4D3007B26D9 /* NSBrazilConfWatchApp WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 765CF5302367C4D3007B26D9 /* NSBrazilConfWatchApp WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		765CF5372367C4D3007B26D9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 765CF5352367C4D3007B26D9 /* Interface.storyboard */; };
 		765CF5392367C4D5007B26D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765CF5382367C4D5007B26D9 /* Assets.xcassets */; };
@@ -73,14 +78,8 @@
 		765CF55C2367C67E007B26D9 /* TalkItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CF55B2367C67E007B26D9 /* TalkItemView.swift */; };
 		765CF5662367CDA2007B26D9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D589C60234577CB003D95D8 /* Store.swift */; };
 		765CF5672367CDAC007B26D9 /* Bundle+NSBrazilConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A956C2342EB5A00B2C582 /* Bundle+NSBrazilConf.swift */; };
-		765CF5832367CE74007B26D9 /* TalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A95832342F0F800B2C582 /* TalkModel.swift */; };
 		765CF5852367D78F007B26D9 /* TalkDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CF5842367D78F007B26D9 /* TalkDetails.swift */; };
-		765CF5862367DE14007B26D9 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D589C64234916A7003D95D8 /* Schedule.swift */; };
 		765CF5882367DE85007B26D9 /* NSBrazilData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CF5872367DE85007B26D9 /* NSBrazilData.swift */; };
-		765CF5892367DEB0007B26D9 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D589C6223457856003D95D8 /* MockData.json */; };
-		3DD10CA12360D95900A74997 /* SponsorViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10CA02360D95900A74997 /* SponsorViewSection.swift */; };
-		3DD10CA32360D9D500A74997 /* PastVideosViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10CA22360D9D500A74997 /* PastVideosViewSection.swift */; };
-		3DD10CA52360DB6700A74997 /* PastEditionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10CA42360DB6700A74997 /* PastEditionCardView.swift */; };
 		B4106ACC234A8E85007F0F74 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106ACB234A8E85007F0F74 /* FeedItem.swift */; };
 		B4106ACE234A8EA0007F0F74 /* FeedItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106ACD234A8EA0007F0F74 /* FeedItemType.swift */; };
 		B4106AD0234A8EC3007F0F74 /* TextFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106ACF234A8EC3007F0F74 /* TextFeedItem.swift */; };
@@ -200,6 +199,10 @@
 		1D97A1AA236000060024812F /* SponsorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorView.swift; sourceTree = "<group>"; };
 		1DDBD505234A3B3900A1CDBC /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		1DF60632234A4FF100C93AF3 /* ScheduleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListViewModel.swift; sourceTree = "<group>"; };
+		3DD10CA02360D95900A74997 /* SponsorViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorViewSection.swift; sourceTree = "<group>"; };
+		3DD10CA22360D9D500A74997 /* PastVideosViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastVideosViewSection.swift; sourceTree = "<group>"; };
+		3DD10CA42360DB6700A74997 /* PastEditionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEditionCardView.swift; sourceTree = "<group>"; };
+		76579BAF236BC0A3003A25F2 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		765CF52D2367C4D3007B26D9 /* NSBrazilConfWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSBrazilConfWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		765CF5302367C4D3007B26D9 /* NSBrazilConfWatchApp WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NSBrazilConfWatchApp WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		765CF5362367C4D3007B26D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -215,9 +218,6 @@
 		765CF55B2367C67E007B26D9 /* TalkItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkItemView.swift; sourceTree = "<group>"; };
 		765CF5842367D78F007B26D9 /* TalkDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkDetails.swift; sourceTree = "<group>"; };
 		765CF5872367DE85007B26D9 /* NSBrazilData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBrazilData.swift; sourceTree = "<group>"; };
-		3DD10CA02360D95900A74997 /* SponsorViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorViewSection.swift; sourceTree = "<group>"; };
-		3DD10CA22360D9D500A74997 /* PastVideosViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastVideosViewSection.swift; sourceTree = "<group>"; };
-		3DD10CA42360DB6700A74997 /* PastEditionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEditionCardView.swift; sourceTree = "<group>"; };
 		B4106ACB234A8E85007F0F74 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		B4106ACD234A8EA0007F0F74 /* FeedItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemType.swift; sourceTree = "<group>"; };
 		B4106ACF234A8EC3007F0F74 /* TextFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFeedItem.swift; sourceTree = "<group>"; };
@@ -471,6 +471,25 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		76579BAD236BC061003A25F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				765CF5442367C4D5007B26D9 /* ContentView.swift */,
+				765CF55B2367C67E007B26D9 /* TalkItemView.swift */,
+				765CF5842367D78F007B26D9 /* TalkDetails.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		76579BAE236BC06B003A25F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				765CF5872367DE85007B26D9 /* NSBrazilData.swift */,
+				76579BAF236BC0A3003A25F2 /* Schedule.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		765CF5342367C4D3007B26D9 /* NSBrazilConfWatchApp WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,10 +503,8 @@
 		765CF5432367C4D5007B26D9 /* NSBrazilConfWatchApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				765CF5872367DE85007B26D9 /* NSBrazilData.swift */,
-				765CF5442367C4D5007B26D9 /* ContentView.swift */,
-				765CF55B2367C67E007B26D9 /* TalkItemView.swift */,
-				765CF5842367D78F007B26D9 /* TalkDetails.swift */,
+				76579BAE236BC06B003A25F2 /* Model */,
+				76579BAD236BC061003A25F2 /* Views */,
 				765CF5462367C4D5007B26D9 /* HostingController.swift */,
 				765CF5482367C4D5007B26D9 /* ExtensionDelegate.swift */,
 				765CF54A2367C4D5007B26D9 /* Assets.xcassets */,
@@ -684,8 +701,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				765CF54E2367C4D5007B26D9 /* Preview Assets.xcassets in Resources */,
+				76579BAC236BBBF6003A25F2 /* 2019.json in Resources */,
 				765CF54B2367C4D5007B26D9 /* Assets.xcassets in Resources */,
-				765CF5892367DEB0007B26D9 /* MockData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,10 +789,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				765CF55C2367C67E007B26D9 /* TalkItemView.swift in Sources */,
-				765CF5832367CE74007B26D9 /* TalkModel.swift in Sources */,
 				765CF5472367C4D5007B26D9 /* HostingController.swift in Sources */,
-				765CF5862367DE14007B26D9 /* Schedule.swift in Sources */,
 				765CF5882367DE85007B26D9 /* NSBrazilData.swift in Sources */,
+				76579BB0236BC0A3003A25F2 /* Schedule.swift in Sources */,
 				765CF5452367C4D5007B26D9 /* ContentView.swift in Sources */,
 				765CF5662367CDA2007B26D9 /* Store.swift in Sources */,
 				765CF5672367CDAC007B26D9 /* Bundle+NSBrazilConf.swift in Sources */,

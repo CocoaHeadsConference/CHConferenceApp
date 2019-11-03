@@ -26,7 +26,7 @@ struct TalkItemView: View {
             VStack(alignment: .leading, spacing: 0) {
                 Text(talk.dateDescription)
                     .font(.footnote)
-                Text(talk.intervalDescription)
+                Text(talk.type.title.uppercased())
                     .font(.footnote)
             }
         }.fixedSize(horizontal: false, vertical: true)

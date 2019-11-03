@@ -17,7 +17,6 @@ struct TalkDetailsView: View {
             VStack(alignment: .leading, spacing: 8) {
                 TalkItemView(talk: talk)
                 Text(talk.description ?? "No description available")
-                    .lineLimit(nil)
             }.fixedSize(horizontal: false, vertical: true)
         }
         .navigationBarTitle("Details")
