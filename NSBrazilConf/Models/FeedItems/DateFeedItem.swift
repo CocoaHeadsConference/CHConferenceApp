@@ -20,4 +20,11 @@ final class DateFeedItem: FeedItem {
         self.dates = try container.decode([Date].self, forKey: .dates)
         try super.init(from: decoder)
     }
+
+    #if DEBUG
+    init(dates: [Date]) {
+        self.dates = dates
+        super.init(type: .date)
+    }
+    #endif
 }

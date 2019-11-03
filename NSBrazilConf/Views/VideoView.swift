@@ -4,7 +4,7 @@ import SwiftUI
 struct VideoView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    var videoUrl = URL(string: "https://www.cocoaheads.com.br/videos/detalhes/20")!
+    var videoUrl: URL
     
     @State var isPresented = false
     
@@ -14,11 +14,12 @@ struct VideoView: View {
                     ZStack(alignment: .topTrailing) {
                         Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
                             Text("Voltar")
-                                .fontWeight(.medium)
-                                .foregroundColor(Color.black)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(UIColor.label))
                         }
                     }
-                    .padding()
+                    .padding(.trailing, 16)
+                    .padding(.top, 12)
                     SponsorWebView(
                         url: videoUrl
                     )
@@ -31,35 +32,7 @@ struct VideoView: View {
 #if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoView()
+        VideoView(videoUrl: URL(string: "https://google.com")!)
     }
 }
 #endif
-
-struct CardView: View {
-    var body: some View {
-        VStack {
-            Text("Card back")
-        }
-        .frame(width: 340, height: 220)
-        .background(Color.blue)
-        .cornerRadius(10)
-        .shadow(radius: 20)
-    }
-}
-
-struct TitleView: View {
-    var body: some View {
-        VStack {
-            HStack {
-                Text("Video")
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                Spacer()
-            }
-            Image("Illustration5")
-            Spacer()
-        }.padding()
-    }
-}
-

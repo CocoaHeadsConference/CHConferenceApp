@@ -2,33 +2,40 @@
 import SwiftUI
 
 struct HomeTabBar: View {
-    
+
     init() {
         UITabBar.appearance().backgroundColor = UIColor(hexString: "#1D3115")
     }
+
+    let viewModel = FeedViewModel()
     
     var body: some View {
-        TabView {
-            Home(feedViewModel: FeedViewModel()).tabItem ({
-                VStack {
-                    Image("IconHome")
-                    Text("Home")
+        Group {
+            if viewModel.isEmpty {
+                RetryView()
+            } else {
+                TabView {
+                    HomeList(feedViewModel: self.viewModel).tabItem ({
+                        VStack {
+                            Image("IconHome").renderingMode(.template).accentColor(Color(UIColor.label))
+                            Text("Home")
+                        }
+                    })
+                    .tag(1)
+
+                    ScheduleListView(viewModel: self.viewModel).tabItem({
+                        VStack {
+                            Image("IconCards").renderingMode(.template).accentColor(Color(UIColor.label))
+                            Text("Schedule")
+                        }
+                    })
+                    .tag(2)
                 }
-            })
-            .tag(1)
-            
-            ScheduleListView(scheduleViewModel: ScheduleListViewModel()).tabItem({
-                VStack {
-                    Image("IconCards")
-                    Text("Schedule")
-                }
-            })
-            .tag(2)
+                .navigationBarTitle("NSBrazil")
+                .edgesIgnoringSafeArea(.top)
+                .accentColor(Color(UIColor.label))
+            }
         }
-        .navigationBarTitle("NSBrazil")
-        .edgesIgnoringSafeArea(.top)
-        .accentColor(Color("chColor"))
-        
     }
 }
 
