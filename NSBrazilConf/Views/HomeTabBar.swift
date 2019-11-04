@@ -17,7 +17,9 @@ struct HomeTabBar: View {
                 TabView {
                     HomeList(feedViewModel: self.viewModel).tabItem ({
                         VStack {
-                            Image("IconHome").renderingMode(.template).accentColor(Color(UIColor.label))
+                            Image(systemName: "house.fill")
+                                .imageScale(.large)
+                                .accentColor(Color(UIColor.label))
                             Text("Home")
                         }
                     })
@@ -25,7 +27,8 @@ struct HomeTabBar: View {
 
                     ScheduleListView(viewModel: self.viewModel).tabItem({
                         VStack {
-                            Image("IconCards").renderingMode(.template).accentColor(Color(UIColor.label))
+                            Image(systemName: "calendar")
+                                .imageScale(.large).accentColor(Color(UIColor.label))
                             Text("Schedule")
                         }
                     })
@@ -41,6 +44,9 @@ struct HomeTabBar: View {
 
 struct HomeTabBar_Previews: PreviewProvider {
     static var previews: some View {
-        HomeTabBar()
+        Group {
+            HomeTabBar()
+            HomeTabBar().environment(\.colorScheme, .dark)
+        }
     }
 }
