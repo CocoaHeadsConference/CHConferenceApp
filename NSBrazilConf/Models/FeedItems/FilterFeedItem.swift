@@ -31,10 +31,8 @@ final class FilterFeedItem: FeedItem {
         try super.init(from: decoder)
     }
 
-    #if DEBUG
     init(feeds: [FilteredFeed]) {
         self.feeds = feeds
         super.init(type: .filterFeed)
     }
-    #endif
 }

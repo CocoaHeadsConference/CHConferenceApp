@@ -18,7 +18,6 @@ class TalkFeedItem: FeedItem {
         case date, name, speaker, image
     }
 
-    #if DEBUG
     init(date: Date, name: String, speaker: String, image: String) {
         self.date = date
         self.name = name
@@ -26,7 +25,6 @@ class TalkFeedItem: FeedItem {
         self.image = image
         super.init(type: .talk)
     }
-    #endif
 
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

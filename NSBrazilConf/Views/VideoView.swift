@@ -29,10 +29,8 @@ struct VideoView: View {
     }
 }
 
-#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         VideoView(videoUrl: URL(string: "https://google.com")!)
     }
 }
-#endif
