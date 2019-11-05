@@ -17,9 +17,7 @@ class FeedItem: Codable, Identifiable {
         self.type = try container.decode(FeedItemType.self, forKey: .type)
     }
 
-    #if DEBUG
     init(type: FeedItemType) {
         self.type = type
     }
-    #endif
 }

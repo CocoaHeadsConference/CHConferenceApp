@@ -79,6 +79,8 @@
 		765CF5662367CDA2007B26D9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D589C60234577CB003D95D8 /* Store.swift */; };
 		765CF5672367CDAC007B26D9 /* Bundle+NSBrazilConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A956C2342EB5A00B2C582 /* Bundle+NSBrazilConf.swift */; };
 		765CF5882367DE85007B26D9 /* NSBrazilData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CF5872367DE85007B26D9 /* NSBrazilData.swift */; };
+		3DD10CA32360D9D500A74997 /* VideoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10CA22360D9D500A74997 /* VideoSectionView.swift */; };
+		3DD10CA52360DB6700A74997 /* VideoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10CA42360DB6700A74997 /* VideoCardView.swift */; };
 		B40681AC236E430F00DE707D /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40681AB236E430F00DE707D /* RetryView.swift */; };
 		B4106ACC234A8E85007F0F74 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106ACB234A8E85007F0F74 /* FeedItem.swift */; };
 		B4106ACE234A8EA0007F0F74 /* FeedItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106ACD234A8EA0007F0F74 /* FeedItemType.swift */; };
@@ -223,6 +225,8 @@
 		765CF54F2367C4D5007B26D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		765CF55B2367C67E007B26D9 /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
 		765CF5872367DE85007B26D9 /* NSBrazilData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBrazilData.swift; sourceTree = "<group>"; };
+		3DD10CA22360D9D500A74997 /* VideoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSectionView.swift; sourceTree = "<group>"; };
+		3DD10CA42360DB6700A74997 /* VideoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCardView.swift; sourceTree = "<group>"; };
 		B40681AB236E430F00DE707D /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
 		B4106ACB234A8E85007F0F74 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		B4106ACD234A8EA0007F0F74 /* FeedItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemType.swift; sourceTree = "<group>"; };
@@ -426,8 +430,8 @@
 				1D0A95952342FF5400B2C582 /* TitleView.swift */,
 				B48254A1234ABC130008A035 /* DateFeedView.swift */,
 				B4A54FFC234BDBC9003CFEFA /* MapFeedView.swift */,
-				3DD10CA22360D9D500A74997 /* PastVideosViewSection.swift */,
-				3DD10CA42360DB6700A74997 /* PastEditionCardView.swift */,
+				3DD10CA22360D9D500A74997 /* VideoSectionView.swift */,
+				3DD10CA42360DB6700A74997 /* VideoCardView.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -765,7 +769,7 @@
 				1D0A957D2342F0BB00B2C582 /* String+Capitalize.swift in Sources */,
 				1D0A95852342F0F800B2C582 /* VideoModel.swift in Sources */,
 				1D0A95502342E8F400B2C582 /* NSBrazilTitleView.swift in Sources */,
-				3DD10CA52360DB6700A74997 /* PastEditionCardView.swift in Sources */,
+				3DD10CA52360DB6700A74997 /* VideoCardView.swift in Sources */,
 				B4889474236B2EB3009A8D37 /* TalkView.swift in Sources */,
 				1D0A957E2342F0BB00B2C582 /* UIViewController+URL.swift in Sources */,
 				1D0A95572342E8F400B2C582 /* TalkDetail.swift in Sources */,
@@ -784,7 +788,7 @@
 				B4106AD8234A8F15007F0F74 /* VideoFeedItem.swift in Sources */,
 				1DDBD506234A3B3900A1CDBC /* FeedViewModel.swift in Sources */,
 				1D0A95882342F0F800B2C582 /* FeedModel.swift in Sources */,
-				3DD10CA32360D9D500A74997 /* PastVideosViewSection.swift in Sources */,
+				3DD10CA32360D9D500A74997 /* VideoSectionView.swift in Sources */,
 				1D0A95922342F35E00B2C582 /* Theme.swift in Sources */,
 				1D0A955A2342E8F400B2C582 /* SponsorRow.swift in Sources */,
 				B4106ACC234A8E85007F0F74 /* FeedItem.swift in Sources */,

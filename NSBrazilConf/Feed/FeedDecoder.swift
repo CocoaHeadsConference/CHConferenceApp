@@ -37,9 +37,7 @@ struct FeedDecoder: Codable {
         self.feedItems = items
     }
 
-    #if DEBUG
     init(feedItems: [FeedItem]) {
         self.feedItems = feedItems
     }
-    #endif
 }

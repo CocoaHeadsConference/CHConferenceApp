@@ -21,10 +21,8 @@ final class DateFeedItem: FeedItem {
         try super.init(from: decoder)
     }
 
-    #if DEBUG
     init(dates: [Date]) {
         self.dates = dates
         super.init(type: .date)
     }
-    #endif
 }
