@@ -15,7 +15,7 @@ class FeedManager {
     
     var dataTask: AnyCancellable?
     
-    let url = URL(string: "https://nsbrazil.com/app/2019.json")!
+    let url = URL(string: "https://nsbrazil.com/app/2019-schedule.json")!
     let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
