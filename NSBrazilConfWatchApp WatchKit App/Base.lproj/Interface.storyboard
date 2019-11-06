@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JoM-7p-OFG">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+    </dependencies>
+    <scenes>
+        <!--FeedController-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <hostingController identifier="FeedController" id="3mp-fW-waa" customClass="FeedController" customModule="NSBrazilConfWatchApp_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="31"/>
+        </scene>
+        <!--ErrorController-->
+        <scene sceneID="t3b-ch-vuz">
+            <objects>
+                <hostingController identifier="ErrorController" id="f0E-Gm-hk7" customClass="ErrorController" customModule="NSBrazilConfWatchApp_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1050" y="31"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="RAE-ZW-hSr">
+            <objects>
+                <controller identifier="LoadingController" title="Schedule" id="JoM-7p-OFG">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Loading..." minimumScaleFactor="0.0" id="fXu-ly-6gh">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="397" y="31"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.36862745098039218" green="0.80392156862745101" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+</document>
