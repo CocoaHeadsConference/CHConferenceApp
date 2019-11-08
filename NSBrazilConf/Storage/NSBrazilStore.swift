@@ -43,16 +43,16 @@ public final class NSBrazilStore: ObservableObject {
 
         return Just(data)
             .decode(type: HomeFeed.self, decoder: self.contentDecoder)
-            .mapError { error in
+            .handleEvents(receiveCompletion: { (completion) in
+                if case .finished = completion {
+                    self.cache.saveCache(data)
+                }
+            }).mapError { error in
                 switch error {
                 case is DecodingError: return FetchError.parse(error.localizedDescription)
                 default: return FetchError.unknown(error)
                 }
-            }.map {
-                self.cache.saveCache(data)
-                return $0
-            }
-            .eraseToAnyPublisher()
+            }.eraseToAnyPublisher()
     }
     
     public func fetchCache() -> AnyPublisher<HomeFeed, FetchError> {
