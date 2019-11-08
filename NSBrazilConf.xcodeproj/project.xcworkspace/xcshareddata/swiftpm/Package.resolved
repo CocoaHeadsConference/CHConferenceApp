@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "LLVS",
+        "repositoryURL": "https://github.com/mentalfaculty/LLVS.git",
+        "state": {
+          "branch": null,
+          "revision": "3b21e21137d835fd1a4ab49589c0ea43272ed33b",
+          "version": "0.4.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

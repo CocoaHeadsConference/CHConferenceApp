@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -79,6 +79,8 @@
 		765CF5662367CDA2007B26D9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D589C60234577CB003D95D8 /* Store.swift */; };
 		765CF5672367CDAC007B26D9 /* Bundle+NSBrazilConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A956C2342EB5A00B2C582 /* Bundle+NSBrazilConf.swift */; };
 		765CF5882367DE85007B26D9 /* NSBrazilData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CF5872367DE85007B26D9 /* NSBrazilData.swift */; };
+		78EE5E4C23760031007D8FC0 /* LLVSCloudKit in Frameworks */ = {isa = PBXBuildFile; productRef = 78EE5E4B23760031007D8FC0 /* LLVSCloudKit */; };
+		78EE5E4E23760031007D8FC0 /* LLVS in Frameworks */ = {isa = PBXBuildFile; productRef = 78EE5E4D23760031007D8FC0 /* LLVS */; };
 		B40681AC236E430F00DE707D /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40681AB236E430F00DE707D /* RetryView.swift */; };
 		B40AB56F237590E600752BD0 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40AB56E237590E600752BD0 /* ActivityIndicatorView.swift */; };
 		B4106ACC234A8E85007F0F74 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106ACB234A8E85007F0F74 /* FeedItem.swift */; };
@@ -258,6 +260,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78EE5E4C23760031007D8FC0 /* LLVSCloudKit in Frameworks */,
+				78EE5E4E23760031007D8FC0 /* LLVS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +598,10 @@
 			dependencies = (
 			);
 			name = NSBrazilConf;
+			packageProductDependencies = (
+				78EE5E4B23760031007D8FC0 /* LLVSCloudKit */,
+				78EE5E4D23760031007D8FC0 /* LLVS */,
+			);
 			productName = NSBrazilConf;
 			productReference = 1D0A95272342E87500B2C582 /* NSBrazil.app */;
 			productType = "com.apple.product-type.application";
@@ -682,6 +690,9 @@
 				Base,
 			);
 			mainGroup = 1D0A951E2342E87500B2C582;
+			packageReferences = (
+				78EE5E4A23760031007D8FC0 /* XCRemoteSwiftPackageReference "LLVS" */,
+			);
 			productRefGroup = 1D0A95282342E87500B2C582 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -990,6 +1001,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NSBrazilConf/NSBrazilConf.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"NSBrazilConf/Preview Content\"";
@@ -1003,6 +1016,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.cocoaheads.CocoaheadsConf.NSBrazilConf;
 				PRODUCT_NAME = NSBrazil;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1014,6 +1029,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NSBrazilConf/NSBrazilConf.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"NSBrazilConf/Preview Content\"";
@@ -1027,6 +1044,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.cocoaheads.CocoaheadsConf.NSBrazilConf;
 				PRODUCT_NAME = NSBrazil;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1200,6 +1219,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		78EE5E4A23760031007D8FC0 /* XCRemoteSwiftPackageReference "LLVS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mentalfaculty/LLVS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		78EE5E4B23760031007D8FC0 /* LLVSCloudKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78EE5E4A23760031007D8FC0 /* XCRemoteSwiftPackageReference "LLVS" */;
+			productName = LLVSCloudKit;
+		};
+		78EE5E4D23760031007D8FC0 /* LLVS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78EE5E4A23760031007D8FC0 /* XCRemoteSwiftPackageReference "LLVS" */;
+			productName = LLVS;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1D0A951F2342E87500B2C582 /* Project object */;
 }
