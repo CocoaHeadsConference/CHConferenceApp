@@ -24,25 +24,15 @@ public final class NSBrazilStore: ObservableObject, Store {
     let cache: Cache = Cache()
     public let session: URLSession = URLSession.shared
     let jsonURL: URL = URL(string: "https://nsbrazil.com/app/2019.json")!
+
+    public var objectWillChange = ObservableObjectPublisher()
     
     public init() {
         self.fetchInfo()
     }
 
-    @Published var data: HomeFeed? 
-    
-    @Published var mock: HomeFeed? = {
-        guard let url = Bundle.nsbrazilConf.url(forResource: "2019", withExtension: "json") else { fatalError("deu ruim") }
-        do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            return try decoder.decode(HomeFeed.self, from: data)
-        } catch {
-            return nil
-        }
-    }()
-    
+    @Published var data: HomeFeed?
+    @Published var isLoading: Bool = true
 
     public func fetchInfo() {
         let decoder = JSONDecoder()
@@ -52,6 +42,9 @@ public final class NSBrazilStore: ObservableObject, Store {
             .map { $0.data }
             .decode(type: HomeFeed.self, decoder: decoder)
             .mapError { error -> FetchError in
+                self.data = nil
+                self.isLoading = false
+                self.objectWillChange.send()
                 switch error {
                     case is DecodingError: return FetchError.parse(error.localizedDescription)
                     default: return FetchError.unknown(error)
@@ -60,7 +53,9 @@ public final class NSBrazilStore: ObservableObject, Store {
             .sink(receiveCompletion: { (completion) in
                 print(".sink() received the completion: ", String(describing: completion))
             }, receiveValue: { infos in
+                self.objectWillChange.send()
                 self.data = infos
+                self.isLoading = false
             })
     }
 

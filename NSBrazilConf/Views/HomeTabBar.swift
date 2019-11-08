@@ -7,11 +7,13 @@ struct HomeTabBar: View {
         UITabBar.appearance().backgroundColor = UIColor(hexString: "#1D3115")
     }
 
-    let viewModel = FeedViewModel()
+    var viewModel = FeedViewModel()
     
     var body: some View {
         Group {
-            if viewModel.isEmpty {
+            if viewModel.isLoading {
+                ActivityIndicatorView()
+            } else if viewModel.isEmpty {
                 RetryView()
             } else {
                 TabView {

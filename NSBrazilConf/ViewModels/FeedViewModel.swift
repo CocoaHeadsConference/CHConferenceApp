@@ -19,4 +19,8 @@ public struct FeedViewModel {
     var isEmpty: Bool {
         return homeFeed.isEmpty && scheduleFeed.isEmpty
     }
+
+    var isLoading: Bool {
+        return store.isLoading
+    }
 }
