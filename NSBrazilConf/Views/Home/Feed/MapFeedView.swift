@@ -18,18 +18,26 @@ struct MapFeedView: View, FeedViewProtocol {
    var feedItem: MapFeedItem
 
     var body: some View {
-        CardView{
-            VStack(alignment: HorizontalAlignment.leading) {
-                MapView(location: self.feedItem.location, annotationTitle: self.feedItem.title, span: self.feedItem.span)
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("\(self.feedItem.title) \(self.feedItem.subtitle)")
-                        .font(.headline)
+        Button(action: self.openMap) {
+            CardView{
+                VStack(alignment: HorizontalAlignment.leading) {
+                    MapView(location: self.feedItem.location, annotationTitle: self.feedItem.title, span: self.feedItem.span)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("\(self.feedItem.title) \(self.feedItem.subtitle)")
+                            .font(.headline)
+                    }
+                    .padding(.leading, 16)
+                    .padding(.bottom, 8)
                 }
-                .padding(.leading, 16)
-                .padding(.bottom, 8)
             }
-        }
-        .frame(maxWidth: .infinity, minHeight: 286)
+        }.frame(maxWidth: .infinity, minHeight: 286)
+    }
+    
+    func openMap() {
+        let placemark = MKPlacemark(coordinate: self.feedItem.location)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = self.feedItem.title
+        mapItem.openInMaps(launchOptions: nil)
     }
 }
 
