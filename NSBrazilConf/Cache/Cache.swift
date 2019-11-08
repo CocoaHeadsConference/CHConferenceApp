@@ -20,12 +20,6 @@ class Cache: NSObject {
         return fullPath
     }()
     
-    let fileManager: FileManager
-    
-    init(fileManager: FileManager = .default) {
-        self.fileManager = fileManager
-    }
-    
     public func loadCache() -> Data? {
         guard let cachePath = self.cachePath else {
             return nil
