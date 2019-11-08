@@ -5,7 +5,7 @@ import Combine
 public enum FetchError: Error {
     case parse(String)
     case unknown(Error)
-    case invalidCache
+    case invalidCache(Error)
 
     var localizedDescription: String {
         switch self {
@@ -13,8 +13,8 @@ public enum FetchError: Error {
             return String(format: NSLocalizedString("Unable to parse key %@ from json", comment: "Unable to parse fetch activity error"), key)
         case .unknown(let error):
             return String(format: NSLocalizedString("Unable to find info with identifier %@", comment: "info not found error"), error.localizedDescription)
-        case .invalidCache:
-            return String(format: NSLocalizedString("Unable to load device cache", comment: "info not found error"))
+        case .invalidCache(let error):
+            return String(format: NSLocalizedString("Unable to load device cache %@", comment: "info not found error"), error.localizedDescription)
         }
     }
 }
@@ -60,8 +60,8 @@ public final class NSBrazilStore: ObservableObject {
         
         return Just(self.cache.loadCache() ?? Data())
             .decode(type: HomeFeed.self, decoder: self.contentDecoder)
-            .mapError { _ in
-                return FetchError.invalidCache
+            .mapError { error in
+                return FetchError.invalidCache(error)
             }
             .eraseToAnyPublisher()
     }
