@@ -3,15 +3,23 @@
 import SwiftUI
 
 struct PlatinumSponsorCard: View {
-    var sponsor: Sponsor 
+    var sponsor: Sponsor
+    @State var showContent = false
     
     var body: some View {
-        VStack(alignment: .center) {
-            ImageViewContainer(imageURL: sponsor.image)
+        Button(action: {
+            self.showContent.toggle()
+        }) {
+            VStack(alignment: .center) {
+                ImageViewContainer(imageURL: sponsor.image)
+            }
+            .background(sponsor.background)
+            .cornerRadius(10)
+            .padding([.leading, .trailing], 5)
         }
-        .background(sponsor.background)
-        .cornerRadius(10)
-        .padding([.leading, .trailing], 5)
+        .sheet(isPresented: $showContent, content: {
+            SafariView(url: self.sponsor.link)
+        })
     }
 }
 

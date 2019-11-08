@@ -15,12 +15,7 @@ struct SponsorRow: View {
                 .fontWeight(.medium)
             HStack {
                 ForEach(0..<sponsors.count) { index in
-                    Button(action: { self.showContent.toggle() }) {
-                        PlatinumSponsorCard(sponsor: self.sponsors[index])
-                            .sheet(isPresented: self.$showContent) {
-                                SafariView(url: self.sponsors[index].link)
-                        }
-                    }
+                   PlatinumSponsorCard(sponsor: self.sponsors[index])
                 }
             }.padding(.horizontal, 5)
         }.frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
