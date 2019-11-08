@@ -2,7 +2,6 @@
 import SwiftUI
 import Combine
 
-
 public enum FetchError: Error {
     case parse(String)
     case unknown(Error)
@@ -17,7 +16,7 @@ public enum FetchError: Error {
     }
 }
 
-public final class NSBrazilStore: ObservableObject, Store {
+public final class NSBrazilStore: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
@@ -27,38 +26,36 @@ public final class NSBrazilStore: ObservableObject, Store {
 
     public var objectWillChange = ObservableObjectPublisher()
     
-    public init() {
-        self.fetchInfo()
-    }
+    public init() {}
 
     @Published var data: HomeFeed?
     @Published var isLoading: Bool = true
 
-    public func fetchInfo() {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        
-        self.cancellable = session.dataTaskPublisher(for: jsonURL)
-            .map { $0.data }
-            .decode(type: HomeFeed.self, decoder: decoder)
-            .mapError { error -> FetchError in
-                self.data = nil
-                self.isLoading = false
-                self.objectWillChange.send()
-                switch error {
-                    case is DecodingError: return FetchError.parse(error.localizedDescription)
-                    default: return FetchError.unknown(error)
-                }
-            }
-            .sink(receiveCompletion: { (completion) in
-                print(".sink() received the completion: ", String(describing: completion))
-            }, receiveValue: { infos in
-                self.objectWillChange.send()
-                self.data = infos
-                self.isLoading = false
-            })
+    func decode(_ data: Data) -> AnyPublisher<NSBrazil.HomeFeed, FetchError> {
+      let decoder = JSONDecoder()
+      decoder.dateDecodingStrategy = .iso8601
+
+      return Just(data)
+        .decode(type: HomeFeed.self, decoder: decoder)
+        .mapError { error in
+          switch error {
+              case is DecodingError: return FetchError.parse(error.localizedDescription)
+              default: return FetchError.unknown(error)
+          }
+        }
+        .eraseToAnyPublisher()
     }
 
+    public func fetchInfo() -> AnyPublisher<HomeFeed, FetchError> {
+        return session.dataTaskPublisher(for: jsonURL)
+            .map { $0.data }
+            .mapError( { error -> FetchError in
+                return FetchError.unknown(error)
+            })
+            .flatMap(maxPublishers: .max(1)) { pair in
+                self.decode(pair)
+            }.eraseToAnyPublisher()
+    }
 }
 
 

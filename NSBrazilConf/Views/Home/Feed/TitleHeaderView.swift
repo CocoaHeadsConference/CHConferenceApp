@@ -4,19 +4,26 @@ import SwiftUI
 struct TitleHeaderView: View {
     init?(feedItem: FeedItem) {
         guard let item = feedItem as? SubtitleFeedItem else { return nil }
-        self.feedItem = item
+        title = item.text
+        subtitle = item.subtext
     }
 
-    var feedItem: SubtitleFeedItem
+    init(title: String, subtitle: String) {
+        self.title = title
+        self.subtitle = subtitle
+    }
+
+    var title: String
+    var subtitle: String
     
     var body: some View {
         ZStack(alignment: .leading) {
             VStack(alignment: .leading, spacing: 8) {
-                Text(feedItem.text)
+                Text(title)
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .lineLimit(2)
-                Text(feedItem.subtext)
+                    .frame(minHeight: 0, maxHeight: 90)
+                Text(subtitle)
                     .font(.body)
                     .foregroundColor(.gray)
             }
@@ -25,4 +32,10 @@ struct TitleHeaderView: View {
         .padding(.horizontal, 10)
     }
 
+}
+
+struct TitleHeaderView_Previews: PreviewProvider {
+    static var previews: some View {
+        TitleHeaderView(title: "Pra você que chegou até aqui:", subtitle: "Eu vou escrever um texto grande pra ocupar bastante espaço mas eu acho que tá tudo bem porque o texto é bem grande mesmo sabe")
+    }
 }
