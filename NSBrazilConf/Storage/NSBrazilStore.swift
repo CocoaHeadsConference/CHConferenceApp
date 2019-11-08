@@ -32,20 +32,36 @@ public final class NSBrazilStore: ObservableObject {
     @Published var isLoading: Bool = true
 
     func decode(_ data: Data) -> AnyPublisher<NSBrazil.HomeFeed, FetchError> {
-      let decoder = JSONDecoder()
-      decoder.dateDecodingStrategy = .iso8601
+        self.cache.saveCache(data)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
 
-      return Just(data)
-        .decode(type: HomeFeed.self, decoder: decoder)
-        .mapError { error in
-          switch error {
-              case is DecodingError: return FetchError.parse(error.localizedDescription)
-              default: return FetchError.unknown(error)
-          }
-        }
-        .eraseToAnyPublisher()
+        return Just(data)
+            .decode(type: HomeFeed.self, decoder: decoder)
+            .mapError { error in
+                switch error {
+                case is DecodingError: return FetchError.parse(error.localizedDescription)
+                default: return FetchError.unknown(error)
+                }
+            }
+            .eraseToAnyPublisher()
     }
-
+    
+    public func fetchCache() -> AnyPublisher<HomeFeed, FetchError> {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
+        return Just(self.cache.loadCache() ?? Data())
+            .decode(type: HomeFeed.self, decoder: decoder)
+            .mapError { error in
+                switch error {
+                    case is DecodingError: return FetchError.parse(error.localizedDescription)
+                    default: return FetchError.unknown(error)
+                }
+            }
+            .eraseToAnyPublisher()
+    }
+    
     public func fetchInfo() -> AnyPublisher<HomeFeed, FetchError> {
         return session.dataTaskPublisher(for: jsonURL)
             .map { $0.data }
