@@ -27,7 +27,7 @@ public class FeedViewModel: ObservableObject {
             }, receiveValue: { value in
                 self.isLoading = false
                 self.homeFeed = value.feed.feedItems
-                self.scheduleFeed = value.feed.feedItems
+                self.scheduleFeed = value.schedule.feedItems
             })
     }
 
