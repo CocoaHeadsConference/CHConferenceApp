@@ -19,7 +19,7 @@ struct VideoModel: Codable, Identifiable {
     let youTubeUrl: URL
     
     var talk: TalkModel? {
-        return Cache.default.talk(with: talkId)
+        return nil
     }
     
 }

@@ -7,56 +7,49 @@
 //
 
 import UIKit
+import LLVS
 
 class Cache: NSObject {
 
-    static let `default`: Cache = Cache()
+    private static let FeedValueId = Value.ID("HOME_FEED_CACHE")
     
-    var speakers: [Int:SpeakerModel] = [:]
-    var rooms: [Int:RoomModel] = [:]
-    var talks: [Int:TalkModel] = [:]
-    var sponsors: [SponsorModel] = []
-    var videos: [Int:VideoModel] = [:]
+    private lazy var cacheStore: LLVS.Store? = {
+        guard let rootDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
+            return nil
+        }
+        let store = try? LLVS.Store(rootDirectoryURL: URL(fileURLWithPath: rootDir, isDirectory: true))
+        do {
+            try store?.reloadHistory()
+        } catch {
+            print("Failed to load cache history: \(error.localizedDescription)")
+        }
+        return store
+    }()
     
-    var event: FeedModel?
-    
-    func talk(with id: Int)-> TalkModel? {
-        return talks[id]
+    public func loadCache() -> Data? {
+        guard let store = self.cacheStore else {
+            return nil
+        }
+        
+        guard let version = store.mostRecentHead else {
+            return nil
+        }
+        
+        let value: Value? = try? store.value(id: Cache.FeedValueId, at: version.id)
+        return value?.data
     }
     
-    func talks(for speaker: SpeakerModel)-> [TalkModel]? {
-        return []
-    }
-    
-    func speaker(with id: Int)-> SpeakerModel? {
-        return speakers[id]
-    }
-    
-    func room(with id: Int)-> RoomModel? {
-        return rooms[id]
-    }
-    
-    func video(with id: Int) -> VideoModel? {
-        return videos[id]
-    }
-    
-    func video(for talk: Int) -> VideoModel? {
-        return videos.compactMap({ $0.1 }).filter({ $0.talk?.id == talk }).first
-    }
-    
-    func `import`(store: NSBrazilData) throws {
-//        let allSpeakers: [SpeakerModel] = try json.value(for: "speakers")
-//        allSpeakers.forEach { speakers[$0.id] = $0 }
-//        let allRooms: [RoomModel] = try json.value(for: "rooms")
-//        allRooms.forEach { rooms[$0.id] = $0 }
-//        let allTalks: [TalkModel] = try json.value(for: "talks")
-//        allTalks.forEach { talks[$0.id] = $0 }
-//        sponsors = try json.value(for: "sponsors")
-//        let allVideos: [VideoModel] = try json.value(for: "videos")
-//        allVideos.forEach({ videos[$0.id] = $0 })
-//        event = try json.value(for: "event")
-//        let theme: Theme = try json.value(for: "theme")
-//        Theme.shared.apply(theme: theme)
+    public func saveCache(_ data: Data) {
+        guard let store = self.cacheStore else {
+            return
+        }
+        
+        let value = Value(id: Cache.FeedValueId, data: data)
+        if let currentVersion = store.mostRecentHead {
+            let _ = try? store.makeVersion(basedOnPredecessor: currentVersion.id, storing: [.update(value)])
+        } else {
+            let _ = try? store.makeVersion(basedOnPredecessor: nil, storing: [.insert(value)])
+        }
     }
     
 }
