@@ -12,6 +12,7 @@ import LLVS
 class Cache: NSObject {
 
     private static let FeedValueId = Value.ID("HOME_FEED_CACHE")
+    private var currentVersion: Version? = nil
     
     private lazy var cacheStore: LLVS.Store? = {
         guard let rootDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
@@ -23,6 +24,7 @@ class Cache: NSObject {
         } catch {
             print("Failed to load cache history: \(error.localizedDescription)")
         }
+        self.currentVersion = store?.mostRecentHead
         return store
     }()
     
@@ -31,7 +33,7 @@ class Cache: NSObject {
             return nil
         }
         
-        guard let version = store.mostRecentHead else {
+        guard let version = self.currentVersion else {
             return nil
         }
         
@@ -45,10 +47,10 @@ class Cache: NSObject {
         }
         
         let value = Value(id: Cache.FeedValueId, data: data)
-        if let currentVersion = store.mostRecentHead {
-            let _ = try? store.makeVersion(basedOnPredecessor: currentVersion.id, storing: [.update(value)])
+        if let currentVersion = self.currentVersion {
+            self.currentVersion = try? store.makeVersion(basedOnPredecessor: currentVersion.id, storing: [.update(value)])
         } else {
-            let _ = try? store.makeVersion(basedOnPredecessor: nil, storing: [.insert(value)])
+            self.currentVersion = try? store.makeVersion(basedOnPredecessor: nil, storing: [.insert(value)])
         }
     }
     
