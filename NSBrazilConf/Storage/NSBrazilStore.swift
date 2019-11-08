@@ -24,7 +24,7 @@ public final class NSBrazilStore: ObservableObject {
     private var cancellable: AnyCancellable?
     
     let cache: Cache = Cache()
-    public let session: URLSession = URLSession(configuration: URLSessionConfiguration.ephemeral)
+    public let session: URLSession = URLSession.shared
     let jsonURL: URL = URL(string: "https://nsbrazil.com/app/2019.json")!
 
     private lazy var contentDecoder: JSONDecoder = {
