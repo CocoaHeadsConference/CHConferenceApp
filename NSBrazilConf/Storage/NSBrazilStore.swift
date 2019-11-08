@@ -29,7 +29,9 @@ public final class NSBrazilStore: ObservableObject, Store {
         self.fetchInfo()
     }
 
-    @Published var data: HomeFeed? = {
+    @Published var data: HomeFeed? 
+    
+    @Published var mock: HomeFeed? = {
         guard let url = Bundle.nsbrazilConf.url(forResource: "2019", withExtension: "json") else { fatalError("deu ruim") }
         do {
             let data = try Data(contentsOf: url)

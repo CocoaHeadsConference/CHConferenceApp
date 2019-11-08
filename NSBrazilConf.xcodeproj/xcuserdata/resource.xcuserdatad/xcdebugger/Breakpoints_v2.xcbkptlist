@@ -3,4 +3,118 @@
    uuid = "740B2420-9508-43A8-B327-04755298F525"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DFE9ADC8-391C-4E10-8690-C767CB9F303B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NSBrazilConf/Views/Home/Sponsors/SponsorRow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "DFE9ADC8-391C-4E10-8690-C767CB9F303B - 8f89687b9da9991e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, NSBrazil.PlatinumSponsorCard&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in NSBrazil.SponsorRow.body.getter : some"
+                  moduleName = "NSBrazil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/resource/Documents/Douglas/CHConferenceApp/NSBrazilConf/Views/Home/Sponsors/SponsorRow.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "46">
+               </Location>
+               <Location
+                  uuid = "DFE9ADC8-391C-4E10-8690-C767CB9F303B - bb14f0ab35e0a0b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; NSBrazil.PlatinumSponsorCard in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, NSBrazil.PlatinumSponsorCard&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in NSBrazil.SponsorRow.body.getter : some"
+                  moduleName = "NSBrazil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/resource/Documents/Douglas/CHConferenceApp/NSBrazilConf/Views/Home/Sponsors/SponsorRow.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "89">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EC3D27F3-1869-42ED-8011-31847A220BCA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NSBrazilConf/Views/Home/Sponsors/PlatinumSponsorCard.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "EC3D27F3-1869-42ED-8011-31847A220BCA - 4d6912d89292b952"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in NSBrazil.PlatinumSponsorCard.body.getter : some"
+                  moduleName = "NSBrazil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/resource/Documents/Douglas/CHConferenceApp/NSBrazilConf/Views/Home/Sponsors/PlatinumSponsorCard.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "264">
+               </Location>
+               <Location
+                  uuid = "EC3D27F3-1869-42ED-8011-31847A220BCA - c07d7ec5f2d258db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; NSBrazil.ImageViewContainer in closure #2 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in NSBrazil.PlatinumSponsorCard.body.getter : some"
+                  moduleName = "NSBrazil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/resource/Documents/Douglas/CHConferenceApp/NSBrazilConf/Views/Home/Sponsors/PlatinumSponsorCard.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "85">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "319071F9-38E5-4BD4-8E98-4A7827ECCAD8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NSBrazilConf/Views/Home/Sponsors/SponsorViewSection.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
