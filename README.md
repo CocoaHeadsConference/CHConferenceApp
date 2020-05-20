@@ -24,7 +24,7 @@
 ## NSBrazil Conference SwiftUI application!
 
 # Features
-* Home to track your conference informations
+* Home to track conference informations
 * Talks from past conferences
 * List of all talks separated by day and time
 * Localized to English
