@@ -10,8 +10,8 @@ struct HomeTabBar: View {
     @ObservedObject var viewModel = FeedViewModel()
     
     var body: some View {
-        Group {
-            if $viewModel.isLoading.wrappedValue {
+        ZStack {
+            if viewModel.isLoading {
                 ActivityIndicatorView()
             } else {
                 TabView {
@@ -35,7 +35,6 @@ struct HomeTabBar: View {
                     .tag(2)
                 }
                 .navigationBarTitle("NSBrazil")
-                .edgesIgnoringSafeArea(.top)
                 .accentColor(Color(UIColor.label))
             }
         }
