@@ -22,6 +22,7 @@ struct TitleHeaderView: View {
                 Text(title)
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .minimumScaleFactor(0.5)
                     .frame(minHeight: 0, maxHeight: 90)
                 Text(subtitle)
                     .font(.body)

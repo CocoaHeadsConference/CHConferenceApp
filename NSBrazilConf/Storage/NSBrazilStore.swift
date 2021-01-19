@@ -39,7 +39,7 @@ public final class NSBrazilStore: ObservableObject {
     @Published var data: HomeFeed?
     @Published var isLoading: Bool = true
 
-    func decode(_ data: Data) -> AnyPublisher<NSBrazil.HomeFeed, FetchError> {
+    func decode(_ data: Data) -> AnyPublisher<HomeFeed, FetchError> {
 
         return Just(data)
             .decode(type: HomeFeed.self, decoder: self.contentDecoder)

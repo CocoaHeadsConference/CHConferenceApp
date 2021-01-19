@@ -4,11 +4,11 @@
 <dict>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>appclips:nsbrazil.com</string>
+		<string>applinks:nsbrazil.com</string>
 	</array>
-	<key>com.apple.security.app-sandbox</key>
-	<true/>
-	<key>com.apple.security.network.client</key>
-	<true/>
+	<key>com.apple.developer.parent-application-identifiers</key>
+	<array>
+		<string>$(AppIdentifierPrefix)br.com.cocoaheads.CocoaheadsConf.NSBrazilConf</string>
+	</array>
 </dict>
 </plist>

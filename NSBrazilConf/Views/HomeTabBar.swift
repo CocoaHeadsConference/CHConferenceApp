@@ -3,49 +3,119 @@ import SwiftUI
 
 struct HomeTabBar: View {
 
-    init() {
+    init(model: FeedViewModel) {
         UITabBar.appearance().backgroundColor = UIColor(hexString: "#1D3115")
+        viewModel = model
     }
 
-    @ObservedObject var viewModel = FeedViewModel()
+    enum SelectedMenu: Int {
+        case home
+        case schedule
+    }
+
+    @ObservedObject var viewModel: FeedViewModel
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+    @State var currentlySelectedMenu: Int? = 0
     
     var body: some View {
         ZStack {
-            if viewModel.isLoading {
+            switch viewModel.isLoading {
+            case .loading:
                 ActivityIndicatorView()
-            } else {
-                TabView {
-                    HomeList(feedViewModel: self.viewModel).tabItem ({
-                        VStack {
-                            Image(systemName: "house.fill")
-                                .imageScale(.large)
-                                .accentColor(Color(UIColor.label))
-                            Text("Home")
-                        }
-                    })
-                    .tag(1)
-
-                    ScheduleListView(viewModel: self.viewModel).tabItem({
-                        VStack {
-                            Image(systemName: "calendar")
-                                .imageScale(.large).accentColor(Color(UIColor.label))
-                            Text("Schedule")
-                        }
-                    })
-                    .tag(2)
-                }
-                .navigationBarTitle("NSBrazil")
-                .accentColor(Color(UIColor.label))
+            case .loaded:
+                loadedBody
+            case .failed:
+                errorBody
             }
         }
     }
+
+    @ViewBuilder
+    var loadedBody: some View {
+        if horizontalSizeClass == .regular, #available(iOS 14.0, *) {
+            largeScreenView
+        } else {
+            smallScreenView
+        }
+    }
+
+    @available(iOS 14.0, *)
+    var largeScreenView: some View {
+        NavigationView {
+            List {
+                NavigationLink(
+                    destination: homeListView,
+                    tag: 0,
+                    selection: $currentlySelectedMenu,
+                    label: {
+                        Label("Home", systemImage: "house.fill")
+                    })
+
+                NavigationLink(
+                    destination: scheduleListView,
+                    tag: 1,
+                    selection: $currentlySelectedMenu,
+                    label: {
+                        Label("Agenda", systemImage: "calendar")
+                    })
+            }
+            .listStyle(SidebarListStyle())
+            .navigationTitle("NSBrazil")
+        }
+    }
+
+    var smallScreenView: some View {
+        TabView {
+            homeListView
+            scheduleListView
+        }
+        .navigationBarTitle("NSBrazil")
+        .accentColor(Color(UIColor.label))
+    }
+
+    var homeListView: some View {
+        HomeList(feedViewModel: self.viewModel).tabItem ({
+            VStack {
+                Image(systemName: "house.fill")
+                    .imageScale(.large)
+                    .accentColor(Color(UIColor.label))
+                Text("Home")
+            }
+        })
+        .tag(1)
+    }
+
+    var scheduleListView: some View {
+        ScheduleListView(viewModel: self.viewModel).tabItem({
+            VStack {
+                Image(systemName: "calendar")
+                    .imageScale(.large).accentColor(Color(UIColor.label))
+                Text("Schedule")
+            }
+        })
+        .tag(2)
+    }
+
+    var errorBody: some View {
+        VStack(spacing: 20) {
+            Text("Algo deu errado")
+                .font(Font.title.bold())
+
+            Button(action: {
+                self.viewModel.fetchInfo()
+            }, label: {
+                Text("Tentar novamente")
+            })
+        }
+    }
+
 }
 
 struct HomeTabBar_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HomeTabBar()
-            HomeTabBar().environment(\.colorScheme, .dark)
+            HomeTabBar(model: FeedViewModel())
+            HomeTabBar(model: FeedViewModel()).environment(\.colorScheme, .dark)
         }
     }
 }

@@ -5,6 +5,12 @@ import Combine
 
 public class FeedViewModel: ObservableObject {
 
+    enum LoadState {
+        case loading
+        case loaded
+        case failed
+    }
+
     @ObservedObject var store = NSBrazilStore()
     private var cancellable: AnyCancellable? = nil
 
@@ -13,7 +19,7 @@ public class FeedViewModel: ObservableObject {
     }
 
     func fetchInfo() {
-        self.isLoading = true
+        self.isLoading = .loading
         
         let cachePublisher = self.store.fetchCache()
         let networkPublisher = self.store.fetchInfo()
@@ -24,12 +30,11 @@ public class FeedViewModel: ObservableObject {
             .sink(receiveCompletion: { received in
                 switch received {
                 case .finished:
-                    print("sim")
+                    self.isLoading = .loaded
                 case .failure(_):
-                    print("nao")
+                    self.isLoading = .failed
                 }
             }, receiveValue: { value in
-                self.isLoading = false
                 self.homeFeed = value.feed.feedItems
                 self.scheduleFeed = value.schedule.feedItems
             })
@@ -37,5 +42,5 @@ public class FeedViewModel: ObservableObject {
 
     @Published var homeFeed: [FeedItem] = []
     @Published var scheduleFeed: [FeedItem] = []
-    @Published var isLoading: Bool = false
+    @Published var isLoading: LoadState = .loading
 }

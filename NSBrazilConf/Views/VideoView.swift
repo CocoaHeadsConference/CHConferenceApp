@@ -29,7 +29,7 @@ struct VideoView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct VideoView_Previews: PreviewProvider {
     static var previews: some View {
         VideoView(videoUrl: URL(string: "https://google.com")!)
     }

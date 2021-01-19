@@ -26,6 +26,7 @@ struct TitleView: View {
                 Text(text)
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .minimumScaleFactor(0.5)
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
