@@ -8,7 +8,7 @@
 	</array>
 	<key>com.apple.developer.parent-application-identifiers</key>
 	<array>
-		<string>$(AppIdentifierPrefix)br.com.cocoaheads.CocoaheadsConf.NSBrazilConf</string>
+		<string>$(AppIdentifierPrefix)com.cocoaheadsbr.conf</string>
 	</array>
 </dict>
 </plist>

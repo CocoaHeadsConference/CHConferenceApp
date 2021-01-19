@@ -1264,7 +1264,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2021.1;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.cocoaheads.CocoaheadsConf.NSBrazilConf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = NSBrazil;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1290,7 +1290,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2021.1;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.cocoaheads.CocoaheadsConf.NSBrazilConf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = NSBrazil;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1423,6 +1423,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = NSClip/NSClip.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NSClip/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
@@ -1434,8 +1435,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2021.1;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.cocoaheads.CocoaheadsConf.NSBrazilConf.Clip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.baseClip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1448,6 +1450,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = NSClip/NSClip.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NSClip/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
@@ -1459,8 +1462,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2021.1;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.cocoaheads.CocoaheadsConf.NSBrazilConf.Clip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.baseClip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
