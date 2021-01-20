@@ -25,7 +25,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>br.com.cocoaheads.CocoaheadsConf.NSBrazilConfWatchApp.watchkitapp</string>
+			<string>com.cocoaheadsbr.conf</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>

@@ -3,7 +3,7 @@ import SwiftUI
 
 struct HeaderView: View {
         var body: some View {
-            HStack(spacing: -15) {
+            HStack {
                 Image(decorative: "ic_logo_nsbrazil")
                     .resizable()
                     .frame(width: 70, height: 70)
@@ -11,10 +11,10 @@ struct HeaderView: View {
 
                 Text("NSBrazil")
                     .font(Font.largeTitle.weight(.heavy))
-                    .padding(.leading, 24)
 
                 Spacer()
             }
+            .padding()
     }
 }
 

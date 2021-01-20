@@ -22,7 +22,7 @@ struct DownloadCallToAction: View {
                 Image(.linkCircle)
             }
 
-            Text("Além do cronograma, o app também tem notícias da comunidade e funciona no seu Apple Watch :)")
+            Text("Além do cronograma, o app também tem notícias da comunidade :)")
                 .font(.caption)
         }
         .padding(20)
