@@ -41,6 +41,7 @@ struct FilterFeedView: View {
                                         FeedBuilder.view(for: item)
                                     }
                                 }
+                                .padding(.vertical, 30)
                             }
                             if (index != self.feedItem.feeds.count - 1) {
                                 Divider()

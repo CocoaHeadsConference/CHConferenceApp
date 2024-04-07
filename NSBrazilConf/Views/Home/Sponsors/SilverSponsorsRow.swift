@@ -22,17 +22,15 @@ struct SilverSponsorsRow: View {
                 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
-                    ForEach(0..<sponsor.silverSponsors.count) { index in
+                    ForEach(sponsor.silverSponsors) { sponsor in
                         Button(action: { self.showContent.toggle() }) {
                             GeometryReader { geometry in
-                                SilverSponsorCard(
-                                    sponsor: self.sponsor.silverSponsors[index]
-                                )
+                                SilverSponsorCard(sponsor: sponsor)
                                 .sheet(isPresented: self.$showContent) {
-                                    SponsorView(
-                                        sponsorUrl: self.self.sponsor.silverSponsors[index].link,
-                                        isPresented: self.showContent
-                                    )
+                                    VideoView(videoUrl: sponsor.link)
+                                    #if os(visionOS)
+                                      .frame(minWidth: 500, minHeight: 500)
+                                    #endif
                                 }
                             }
                             .frame(width: 96, height: 96)

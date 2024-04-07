@@ -28,7 +28,7 @@ struct DownloadCallToAction: View {
         .padding(20)
         .background(
             RoundedRectangle(cornerRadius: 25.0, style: .continuous)
-                .fill(Color(.ctaBackground))
+                .fill(Color(uiColor: UIColor(resource: .ctaBackground)))
                 .shadow(radius: 10)
         )
         .padding(.horizontal, 10)

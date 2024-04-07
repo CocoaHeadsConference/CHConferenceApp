@@ -6,16 +6,14 @@ struct SponsorRow: View {
     var title: String
     var sponsors: [Sponsor]
     
-    @State var showContent = false
-    
     var body: some View {
         VStack(alignment: .center) {
             Text(title)
                 .font(.system(size: 24))
                 .fontWeight(.medium)
             HStack {
-                ForEach(0..<sponsors.count) { index in
-                   PlatinumSponsorCard(sponsor: self.sponsors[index])
+                ForEach(sponsors) {
+                   PlatinumSponsorCard(sponsor: $0)
                 }
             }.padding(.horizontal, 5)
         }.frame(minWidth: 0, maxWidth: .infinity, alignment: .center)

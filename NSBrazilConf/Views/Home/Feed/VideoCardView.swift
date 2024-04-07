@@ -55,8 +55,13 @@ struct VideoCardView: View {
                 .background(self.video.backgroundColor)
                 .frame(width: 246, height: 360)
             }
-        }.sheet(isPresented: $showContent, content: {
+        }
+        .buttonBorderShape(.roundedRectangle)
+        .sheet(isPresented: $showContent, content: {
             VideoView(videoUrl: self.video.link)
+#if os(visionOS)
+            .frame(minWidth: 500, minHeight: 500)
+          #endif
         })
     }
 }

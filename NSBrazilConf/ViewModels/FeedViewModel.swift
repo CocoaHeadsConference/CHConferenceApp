@@ -18,6 +18,12 @@ public class FeedViewModel: ObservableObject {
         fetchInfo()
     }
 
+    init(home: [FeedItem], schedule: [FeedItem]) {
+      homeFeed = home
+      scheduleFeed = schedule
+      isLoading = .loaded
+    }
+
     func fetchInfo() {
         self.isLoading = .loading
         
@@ -43,4 +49,10 @@ public class FeedViewModel: ObservableObject {
     @Published var homeFeed: [FeedItem] = []
     @Published var scheduleFeed: [FeedItem] = []
     @Published var isLoading: LoadState = .loading
+}
+
+extension FeedViewModel {
+  static var mock: FeedViewModel {
+    FeedViewModel(home: .homeMock, schedule: .scheduleMock)
+  }
 }
