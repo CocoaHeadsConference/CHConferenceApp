@@ -19,13 +19,21 @@ struct PlatinumSponsorCard: View {
         }
         .buttonBorderShape(.roundedRectangle)
         .sheet(isPresented: $showContent, content: {
-            SafariView(url: self.sponsor.link)
+          VideoView(videoUrl: sponsor.link)
+          #if os(visionOS)
+            .frame(minWidth: 500, minHeight: 500)
+          #endif
         })
     }
 }
 
 struct SponsorCard_Previews: PreviewProvider {
     static var previews: some View {
-        PlatinumSponsorCard(sponsor: Sponsor(name: "", link: URL(string: "www")!, image: URL(string: "https://nsbrazil.com/images/app/meli-logo.png")!, backgroundColor: "#BABACA")).previewDevice(.iPhone11)
+        PlatinumSponsorCard(
+          sponsor: Sponsor(
+            name: "",
+            link: URL(string: "mercadolivre.com.br")!,
+            image: URL(string: "https://nsbrazil.com/images/app/meli-logo.png")!,
+            backgroundColor: "#BABACA")).previewDevice(.iPhone11)
     }
 }

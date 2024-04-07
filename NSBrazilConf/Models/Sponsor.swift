@@ -10,13 +10,15 @@ import Foundation
 import SwiftUI
 
 struct Sponsor: Codable, Identifiable {
-    let id = UUID()
     let name: String
     let link: URL
     let image: URL
     let backgroundColor: String
     
-    
+    var id: String {
+        name
+    }
+
     var logo: UIImage {
         return UIImage(named: "ic_merc_livre") ?? UIImage()
     }
