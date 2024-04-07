@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -170,7 +170,7 @@
 		B412626B2BC32D7B00F11516 /* Date+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41262692BC32D2500F11516 /* Date+Identifiable.swift */; };
 		B44067B525B1E25700D9DE9B /* NSClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44067B425B1E25700D9DE9B /* NSClipApp.swift */; };
 		B44067BC25B1E25800D9DE9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44067BB25B1E25800D9DE9B /* Preview Assets.xcassets */; };
-		B44067C125B1E25800D9DE9B /* NSClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = B44067B225B1E25700D9DE9B /* NSClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B44067C125B1E25800D9DE9B /* NSClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = B44067B225B1E25700D9DE9B /* NSClip.app */; platformFilters = (ios, maccatalyst, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B44067CB25B1E26900D9DE9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A95302342E87700B2C582 /* Assets.xcassets */; };
 		B45D01F625B5BC1800FBE2BB /* Image+SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D01F525B5BC1800FBE2BB /* Image+SFSymbols.swift */; };
 		B45D01F725B5BC1800FBE2BB /* Image+SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D01F525B5BC1800FBE2BB /* Image+SFSymbols.swift */; };
