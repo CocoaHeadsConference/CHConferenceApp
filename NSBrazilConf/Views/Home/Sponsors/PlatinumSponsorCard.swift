@@ -17,6 +17,7 @@ struct PlatinumSponsorCard: View {
             .cornerRadius(10)
             .padding([.leading, .trailing], 5)
         }
+        .buttonBorderShape(.roundedRectangle)
         .sheet(isPresented: $showContent, content: {
             SafariView(url: self.sponsor.link)
         })

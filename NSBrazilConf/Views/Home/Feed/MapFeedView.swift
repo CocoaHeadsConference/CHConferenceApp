@@ -15,30 +15,47 @@ struct MapFeedView: View, FeedViewProtocol {
        self.feedItem = item
    }
 
-   var feedItem: MapFeedItem
+   let feedItem: MapFeedItem
 
     var body: some View {
-        Button(action: self.openMap) {
-            CardView{
-                VStack(alignment: HorizontalAlignment.leading) {
-                    MapView(location: self.feedItem.location, annotationTitle: self.feedItem.title, span: self.feedItem.span)
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("\(self.feedItem.title) \(self.feedItem.subtitle)")
-                            .font(.headline)
-                    }
-                    .padding(.leading, 16)
-                    .padding(.bottom, 8)
-                }
-            }
-        }.frame(maxWidth: .infinity, minHeight: 286)
+      #if os(visionOS)
+      innerView
+        .onTapGesture {
+          openMap()
+        }
+        .frame(maxWidth: .infinity, minHeight: 286)
+      #else
+      Button(action: openMap) {
+        innerView
+      }
+      .frame(maxWidth: .infinity, minHeight: 286)
+      #endif
     }
-    
-    func openMap() {
-        let placemark = MKPlacemark(coordinate: self.feedItem.location)
-        let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = self.feedItem.title
-        mapItem.openInMaps(launchOptions: nil)
+
+  @ViewBuilder
+  var innerView: some View {
+    CardView{
+      VStack(alignment: .leading) {
+        MapView(
+          location: feedItem.location,
+          annotationTitle: feedItem.title,
+          span: feedItem.span)
+        VStack(alignment: .leading, spacing: 4) {
+          Text("\(feedItem.title) \(feedItem.subtitle)")
+            .font(.headline)
+        }
+        .padding(.leading, 16)
+        .padding(.bottom, 8)
+      }
     }
+  }
+
+  func openMap() {
+    let placemark = MKPlacemark(coordinate: feedItem.location)
+    let mapItem = MKMapItem(placemark: placemark)
+    mapItem.name = self.feedItem.title
+    mapItem.openInMaps(launchOptions: nil)
+  }
 }
 
 struct MapFeedView_Previews: PreviewProvider {
