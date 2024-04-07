@@ -32,14 +32,13 @@ struct HomeTabBar: View {
 
     @ViewBuilder
     var loadedBody: some View {
-        if horizontalSizeClass == .regular, #available(iOS 14.0, *) {
+        if horizontalSizeClass == .regular {
             largeScreenView
         } else {
             smallScreenView
         }
     }
 
-    @available(iOS 14.0, *)
     var largeScreenView: some View {
         NavigationView {
             List {
@@ -108,14 +107,8 @@ struct HomeTabBar: View {
             })
         }
     }
-
 }
 
-struct HomeTabBar_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            HomeTabBar(model: FeedViewModel())
-            HomeTabBar(model: FeedViewModel()).environment(\.colorScheme, .dark)
-        }
-    }
+#Preview {
+  HomeTabBar(model: .mock)
 }
