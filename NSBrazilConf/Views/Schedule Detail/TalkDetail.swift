@@ -12,7 +12,7 @@ struct TalkDetail: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 80, height: 80)
-                            .background(Color(.background))
+                        .background(.background)
                         .cornerRadius(40)
                         VStack(spacing: 8) {
                             Text(talk?.title ?? "")

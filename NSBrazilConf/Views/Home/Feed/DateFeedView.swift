@@ -36,7 +36,7 @@ struct DateFeedView: View, FeedViewProtocol {
         formatter.dateFormat = "EEEE - h:mm"
         let dayHourText = formatter.string(from: date)
 
-        return AnyView(DateDayView(dateText: dateText, dayHourText: dayHourText))
+        return DateDayView(dateText: dateText, dayHourText: dayHourText)
     }
 }
 

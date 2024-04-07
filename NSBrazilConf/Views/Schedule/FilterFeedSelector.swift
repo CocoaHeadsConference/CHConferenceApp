@@ -22,7 +22,7 @@ struct FilterFeedSelector: View {
                     .font(.headline)
                     .frame(minWidth: 100, alignment: .center)
                     .padding()
-                    .background(Color(.buttonBackground))
+                    .background(Color(uiColor: UIColor(resource: .buttonBackground)))
                     .cornerRadius(8)
             )
         } else {
@@ -35,7 +35,7 @@ struct FilterFeedSelector: View {
                         .foregroundColor(Color.black)
                         .frame(minWidth: 100, alignment: .center)
                         .padding()
-                        .background(Color(.buttonBackground))
+                        .background(Color(uiColor: UIColor(resource: .buttonBackground)))
                         .cornerRadius(8)
 
                 }
