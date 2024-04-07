@@ -15,21 +15,21 @@ struct DateFeedView: View, FeedViewProtocol {
         self.feedItem = item
     }
 
-    var feedItem: DateFeedItem
+    let feedItem: DateFeedItem
 
     var body: some View {
         CardView {
             HStack(spacing: 56) {
-                ForEach(0..<self.feedItem.dates.count) { index in
-                    self.dateDayView(from: self.feedItem.dates[index])
-                }
+              ForEach(feedItem.dates) {
+                dateDayView(from: $0)
+              }
             }
             .padding()
             .frame(maxWidth: .infinity, minHeight: 88)
         }
     }
 
-    private func dateDayView(from date: Date) -> AnyView {
+    private func dateDayView(from date: Date) -> some View {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MMM"
         let dateText = formatter.string(from: date).uppercased()
@@ -40,12 +40,10 @@ struct DateFeedView: View, FeedViewProtocol {
     }
 }
 
-struct DateFeedView_Previews: PreviewProvider {
-    static var previews: some View {
-        DateFeedView(feedItem: DateFeedItem(dates: [
-            Date(),
-            Date()
-        ]))
-    }
-}
+#Preview {
+  DateFeedView(feedItem: DateFeedItem(dates: [
+      Date(),
+      Date()
+  ]))
 
+}

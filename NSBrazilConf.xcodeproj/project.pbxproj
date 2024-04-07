@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -166,9 +166,11 @@
 		B4106AE9234A9025007F0F74 /* FeedDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106AE8234A9025007F0F74 /* FeedDecoder.swift */; };
 		B4106AEB234A903A007F0F74 /* UnknownItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106AEA234A903A007F0F74 /* UnknownItem.swift */; };
 		B4106AED234A904E007F0F74 /* HomeFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106AEC234A904E007F0F74 /* HomeFeed.swift */; };
+		B412626A2BC32D2500F11516 /* Date+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41262692BC32D2500F11516 /* Date+Identifiable.swift */; };
+		B412626B2BC32D7B00F11516 /* Date+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41262692BC32D2500F11516 /* Date+Identifiable.swift */; };
 		B44067B525B1E25700D9DE9B /* NSClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44067B425B1E25700D9DE9B /* NSClipApp.swift */; };
 		B44067BC25B1E25800D9DE9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44067BB25B1E25800D9DE9B /* Preview Assets.xcassets */; };
-		B44067C125B1E25800D9DE9B /* NSClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = B44067B225B1E25700D9DE9B /* NSClip.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B44067C125B1E25800D9DE9B /* NSClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = B44067B225B1E25700D9DE9B /* NSClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B44067CB25B1E26900D9DE9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A95302342E87700B2C582 /* Assets.xcassets */; };
 		B45D01F625B5BC1800FBE2BB /* Image+SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D01F525B5BC1800FBE2BB /* Image+SFSymbols.swift */; };
 		B45D01F725B5BC1800FBE2BB /* Image+SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45D01F525B5BC1800FBE2BB /* Image+SFSymbols.swift */; };
@@ -340,6 +342,7 @@
 		B4106AE8234A9025007F0F74 /* FeedDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDecoder.swift; sourceTree = "<group>"; };
 		B4106AEA234A903A007F0F74 /* UnknownItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownItem.swift; sourceTree = "<group>"; };
 		B4106AEC234A904E007F0F74 /* HomeFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeed.swift; sourceTree = "<group>"; };
+		B41262692BC32D2500F11516 /* Date+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Identifiable.swift"; sourceTree = "<group>"; };
 		B44067B225B1E25700D9DE9B /* NSClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44067B425B1E25700D9DE9B /* NSClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSClipApp.swift; sourceTree = "<group>"; };
 		B44067BB25B1E25800D9DE9B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -500,6 +503,7 @@
 				1D0A95622342EAF500B2C582 /* UIImage+Color.swift */,
 				B4889479236BA9C7009A8D37 /* PreviewDevice+Devices.swift */,
 				B45D020025B5C2E500FBE2BB /* Color+Case.swift */,
+				B41262692BC32D2500F11516 /* Date+Identifiable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -952,6 +956,7 @@
 				1D7D1E962363E704006C2A05 /* RemoteImage.swift in Sources */,
 				B4106ADA234A8F2B007F0F74 /* Sponsor.swift in Sources */,
 				B4106AED234A904E007F0F74 /* HomeFeed.swift in Sources */,
+				B412626A2BC32D2500F11516 /* Date+Identifiable.swift in Sources */,
 				1D0A95652342EAF500B2C582 /* UIImage+Color.swift in Sources */,
 				B4106AD2234A8ED3007F0F74 /* DateFeedItem.swift in Sources */,
 				B4A54FFD234BDBC9003CFEFA /* MapFeedView.swift in Sources */,
@@ -1053,6 +1058,7 @@
 				B40D798B25B59260009DEE17 /* VideoSectionView.swift in Sources */,
 				B40D798E25B59260009DEE17 /* DateFeedView.swift in Sources */,
 				B40D798825B59260009DEE17 /* SponsorView.swift in Sources */,
+				B412626B2BC32D7B00F11516 /* Date+Identifiable.swift in Sources */,
 				B40D797225B59246009DEE17 /* UIImage+Color.swift in Sources */,
 				B40D797925B59246009DEE17 /* String+Capitalize.swift in Sources */,
 				B40D798125B59260009DEE17 /* PlatinumSponsorCard.swift in Sources */,
@@ -1248,7 +1254,7 @@
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NSBrazilConf/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1256,9 +1262,11 @@
 				MARKETING_VERSION = 2021.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = NSBrazil;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -1275,7 +1283,7 @@
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NSBrazilConf/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1283,9 +1291,11 @@
 				MARKETING_VERSION = 2021.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = NSBrazil;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};
@@ -1421,7 +1431,7 @@
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NSClip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1449,7 +1459,7 @@
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NSClip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
