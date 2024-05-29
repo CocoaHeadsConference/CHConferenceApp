@@ -58,6 +58,7 @@
 		3DD10CA12360D95900A74997 /* SponsorViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10CA02360D95900A74997 /* SponsorViewSection.swift */; };
 		3DD10CA32360D9D500A74997 /* VideoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10CA22360D9D500A74997 /* VideoSectionView.swift */; };
 		3DD10CA52360DB6700A74997 /* VideoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10CA42360DB6700A74997 /* VideoCardView.swift */; };
+		6BBFEDC02C06F060008D914B /* HomeFacelift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBFEDBF2C06F060008D914B /* HomeFacelift.swift */; };
 		7627C791236FA76C00A108BA /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763CC6C1236F9CC8004611D1 /* ErrorController.swift */; };
 		763CC6B5236F7667004611D1 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763CC6B4236F7667004611D1 /* Schedule.swift */; };
 		763CC6B7236F76A9004611D1 /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763CC6B6236F76A9004611D1 /* Talk.swift */; };
@@ -304,6 +305,7 @@
 		3DD10CA02360D95900A74997 /* SponsorViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorViewSection.swift; sourceTree = "<group>"; };
 		3DD10CA22360D9D500A74997 /* VideoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSectionView.swift; sourceTree = "<group>"; };
 		3DD10CA42360DB6700A74997 /* VideoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCardView.swift; sourceTree = "<group>"; };
+		6BBFEDBF2C06F060008D914B /* HomeFacelift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFacelift.swift; sourceTree = "<group>"; };
 		763CC6B4236F7667004611D1 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		763CC6B6236F76A9004611D1 /* Talk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
 		763CC6B8236F7F05004611D1 /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 				B4FB65CC236C8839008479A5 /* CardView.swift */,
 				B40681AB236E430F00DE707D /* RetryView.swift */,
 				B40AB56E237590E600752BD0 /* ActivityIndicatorView.swift */,
+				6BBFEDBF2C06F060008D914B /* HomeFacelift.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -944,6 +947,7 @@
 				1D0A95502342E8F400B2C582 /* NSBrazilTitleView.swift in Sources */,
 				3DD10CA52360DB6700A74997 /* VideoCardView.swift in Sources */,
 				B40AB56F237590E600752BD0 /* ActivityIndicatorView.swift in Sources */,
+				6BBFEDC02C06F060008D914B /* HomeFacelift.swift in Sources */,
 				B4889474236B2EB3009A8D37 /* TalkView.swift in Sources */,
 				1D0A957E2342F0BB00B2C582 /* UIViewController+URL.swift in Sources */,
 				1D0A95572342E8F400B2C582 /* TalkDetail.swift in Sources */,

@@ -4,7 +4,6 @@ import SwiftUI
 struct HomeTabBar: View {
 
     init(model: FeedViewModel) {
-        UITabBar.appearance().backgroundColor = UIColor(hexString: "#1D3115")
         viewModel = model
     }
 
