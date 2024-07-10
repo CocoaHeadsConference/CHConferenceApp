@@ -1,0 +1,14 @@
+disabled_rules:
+  - trailing_whitespace
+  - opening_brace
+
+excluded:
+  - Pods
+  - SwiftLint/Common/3rdPartyLib
+  - "CocoaHeadsApp/Resources/Generated/R.generated.swift"
+  - "Modules/Sources/Authentication/R.generated.swift"
+  - "CocoaHeadsApp/Modules/Sources/NetworkPlatform/Common/HTTPStatusCode.swift"
+
+force_cast: warning
+
+reporter: "xcode"
