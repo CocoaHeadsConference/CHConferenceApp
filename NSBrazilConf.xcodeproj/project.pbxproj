@@ -185,6 +185,7 @@
 		B488947A236BA9C7009A8D37 /* PreviewDevice+Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4889479236BA9C7009A8D37 /* PreviewDevice+Devices.swift */; };
 		B4A54FFD234BDBC9003CFEFA /* MapFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A54FFC234BDBC9003CFEFA /* MapFeedView.swift */; };
 		B4FB65CD236C8839008479A5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB65CC236C8839008479A5 /* CardView.swift */; };
+		EADFA1892C4B130700EC83EE /* Puddles in Frameworks */ = {isa = PBXBuildFile; productRef = EADFA1882C4B130700EC83EE /* Puddles */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -367,6 +368,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EADFA1892C4B130700EC83EE /* Puddles in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,6 +738,9 @@
 			dependencies = (
 			);
 			name = NSBrazilConf;
+			packageProductDependencies = (
+				EADFA1882C4B130700EC83EE /* Puddles */,
+			);
 			productName = NSBrazilConf;
 			productReference = 1D0A95272342E87500B2C582 /* NSBrazil.app */;
 			productType = "com.apple.product-type.application";
@@ -844,6 +849,9 @@
 				Base,
 			);
 			mainGroup = 1D0A951E2342E87500B2C582;
+			packageReferences = (
+				EADFA1872C4B130700EC83EE /* XCRemoteSwiftPackageReference "Puddles" */,
+			);
 			productRefGroup = 1D0A95282342E87500B2C582 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1531,6 +1539,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EADFA1872C4B130700EC83EE /* XCRemoteSwiftPackageReference "Puddles" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftedMind/Puddles";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EADFA1882C4B130700EC83EE /* Puddles */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EADFA1872C4B130700EC83EE /* XCRemoteSwiftPackageReference "Puddles" */;
+			productName = Puddles;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1D0A951F2342E87500B2C582 /* Project object */;
 }
