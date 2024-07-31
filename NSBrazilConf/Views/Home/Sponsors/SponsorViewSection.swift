@@ -32,20 +32,15 @@ struct SponsorsViewSection: View, FeedViewProtocol {
     }
 }
 
-struct SponsorsViewSection_Preview: PreviewProvider {
-    static var previews: some View {
-        let sponsor = Sponsor(name: "Mercado Livre",
-                              link: URL(string: "https://mercadolivre.com")!,
-                              image: URL(string: "https://nsbrazil.com/images/app/meli-logo.png")!,
-                              backgroundColor: "#BABACA")
-        let platinum = [sponsor, sponsor]
-        let gold = [sponsor]
+#Preview {
+  let sponsor = Sponsor(name: "Mercado Livre",
+                        link: URL(string: "https://mercadolivre.com")!,
+                        image: URL(string: "https://nsbrazil.com/images/app/meli-logo.png")!,
+                        backgroundColor: "#BABACA")
+  let platinum = [sponsor, sponsor]
+  let gold = [sponsor]
 
-        let item = SponsorFeedItem(platinum: platinum, gold: gold, silver: gold)
+  let item = SponsorFeedItem(platinum: platinum, gold: gold, silver: gold)
 
-        return Group {
-            SponsorsViewSection(feedItem: item).previewDevice(.iPhone11)
-            SponsorsViewSection(feedItem: item).previewDevice(.iPhoneSE)
-        }
-    }
+  return SponsorsViewSection(feedItem: item)
 }

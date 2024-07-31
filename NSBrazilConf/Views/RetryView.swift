@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+// TODO: This can be replaced by ContentUnavailableView
+
 struct RetryView: View {
     var body: some View {
         VStack(spacing: 10) {
@@ -17,12 +19,6 @@ struct RetryView: View {
     }
 }
 
-struct RetryView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            RetryView().previewDevice(.iPhone11)
-            RetryView().previewDevice(.iPhone11).environment(\.colorScheme, .dark)
-        }
-
-    }
+#Preview {
+  RetryView()
 }

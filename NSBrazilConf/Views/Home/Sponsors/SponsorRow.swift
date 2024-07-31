@@ -20,22 +20,17 @@ struct SponsorRow: View {
     }
 }
 
-struct PlatinumSponsorsRow_Previews: PreviewProvider {
-    static var previews: some View {
-        let sponsors = [
-            Sponsor(name: "Mercado Livre",
-                    link: URL(string: "https://mercadolivre.com")!,
-                    image: URL(string: "https://nsbrazil.com/images/app/meli-logo.png")!,
-                    backgroundColor: "#BABACA"),
-            Sponsor(name: "Mercado Livre",
-                    link: URL(string: "https://mercadolivre.com")!,
-                    image: URL(string: "https://nsbrazil.com/images/app/meli-logo.png")!,
-                    backgroundColor: "#BABACA")
-        ]
-
-        return Group {
-            SponsorRow(title: "Platinum", sponsors: sponsors).previewDevice(.iPhone11)
-            SponsorRow(title: "Platinum", sponsors: sponsors).previewDevice(.iPhoneSE)
-        }
-    }
+#Preview {
+  SponsorRow(
+    title: "Platinum",
+    sponsors: [
+      Sponsor(name: "Mercado Livre",
+              link: URL(string: "https://mercadolivre.com")!,
+              image: URL(string: "https://nsbrazil.com/images/app/meli-logo.png")!,
+              backgroundColor: "#BABACA"),
+      Sponsor(name: "Mercado Livre",
+              link: URL(string: "https://mercadolivre.com")!,
+              image: URL(string: "https://nsbrazil.com/images/app/meli-logo.png")!,
+              backgroundColor: "#BABACA")
+  ])
 }

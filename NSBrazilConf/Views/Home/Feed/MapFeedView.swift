@@ -58,12 +58,12 @@ struct MapFeedView: View, FeedViewProtocol {
   }
 }
 
-struct MapFeedView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapFeedView(feedItem: MapFeedItem(location: CLLocationCoordinate2D(),
-                                          span: MKCoordinateSpan(),
-                                          title: "CUBO",
-                                          subtitle: "Itaú")
-        ).previewDevice(.iPhone11)
-    }
+#Preview {
+  MapFeedView(feedItem: 
+    MapFeedItem(
+      location: CLLocationCoordinate2D(),
+      span: MKCoordinateSpan(),
+      title: "CUBO",
+      subtitle: "Itaú")
+  )
 }

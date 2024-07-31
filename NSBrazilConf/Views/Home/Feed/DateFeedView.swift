@@ -6,6 +6,7 @@
 //  Copyright © 2019 Cocoaheadsbr. All rights reserved.
 //
 
+import Common
 import SwiftUI
 
 struct DateFeedView: View, FeedViewProtocol {

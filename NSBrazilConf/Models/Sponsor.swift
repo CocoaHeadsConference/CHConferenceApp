@@ -6,6 +6,7 @@
 //  Copyright © 2019 Cocoaheadsbr. All rights reserved.
 //
 
+import Common
 import Foundation
 import SwiftUI
 
@@ -24,6 +25,6 @@ struct Sponsor: Codable, Identifiable {
     }
     
     var background: Color {
-        return Color(UIColor.init(hexString: backgroundColor))
+        return Color(UIColor(hexString: backgroundColor))
     }
 }

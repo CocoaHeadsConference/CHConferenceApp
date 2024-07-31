@@ -27,13 +27,11 @@ struct PlatinumSponsorCard: View {
     }
 }
 
-struct SponsorCard_Previews: PreviewProvider {
-    static var previews: some View {
-        PlatinumSponsorCard(
-          sponsor: Sponsor(
-            name: "",
-            link: URL(string: "mercadolivre.com.br")!,
-            image: URL(string: "https://nsbrazil.com/images/app/meli-logo.png")!,
-            backgroundColor: "#BABACA")).previewDevice(.iPhone11)
-    }
+#Preview {
+  PlatinumSponsorCard(
+    sponsor: Sponsor(
+      name: "",
+      link: URL(string: "mercadolivre.com.br")!,
+      image: URL(string: "https://nsbrazil.com/images/app/meli-logo.png")!,
+      backgroundColor: "#BABACA"))
 }

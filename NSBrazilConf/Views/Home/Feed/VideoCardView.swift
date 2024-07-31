@@ -66,13 +66,11 @@ struct VideoCardView: View {
     }
 }
 
-struct PastEditionCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        let video = Video(title: "The roots",
-                          speaker: "Felipe Lefèvre Marino",
-                          background: URL(string: "https://google.com")!,
-                          link: URL(string: "https://www.cocoaheads.com.br/videos/detalhes/20")!)
-
-        return VideoCardView(video: video).previewDevice(.iPhone11)
-    }
+#Preview {
+  VideoCardView(video: 
+    Video(title: "The roots",
+          speaker: "Felipe Lefèvre Marino",
+          background: URL(string: "https://google.com")!,
+          link: URL(string: "https://www.cocoaheads.com.br/videos/detalhes/20")!)
+  )
 }

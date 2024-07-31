@@ -19,7 +19,7 @@ struct DownloadCallToAction: View {
                 Text("Baixe o app!")
                     .font(Font.title.bold())
                 Spacer()
-                Image(.linkCircle)
+                Image(systemName: "link.circle")
             }
 
             Text("Além do cronograma, o app também tem notícias da comunidade :)")

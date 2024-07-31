@@ -28,15 +28,12 @@ struct CardView<Content>: View where Content: View {
     }
 }
 
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            CardView {
-                MapView(location: CLLocationCoordinate2D(), annotationTitle: "", span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-            }
-            CardView {
-                Text("Hmm").padding()
-            }
-        }.previewDevice(.iPhone11)
-    }
+#Preview("Card view with inner MapView") {
+  CardView {
+      MapView(location: CLLocationCoordinate2D(), annotationTitle: "", span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+  }
+}
+
+#Preview("Card view with Text") {
+  Text("Test text").padding()
 }
