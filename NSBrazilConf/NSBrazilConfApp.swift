@@ -1,3 +1,4 @@
+import NSBrazilLib
 import SwiftUI
 
 @main
