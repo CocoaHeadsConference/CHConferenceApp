@@ -3,11 +3,13 @@ import SwiftUI
 
 @main
 struct NSBrazilConfApp: App {
-    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
-    
     var body: some Scene {
         WindowGroup {
+          #if DEBUG
+            HomeTabBar(model: .mock)
+          #else
             HomeTabBar(model: FeedViewModel())
+          #endif
         }
     }
 }

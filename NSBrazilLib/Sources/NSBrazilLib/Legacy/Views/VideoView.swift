@@ -20,9 +20,11 @@ struct VideoView: View {
                     }
                     .padding(.trailing, 16)
                     .padding(.top, 12)
-                    SponsorWebView(
+                  #if !os(watchOS)
+                    WebView(
                         url: videoUrl
                     )
+                  #endif
                 }
             }
 

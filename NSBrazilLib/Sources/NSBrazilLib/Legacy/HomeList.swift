@@ -1,11 +1,16 @@
 import SwiftUI
 
-struct HomeList: View {
+public struct HomeList: View {
+
+  public init(feedViewModel: FeedViewModel) {
+    self.feedViewModel = feedViewModel
+  }
+  
   let feedViewModel: FeedViewModel
 
   @Environment(\.horizontalSizeClass) var sizeClass
 
-  var body: some View {
+  public var body: some View {
     ScrollView {
       VStack(alignment: .leading ,spacing: 15) {
         ForEach(feedViewModel.homeFeed) { item in

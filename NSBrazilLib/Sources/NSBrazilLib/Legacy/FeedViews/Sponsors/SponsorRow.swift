@@ -13,7 +13,7 @@ struct SponsorRow: View {
                 .fontWeight(.medium)
             HStack {
                 ForEach(sponsors) {
-                   PlatinumSponsorCard(sponsor: $0)
+                   SponsorCard(sponsor: $0)
                 }
             }.padding(.horizontal, 5)
         }.frame(minWidth: 0, maxWidth: .infinity, alignment: .center)

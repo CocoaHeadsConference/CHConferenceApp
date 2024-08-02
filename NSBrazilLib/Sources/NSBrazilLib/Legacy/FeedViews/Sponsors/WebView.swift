@@ -1,8 +1,8 @@
-
 import SwiftUI
 import WebKit
 
-struct SponsorWebView: UIViewRepresentable {
+#if !os(watchOS)
+struct WebView: UIViewRepresentable {
     let url: URL
 
     func makeUIView(context: Context) -> WKWebView  {
@@ -18,10 +18,7 @@ struct SponsorWebView: UIViewRepresentable {
     }
 }
 
-struct SponsorWebView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        SponsorWebView(url: URL(string: "https://www.apple.com")!)
-
-    }
+#Preview {
+  WebView(url: URL(string: "https://www.apple.com")!)
 }
+#endif

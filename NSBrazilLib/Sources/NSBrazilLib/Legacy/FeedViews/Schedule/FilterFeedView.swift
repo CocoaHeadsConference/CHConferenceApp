@@ -58,8 +58,10 @@ struct FilterFeedView: View {
                     ForEach(0..<self.feedItem.feeds.count) { index in
                         Text(self.feedItem.feeds[index].title).tag(index)
                     }
-                }.pickerStyle(SegmentedPickerStyle())
-                    .padding([.leading, .trailing], 10)
+                }
+                // TODO: This view should be a paging tab view in the future
+                // .pickerStyle(SegmentedPickerStyle()) // not supported on watchOS
+                .padding([.leading, .trailing], 10)
 
                 Text(self.feedItem.feeds[self.selectedFeed].title)
                 .font(.largeTitle)
