@@ -15,7 +15,7 @@ struct VideoView: View {
                         Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
                             Text("Voltar")
                                 .fontWeight(.bold)
-                                .foregroundColor(Color(UIColor.label))
+                                .foregroundStyle(.primary)
                         }
                     }
                     .padding(.trailing, 16)

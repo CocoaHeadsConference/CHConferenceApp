@@ -1,5 +1,7 @@
 import SwiftUI
+#if canImport(WebKit)
 import WebKit
+#endif
 
 #if !os(watchOS)
 struct WebView: UIViewRepresentable {
