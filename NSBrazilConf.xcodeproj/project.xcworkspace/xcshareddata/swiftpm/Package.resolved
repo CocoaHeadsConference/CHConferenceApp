@@ -1,5 +1,4 @@
 {
-  "originHash" : "06538c860a60df9b99af4a7b7e556813faa1bba960e8a16cac7894903a3e8b50",
   "pins" : [
     {
       "identity" : "puddles",
@@ -11,5 +10,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }
