@@ -25,6 +25,6 @@ struct Sponsor: Codable, Identifiable {
     }
     
     var background: Color {
-        return Color(UIColor(hexString: backgroundColor))
+      return Color(hex: backgroundColor)
     }
 }

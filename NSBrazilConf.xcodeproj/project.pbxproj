@@ -10,8 +10,6 @@
 		1D0A95312342E87700B2C582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A95302342E87700B2C582 /* Assets.xcassets */; };
 		1D0A95342342E87700B2C582 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A95332342E87700B2C582 /* Preview Assets.xcassets */; };
 		1D0A95372342E87700B2C582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A95352342E87700B2C582 /* LaunchScreen.storyboard */; };
-		1D0A95602342E92E00B2C582 /* PaintCodeStyle.pcvd in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A955E2342E92E00B2C582 /* PaintCodeStyle.pcvd */; };
-		1D589C61234577CB003D95D8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D589C60234577CB003D95D8 /* Store.swift */; };
 		6BC95AE12C4C381400BFBF71 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC95AE02C4C381400BFBF71 /* RatingView.swift */; };
 		6BC95AE32C4C443600BFBF71 /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC95AE22C4C443600BFBF71 /* CustomCardView.swift */; };
 		6BC95AE52C4C446100BFBF71 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC95AE42C4C446100BFBF71 /* CustomButton.swift */; };
@@ -20,7 +18,6 @@
 		6BCB43452C4C23630076A6E9 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB43442C4C23630076A6E9 /* HomeModule.swift */; };
 		B409F3B62C5AE0EB00ECF000 /* NSBrazilLib in Frameworks */ = {isa = PBXBuildFile; productRef = B409F3B52C5AE0EB00ECF000 /* NSBrazilLib */; };
 		B409F3BA2C5AE3FE00ECF000 /* NSBrazilLib in Frameworks */ = {isa = PBXBuildFile; productRef = B409F3B92C5AE3FE00ECF000 /* NSBrazilLib */; };
-		B40D796F25B59246009DEE17 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D589C60234577CB003D95D8 /* Store.swift */; };
 		B40D79C625B5B61A009DEE17 /* DownloadCallToAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D79C525B5B61A009DEE17 /* DownloadCallToAction.swift */; };
 		B44067B525B1E25700D9DE9B /* NSClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44067B425B1E25700D9DE9B /* NSClipApp.swift */; };
 		B44067BC25B1E25800D9DE9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44067BB25B1E25800D9DE9B /* Preview Assets.xcassets */; };
@@ -91,8 +88,6 @@
 		1D0A95332342E87700B2C582 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1D0A95362342E87700B2C582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D0A95382342E87700B2C582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D0A955E2342E92E00B2C582 /* PaintCodeStyle.pcvd */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = PaintCodeStyle.pcvd; sourceTree = "<group>"; };
-		1D589C60234577CB003D95D8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		6BC95AE02C4C381400BFBF71 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		6BC95AE22C4C443600BFBF71 /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
 		6BC95AE42C4C446100BFBF71 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -191,8 +186,6 @@
 				6BC95ADF2C4C380300BFBF71 /* Components */,
 				6BCB43432C4C23230076A6E9 /* Modules */,
 				B48E24C82367A24100193834 /* NSBrazilConf.entitlements */,
-				1D589C5F2345778E003D95D8 /* Storage */,
-				1D0A955D2342E92E00B2C582 /* Support */,
 				1D0A95302342E87700B2C582 /* Assets.xcassets */,
 				1D0A95352342E87700B2C582 /* LaunchScreen.storyboard */,
 				1D0A95382342E87700B2C582 /* Info.plist */,
@@ -208,22 +201,6 @@
 				1D0A95332342E87700B2C582 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		1D0A955D2342E92E00B2C582 /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				1D0A955E2342E92E00B2C582 /* PaintCodeStyle.pcvd */,
-			);
-			path = Support;
-			sourceTree = "<group>";
-		};
-		1D589C5F2345778E003D95D8 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				1D589C60234577CB003D95D8 /* Store.swift */,
-			);
-			path = Storage;
 			sourceTree = "<group>";
 		};
 		6BC95ADF2C4C380300BFBF71 /* Components */ = {
@@ -461,7 +438,6 @@
 			files = (
 				1D0A95372342E87700B2C582 /* LaunchScreen.storyboard in Resources */,
 				1D0A95342342E87700B2C582 /* Preview Assets.xcassets in Resources */,
-				1D0A95602342E92E00B2C582 /* PaintCodeStyle.pcvd in Resources */,
 				1D0A95312342E87700B2C582 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,7 +481,6 @@
 				6BCB43422C4C20350076A6E9 /* NSBrazilConfApp.swift in Sources */,
 				6BC95AE12C4C381400BFBF71 /* RatingView.swift in Sources */,
 				6BC95AE52C4C446100BFBF71 /* CustomButton.swift in Sources */,
-				1D589C61234577CB003D95D8 /* Store.swift in Sources */,
 				6BC95AE32C4C443600BFBF71 /* CustomCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,7 +490,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B40D79C625B5B61A009DEE17 /* DownloadCallToAction.swift in Sources */,
-				B40D796F25B59246009DEE17 /* Store.swift in Sources */,
 				B44067B525B1E25700D9DE9B /* NSClipApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

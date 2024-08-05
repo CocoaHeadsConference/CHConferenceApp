@@ -3,7 +3,6 @@ import SwiftUI
 #if !os(watchOS)
 public struct HomeTabBar: View {
     public init(model: FeedViewModel) {
-        UITabBar.appearance().backgroundColor = UIColor(hexString: "#1D3115")
         viewModel = model
     }
 
