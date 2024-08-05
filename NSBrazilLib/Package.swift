@@ -36,6 +36,9 @@ let package = Package(
             dependencies: [
               "Common",
               puddles
+            ],
+            resources: [
+              .process("2019.json")
             ]),
         .testTarget(
             name: "NSBrazilLibTests",

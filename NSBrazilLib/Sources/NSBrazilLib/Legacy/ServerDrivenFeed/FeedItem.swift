@@ -24,11 +24,20 @@ public class FeedItem: Codable, Identifiable {
 
 extension FeedItem {
   static var mock: HomeFeed {
-    let url = Bundle.main.url(forResource: "2019", withExtension: "json")
-    let data = try! Data(contentsOf: url!)
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .iso8601
-    return try! decoder.decode(HomeFeed.self, from: data)
+
+    guard
+      let url = Bundle.module.url(forResource: "2019", withExtension: "json"),
+      let data = try? Data(contentsOf: url),
+      let feed = try? decoder.decode(HomeFeed.self, from: data)
+    else {
+      return HomeFeed(
+        version: 0,
+        feed: .init(feedItems: []),
+        schedule: .init(feedItems: []))
+    }
+    return feed
   }
 }
 

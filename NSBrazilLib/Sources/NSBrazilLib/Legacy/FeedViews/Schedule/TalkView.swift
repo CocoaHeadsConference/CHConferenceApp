@@ -45,6 +45,7 @@ struct TalkView: View {
         .padding(2)
     }
 
+    // TODO: Swap for AsyncImage
     private func image() -> AnyView {
         guard let image = remoteImage.image else {
             return AnyView(EmptyView())
@@ -55,7 +56,7 @@ struct TalkView: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 80, height: 80)
-                .background(Color(uiColor: UIColor(resource: .background)))
+            .background(Color(.buttonBackground))
             .cornerRadius(40)
         )
     }
