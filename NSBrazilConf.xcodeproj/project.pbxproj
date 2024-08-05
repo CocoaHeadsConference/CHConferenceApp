@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D0A952B2342E87500B2C582 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A952A2342E87500B2C582 /* AppDelegate.swift */; };
 		1D0A95312342E87700B2C582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A95302342E87700B2C582 /* Assets.xcassets */; };
 		1D0A95342342E87700B2C582 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A95332342E87700B2C582 /* Preview Assets.xcassets */; };
 		1D0A95372342E87700B2C582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A95352342E87700B2C582 /* LaunchScreen.storyboard */; };
-		1D0A95602342E92E00B2C582 /* PaintCodeStyle.pcvd in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A955E2342E92E00B2C582 /* PaintCodeStyle.pcvd */; };
-		1D589C61234577CB003D95D8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D589C60234577CB003D95D8 /* Store.swift */; };
 		6BC95AE12C4C381400BFBF71 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC95AE02C4C381400BFBF71 /* RatingView.swift */; };
 		6BC95AE32C4C443600BFBF71 /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC95AE22C4C443600BFBF71 /* CustomCardView.swift */; };
 		6BC95AE52C4C446100BFBF71 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC95AE42C4C446100BFBF71 /* CustomButton.swift */; };
@@ -21,14 +18,34 @@
 		6BCB43452C4C23630076A6E9 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB43442C4C23630076A6E9 /* HomeModule.swift */; };
 		B409F3B62C5AE0EB00ECF000 /* NSBrazilLib in Frameworks */ = {isa = PBXBuildFile; productRef = B409F3B52C5AE0EB00ECF000 /* NSBrazilLib */; };
 		B409F3BA2C5AE3FE00ECF000 /* NSBrazilLib in Frameworks */ = {isa = PBXBuildFile; productRef = B409F3B92C5AE3FE00ECF000 /* NSBrazilLib */; };
-		B40D796F25B59246009DEE17 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D589C60234577CB003D95D8 /* Store.swift */; };
 		B40D79C625B5B61A009DEE17 /* DownloadCallToAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D79C525B5B61A009DEE17 /* DownloadCallToAction.swift */; };
 		B44067B525B1E25700D9DE9B /* NSClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44067B425B1E25700D9DE9B /* NSClipApp.swift */; };
 		B44067BC25B1E25800D9DE9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44067BB25B1E25800D9DE9B /* Preview Assets.xcassets */; };
 		B44067C125B1E25800D9DE9B /* NSClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = B44067B225B1E25700D9DE9B /* NSClip.app */; platformFilters = (ios, maccatalyst, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B44067CB25B1E26900D9DE9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A95302342E87700B2C582 /* Assets.xcassets */; };
-		B48254A0234AB9810008A035 /* 2019.json in Resources */ = {isa = PBXBuildFile; fileRef = B482549F234AB9810008A035 /* 2019.json */; };
+		B482AA8A2C5C721600F66F3B /* CocoaHeadsBR_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B482AA892C5C721600F66F3B /* CocoaHeadsBR_WatchApp.swift */; };
+		B482AA8C2C5C721600F66F3B /* WatchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B482AA8B2C5C721600F66F3B /* WatchRootView.swift */; };
+		B482AA8E2C5C721700F66F3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B482AA8D2C5C721700F66F3B /* Assets.xcassets */; };
+		B482AA912C5C721700F66F3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B482AA902C5C721700F66F3B /* Preview Assets.xcassets */; };
+		B482AA942C5C721700F66F3B /* CocoaHeadsBR.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B482AA872C5C721600F66F3B /* CocoaHeadsBR.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B482AA9A2C5C722C00F66F3B /* NSBrazilLib in Frameworks */ = {isa = PBXBuildFile; productRef = B482AA992C5C722C00F66F3B /* NSBrazilLib */; };
+		B4A60BDD2C5C9C1900D2597B /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = B4A60BDC2C5C9C1900D2597B /* RealityKitContent */; };
+		B4A60BDF2C5C9C1900D2597B /* CocoaHeads_BR_VisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A60BDE2C5C9C1900D2597B /* CocoaHeads_BR_VisionApp.swift */; };
+		B4A60BE12C5C9C1900D2597B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A60BE02C5C9C1900D2597B /* ContentView.swift */; };
+		B4A60BE32C5C9C1A00D2597B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A60BE22C5C9C1A00D2597B /* Assets.xcassets */; };
+		B4A60BE62C5C9C1A00D2597B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A60BE52C5C9C1A00D2597B /* Preview Assets.xcassets */; };
+		B4A60BEC2C5C9C5100D2597B /* NSBrazilLib in Frameworks */ = {isa = PBXBuildFile; productRef = B4A60BEB2C5C9C5100D2597B /* NSBrazilLib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B482AA922C5C721700F66F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D0A951F2342E87500B2C582 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B482AA862C5C721600F66F3B;
+			remoteInfo = "CocoaHeadsBR Watch Watch App";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		B44067C225B1E25800D9DE9B /* Embed App Clips */ = {
@@ -52,17 +69,25 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B482AA952C5C721700F66F3B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B482AA942C5C721700F66F3B /* CocoaHeadsBR.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D0A95272342E87500B2C582 /* NSBrazil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSBrazil.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D0A952A2342E87500B2C582 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D0A95302342E87700B2C582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D0A95332342E87700B2C582 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1D0A95362342E87700B2C582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D0A95382342E87700B2C582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D0A955E2342E92E00B2C582 /* PaintCodeStyle.pcvd */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = PaintCodeStyle.pcvd; sourceTree = "<group>"; };
-		1D589C60234577CB003D95D8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		6BC95AE02C4C381400BFBF71 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		6BC95AE22C4C443600BFBF71 /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
 		6BC95AE42C4C446100BFBF71 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -76,8 +101,19 @@
 		B44067BD25B1E25800D9DE9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B44067BE25B1E25800D9DE9B /* NSClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NSClip.entitlements; sourceTree = "<group>"; };
 		B441A4F62C5ADABD009E7771 /* NSBrazilLib */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NSBrazilLib; sourceTree = "<group>"; };
-		B482549F234AB9810008A035 /* 2019.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2019.json; sourceTree = "<group>"; };
+		B482AA872C5C721600F66F3B /* CocoaHeadsBR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaHeadsBR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B482AA892C5C721600F66F3B /* CocoaHeadsBR_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaHeadsBR_WatchApp.swift; sourceTree = "<group>"; };
+		B482AA8B2C5C721600F66F3B /* WatchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRootView.swift; sourceTree = "<group>"; };
+		B482AA8D2C5C721700F66F3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B482AA902C5C721700F66F3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B48E24C82367A24100193834 /* NSBrazilConf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NSBrazilConf.entitlements; sourceTree = "<group>"; };
+		B4A60BD82C5C9C1900D2597B /* CocoaHeadsBR Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CocoaHeadsBR Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4A60BDB2C5C9C1900D2597B /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		B4A60BDE2C5C9C1900D2597B /* CocoaHeads_BR_VisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaHeads_BR_VisionApp.swift; sourceTree = "<group>"; };
+		B4A60BE02C5C9C1900D2597B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B4A60BE22C5C9C1A00D2597B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4A60BE52C5C9C1A00D2597B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B4A60BE72C5C9C1A00D2597B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4C5F8C32C5ADD1C0031246C /* Common */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Common; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +134,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B482AA842C5C721600F66F3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B482AA9A2C5C722C00F66F3B /* NSBrazilLib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4A60BD52C5C9C1900D2597B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4A60BDD2C5C9C1900D2597B /* RealityKitContent in Frameworks */,
+				B4A60BEC2C5C9C5100D2597B /* NSBrazilLib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -108,6 +161,9 @@
 				B441A4F62C5ADABD009E7771 /* NSBrazilLib */,
 				1D0A95292342E87500B2C582 /* NSBrazilConf */,
 				B44067B325B1E25700D9DE9B /* NSClip */,
+				B482AA882C5C721600F66F3B /* CocoaHeadsBR Watch Watch App */,
+				B4A60BD92C5C9C1900D2597B /* CocoaHeads BR Vision */,
+				B4A60BDA2C5C9C1900D2597B /* Packages */,
 				1D0A95282342E87500B2C582 /* Products */,
 				B4451F7A25B5D4BF00901DC3 /* Frameworks */,
 			);
@@ -118,6 +174,8 @@
 			children = (
 				1D0A95272342E87500B2C582 /* NSBrazil.app */,
 				B44067B225B1E25700D9DE9B /* NSClip.app */,
+				B482AA872C5C721600F66F3B /* CocoaHeadsBR.app */,
+				B4A60BD82C5C9C1900D2597B /* CocoaHeadsBR Vision.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,9 +186,6 @@
 				6BC95ADF2C4C380300BFBF71 /* Components */,
 				6BCB43432C4C23230076A6E9 /* Modules */,
 				B48E24C82367A24100193834 /* NSBrazilConf.entitlements */,
-				1D589C5F2345778E003D95D8 /* Storage */,
-				1D0A955D2342E92E00B2C582 /* Support */,
-				1D0A952A2342E87500B2C582 /* AppDelegate.swift */,
 				1D0A95302342E87700B2C582 /* Assets.xcassets */,
 				1D0A95352342E87700B2C582 /* LaunchScreen.storyboard */,
 				1D0A95382342E87700B2C582 /* Info.plist */,
@@ -146,23 +201,6 @@
 				1D0A95332342E87700B2C582 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		1D0A955D2342E92E00B2C582 /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				1D0A955E2342E92E00B2C582 /* PaintCodeStyle.pcvd */,
-				B482549F234AB9810008A035 /* 2019.json */,
-			);
-			path = Support;
-			sourceTree = "<group>";
-		};
-		1D589C5F2345778E003D95D8 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				1D589C60234577CB003D95D8 /* Store.swift */,
-			);
-			path = Storage;
 			sourceTree = "<group>";
 		};
 		6BC95ADF2C4C380300BFBF71 /* Components */ = {
@@ -211,6 +249,53 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B482AA882C5C721600F66F3B /* CocoaHeadsBR Watch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				B482AA892C5C721600F66F3B /* CocoaHeadsBR_WatchApp.swift */,
+				B482AA8B2C5C721600F66F3B /* WatchRootView.swift */,
+				B482AA8D2C5C721700F66F3B /* Assets.xcassets */,
+				B482AA8F2C5C721700F66F3B /* Preview Content */,
+			);
+			path = "CocoaHeadsBR Watch Watch App";
+			sourceTree = "<group>";
+		};
+		B482AA8F2C5C721700F66F3B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B482AA902C5C721700F66F3B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B4A60BD92C5C9C1900D2597B /* CocoaHeads BR Vision */ = {
+			isa = PBXGroup;
+			children = (
+				B4A60BDE2C5C9C1900D2597B /* CocoaHeads_BR_VisionApp.swift */,
+				B4A60BE02C5C9C1900D2597B /* ContentView.swift */,
+				B4A60BE22C5C9C1A00D2597B /* Assets.xcassets */,
+				B4A60BE72C5C9C1A00D2597B /* Info.plist */,
+				B4A60BE42C5C9C1A00D2597B /* Preview Content */,
+			);
+			path = "CocoaHeads BR Vision";
+			sourceTree = "<group>";
+		};
+		B4A60BDA2C5C9C1900D2597B /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B4A60BDB2C5C9C1900D2597B /* RealityKitContent */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		B4A60BE42C5C9C1A00D2597B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B4A60BE52C5C9C1A00D2597B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,10 +308,12 @@
 				1D0A95252342E87500B2C582 /* Resources */,
 				B44067C225B1E25800D9DE9B /* Embed App Clips */,
 				B44067E225B1E2D100D9DE9B /* Embed Frameworks */,
+				B482AA952C5C721700F66F3B /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B482AA932C5C721700F66F3B /* PBXTargetDependency */,
 			);
 			name = NSBrazilConf;
 			packageProductDependencies = (
@@ -256,13 +343,54 @@
 			productReference = B44067B225B1E25700D9DE9B /* NSClip.app */;
 			productType = "com.apple.product-type.application.on-demand-install-capable";
 		};
+		B482AA862C5C721600F66F3B /* CocoaHeadsBR Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B482AA982C5C721700F66F3B /* Build configuration list for PBXNativeTarget "CocoaHeadsBR Watch" */;
+			buildPhases = (
+				B482AA832C5C721600F66F3B /* Sources */,
+				B482AA842C5C721600F66F3B /* Frameworks */,
+				B482AA852C5C721600F66F3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CocoaHeadsBR Watch";
+			packageProductDependencies = (
+				B482AA992C5C722C00F66F3B /* NSBrazilLib */,
+			);
+			productName = "CocoaHeadsBR Watch Watch App";
+			productReference = B482AA872C5C721600F66F3B /* CocoaHeadsBR.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B4A60BD72C5C9C1900D2597B /* CocoaHeadsBR Vision */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4A60BEA2C5C9C1A00D2597B /* Build configuration list for PBXNativeTarget "CocoaHeadsBR Vision" */;
+			buildPhases = (
+				B4A60BD42C5C9C1900D2597B /* Sources */,
+				B4A60BD52C5C9C1900D2597B /* Frameworks */,
+				B4A60BD62C5C9C1900D2597B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CocoaHeadsBR Vision";
+			packageProductDependencies = (
+				B4A60BDC2C5C9C1900D2597B /* RealityKitContent */,
+				B4A60BEB2C5C9C5100D2597B /* NSBrazilLib */,
+			);
+			productName = "CocoaHeads BR Vision";
+			productReference = B4A60BD82C5C9C1900D2597B /* CocoaHeadsBR Vision.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1D0A951F2342E87500B2C582 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = Cocoaheadsbr;
 				TargetAttributes = {
@@ -271,6 +399,12 @@
 					};
 					B44067B125B1E25700D9DE9B = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					B482AA862C5C721600F66F3B = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					B4A60BD72C5C9C1900D2597B = {
+						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
@@ -291,6 +425,8 @@
 			targets = (
 				1D0A95262342E87500B2C582 /* NSBrazilConf */,
 				B44067B125B1E25700D9DE9B /* NSClip */,
+				B482AA862C5C721600F66F3B /* CocoaHeadsBR Watch */,
+				B4A60BD72C5C9C1900D2597B /* CocoaHeadsBR Vision */,
 			);
 		};
 /* End PBXProject section */
@@ -301,9 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D0A95372342E87700B2C582 /* LaunchScreen.storyboard in Resources */,
-				B48254A0234AB9810008A035 /* 2019.json in Resources */,
 				1D0A95342342E87700B2C582 /* Preview Assets.xcassets in Resources */,
-				1D0A95602342E92E00B2C582 /* PaintCodeStyle.pcvd in Resources */,
 				1D0A95312342E87700B2C582 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +451,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B482AA852C5C721600F66F3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B482AA912C5C721700F66F3B /* Preview Assets.xcassets in Resources */,
+				B482AA8E2C5C721700F66F3B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4A60BD62C5C9C1900D2597B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4A60BE62C5C9C1A00D2597B /* Preview Assets.xcassets in Resources */,
+				B4A60BE32C5C9C1A00D2597B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -324,13 +476,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D0A952B2342E87500B2C582 /* AppDelegate.swift in Sources */,
 				6BC95AE72C4C44BA00BFBF71 /* TitleSectionView.swift in Sources */,
 				6BCB43452C4C23630076A6E9 /* HomeModule.swift in Sources */,
 				6BCB43422C4C20350076A6E9 /* NSBrazilConfApp.swift in Sources */,
 				6BC95AE12C4C381400BFBF71 /* RatingView.swift in Sources */,
 				6BC95AE52C4C446100BFBF71 /* CustomButton.swift in Sources */,
-				1D589C61234577CB003D95D8 /* Store.swift in Sources */,
 				6BC95AE32C4C443600BFBF71 /* CustomCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,12 +490,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				B40D79C625B5B61A009DEE17 /* DownloadCallToAction.swift in Sources */,
-				B40D796F25B59246009DEE17 /* Store.swift in Sources */,
 				B44067B525B1E25700D9DE9B /* NSClipApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B482AA832C5C721600F66F3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B482AA8C2C5C721600F66F3B /* WatchRootView.swift in Sources */,
+				B482AA8A2C5C721600F66F3B /* CocoaHeadsBR_WatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4A60BD42C5C9C1900D2597B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4A60BE12C5C9C1900D2597B /* ContentView.swift in Sources */,
+				B4A60BDF2C5C9C1900D2597B /* CocoaHeads_BR_VisionApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B482AA932C5C721700F66F3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B482AA862C5C721600F66F3B /* CocoaHeadsBR Watch */;
+			targetProxy = B482AA922C5C721700F66F3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1D0A95352342E87700B2C582 /* LaunchScreen.storyboard */ = {
@@ -486,6 +661,7 @@
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NSBrazilConf/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CocoaHeadsBR;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,11 +670,11 @@
 				MARKETING_VERSION = 2024.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = NSBrazil;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Debug;
@@ -516,6 +692,7 @@
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NSBrazilConf/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CocoaHeadsBR;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -524,11 +701,11 @@
 				MARKETING_VERSION = 2024.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = NSBrazil;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Release;
@@ -547,6 +724,7 @@
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NSClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CocoaHeadsBR;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -556,6 +734,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.baseClip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -575,6 +756,7 @@
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NSClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CocoaHeadsBR;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -584,8 +766,155 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.baseClip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B482AA962C5C721700F66F3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeadsBR Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = V45SL99ZK4;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.cocoaheadsbr.conf;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.watchkitapp;
+				PRODUCT_NAME = CocoaHeadsBR;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		B482AA972C5C721700F66F3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeadsBR Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = V45SL99ZK4;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.cocoaheadsbr.conf;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.watchkitapp;
+				PRODUCT_NAME = CocoaHeadsBR;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		B4A60BE82C5C9C1A00D2597B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeads BR Vision/Preview Content\"";
+				DEVELOPMENT_TEAM = V45SL99ZK4;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = CocoaHeadsBR;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cocoaheads.conf.CocoaHeads-BR-Vision";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		B4A60BE92C5C9C1A00D2597B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeads BR Vision/Preview Content\"";
+				DEVELOPMENT_TEAM = V45SL99ZK4;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = CocoaHeadsBR;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cocoaheads.conf.CocoaHeads-BR-Vision";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Release;
 		};
@@ -619,6 +948,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B482AA982C5C721700F66F3B /* Build configuration list for PBXNativeTarget "CocoaHeadsBR Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B482AA962C5C721700F66F3B /* Debug */,
+				B482AA972C5C721700F66F3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4A60BEA2C5C9C1A00D2597B /* Build configuration list for PBXNativeTarget "CocoaHeadsBR Vision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4A60BE82C5C9C1A00D2597B /* Debug */,
+				B4A60BE92C5C9C1A00D2597B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -627,6 +974,18 @@
 			productName = NSBrazilLib;
 		};
 		B409F3B92C5AE3FE00ECF000 /* NSBrazilLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NSBrazilLib;
+		};
+		B482AA992C5C722C00F66F3B /* NSBrazilLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NSBrazilLib;
+		};
+		B4A60BDC2C5C9C1900D2597B /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+		B4A60BEB2C5C9C5100D2597B /* NSBrazilLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NSBrazilLib;
 		};

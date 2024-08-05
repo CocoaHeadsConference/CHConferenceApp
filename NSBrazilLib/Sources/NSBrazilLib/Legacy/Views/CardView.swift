@@ -21,19 +21,16 @@ struct CardView<Content>: View where Content: View {
         Group {
             content()
         }
-        .background(Color(UIColor.tertiarySystemBackground))
+        .background(.quinary)
         .cornerRadius(8)
         .padding()
         .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 0)
     }
 }
 
-#Preview("Card view with inner MapView") {
+#Preview {
   CardView {
-      MapView(location: CLLocationCoordinate2D(), annotationTitle: "", span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    Text("Test text")
+      .padding()
   }
-}
-
-#Preview("Card view with Text") {
-  Text("Test text").padding()
 }

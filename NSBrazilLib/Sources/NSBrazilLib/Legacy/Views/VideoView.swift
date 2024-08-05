@@ -15,14 +15,16 @@ struct VideoView: View {
                         Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
                             Text("Voltar")
                                 .fontWeight(.bold)
-                                .foregroundColor(Color(UIColor.label))
+                                .foregroundStyle(.primary)
                         }
                     }
                     .padding(.trailing, 16)
                     .padding(.top, 12)
-                    SponsorWebView(
+                  #if !os(watchOS)
+                    WebView(
                         url: videoUrl
                     )
+                  #endif
                 }
             }
 

@@ -28,6 +28,7 @@ struct MapFeedView: View, FeedViewProtocol {
       Button(action: openMap) {
         innerView
       }
+      .buttonStyle(.plain)
       .frame(maxWidth: .infinity, minHeight: 286)
       #endif
     }
@@ -36,10 +37,12 @@ struct MapFeedView: View, FeedViewProtocol {
   var innerView: some View {
     CardView{
       VStack(alignment: .leading) {
-        MapView(
-          location: feedItem.location,
-          annotationTitle: feedItem.title,
-          span: feedItem.span)
+        Map(
+          initialPosition: .camera(
+            .init(
+              centerCoordinate: feedItem.location,
+              distance: 1000.0)))
+        .disabled(true)
         VStack(alignment: .leading, spacing: 4) {
           Text("\(feedItem.title) \(feedItem.subtitle)")
             .font(.headline)
@@ -61,7 +64,9 @@ struct MapFeedView: View, FeedViewProtocol {
 #Preview {
   MapFeedView(feedItem: 
     MapFeedItem(
-      location: CLLocationCoordinate2D(),
+      location: CLLocationCoordinate2D(
+        latitude: -23.5965911,
+        longitude: -46.6867937),
       span: MKCoordinateSpan(),
       title: "CUBO",
       subtitle: "Itaú")

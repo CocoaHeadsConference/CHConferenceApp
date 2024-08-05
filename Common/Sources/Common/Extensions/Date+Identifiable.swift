@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Date: Identifiable {
+extension Date: @retroactive Identifiable {
   public var id: String {
     ISO8601Format()
   }

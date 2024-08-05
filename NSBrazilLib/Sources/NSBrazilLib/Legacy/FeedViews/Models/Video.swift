@@ -17,6 +17,6 @@ struct Video: Codable, Identifiable {
     let link: URL
     
     var backgroundColor: Color {
-      return Color(uiColor: UIColor(resource: .background10))
+      Color(.background10)
     }
 }

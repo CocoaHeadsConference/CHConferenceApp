@@ -1,10 +1,8 @@
-
 import SwiftUI
 
+#if !os(watchOS)
 public struct HomeTabBar: View {
-
     public init(model: FeedViewModel) {
-        UITabBar.appearance().backgroundColor = UIColor(hexString: "#1D3115")
         viewModel = model
     }
 
@@ -21,7 +19,7 @@ public struct HomeTabBar: View {
         ZStack {
             switch viewModel.isLoading {
             case .loading:
-                ActivityIndicatorView()
+                ProgressView()
             case .loaded:
                 loadedBody
             case .failed:
@@ -112,3 +110,4 @@ public struct HomeTabBar: View {
 #Preview {
   HomeTabBar(model: .mock)
 }
+#endif
