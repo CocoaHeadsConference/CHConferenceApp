@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "EAF37B6F-CF6C-431C-9298-91E396511DFF",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:NSBrazilConf.xcodeproj",
+      "identifier" : "1D0A95262342E87500B2C582",
+      "name" : "NSBrazilConf"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Common",
+        "identifier" : "CommonTests",
+        "name" : "CommonTests"
+      }
+    }
+  ],
+  "version" : 1
+}

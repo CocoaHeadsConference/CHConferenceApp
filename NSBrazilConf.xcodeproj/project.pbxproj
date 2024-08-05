@@ -114,6 +114,7 @@
 		B4A60BE22C5C9C1A00D2597B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4A60BE52C5C9C1A00D2597B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B4A60BE72C5C9C1A00D2597B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4BAA62D2C61542C0024B351 /* NSBrazilConf.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = NSBrazilConf.xctestplan; sourceTree = "<group>"; };
 		B4C5F8C32C5ADD1C0031246C /* Common */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Common; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +158,7 @@
 		1D0A951E2342E87500B2C582 = {
 			isa = PBXGroup;
 			children = (
+				B4BAA62D2C61542C0024B351 /* NSBrazilConf.xctestplan */,
 				B4C5F8C32C5ADD1C0031246C /* Common */,
 				B441A4F62C5ADABD009E7771 /* NSBrazilLib */,
 				1D0A95292342E87500B2C582 /* NSBrazilConf */,

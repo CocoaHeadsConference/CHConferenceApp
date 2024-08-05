@@ -8,3 +8,7 @@ DerivedData/
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .netrc
 *.xcuserstate
+.DS_Store
+*.xcuserstate
+NSBrazilConf.xcodeproj/xcuserdata/mauriciocardozo.xcuserdatad/xcschemes/xcschememanagement.plist
+Packages/RealityKitContent/.swiftpm/xcode/xcuserdata/mauriciocardozo.xcuserdatad/xcschemes/xcschememanagement.plist
