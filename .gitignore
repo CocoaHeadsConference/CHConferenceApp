@@ -1,2 +1,14 @@
-NSBrazilConf.xcodeproj/project.xcworkspace/xcuserdata
-NSBrazilConf.xcodeproj/xcuserdata
+NSBrazilConf.xcodeproj/project.xcworkspace/xcuserdata/*
+NSBrazilConf.xcodeproj/xcuserdata/*
+.DS_Store
+/.build
+xcuserdata/
+DerivedData/
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.netrc
+*.xcuserstate
+.DS_Store
+*.xcuserstate
+NSBrazilConf.xcodeproj/xcuserdata/mauriciocardozo.xcuserdatad/xcschemes/xcschememanagement.plist
+Packages/RealityKitContent/.swiftpm/xcode/xcuserdata/mauriciocardozo.xcuserdatad/xcschemes/xcschememanagement.plist
