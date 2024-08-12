@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "puddles",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftedMind/Puddles",
+      "state" : {
+        "revision" : "d44cd174221423f803d9c844441bc1542a45b843",
+        "version" : "2.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

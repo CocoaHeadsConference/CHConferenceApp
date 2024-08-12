@@ -6,6 +6,7 @@
 //  Copyright © 2021 Cocoaheadsbr. All rights reserved.
 //
 
+import NSBrazilLib
 import SwiftUI
 
 @main
@@ -18,7 +19,7 @@ struct NSClipApp: App {
             ZStack {
                 switch feedModel.isLoading {
                 case .loading:
-                    ActivityIndicatorView()
+                    ProgressView()
                 case .loaded:
                     loadedBody
                 case .failed:
