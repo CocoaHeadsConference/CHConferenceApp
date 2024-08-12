@@ -279,7 +279,8 @@
 				B4A60BE72C5C9C1A00D2597B /* Info.plist */,
 				B4A60BE42C5C9C1A00D2597B /* Preview Content */,
 			);
-			path = "CocoaHeads BR Vision";
+			name = "CocoaHeads BR Vision";
+			path = "CocoaHeadsBR Vision";
 			sourceTree = "<group>";
 		};
 		B4A60BDA2C5C9C1900D2597B /* Packages */ = {
@@ -859,7 +860,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeads BR Vision/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeadsBR Vision/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -895,7 +896,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeads BR Vision/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeadsBR Vision/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;

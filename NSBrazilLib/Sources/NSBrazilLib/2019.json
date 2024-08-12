@@ -2,6 +2,12 @@
     "version": 1,
     "feed": [
         {
+            "type": "subtitle",
+            "textStyle": "header",
+            "text": "Home com Mock",
+            "subtext": "Para ver o JSON de prod, execute em modo Release"
+        },
+        {
             "type": "text",
             "textStyle": "header",
             "text": "O evento nacional do CocoaHeads Brasil"

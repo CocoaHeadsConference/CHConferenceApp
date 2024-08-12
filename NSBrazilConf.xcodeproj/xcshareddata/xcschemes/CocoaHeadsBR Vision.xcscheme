@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D0A95262342E87500B2C582"
-               BuildableName = "NSBrazil.app"
-               BlueprintName = "NSBrazilConf"
+               BlueprintIdentifier = "B4A60BD72C5C9C1900D2597B"
+               BuildableName = "CocoaHeadsBR Vision.app"
+               BlueprintName = "CocoaHeadsBR Vision"
                ReferencedContainer = "container:NSBrazilConf.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,13 +27,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:NSBrazilConf.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -49,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D0A95262342E87500B2C582"
-            BuildableName = "NSBrazil.app"
-            BlueprintName = "NSBrazilConf"
+            BlueprintIdentifier = "B4A60BD72C5C9C1900D2597B"
+            BuildableName = "CocoaHeadsBR Vision.app"
+            BlueprintName = "CocoaHeadsBR Vision"
             ReferencedContainer = "container:NSBrazilConf.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -66,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D0A95262342E87500B2C582"
-            BuildableName = "NSBrazil.app"
-            BlueprintName = "NSBrazilConf"
+            BlueprintIdentifier = "B4A60BD72C5C9C1900D2597B"
+            BuildableName = "CocoaHeadsBR Vision.app"
+            BlueprintName = "CocoaHeadsBR Vision"
             ReferencedContainer = "container:NSBrazilConf.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
