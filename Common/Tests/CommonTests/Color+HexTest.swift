@@ -5,8 +5,8 @@
 //  Created by Mauricio Cardozo on 04/08/24.
 //
 
-import Testing
 import SwiftUI
+import Testing
 
 @Suite("Hex string to SwiftUI Color conversion")
 struct ColorHexTests {

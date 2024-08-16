@@ -312,6 +312,7 @@
 				B44067C225B1E25800D9DE9B /* Embed App Clips */,
 				B44067E225B1E2D100D9DE9B /* Embed Frameworks */,
 				B482AA952C5C721700F66F3B /* Embed Watch Content */,
+				B4DD00102C6EF065003ADBD9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -473,6 +474,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B4DD00102C6EF065003ADBD9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swift format lint -r .\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D0A95232342E87500B2C582 /* Sources */ = {

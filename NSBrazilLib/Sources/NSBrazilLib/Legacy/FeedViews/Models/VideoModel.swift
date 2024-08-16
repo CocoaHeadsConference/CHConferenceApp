@@ -9,25 +9,25 @@
 import Foundation
 
 struct VideoModel: Codable, Identifiable {
-    
-    enum VideoError: Error {
-        case missingYouTubeUrl, missingTalkId
-    }
-    
-    let id: Int
-    private let talkId: Int
-    let youTubeUrl: URL
-    
-    var talk: TalkModel? {
-        return nil
-    }
-    
+
+  enum VideoError: Error {
+    case missingYouTubeUrl, missingTalkId
+  }
+
+  let id: Int
+  private let talkId: Int
+  let youTubeUrl: URL
+
+  var talk: TalkModel? {
+    return nil
+  }
+
 }
 
 extension VideoModel {
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case talkId = "talk"
-        case youTubeUrl = "youtube_url"
-    }
+  enum CodingKeys: String, CodingKey {
+    case id = "id"
+    case talkId = "talk"
+    case youTubeUrl = "youtube_url"
+  }
 }

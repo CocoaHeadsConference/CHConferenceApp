@@ -9,7 +9,7 @@
 import Foundation
 
 public struct HomeFeed: Codable {
-    let version: Int
-    let feed: FeedDecoder
-    let schedule: FeedDecoder
+  let version: Int
+  let feed: FeedDecoder
+  let schedule: FeedDecoder
 }

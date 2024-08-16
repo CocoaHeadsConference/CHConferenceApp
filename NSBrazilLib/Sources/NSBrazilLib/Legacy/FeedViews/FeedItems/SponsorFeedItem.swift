@@ -9,26 +9,26 @@
 import Foundation
 
 final class SponsorFeedItem: FeedItem {
-    let platinumSponsors: [Sponsor]
-    let goldSponsors: [Sponsor]
-    let silverSponsors: [Sponsor]
+  let platinumSponsors: [Sponsor]
+  let goldSponsors: [Sponsor]
+  let silverSponsors: [Sponsor]
 
-    private enum CodingKeys: String, CodingKey {
-        case platinum, gold, silver
-    }
+  private enum CodingKeys: String, CodingKey {
+    case platinum, gold, silver
+  }
 
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.platinumSponsors = try container.decode([Sponsor].self, forKey: .platinum)
-        self.goldSponsors = try container.decode([Sponsor].self, forKey: .gold)
-        self.silverSponsors = try container.decode([Sponsor].self, forKey: .silver)
-        try super.init(from: decoder)
-    }
+  required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    self.platinumSponsors = try container.decode([Sponsor].self, forKey: .platinum)
+    self.goldSponsors = try container.decode([Sponsor].self, forKey: .gold)
+    self.silverSponsors = try container.decode([Sponsor].self, forKey: .silver)
+    try super.init(from: decoder)
+  }
 
-    init(platinum: [Sponsor], gold: [Sponsor], silver: [Sponsor]) {
-        platinumSponsors = platinum
-        goldSponsors = gold
-        silverSponsors = silver
-        super.init(type: .sponsors)
-    }
+  init(platinum: [Sponsor], gold: [Sponsor], silver: [Sponsor]) {
+    platinumSponsors = platinum
+    goldSponsors = gold
+    silverSponsors = silver
+    super.init(type: .sponsors)
+  }
 }

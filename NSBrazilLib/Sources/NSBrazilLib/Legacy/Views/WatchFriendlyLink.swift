@@ -15,16 +15,19 @@ struct WatchFriendlyLink<Content: View>: View {
   @ViewBuilder var label: () -> Content
 
   var body: some View {
-    Button(action: {
-      let session = ASWebAuthenticationSession(
+    Button(
+      action: {
+        let session = ASWebAuthenticationSession(
           url: url,
           callbackURLScheme: nil
-      ) { _, _ in }
-      session.prefersEphemeralWebBrowserSession = true
-      session.start()
-    }, label: {
-      label()
-    })
+        ) { _, _ in }
+        session.prefersEphemeralWebBrowserSession = true
+        session.start()
+      },
+      label: {
+        label()
+      }
+    )
     .buttonStyle(.plain)
   }
 }

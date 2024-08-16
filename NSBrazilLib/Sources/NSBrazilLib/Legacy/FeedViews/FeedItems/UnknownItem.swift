@@ -9,10 +9,10 @@
 import Foundation
 
 struct UnknownItem<T: Decodable>: Decodable {
-    let base: T?
+  let base: T?
 
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        self.base = try? container.decode(T.self)
-    }
+  init(from decoder: Decoder) throws {
+    let container = try decoder.singleValueContainer()
+    self.base = try? container.decode(T.self)
+  }
 }

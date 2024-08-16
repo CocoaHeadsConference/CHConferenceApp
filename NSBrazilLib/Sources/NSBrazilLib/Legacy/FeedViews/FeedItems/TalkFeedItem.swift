@@ -9,29 +9,29 @@
 import Foundation
 
 class TalkFeedItem: FeedItem {
-    let date: Date
-    let name: String
-    let speaker: String
-    let image: String
+  let date: Date
+  let name: String
+  let speaker: String
+  let image: String
 
-    private enum CodingKeys: String, CodingKey {
-        case date, name, speaker, image
-    }
+  private enum CodingKeys: String, CodingKey {
+    case date, name, speaker, image
+  }
 
-    init(date: Date, name: String, speaker: String, image: String) {
-        self.date = date
-        self.name = name
-        self.speaker = speaker
-        self.image = image
-        super.init(type: .talk)
-    }
+  init(date: Date, name: String, speaker: String, image: String) {
+    self.date = date
+    self.name = name
+    self.speaker = speaker
+    self.image = image
+    super.init(type: .talk)
+  }
 
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.date = try container.decode(Date.self, forKey: .date)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.speaker = try container.decode(String.self, forKey: .speaker)
-        self.image = try container.decode(String.self, forKey: .image)
-        try super.init(from: decoder)
-    }
+  required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    self.date = try container.decode(Date.self, forKey: .date)
+    self.name = try container.decode(String.self, forKey: .name)
+    self.speaker = try container.decode(String.self, forKey: .speaker)
+    self.image = try container.decode(String.self, forKey: .image)
+    try super.init(from: decoder)
+  }
 }

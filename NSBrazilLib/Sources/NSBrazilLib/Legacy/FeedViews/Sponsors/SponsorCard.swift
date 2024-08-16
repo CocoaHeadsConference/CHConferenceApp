@@ -1,18 +1,18 @@
 import SwiftUI
 
 struct SponsorCard: View {
-    var sponsor: Sponsor
+  var sponsor: Sponsor
 
-    var body: some View {
-      WatchFriendlyLink(url: sponsor.link) {
-        VStack(alignment: .center) {
-            ImageViewContainer(imageURL: sponsor.image)
-        }
-        .background(sponsor.background)
-        .cornerRadius(10)
-        .padding([.leading, .trailing], 5)
+  var body: some View {
+    WatchFriendlyLink(url: sponsor.link) {
+      VStack(alignment: .center) {
+        ImageViewContainer(imageURL: sponsor.image)
       }
+      .background(sponsor.background)
+      .cornerRadius(10)
+      .padding([.leading, .trailing], 5)
     }
+  }
 }
 
 #Preview {

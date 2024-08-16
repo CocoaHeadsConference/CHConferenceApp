@@ -9,35 +9,35 @@
 import Foundation
 
 struct FeedDecoder: Codable {
-    let feedItems: [FeedItem]
+  let feedItems: [FeedItem]
 
-    private enum FeedItemKey: CodingKey {
-        case type
-    }
+  private enum FeedItemKey: CodingKey {
+    case type
+  }
 
-    init(from decoder: Decoder) throws {
-        var items: [FeedItem] = []
-        var unkeyedFeedItems = try decoder.unkeyedContainer()
-        var itemArray = unkeyedFeedItems
+  init(from decoder: Decoder) throws {
+    var items: [FeedItem] = []
+    var unkeyedFeedItems = try decoder.unkeyedContainer()
+    var itemArray = unkeyedFeedItems
 
-        while !unkeyedFeedItems.isAtEnd {
-            let item = try unkeyedFeedItems.nestedContainer(keyedBy: FeedItemKey.self)
-            let type = (try? item.decode(FeedItemType.self, forKey: FeedItemKey.type)) ?? .unknown
+    while !unkeyedFeedItems.isAtEnd {
+      let item = try unkeyedFeedItems.nestedContainer(keyedBy: FeedItemKey.self)
+      let type = (try? item.decode(FeedItemType.self, forKey: FeedItemKey.type)) ?? .unknown
 
-            do {
-                if let builtType = FeedBuilder.typeDictionary[type] {
-                    items.append(try itemArray.decode(builtType))
-                }
-            } catch(let error) {
-                print(error)
-                _ = try itemArray.decode(UnknownItem<FeedItem>.self)
-            }
+      do {
+        if let builtType = FeedBuilder.typeDictionary[type] {
+          items.append(try itemArray.decode(builtType))
         }
-
-        self.feedItems = items
+      } catch (let error) {
+        print(error)
+        _ = try itemArray.decode(UnknownItem<FeedItem>.self)
+      }
     }
 
-    init(feedItems: [FeedItem]) {
-        self.feedItems = feedItems
-    }
+    self.feedItems = items
+  }
+
+  init(feedItems: [FeedItem]) {
+    self.feedItems = feedItems
+  }
 }

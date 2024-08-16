@@ -6,8 +6,8 @@
 //  Copyright © 2024 Cocoaheadsbr. All rights reserved.
 //
 
-import SwiftUI
 import NSBrazilLib
+import SwiftUI
 
 public struct RootView: View {
 
@@ -24,17 +24,20 @@ public struct RootView: View {
     case .loaded:
       content
     case .failed:
-      ContentUnavailableView(label: {
-        Label("Falha no carregamento", systemImage: "network.slash")
-      }, description: {
-        Spacer()
-      }, actions: {
-        Button(action: {
-          viewModel.fetchInfo()
-        }) {
-          Text("Tentar novamente")
-        }
-      })
+      ContentUnavailableView(
+        label: {
+          Label("Falha no carregamento", systemImage: "network.slash")
+        },
+        description: {
+          Spacer()
+        },
+        actions: {
+          Button(action: {
+            viewModel.fetchInfo()
+          }) {
+            Text("Tentar novamente")
+          }
+        })
     }
   }
 

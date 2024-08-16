@@ -5,9 +5,10 @@
 //  Created by Mauricio Cardozo on 04/08/24.
 //
 
-@testable import Common
 import Foundation
 import Testing
+
+@testable import Common
 
 @Suite("Date+Identifiable testing")
 struct DateIdentifiableTest {

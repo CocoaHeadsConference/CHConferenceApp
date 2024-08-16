@@ -10,9 +10,9 @@ import Foundation
 
 struct SponsorModel: Codable, Identifiable {
 
-    let id: Int
-    let title: String
-    let image: URL
-    let url: URL
+  let id: Int
+  let title: String
+  let image: URL
+  let url: URL
 
 }

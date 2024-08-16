@@ -10,19 +10,19 @@ import Foundation
 
 final class SubtitleFeedItem: FeedItem {
 
-    let textStyle: String
-    let text: String
-    let subtext: String
+  let textStyle: String
+  let text: String
+  let subtext: String
 
-    private enum CodingKeys: String, CodingKey {
-        case textStyle, text, subtext
-    }
+  private enum CodingKeys: String, CodingKey {
+    case textStyle, text, subtext
+  }
 
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.textStyle = try container.decode(String.self, forKey: .textStyle)
-        self.text = try container.decode(String.self, forKey: .text)
-        self.subtext = try container.decode(String.self, forKey: .subtext)
-        try super.init(from: decoder)
-    }
+  required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    self.textStyle = try container.decode(String.self, forKey: .textStyle)
+    self.text = try container.decode(String.self, forKey: .text)
+    self.subtext = try container.decode(String.self, forKey: .subtext)
+    try super.init(from: decoder)
+  }
 }
