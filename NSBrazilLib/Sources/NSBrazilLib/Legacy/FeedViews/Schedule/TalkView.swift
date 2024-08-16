@@ -14,16 +14,13 @@ struct TalkView: View {
   init?(feedItem: FeedItem) {
     guard let item = feedItem as? TalkFeedItem else { return nil }
     self.feedItem = item
-    self.remoteImage = RemoteImage(imageURL: item.image, placeholder: "ic_logo_nsbrazil")
   }
 
   var feedItem: TalkFeedItem
 
-  @ObservedObject var remoteImage: RemoteImage
-
   var body: some View {
     HStack(spacing: 12.0) {
-      image()
+      image
       VStack(alignment: .leading, spacing: 5) {
         Spacer().frame(maxHeight: 5)
         Text(feedItem.name)
@@ -45,20 +42,21 @@ struct TalkView: View {
     .padding(2)
   }
 
-  // TODO: Swap for AsyncImage
-  private func image() -> AnyView {
-    guard let image = remoteImage.image else {
-      return AnyView(EmptyView())
-    }
-
-    return AnyView(
-      Image(uiImage: image)
+  @ViewBuilder
+  private var image: some View {
+    AsyncImage(
+      url: URL(string: feedItem.image),
+      scale: 1
+    ) { image in
+      image
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(width: 80, height: 80)
         .background(Color(.buttonBackground))
         .cornerRadius(40)
-    )
+    } placeholder: {
+      ProgressView()
+    }
   }
 
   func date() -> String {
@@ -68,15 +66,13 @@ struct TalkView: View {
   }
 }
 
-struct TalkView_Previews: PreviewProvider {
-  static var previews: some View {
-    TalkView(
-      feedItem: TalkFeedItem(
-        date: Date(),
-        name: "Colocando Swift na sua UI",
-        speaker: "Agostinho Carrara",
-        image: "https://nsbrazil.com/images/app/meli-logo.png"
-      )
+#Preview {
+  TalkView(
+    feedItem: TalkFeedItem(
+      date: Date(),
+      name: "Colocando Swift na sua UI",
+      speaker: "Agostinho Carrara",
+      image: "https://nsbrazil.com/images/app/meli-logo.png"
     )
-  }
+  )
 }

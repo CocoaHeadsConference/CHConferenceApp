@@ -71,7 +71,17 @@ struct VideoCardView: View {
 
       }
       .background(
-        ImageViewContainer(imageURL: self.video.background, hasPadding: false, contentMode: .fill)
+        AsyncImage(
+          url: video.background,
+          scale: 1
+        ) { image in
+          image
+            .aspectRatio(contentMode: .fill)
+        } placeholder: {
+          Rectangle()
+            .opacity(0.1)
+            .redacted(reason: .placeholder)
+        }
       )
       .background(self.video.backgroundColor)
       .frame(width: 246, height: 360)
@@ -85,7 +95,7 @@ struct VideoCardView: View {
       Video(
         title: "The roots",
         speaker: "Felipe Lefèvre Marino",
-        background: URL(string: "https://google.com")!,
+        background: URL(string: "https://nsbrazil.com/images/talks/dicas-macOS.jpg")!,
         link: URL(string: "https://www.cocoaheads.com.br/videos/detalhes/20")!)
   )
 }

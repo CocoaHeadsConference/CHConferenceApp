@@ -6,7 +6,18 @@ struct SponsorCard: View {
   var body: some View {
     WatchFriendlyLink(url: sponsor.link) {
       VStack(alignment: .center) {
-        ImageViewContainer(imageURL: sponsor.image)
+        AsyncImage(
+          url: sponsor.image,
+          scale: 1
+        ) { image in
+          image
+            .resizable()
+            .renderingMode(.original)
+            .aspectRatio(contentMode: .fit)
+            .padding(10)
+        } placeholder: {
+          ProgressView()
+        }
       }
       .background(sponsor.background)
       .cornerRadius(10)
