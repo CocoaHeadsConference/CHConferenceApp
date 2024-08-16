@@ -6,14 +6,8 @@ import SwiftUI
       viewModel = model
     }
 
-    enum SelectedMenu: Int {
-      case home
-      case schedule
-    }
-
     @ObservedObject var viewModel: FeedViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
-    @State var currentlySelectedMenu: Int? = 0
 
     public var body: some View {
       ZStack {
@@ -38,26 +32,26 @@ import SwiftUI
     }
 
     var largeScreenView: some View {
-      NavigationView {
+      NavigationSplitView {
         List {
-          NavigationLink(
-            destination: homeListView,
-            tag: 0,
-            selection: $currentlySelectedMenu,
-            label: {
-              Label("Home", systemImage: "house.fill")
-            })
+          NavigationLink {
+            homeListView
+          } label: {
+            Label("Home", systemImage: "house.fill")
+          }
+          .tag(0)
 
-          NavigationLink(
-            destination: scheduleListView,
-            tag: 1,
-            selection: $currentlySelectedMenu,
-            label: {
-              Label("Agenda", systemImage: "calendar")
-            })
+          NavigationLink {
+            scheduleListView
+          } label: {
+            Label("Agenda", systemImage: "calendar")
+          }
+          .tag(1)
         }
         .listStyle(SidebarListStyle())
         .navigationTitle("NSBrazil")
+      } detail: {
+        EmptyView()
       }
     }
 

@@ -44,18 +44,29 @@ struct TalkView: View {
 
   @ViewBuilder
   private var image: some View {
-    AsyncImage(
-      url: URL(string: feedItem.image),
-      scale: 1
-    ) { image in
-      image
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .frame(width: 80, height: 80)
-        .background(Color(.buttonBackground))
-        .cornerRadius(40)
-    } placeholder: {
-      ProgressView()
+    if feedItem.image.isEmpty {
+      EmptyView()
+    } else {
+      AsyncImage(
+        url: URL(string: feedItem.image),
+        transaction: .init(animation: .smooth)
+      ) { phase in
+        switch phase {
+        case .success(let image):
+          image
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 80, height: 80)
+            .background(Color(.buttonBackground))
+            .cornerRadius(40)
+        case .failure, .empty:
+          Color(.buttonBackground)
+        @unknown default:
+          Color(.buttonBackground)
+        }
+      }
+      .clipShape(Circle())
+      .frame(width: 80, height: 80)
     }
   }
 
@@ -66,13 +77,35 @@ struct TalkView: View {
   }
 }
 
-#Preview {
+#Preview("Loaded view") {
   TalkView(
     feedItem: TalkFeedItem(
       date: Date(),
       name: "Colocando Swift na sua UI",
       speaker: "Agostinho Carrara",
       image: "https://nsbrazil.com/images/app/meli-logo.png"
+    )
+  )
+}
+
+#Preview("Progress view") {
+  TalkView(
+    feedItem: TalkFeedItem(
+      date: Date(),
+      name: "Colocando Swift na sua UI",
+      speaker: "Agostinho Carrara",
+      image: "asdfg"
+    )
+  )
+}
+
+#Preview("Empty image") {
+  TalkView(
+    feedItem: TalkFeedItem(
+      date: Date(),
+      name: "Colocando Swift na sua UI",
+      speaker: "Agostinho Carrara",
+      image: ""
     )
   )
 }
