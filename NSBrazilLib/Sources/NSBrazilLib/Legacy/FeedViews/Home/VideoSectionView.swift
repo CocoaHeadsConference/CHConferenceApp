@@ -23,16 +23,16 @@ struct VideoSectionView: View {
   var body: some View {
     ScrollView(.horizontal, showsIndicators: false) {
       HStack(spacing: 24) {
-        ForEach(0..<feedItem.videos.count) { index in
+        ForEach(feedItem.videos) { item in
           if self.horizontalSizeClass == .compact {
             GeometryReader { geometry in
-              VideoCardView(video: self.feedItem.videos[index])
+              VideoCardView(video: item)
                 .rotation3DEffect(
                   Angle(degrees: Double((geometry.frame(in: .global).minX - 40) / -30)),
                   axis: (x: 0, y: 10, z: 0))
             }.frame(width: 250)
           } else {
-            VideoCardView(video: self.feedItem.videos[index])
+            VideoCardView(video: item)
           }
         }
       }

@@ -27,24 +27,25 @@ struct FilterFeedView: View {
       return AnyView(
         ScrollView(.horizontal) {
           HStack {
-            ForEach(0..<feedItem.feeds.count) { index in
+            ForEach(feedItem.feeds) { item in
               ScrollView(.vertical) {
                 VStack {
-                  Text(self.feedItem.feeds[index].title)
+                  Text(item.title)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(2)
                     .padding([.leading, .trailing], 8)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
 
-                  ForEach(self.feedItem.feeds[index].decoder.feedItems) { item in
+                  ForEach(item.decoder.feedItems) { item in
                     FeedBuilder.view(for: item)
                   }
                 }
                 .padding(.vertical, 30)
               }
-              if index != self.feedItem.feeds.count - 1 {
+              if item != feedItem.feeds.last {
                 Divider()
+                  .padding(.horizontal)
               }
             }
           }.frame(width: 1400)
@@ -55,8 +56,8 @@ struct FilterFeedView: View {
       return AnyView(
         VStack {
           Picker("", selection: $selectedFeed) {
-            ForEach(0..<self.feedItem.feeds.count) { index in
-              Text(self.feedItem.feeds[index].title).tag(index)
+            ForEach(feedItem.feeds) { item in
+              Text(item.title).tag(item.id)
             }
           }
           // TODO: This view should be a paging tab view in the future

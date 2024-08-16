@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct Video: Codable, Identifiable {
-  let id = UUID()
+  private(set) var id = UUID()
   let title: String
   let speaker: String
   let background: URL

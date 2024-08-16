@@ -8,13 +8,20 @@
 
 import Foundation
 
-struct FilteredFeed: Codable {
+struct FilteredFeed: Codable, Identifiable {
+  var id: String { title }
   let title: String
   let decoder: FeedDecoder
 
   enum CodingKeys: String, CodingKey {
     case title
     case decoder = "feedItems"
+  }
+}
+
+extension FilteredFeed: Equatable {
+  static func == (lhs: FilteredFeed, rhs: FilteredFeed) -> Bool {
+    lhs.id == rhs.id
   }
 }
 
