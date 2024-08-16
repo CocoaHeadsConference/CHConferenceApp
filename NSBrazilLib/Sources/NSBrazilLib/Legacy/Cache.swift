@@ -10,7 +10,8 @@ import UIKit
 
 class Cache: NSObject {
 
-  private static let CacheFileID = "FEED_DATA_CACHE"
+  private static let fileID = "FEED_DATA_CACHE"
+
   private lazy var cachePath: URL? = {
     guard
       let rootDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
@@ -19,7 +20,7 @@ class Cache: NSObject {
       return nil
     }
     let basePath = URL(fileURLWithPath: rootDir, isDirectory: true)
-    let fullPath = basePath.appendingPathComponent(Cache.CacheFileID, isDirectory: false)
+    let fullPath = basePath.appendingPathComponent(Cache.fileID, isDirectory: false)
     return fullPath
   }()
 
