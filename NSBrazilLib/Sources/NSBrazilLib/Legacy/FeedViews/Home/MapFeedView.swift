@@ -6,42 +6,43 @@
 //  Copyright © 2019 Cocoaheadsbr. All rights reserved.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct MapFeedView: View, FeedViewProtocol {
-    init?(feedItem: FeedItem) {
-       guard let item = feedItem as? MapFeedItem else { return nil }
-       self.feedItem = item
-   }
+  init?(feedItem: FeedItem) {
+    guard let item = feedItem as? MapFeedItem else { return nil }
+    self.feedItem = item
+  }
 
-   let feedItem: MapFeedItem
+  let feedItem: MapFeedItem
 
-    var body: some View {
-      #if os(visionOS)
+  var body: some View {
+    #if os(visionOS)
       innerView
         .onTapGesture {
           openMap()
         }
         .frame(maxWidth: .infinity, minHeight: 286)
-      #else
+    #else
       Button(action: openMap) {
         innerView
       }
       .buttonStyle(.plain)
       .frame(maxWidth: .infinity, minHeight: 286)
-      #endif
-    }
+    #endif
+  }
 
   @ViewBuilder
   var innerView: some View {
-    CardView{
+    CardView {
       VStack(alignment: .leading) {
         Map(
           initialPosition: .camera(
             .init(
               centerCoordinate: feedItem.location,
-              distance: 1000.0)))
+              distance: 1000.0))
+        )
         .disabled(true)
         VStack(alignment: .leading, spacing: 4) {
           Text("\(feedItem.title) \(feedItem.subtitle)")
@@ -62,13 +63,14 @@ struct MapFeedView: View, FeedViewProtocol {
 }
 
 #Preview {
-  MapFeedView(feedItem: 
-    MapFeedItem(
-      location: CLLocationCoordinate2D(
-        latitude: -23.5965911,
-        longitude: -46.6867937),
-      span: MKCoordinateSpan(),
-      title: "CUBO",
-      subtitle: "Itaú")
+  MapFeedView(
+    feedItem:
+      MapFeedItem(
+        location: CLLocationCoordinate2D(
+          latitude: -23.5965911,
+          longitude: -46.6867937),
+        span: MKCoordinateSpan(),
+        title: "CUBO",
+        subtitle: "Itaú")
   )
 }

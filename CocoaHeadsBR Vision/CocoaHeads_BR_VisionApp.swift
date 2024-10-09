@@ -11,13 +11,13 @@ import SwiftUI
 
 @main
 struct CocoaHeads_BR_VisionApp: App {
-    var body: some Scene {
-        WindowGroup {
-#if DEBUG
-  HomeTabBar(model: .mock)
-#else
-  HomeTabBar(model: FeedViewModel())
-#endif
-        }
+  var body: some Scene {
+    WindowGroup {
+      #if DEBUG
+        HomeTabBar(model: .mock)
+      #else
+        HomeTabBar(model: FeedViewModel())
+      #endif
     }
+  }
 }

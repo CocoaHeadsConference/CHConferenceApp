@@ -17,8 +17,8 @@ public struct ScheduleListView: View {
 
   public var body: some View {
     VStack {
-      ForEach(0..<viewModel.scheduleFeed.count) { feedIndex in
-        FeedBuilder.view(for: self.viewModel.scheduleFeed[feedIndex])
+      ForEach(viewModel.scheduleFeed) { item in
+        FeedBuilder.view(for: item)
       }
     }
   }

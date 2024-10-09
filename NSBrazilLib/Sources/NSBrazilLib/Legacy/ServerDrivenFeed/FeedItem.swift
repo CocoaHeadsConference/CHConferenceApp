@@ -9,17 +9,17 @@
 import Foundation
 
 public class FeedItem: Codable, Identifiable {
-    public let id = UUID()
-    public let type: FeedItemType
+  public let id = UUID()
+  public let type: FeedItemType
 
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.type = try container.decode(FeedItemType.self, forKey: .type)
-    }
+  public required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    self.type = try container.decode(FeedItemType.self, forKey: .type)
+  }
 
-    public init(type: FeedItemType) {
-        self.type = type
-    }
+  public init(type: FeedItemType) {
+    self.type = type
+  }
 }
 
 extension FeedItem {
@@ -50,4 +50,3 @@ extension Array where Element == FeedItem {
     FeedItem.mock.schedule.feedItems
   }
 }
-

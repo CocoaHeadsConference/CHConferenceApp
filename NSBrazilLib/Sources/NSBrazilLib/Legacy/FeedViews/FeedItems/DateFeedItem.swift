@@ -9,20 +9,20 @@
 import Foundation
 
 final class DateFeedItem: FeedItem {
-    let dates: [Date]
+  let dates: [Date]
 
-    private enum CodingKeys: String, CodingKey {
-        case dates
-    }
+  private enum CodingKeys: String, CodingKey {
+    case dates
+  }
 
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.dates = try container.decode([Date].self, forKey: .dates)
-        try super.init(from: decoder)
-    }
+  required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    self.dates = try container.decode([Date].self, forKey: .dates)
+    try super.init(from: decoder)
+  }
 
-    init(dates: [Date]) {
-        self.dates = dates
-        super.init(type: .date)
-    }
+  init(dates: [Date]) {
+    self.dates = dates
+    super.init(type: .date)
+  }
 }

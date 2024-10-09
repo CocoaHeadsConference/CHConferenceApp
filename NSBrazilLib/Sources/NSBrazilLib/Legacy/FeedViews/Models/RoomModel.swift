@@ -10,8 +10,8 @@ import UIKit
 
 struct RoomModel: Codable, Identifiable {
 
-    let id: Int
-    let title: String
-    let capacity: Int
+  let id: Int
+  let title: String
+  let capacity: Int
 
 }

@@ -12,41 +12,43 @@ import SwiftUI
 @main
 struct NSClipApp: App {
 
-    @StateObject var feedModel = FeedViewModel()
+  @StateObject var feedModel = FeedViewModel()
 
-    var body: some Scene {
-        WindowGroup {
-            ZStack {
-                switch feedModel.isLoading {
-                case .loading:
-                    ProgressView()
-                case .loaded:
-                    loadedBody
-                case .failed:
-                    errorBody
-                }
-            }
+  var body: some Scene {
+    WindowGroup {
+      ZStack {
+        switch feedModel.isLoading {
+        case .loading:
+          ProgressView()
+        case .loaded:
+          loadedBody
+        case .failed:
+          errorBody
         }
+      }
     }
+  }
 
-    var loadedBody: some View {
-        VStack {
-            DownloadCallToAction()
-                .padding(.bottom)
-            ScheduleListView(viewModel: feedModel)
-        }
+  var loadedBody: some View {
+    VStack {
+      DownloadCallToAction()
+        .padding(.bottom)
+      ScheduleListView(viewModel: feedModel)
     }
+  }
 
-    var errorBody: some View {
-        VStack(spacing: 20) {
-            Text("Algo deu errado")
-                .font(Font.title.bold())
+  var errorBody: some View {
+    VStack(spacing: 20) {
+      Text("Algo deu errado")
+        .font(Font.title.bold())
 
-            Button(action: {
-                self.feedModel.fetchInfo()
-            }, label: {
-                Text("Tentar novamente")
-            })
-        }
+      Button(
+        action: {
+          self.feedModel.fetchInfo()
+        },
+        label: {
+          Text("Tentar novamente")
+        })
     }
+  }
 }
