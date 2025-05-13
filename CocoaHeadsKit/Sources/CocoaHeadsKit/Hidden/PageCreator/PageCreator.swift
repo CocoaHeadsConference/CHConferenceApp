@@ -50,6 +50,10 @@ struct PageCreator: View {
         Button("Create from scratch") {
           sheetState = .createUIFromScratch
         }
+
+        if !ui.isEmpty {
+          Text("Content is loaded")
+        }
       }
     }
     .toolbar {

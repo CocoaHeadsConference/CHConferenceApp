@@ -319,6 +319,7 @@ struct EventCreationView: View {
     do {
       let meetupEvent = try await meetupService.event(from: url.absoluteString)
       title = meetupEvent.title
+      address = meetupEvent.address
       latitude = "\(meetupEvent.location.coordinate.latitude)"
       longitude = "\(meetupEvent.location.coordinate.longitude)"
       date = meetupEvent.date

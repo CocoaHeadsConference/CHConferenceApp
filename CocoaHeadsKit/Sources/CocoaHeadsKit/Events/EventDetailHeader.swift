@@ -42,7 +42,6 @@ struct EventDetailHeader: View {
     .frame(alignment: .top)
     .padding(.horizontal)
   }
-
 }
 
 struct HeaderHeightKey: PreferenceKey {

@@ -198,7 +198,6 @@ actor CloudKitService: Sendable {
   func updateEvent(_ event: Event) async throws {
     let database = container.publicCloudDatabase
     let recordID = CKRecord.ID(recordName: event.id.uuidString)
-
     do {
       let record = try await database.record(for: recordID)
       record["title"] = event.title
@@ -222,7 +221,28 @@ actor CloudKitService: Sendable {
   }
 
   func createEvent(_ event: Event) async throws {
-
+    let database = container.publicCloudDatabase
+    let recordID = CKRecord.ID(recordName: event.id.uuidString)
+    do {
+      let record = CKRecord(recordType: "Event", recordID: recordID)
+      record["title"] = event.title
+      record["address"] = event.address
+      record["location"] = CLLocation(
+        latitude: event.location.coordinate.latitude, longitude: event.location.coordinate.longitude)
+      record["date"] = event.date
+      record["endDate"] = event.endDate
+      record["rsvpURL"] = event.rsvpURL.absoluteString
+      record["page"] = event.page
+      let tempDir = FileManager.default.temporaryDirectory
+      let fileURL = tempDir.appendingPathComponent(UUID().uuidString + ".jpg")
+      try event.image?.write(to: fileURL)
+      record["imageAsset"] = CKAsset(fileURL: fileURL)
+      try await database.save(record)
+      try? FileManager.default.removeItem(at: fileURL)
+    } catch {
+      print("Failed to update event: \(error.localizedDescription)")
+      throw error
+    }
   }
 
   // TODO: Create a PageService for these - we need swift-dependencies for this
@@ -264,11 +284,10 @@ actor CloudKitService: Sendable {
     }
 
     let database = container.publicCloudDatabase
-    // TODO: Query specifically for the slug we need! This is *dumb*
     let (matchResults, _) = try await database.records(
       matching: .init(
         recordType: "Page",
-        predicate: NSPredicate(value: true)
+        predicate: NSPredicate(format: "slug == %@", slug)
       )
     )
 
@@ -276,8 +295,6 @@ actor CloudKitService: Sendable {
       switch result {
       case .success(let success):
         guard
-          let pageSlug = success["slug"] as? String,
-          slug == pageSlug,
           let pageJSON = success["ui"] as? String,
           let pageData = pageJSON.data(using: .utf8)
         else {
