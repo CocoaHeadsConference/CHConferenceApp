@@ -12,8 +12,11 @@ import SwiftUI
 struct EventDetailHeader: View {
   let title: String
   let imageURL: URL?
-  let imageData: Data?
+  let imageID: UUID?
   @Binding var scrollPosition: CGPoint
+  @State private var imageData: Data?
+
+  @Environment(\.cloudKitService) var cloudKit
 
   public var body: some View {
     VStack {
@@ -58,11 +61,25 @@ struct EventDetailHeader: View {
 
   @ViewBuilder
   var imageView: some View {
-    if let imageData, let uiImage = UIImage(data: imageData) {
-      Image(uiImage: uiImage)
-        .resizable()
-    } else {
-      AsyncImage(url: imageURL, scale: 2)
+    ZStack {
+      if let imageData, let uiImage = UIImage(data: imageData) {
+        Image(uiImage: uiImage)
+          .resizable()
+      } else {
+        AsyncImage(url: imageURL, scale: 2)
+      }
+    }
+    .task {
+      guard
+        imageURL == nil,
+        let id = imageID
+      else { return }
+
+      do {
+        imageData = try await cloudKit.fetchImageAsset(for: id)
+      } catch {
+        print(error)
+      }
     }
   }
 }

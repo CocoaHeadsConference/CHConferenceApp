@@ -39,7 +39,7 @@ struct EventList: View {
         EventDetail(
           title: event.title,
           image: nil,
-          imageData: event.image,
+          imageID: event.id,
           ui: event.ui,
           shareURL: event.rsvpURL
         )

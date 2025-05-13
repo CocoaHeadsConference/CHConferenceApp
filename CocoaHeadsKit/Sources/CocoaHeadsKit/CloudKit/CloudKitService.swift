@@ -22,6 +22,8 @@ actor CloudKitService: Sendable {
 
   // TODO: Some form of persistency/caching
   // TODO: Break down in multiple steps - this is confusing as is
+
+  /// Fetches Chapters and their Events
   func fetchData() async throws -> [Chapter] {
     let database = container.publicCloudDatabase
     let chapterRecords = try await database.records(
@@ -38,19 +40,32 @@ actor CloudKitService: Sendable {
       case .success(let chapterRecord):
         var chapter = Chapter(from: chapterRecord)
         let eventRecords = chapterRecord["events"] as? [CKRecord.Reference]
-        try await withThrowingTaskGroup(of: CKRecord.self) { group in
-          for eventReference in eventRecords ?? [] {
-            group.addTask {
-              try await database.record(for: eventReference.recordID)
+        let eventIDs = eventRecords?.map(\.recordID) ?? []
+        if !eventIDs.isEmpty {
+          try await withCheckedThrowingContinuation { continuation in
+            let fetchOperation = CKFetchRecordsOperation(recordIDs: eventIDs)
+            fetchOperation.desiredKeys = ["title", "address", "location", "date", "endDate", "rsvpURL", "slug"]
+            var fetchedEvents: [Event] = []
+            fetchOperation.perRecordResultBlock = { _, result in
+              switch result {
+              case .success(let record):
+                if let event = Event(from: record) {
+                  fetchedEvents.append(event)
+                }
+              case .failure(let error):
+                print("Error fetching event: \(error.localizedDescription)")
+              }
             }
-          }
-          for try await record in group {
-            if let event = Event(from: record) {
-              chapter?.events.append(event)
+            fetchOperation.fetchRecordsResultBlock = { _ in
+              chapter?.events = fetchedEvents
+              if let chapter {
+                chapters.append(chapter)
+              }
+              continuation.resume()
             }
+            database.add(fetchOperation)
           }
-        }
-        if let chapter {
+        } else if let chapter {
           chapters.append(chapter)
         }
       case .failure(let error):
@@ -110,28 +125,69 @@ actor CloudKitService: Sendable {
 
   // MARK: - Events
   // TODO: Create an EventService for these, same as page below (or not, idk if we'll keep this)
+
+  /// Fetches all available events, even if they aren't part of any chapter.
   func fetchEventList() async throws -> [Event] {
     let database = container.publicCloudDatabase
-    let (matchResults, _) = try await database.records(
-      matching: .init(
-        recordType: "Event",
-        predicate: NSPredicate(value: true)
-      )
-    )
+    let query = CKQuery(recordType: "Event", predicate: NSPredicate(value: true))
+    let operation = CKQueryOperation(query: query)
+    operation.desiredKeys = ["title", "address", "location", "date", "endDate", "rsvpURL", "slug"]
+    operation.resultsLimit = CKQueryOperation.maximumResults
 
     var events: [Event] = []
-    for (_, result) in matchResults {
-      switch result {
-      case .success(let record):
-        if let event = Event(from: record) {
-          events.append(event)
-        }
-      case .failure(let error):
-        print("Error fetching event: \(error.localizedDescription)")
-      }
-    }
 
-    return events
+    return try await withCheckedThrowingContinuation { continuation in
+      operation.recordMatchedBlock = { _, result in
+        switch result {
+        case .success(let record):
+          if let event = Event(from: record) {
+            events.append(event)
+          }
+        case .failure(let error):
+          print("Error fetching event: \(error.localizedDescription)")
+        }
+      }
+
+      operation.queryResultBlock = { _ in
+        continuation.resume(returning: events)
+      }
+
+      database.add(operation)
+    }
+  }
+
+  // TODO: As always, implement some form of caching for these images
+  /// Fetches only the imageAsset field for a given Event, returns data for the image
+  func fetchImageAsset(for event: Event) async throws -> Data? {
+    try await fetchImageAsset(for: event.id)
+  }
+
+  /// Fetches only the imageAsset field for a given UUID of an Event, returns data for the image
+  func fetchImageAsset(for id: UUID) async throws -> Data? {
+    let database = container.publicCloudDatabase
+    let recordID = CKRecord.ID(recordName: id.uuidString)
+    let operation = CKFetchRecordsOperation(recordIDs: [recordID])
+    operation.desiredKeys = ["imageAsset"]
+
+    return try await withCheckedThrowingContinuation { continuation in
+      operation.perRecordResultBlock = { _, result in
+        switch result {
+        case .success(let record):
+          if let asset = record["imageAsset"] as? CKAsset,
+            let fileURL = asset.fileURL,
+            let data = try? Data(contentsOf: fileURL)
+          {
+            continuation.resume(returning: data)
+          } else {
+            continuation.resume(returning: nil)
+          }
+        case .failure(let error):
+          continuation.resume(throwing: error)
+        }
+      }
+
+      database.add(operation)
+    }
   }
 
   // TODO: We need cloudinary integration for public image URLs - otherwise we won't be able to display images on the web

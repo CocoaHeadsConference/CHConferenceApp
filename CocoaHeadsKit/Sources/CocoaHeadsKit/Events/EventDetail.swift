@@ -10,7 +10,7 @@ import SwiftUI
 struct EventDetail: View {
   let title: String
   let image: URL?
-  let imageData: Data?
+  let imageID: UUID?
   let ui: [EventDetailUI]
   let shareURL: URL
 
@@ -23,7 +23,7 @@ struct EventDetail: View {
       EventDetailHeader(
         title: title,
         imageURL: image,
-        imageData: imageData,
+        imageID: imageID,
         scrollPosition: $scrollPosition
       )
       .padding(.vertical)
@@ -89,7 +89,7 @@ struct EventDetail: View {
     EventDetail(
       title: "CocoaHeads @ Apple Developer Academy",
       image: nil,
-      imageData: nil,
+      imageID: nil,
       ui: Event.mock.ui,
       shareURL: Event.mock.rsvpURL
     )

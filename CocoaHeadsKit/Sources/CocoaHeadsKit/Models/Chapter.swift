@@ -74,8 +74,8 @@ extension Event {
     self.location = record["location"] as? CLLocation ?? CLLocation(latitude: 0, longitude: 0)
     self.date = record["date"] as? Date ?? .now
     self.endDate = record["endDate"] as? Date ?? date.advanced(by: 3600 * 3)
-    // TODO: Add to CloudKit
-    self.rsvpURL = URL(string: "https://apple.com")!
+    let urlString = (record["rsvpURL"] as? String) ?? ""
+    self.rsvpURL = URL(string: urlString) ?? URL(string: "https://cocoaheads.com.br")!
     self.address = (record["address"] as? String) ?? ""
     self.page = (record["slug"] as? String) ?? ""
 

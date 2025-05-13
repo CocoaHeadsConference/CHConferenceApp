@@ -12,15 +12,29 @@ import SwiftUI
 struct Ticket: View {
 
   var imageURL: URL?
+  @State private var imageData: Data?
   let event: Event
+
+  @Environment(\.cloudKitService) var cloudKit
 
   @ViewBuilder
   var image: some View {
-    if let imageData = event.image, let uiImage = UIImage(data: imageData) {
-      Image(uiImage: uiImage)
-        .resizable()
-    } else {
-      AsyncImage(url: imageURL, scale: 2)
+    ZStack {
+      if let imageData, let uiImage = UIImage(data: imageData) {
+        Image(uiImage: uiImage)
+          .resizable()
+      } else {
+        AsyncImage(url: imageURL, scale: 2)
+      }
+    }
+    .task {
+      guard imageURL == nil else { return }
+
+      do {
+        imageData = try await cloudKit.fetchImageAsset(for: event)
+      } catch {
+        print(error)
+      }
     }
   }
 
