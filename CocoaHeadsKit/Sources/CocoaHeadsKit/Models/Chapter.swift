@@ -30,6 +30,7 @@ public struct Event: Hashable, Identifiable, Sendable {
   var endDate: Date
   var rsvpURL: URL
   var page: String
+  var image: Data?
 }
 
 extension Event {
@@ -77,5 +78,12 @@ extension Event {
     self.rsvpURL = URL(string: "https://apple.com")!
     self.address = (record["address"] as? String) ?? ""
     self.page = (record["slug"] as? String) ?? ""
+
+    if let asset = record["imageAsset"] as? CKAsset,
+      let fileURL = asset.fileURL,
+      let data = try? Data(contentsOf: fileURL)
+    {
+      image = data
+    }
   }
 }

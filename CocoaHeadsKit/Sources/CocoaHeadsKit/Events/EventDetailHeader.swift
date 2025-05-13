@@ -7,21 +7,18 @@
 
 import SwiftUI
 
-public struct EventDetailHeader: View {
-  public init(title: String, imageURL: URL? = nil, scrollPosition: Binding<CGPoint>) {
-    self.title = title
-    self.imageURL = imageURL
-    self._scrollPosition = scrollPosition
-  }
+#warning("FIXME: imageView sizing got fucked again - maybe try just having both images there in a zstack")
 
+struct EventDetailHeader: View {
   let title: String
   let imageURL: URL?
+  let imageData: Data?
   @Binding var scrollPosition: CGPoint
 
   public var body: some View {
     VStack {
       GeometryReader { reader in
-        AsyncImage(url: imageURL, scale: 2)
+        imageView
           .aspectRatio(contentMode: .fill)
           .frame(width: reader.size.width)
           .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
@@ -57,6 +54,16 @@ public struct EventDetailHeader: View {
     .offset(y: max(scrollPosition.y / 2, -100))
     .frame(alignment: .top)
     .padding(.horizontal)
+  }
+
+  @ViewBuilder
+  var imageView: some View {
+    if let imageData, let uiImage = UIImage(data: imageData) {
+      Image(uiImage: uiImage)
+        .resizable()
+    } else {
+      AsyncImage(url: imageURL, scale: 2)
+    }
   }
 }
 

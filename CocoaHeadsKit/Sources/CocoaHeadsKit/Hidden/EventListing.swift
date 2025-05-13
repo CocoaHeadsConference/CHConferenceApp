@@ -6,6 +6,7 @@
 //
 
 import CoreLocation
+import PhotosUI
 import SwiftUI
 
 struct EventListing: View {
@@ -81,6 +82,9 @@ struct EventListing: View {
   }
 }
 
+// TODO: Merge these two together once we're TCA
+// MARK: - Editing
+
 struct EventEditingView: View {
   @Environment(\.cloudKitService) private var cloudKit
   @Environment(\.dismiss) private var dismiss
@@ -106,6 +110,35 @@ struct EventEditingView: View {
     self._address = State(initialValue: event.address)
   }
 
+  enum ImageState {
+    case success(Image)
+    case loading(Progress)
+    case failure(Error)
+    case empty
+  }
+
+  @State private var imageState: ImageState = .empty
+  @State private var imageSelection: PhotosPickerItem?
+
+  private func loadTransferable(from imageSelection: PhotosPickerItem) -> Progress {
+    return imageSelection.loadTransferable(type: TicketImage.self) { result in
+      DispatchQueue.main.async {
+        guard imageSelection == self.imageSelection else {
+          print("Failed to get the selected item.")
+          return
+        }
+        switch result {
+        case .success(let profileImage?):
+          self.imageState = .success(profileImage.image)
+        case .success(nil):
+          self.imageState = .failure(NSError(domain: "fuck", code: 0))
+        case .failure(let error):
+          self.imageState = .failure(error)
+        }
+      }
+    }
+  }
+
   var body: some View {
     Form {
       TextField("Title", text: $title)
@@ -114,8 +147,40 @@ struct EventEditingView: View {
       TextField("Location (longitude)", text: $longitude)
       DatePicker("Date", selection: $date, displayedComponents: .date)
       TextField("RSVP URL", text: $rsvpURL)
-      // TODO: Fill from a list of pages instead of having a string here
-      TextField("Page", text: $page)
+      NavigationLink(
+        page.isEmpty
+          ? "Select page"
+          : page
+      ) {
+        PageLoader { pageTitle in
+          page = pageTitle
+        }
+      }
+      PhotosPicker("Image", selection: $imageSelection, matching: .images, photoLibrary: .shared())
+        .onChange(of: imageSelection) {
+          if let imageSelection {
+            let progress = loadTransferable(from: imageSelection)
+            imageState = .loading(progress)
+          } else {
+            imageState = .empty
+          }
+        }
+      VStack {
+        switch imageState {
+        case .success(let image):
+          image
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(height: 200)
+
+        case .loading(let progress):
+          ProgressView(value: progress.fractionCompleted)
+        case .failure(let error):
+          Text(error.localizedDescription)
+        case .empty:
+          Text("No image selected")
+        }
+      }
 
       if let errorMessage = errorMessage {
         Text(errorMessage)
@@ -153,7 +218,7 @@ struct EventEditingView: View {
         return
       }
 
-      let updatedEvent = Event(
+      var updatedEvent = Event(
         id: event.id,
         title: title,
         address: address,
@@ -163,6 +228,11 @@ struct EventEditingView: View {
         rsvpURL: url,
         page: page
       )
+
+      if case .success(let image) = imageState {
+        updatedEvent.image = try? await image.exported(as: .jpeg)
+      }
+
       try await cloudKit.updateEvent(updatedEvent)
       dismiss()
     } catch {
@@ -171,6 +241,8 @@ struct EventEditingView: View {
     isSaving = false
   }
 }
+
+// MARK: - Creation
 
 struct EventCreationView: View {
   @Environment(\.cloudKitService) var cloudKit
@@ -195,7 +267,15 @@ struct EventCreationView: View {
       TextField("Location (longitude)", text: $longitude)
       DatePicker("Date", selection: $date, displayedComponents: .date)
       TextField("RSVP URL", text: $rsvpURL)
-      TextField("Page", text: $page)
+      NavigationLink(
+        page.isEmpty
+          ? "Select page"
+          : page
+      ) {
+        PageLoader { pageTitle in
+          page = pageTitle
+        }
+      }
 
       if let errorMessage = errorMessage {
         Text(errorMessage)
@@ -245,7 +325,7 @@ struct EventCreationView: View {
       page = meetupEvent.url.absoluteString
       errorMessage = nil
     } catch {
-      errorMessage = "Failed to prefill data: \(error.localizedDescription)"
+      errorMessage = "Failed to fill with data from Meetup: \(error.localizedDescription)"
     }
     isPrefilling = false
   }

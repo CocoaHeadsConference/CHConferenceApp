@@ -12,6 +12,7 @@ struct PageLoader: View {
   @Environment(\.cloudKitService) var cloudKit
   @State private var pageList: [String] = []
   @State private var text = "Fetching page list from CloudKit"
+  var onPageTap: ((String) -> Void)?
 
   var body: some View {
     if pageList.isEmpty {
@@ -21,8 +22,14 @@ struct PageLoader: View {
         }
     } else {
       List(pageList, id: \.self) { pageTitle in
-        NavigationLink(pageTitle) {
-          Page(slug: pageTitle)
+        if let onPageTap {
+          Button(pageTitle) {
+            onPageTap(pageTitle)
+          }
+        } else {
+          NavigationLink(pageTitle) {
+            Page(slug: pageTitle)
+          }
         }
       }
     }

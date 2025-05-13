@@ -134,6 +134,7 @@ actor CloudKitService: Sendable {
     return events
   }
 
+  // TODO: We need cloudinary integration for public image URLs - otherwise we won't be able to display images on the web
   func updateEvent(_ event: Event) async throws {
     let database = container.publicCloudDatabase
     let recordID = CKRecord.ID(recordName: event.id.uuidString)
@@ -148,7 +149,12 @@ actor CloudKitService: Sendable {
       record["endDate"] = event.endDate
       record["rsvpURL"] = event.rsvpURL.absoluteString
       record["page"] = event.page
+      let tempDir = FileManager.default.temporaryDirectory
+      let fileURL = tempDir.appendingPathComponent(UUID().uuidString + ".jpg")
+      try event.image?.write(to: fileURL)
+      record["imageAsset"] = CKAsset(fileURL: fileURL)
       try await database.save(record)
+      try? FileManager.default.removeItem(at: fileURL)
     } catch {
       print("Failed to update event: \(error.localizedDescription)")
       throw error

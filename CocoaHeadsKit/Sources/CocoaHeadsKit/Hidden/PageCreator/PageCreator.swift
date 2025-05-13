@@ -175,6 +175,7 @@ struct MeetupCreator: View {
             EventDetail(
               title: meetupEvent.title,
               image: meetupEvent.image,
+              imageData: nil,
               ui: meetupEvent.ui(customDescription: description),
               shareURL: meetupEvent.url
             )

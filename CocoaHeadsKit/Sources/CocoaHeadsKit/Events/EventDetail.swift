@@ -10,6 +10,7 @@ import SwiftUI
 struct EventDetail: View {
   let title: String
   let image: URL?
+  let imageData: Data?
   let ui: [EventDetailUI]
   let shareURL: URL
 
@@ -22,6 +23,7 @@ struct EventDetail: View {
       EventDetailHeader(
         title: title,
         imageURL: image,
+        imageData: imageData,
         scrollPosition: $scrollPosition
       )
       .padding(.vertical)
@@ -58,7 +60,7 @@ struct EventDetail: View {
     }
   }
 
-  // TODO: Fix the fact that these buttons are not the same size
+  #warning("FIXME: Fix the fact that these buttons are not the same size")
   @ToolbarContentBuilder
   var toolbarItems: some ToolbarContent {
     ToolbarItem(placement: .topBarLeading) {
@@ -87,6 +89,7 @@ struct EventDetail: View {
     EventDetail(
       title: "CocoaHeads @ Apple Developer Academy",
       image: nil,
+      imageData: nil,
       ui: Event.mock.ui,
       shareURL: Event.mock.rsvpURL
     )

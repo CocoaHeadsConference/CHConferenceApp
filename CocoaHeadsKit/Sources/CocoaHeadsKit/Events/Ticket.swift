@@ -14,12 +14,22 @@ struct Ticket: View {
   var imageURL: URL?
   let event: Event
 
+  @ViewBuilder
+  var image: some View {
+    if let imageData = event.image, let uiImage = UIImage(data: imageData) {
+      Image(uiImage: uiImage)
+        .resizable()
+    } else {
+      AsyncImage(url: imageURL, scale: 2)
+    }
+  }
+
   var body: some View {
     TicketCard {
       header
         .padding()
 
-      AsyncImage(url: imageURL, scale: 2)
+      image
         .aspectRatio(contentMode: .fill)
         .frame(height: 150)
         .clipped()

@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
   name: "CocoaHeadsKit",
   platforms: [
-    .iOS(.v18),
+    .iOS("18.2"),
     .visionOS(.v2)
   ],
   products: [
