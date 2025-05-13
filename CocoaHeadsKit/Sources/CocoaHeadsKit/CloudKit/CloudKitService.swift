@@ -10,7 +10,11 @@ import Foundation
 import SwiftUI
 
 extension EnvironmentValues {
-  @Entry var cloudKitService: CloudKitService = .init()
+  @Entry var cloudKitService: CloudKitService = .live
+}
+
+extension CloudKitService {
+  static var live = CloudKitService()
 }
 
 // TODO: Make a service protocol so we reach for a local mock when running debug builds

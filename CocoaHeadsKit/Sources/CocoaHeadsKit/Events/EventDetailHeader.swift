@@ -7,37 +7,21 @@
 
 import SwiftUI
 
-#warning("FIXME: imageView sizing got fucked again - maybe try just having both images there in a zstack")
-
 struct EventDetailHeader: View {
   let title: String
   let imageURL: URL?
   let imageID: UUID?
   @Binding var scrollPosition: CGPoint
-  @State private var imageData: Data?
-
-  @Environment(\.cloudKitService) var cloudKit
+  @State private var height: CGFloat = 0
 
   public var body: some View {
     VStack {
-      GeometryReader { reader in
-        imageView
-          .aspectRatio(contentMode: .fill)
-          .frame(width: reader.size.width)
-          .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-      }
-      .frame(maxWidth: .infinity, maxHeight: 250)
-      .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-      .padding(3)
-      .background {
-        RoundedRectangle(cornerRadius: 8, style: .continuous)
-          .foregroundStyle(.background)
-      }
-
+      InnerImage(imageURL: imageURL, imageID: imageID)
       Text(title)
         .font(.title)
         .multilineTextAlignment(.center)
     }
+    .id(title)
     .padding(.bottom)
     .background(
       GeometryReader { proxy in
@@ -59,15 +43,39 @@ struct EventDetailHeader: View {
     .padding(.horizontal)
   }
 
-  @ViewBuilder
-  var imageView: some View {
+}
+
+struct HeaderHeightKey: PreferenceKey {
+  static let defaultValue: CGFloat = 0
+  static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+    let nextValue = nextValue()
+    if nextValue.rounded() < value.rounded() { return }
+    value = nextValue.rounded()
+  }
+}
+
+private struct InnerImage: View {
+  let imageURL: URL?
+  let imageID: UUID?
+  @Environment(\.cloudKitService) private var cloudKit
+  @State private var image: Image?
+
+  var body: some View {
     ZStack {
-      if let imageData, let uiImage = UIImage(data: imageData) {
-        Image(uiImage: uiImage)
+      if let image {
+        image
           .resizable()
       } else {
         AsyncImage(url: imageURL, scale: 2)
       }
+    }
+    .aspectRatio(contentMode: .fill)
+    .frame(maxWidth: .infinity, maxHeight: 250)
+    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+    .padding(3)
+    .background {
+      RoundedRectangle(cornerRadius: 8, style: .continuous)
+        .foregroundStyle(.background)
     }
     .task {
       guard
@@ -76,17 +84,17 @@ struct EventDetailHeader: View {
       else { return }
 
       do {
-        imageData = try await cloudKit.fetchImageAsset(for: id)
+        guard
+          let data = try await cloudKit.fetchImageAsset(for: id),
+          let uiImage = UIImage(data: data)
+        else {
+          return
+        }
+
+        image = Image(uiImage: uiImage)
       } catch {
         print(error)
       }
     }
-  }
-}
-
-struct HeaderHeightKey: PreferenceKey {
-  static let defaultValue: CGFloat = 0
-  static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-    value = nextValue()
   }
 }
