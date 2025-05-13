@@ -33,6 +33,11 @@ struct Home: View {
         ProgressView()
       case .loaded(let chapters):
         LoadedHome(chapters: chapters)
+          .refreshable {
+            Task {
+              await fetchData()
+            }
+          }
       case .error:
         ContentUnavailableView {
           Text("Algum erro ocorreu")

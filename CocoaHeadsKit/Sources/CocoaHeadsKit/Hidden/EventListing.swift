@@ -32,7 +32,7 @@ struct EventListing: View {
             Button {
               onEventTap(event)
             } label: {
-              VStack {
+              VStack(alignment: .leading) {
                 Text(event.title)
                 Text(event.page)
                   .font(.caption2)
@@ -42,7 +42,7 @@ struct EventListing: View {
             NavigationLink {
               EventEditingView(event: event)
             } label: {
-              VStack {
+              VStack(alignment: .leading) {
                 Text(event.title)
                 Text(event.page)
                   .font(.caption2)
@@ -128,10 +128,10 @@ struct EventEditingView: View {
           return
         }
         switch result {
-        case .success(let profileImage?):
-          self.imageState = .success(profileImage.image)
+        case .success(let ticketImage?):
+          self.imageState = .success(ticketImage.image)
         case .success(nil):
-          self.imageState = .failure(NSError(domain: "fuck", code: 0))
+          self.imageState = .failure(NSError(domain: "Failed to decode image", code: 0))
         case .failure(let error):
           self.imageState = .failure(error)
         }
@@ -145,7 +145,7 @@ struct EventEditingView: View {
       TextField("Address", text: $address)
       TextField("Location (latitude)", text: $latitude)
       TextField("Location (longitude)", text: $longitude)
-      DatePicker("Date", selection: $date, displayedComponents: .date)
+      DatePicker("Date", selection: $date, displayedComponents: [.date, .hourAndMinute])
       TextField("RSVP URL", text: $rsvpURL)
       NavigationLink(
         page.isEmpty
@@ -204,6 +204,24 @@ struct EventEditingView: View {
       }
     }
     .navigationTitle("Edit Event")
+    .task {
+      await fetchCurrentImage()
+    }
+  }
+
+  func fetchCurrentImage() async {
+    do {
+      guard
+        let asset = try await cloudKit.fetchImageAsset(for: event),
+        let uiImage = UIImage(data: asset)
+      else {
+        return
+      }
+
+      imageState = .success(Image(uiImage: uiImage))
+    } catch {
+
+    }
   }
 
   private func saveEvent() async {
@@ -265,7 +283,7 @@ struct EventCreationView: View {
       TextField("Address", text: $address)
       TextField("Location (latitude)", text: $latitude)
       TextField("Location (longitude)", text: $longitude)
-      DatePicker("Date", selection: $date, displayedComponents: .date)
+      DatePicker("Date", selection: $date, displayedComponents: [.date, .hourAndMinute])
       TextField("RSVP URL", text: $rsvpURL)
       NavigationLink(
         page.isEmpty
@@ -283,7 +301,7 @@ struct EventCreationView: View {
           .padding(.top, 10)
       }
 
-      Button("Prefill from Meetup") {
+      Button("Prefill from Meetup URL") {
         Task {
           await prefillFromMeetup()
         }
