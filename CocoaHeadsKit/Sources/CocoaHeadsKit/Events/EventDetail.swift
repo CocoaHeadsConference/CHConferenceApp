@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct EventDetail: View {
-  let title: String
-  let image: URL?
-  let imageID: UUID?
+  internal init(title: String, image: URL? = nil, imageID: UUID? = nil, ui: [EventDetailUI], shareURL: URL) {
+    self.ui = ui
+    self.details = EventDetailUIDetails(title: title, image: image, imageID: imageID, shareURL: shareURL)
+  }
+
+  @State private var details: EventDetailUIDetails
   let ui: [EventDetailUI]
-  let shareURL: URL
 
   @State private var scrollPosition: CGPoint = .zero
   @State private var headerSize: CGFloat = 0
@@ -21,9 +23,9 @@ struct EventDetail: View {
   var body: some View {
     ZStack(alignment: .top) {
       EventDetailHeader(
-        title: title,
-        imageURL: image,
-        imageID: imageID,
+        title: details.title,
+        imageURL: details.image,
+        imageID: details.imageID,
         scrollPosition: $scrollPosition
       )
       .padding(.vertical)
@@ -58,6 +60,9 @@ struct EventDetail: View {
         dismiss()
       }
     }
+    .onPreferenceChange(EventDetailsPreferenceKey.self) { [$details] newDetails in
+      $details.wrappedValue = newDetails
+    }
   }
 
   #warning("FIXME: Fix the fact that these buttons are not the same size")
@@ -74,7 +79,7 @@ struct EventDetail: View {
     }
 
     ToolbarItem(placement: .topBarTrailing) {
-      ShareLink(item: shareURL) {
+      ShareLink(item: details.shareURL) {
         Image(systemName: "square.and.arrow.up")
           .offset(y: -2)
           .toolbarStyle(scrollPosition: scrollPosition.y)

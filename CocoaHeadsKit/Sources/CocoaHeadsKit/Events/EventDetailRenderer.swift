@@ -54,6 +54,17 @@ public struct EventDetailRenderer: View {
       }
     case .divider:
       Divider()
+    case .details(title: let title, remoteImage: let remote, cloudKitImageID: let ckImage, shareURL: let share):
+      Color.clear.preference(
+        key: EventDetailsPreferenceKey.self,
+        value: EventDetailUIDetails(
+          title: title,
+          image: remote,
+          imageID: ckImage,
+          shareURL: share
+        )
+      )
+
     case .empty:
       EmptyView()
     case .link(let url, title: let title):
@@ -78,6 +89,28 @@ public struct EventDetailRenderer: View {
         EventDetailRenderer(ui: innerUI)
       }
     }
+  }
+}
+
+struct EventDetailUIDetails: Equatable {
+  let title: String
+  let image: URL?
+  let imageID: UUID?
+  let shareURL: URL
+}
+
+struct EventDetailsPreferenceKey: PreferenceKey {
+  static let defaultValue: EventDetailUIDetails = EventDetailUIDetails(
+    title: "",
+    image: nil,
+    imageID: nil,
+    shareURL: .apple
+  )
+
+  static func reduce(value: inout EventDetailUIDetails, nextValue: () -> EventDetailUIDetails) {
+    let nextValue = nextValue()
+    guard nextValue != defaultValue else { return }
+    value = nextValue
   }
 }
 

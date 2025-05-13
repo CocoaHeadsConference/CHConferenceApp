@@ -14,6 +14,7 @@ public indirect enum EventDetailUI: Codable, Sendable {
   case callToAction(title: String, url: URL, systemImage: String?)
   case caption(text: String)
   case debug(EventDetailUI)
+  case details(title: String, remoteImage: URL?, cloudKitImageID: UUID?, shareURL: URL)
   case divider
   case empty
   case link(URL, title: String?)
@@ -39,6 +40,8 @@ extension EventDetailUI: Identifiable {
       "caption-\(text)"
     case .debug(let ui):
       "debug-\(ui.id)"
+    case .details(title: let title, remoteImage: let remote, cloudKitImageID: let ckImage, shareURL: let share):
+      "details-\(title)-\(remote?.hashValue ?? 0)-\(ckImage?.hashValue ?? 0)-\(share.hashValue)"
     case .divider:
       "divider" + UUID().uuidString
     case .empty:

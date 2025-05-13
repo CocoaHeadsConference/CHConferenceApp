@@ -11,6 +11,7 @@ extension Event {
   @MainActor  // isAppClip
   public var ui: [EventDetailUI] {
     return [
+      .details(title: title, remoteImage: nil, cloudKitImageID: id, shareURL: rsvpURL),
       .card(
         title: nil,
         ui: [
