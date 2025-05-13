@@ -52,16 +52,16 @@ struct ChapterSelectionButton: View {
 }
 
 #Preview {
-  @Previewable @State var selectedChapter: Chapter? = Chapter(title: "São Paulo", events: [])
+  @Previewable @State var selectedChapter: Chapter? = .mock("São Paulo")
   ChapterSelectionView(
     selectedChapter: $selectedChapter,
     availableChapters: [
-      Chapter(title: "Belo-Horizonte", events: []),
-      Chapter(title: "Fortaleza", events: []),
-      Chapter(title: "Campinas", events: []),
-      Chapter(title: "Curitiba", events: []),
-      Chapter(title: "Rio de Janeiro", events: []),
-      Chapter(title: "São Paulo", events: [])
+      .mock("Belo-Horizonte"),
+      .mock("Fortaleza"),
+      .mock("Campinas"),
+      .mock("Curitiba"),
+      .mock("Rio de Janeiro"),
+      selectedChapter!
     ]
   )
 }

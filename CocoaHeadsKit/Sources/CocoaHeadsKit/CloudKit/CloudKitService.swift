@@ -87,6 +87,27 @@ actor CloudKitService: Sendable {
     }
   }
 
+  // MARK: - Chapters
+  func update(_ chapter: Chapter, byAdding event: Event) async throws {
+    let database = container.publicCloudDatabase
+    let chapterID = CKRecord.ID(recordName: chapter.id.uuidString)
+    let eventID = CKRecord.ID(recordName: event.id.uuidString)
+    let eventReference = CKRecord.Reference(recordID: eventID, action: .none)
+
+    do {
+      let chapterRecord = try await database.record(for: chapterID)
+      var currentEvents = chapterRecord["events"] as? [CKRecord.Reference] ?? []
+      if !currentEvents.contains(where: { $0.recordID == eventID }) {
+        currentEvents.append(eventReference)
+        chapterRecord["events"] = currentEvents
+        try await database.save(chapterRecord)
+      }
+    } catch {
+      print("Failed to update chapter: \(error.localizedDescription)")
+      throw error
+    }
+  }
+
   // MARK: - Events
   // TODO: Create an EventService for these, same as page below (or not, idk if we'll keep this)
   func fetchEventList() async throws -> [Event] {

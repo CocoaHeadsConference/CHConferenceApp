@@ -10,7 +10,7 @@ import Foundation
 
 // TODO: Move to a separate package, and then rework entirely for a server-driven UI approach
 struct Chapter: Identifiable, Sendable {
-  var id: String { title }  // There's a unique identifier on CKRecord
+  var id: UUID
   let title: String
   var events: [Event]
 }
@@ -32,11 +32,6 @@ public struct Event: Hashable, Identifiable, Sendable {
   var page: String
 }
 
-struct Talk {
-  let speaker: String
-  let title: String
-}
-
 extension Event {
   public static var mock: Self {
     Event(
@@ -54,9 +49,16 @@ extension Event {
 
 extension Chapter {
   init?(from record: CKRecord) {
+    guard let id = UUID.init(uuidString: record.recordID.recordName) else {
+      return nil
+    }
+    self.id = id
     self.events = []
-    guard let name = record["name"] as? String else { return nil }
-    self.title = name
+    self.title = record["name"] as? String ?? ""
+  }
+
+  static func mock(_ title: String) -> Self {
+    self.init(id: UUID(), title: title, events: [])
   }
 }
 

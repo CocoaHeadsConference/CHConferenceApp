@@ -151,7 +151,7 @@ struct LoadedHome: View {
 #Preview("Loaded") {
   LoadedHome(
     chapters: [
-      Chapter(title: "São Paulo", events: [])
+      .mock("São Paulo")
     ]
   )
 }

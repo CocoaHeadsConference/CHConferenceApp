@@ -20,18 +20,32 @@ struct EventListing: View {
 
   @State private var viewState = ViewState.loading
 
+  var onEventTap: ((Event) -> Void)?
+
   var body: some View {
     ZStack {
       switch viewState {
       case .loaded(let array):
         List(array) { event in
-          NavigationLink {
-            EventEditingView(event: event)
-          } label: {
-            VStack {
-              Text(event.title)
-              Text(event.page)
-                .font(.caption2)
+          if let onEventTap {
+            Button {
+              onEventTap(event)
+            } label: {
+              VStack {
+                Text(event.title)
+                Text(event.page)
+                  .font(.caption2)
+              }
+            }
+          } else {
+            NavigationLink {
+              EventEditingView(event: event)
+            } label: {
+              VStack {
+                Text(event.title)
+                Text(event.page)
+                  .font(.caption2)
+              }
             }
           }
         }

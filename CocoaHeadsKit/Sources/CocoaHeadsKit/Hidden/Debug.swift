@@ -34,10 +34,13 @@ struct Debug: View {
             PageLoader()
           }
           NavigationLink("Page creator") {
-            Creator()
+            PageCreator()
           }
           NavigationLink("Event listing") {
             EventListing()
+          }
+          NavigationLink("Add events to chapters") {
+            ChapterEditor()
           }
         }
       }
