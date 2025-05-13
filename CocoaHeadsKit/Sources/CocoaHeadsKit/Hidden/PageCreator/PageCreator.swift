@@ -120,6 +120,7 @@ struct PageCreator: View {
         }
 
       let slug = (chapterTitle + textField).cleanAndLowercased()
+        .replacingOccurrences(of: "º", with: "")
 
       try await cloudKit.createPage(slug: slug, ui: ui)
       // TODO: When this is TCA, display success notification after dismiss

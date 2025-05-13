@@ -48,7 +48,7 @@ actor CloudKitService: Sendable {
         if !eventIDs.isEmpty {
           try await withCheckedThrowingContinuation { continuation in
             let fetchOperation = CKFetchRecordsOperation(recordIDs: eventIDs)
-            fetchOperation.desiredKeys = ["title", "address", "location", "date", "endDate", "rsvpURL", "slug"]
+            fetchOperation.desiredKeys = ["title", "address", "location", "date", "endDate", "rsvpURL", "page"]
             var fetchedEvents: [Event] = []
             fetchOperation.perRecordResultBlock = { _, result in
               switch result {
@@ -135,7 +135,7 @@ actor CloudKitService: Sendable {
     let database = container.publicCloudDatabase
     let query = CKQuery(recordType: "Event", predicate: NSPredicate(value: true))
     let operation = CKQueryOperation(query: query)
-    operation.desiredKeys = ["title", "address", "location", "date", "endDate", "rsvpURL", "slug"]
+    operation.desiredKeys = ["title", "address", "location", "date", "endDate", "rsvpURL", "page"]
     operation.resultsLimit = CKQueryOperation.maximumResults
 
     var events: [Event] = []
@@ -301,7 +301,7 @@ actor CloudKitService: Sendable {
           // TODO: Force-update UI
           return [
             .eventDetail([
-              .text("Atualize o app")
+              .text("Atualize o app - Decode Error")
             ])
           ]
         }
@@ -316,7 +316,7 @@ actor CloudKitService: Sendable {
 
     return [
       .eventDetail([
-        .text("Atualize o app")
+        .text("Atualize o app - Couldn't find page at \(slug)")
       ])
     ]
   }

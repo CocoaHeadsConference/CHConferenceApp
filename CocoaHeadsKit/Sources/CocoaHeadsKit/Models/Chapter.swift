@@ -77,7 +77,7 @@ extension Event {
     let urlString = (record["rsvpURL"] as? String) ?? ""
     self.rsvpURL = URL(string: urlString) ?? URL(string: "https://cocoaheads.com.br")!
     self.address = (record["address"] as? String) ?? ""
-    self.page = (record["slug"] as? String) ?? ""
+    self.page = (record["page"] as? String) ?? ""
 
     if let asset = record["imageAsset"] as? CKAsset,
       let fileURL = asset.fileURL,

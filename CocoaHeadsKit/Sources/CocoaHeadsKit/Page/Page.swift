@@ -52,7 +52,31 @@ struct PageRenderer: View {
     case .home:
       Home()
     case .eventDetail(let eventDetailUI):
-      EventDetailRenderer(ui: eventDetailUI)
+      if let details = eventDetailUI.first(where: { item in
+        if case .details = item { return true }
+        return false
+      }) {
+        if case .details(let title, let image, let id, let share) = details {
+          // There's a very hairy issue going on here and I have no idea why.
+          // Please comment the NavigationStack, run and see for yourself.
+          // TODO: Try to create the nested version of `.details` by adding the NavigationStack
+          // TODO: workaround to the EventDetailRenderer itself, so we can at least clean this
+          // TODO: weird mess up.
+          NavigationStack {
+            EventDetail(
+              title: title,
+              image: image,
+              imageID: id,
+              ui: eventDetailUI,
+              shareURL: share
+            )
+          }
+        } else {
+          EventDetailRenderer(ui: eventDetailUI)
+        }
+      } else {
+        EventDetailRenderer(ui: eventDetailUI)
+      }
     }
   }
 }
