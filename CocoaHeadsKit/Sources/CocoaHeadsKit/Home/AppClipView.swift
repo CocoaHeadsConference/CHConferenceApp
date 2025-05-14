@@ -8,11 +8,12 @@
 import SwiftUI
 
 // TODO: Break things out from CocoaHeadsKit specifically for the AppClip – size reduction is important
+// TODO: Handle onOpenURL
 public struct AppClipView: View {
   public init() {}
 
   enum ViewState {
-    case loaded(Event)
+    case loaded(String)
     case error
     case loading
   }
@@ -26,13 +27,7 @@ public struct AppClipView: View {
       case .loading:
         ProgressView()
       case .loaded(let event):
-        EventDetail(
-          title: event.title,
-          image: nil,
-          imageID: event.id,
-          ui: event.ui,
-          shareURL: event.rsvpURL
-        )
+        Page(slug: event)
       case .error:
         ContentUnavailableView {
           Text("Algum erro ocorreu")
@@ -66,7 +61,7 @@ public struct AppClipView: View {
         return
       }
 
-      state = .loaded(event)
+      state = .loaded(event.page)
     } catch {
       state = .error
     }

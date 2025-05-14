@@ -80,7 +80,7 @@ struct EventEditingView: View {
           ? "Select page"
           : page
       ) {
-        PageLoader { pageTitle in
+        PageListing { pageTitle in
           page = pageTitle
         }
       }
@@ -218,7 +218,7 @@ struct EventCreationView: View {
           ? "Select page"
           : page
       ) {
-        PageLoader { pageTitle in
+        PageListing { pageTitle in
           page = pageTitle
         }
       }

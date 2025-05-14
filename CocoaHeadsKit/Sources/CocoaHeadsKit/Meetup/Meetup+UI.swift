@@ -17,6 +17,7 @@ extension MeetupEvent {
       .rsvpCard(url: url),
       .infoCard(date: date, address: address),
       .descriptionCard(description),
+      .socials(adding: nil),
       .codeOfConduct,
       .whereCard(
         address: address,
@@ -26,11 +27,12 @@ extension MeetupEvent {
   }
 
   @MainActor
-  func ui(customDescription: String) -> [EventDetailUI] {
+  func ui(customDescription: String, withExtraSocial socialURL: URL?) -> [EventDetailUI] {
     [
       .rsvpCard(url: url),
       .infoCard(date: date, address: address),
       .descriptionCard(customDescription),
+      .socials(adding: socialURL),
       .codeOfConduct,
       .whereCard(
         address: address,
@@ -99,15 +101,35 @@ extension EventDetailUI {
       ])
   }
 
+  fileprivate static func socials(adding link: URL?) -> EventDetailUI {
+    .card(title: "Siga nossas redes sociais", ui: [
+      .carousel(ui: [
+        .link(orEmpty: link),
+        .link(URL(string: "https://www.linkedin.com/company/cocoaheads-brasil")!),
+        .link(URL(string: "https://www.instagram.com/cocoaheadsbr/")!),
+        .link(URL(string: "https://bsky.app/profile/cocoaheads.com.br")!, title: "bluesky.app")
+      ])
+    ])
+  }
+
+  // TODO: Move to a better place
+  static func link(orEmpty url: URL?) -> EventDetailUI {
+    if let url {
+      .link(url)
+    } else {
+      .empty
+    }
+  }
+
   fileprivate static var codeOfConduct: EventDetailUI {
     .card(
       title: "Avisos",
       ui: [
         .text(
           "A organização do CocoaHeads captura fotos durante o evento todo, "
-            + "para divulgação de futuros eventos.\n"
-            + "Não quer aparecer nas nossas redes? "
-            + "Avise o organizador ou faça 🖐️ para a foto."
+          + "para divulgação de futuros eventos.\n"
+          + "Não quer aparecer nas nossas redes? "
+          + "Avise o organizador ou faça 🖐️ para a foto."
         ),
         // TODO: Create in-app screen for this
         .callToAction(title: "Leia nosso código de conduta", url: .codeOfConduct)

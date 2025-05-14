@@ -27,19 +27,19 @@ struct Debug: View {
           NavigationLink("Meetup Parser") {
             MeetupDebugging()
           }
-          NavigationLink("Event Detail UI Viewer") {
+          NavigationLink("Event Detail UI Storybook") {
             EventDetailUIViewer()
           }
           NavigationLink("All pages") {
-            PageLoader()
+            PageListing()
           }
           NavigationLink("Page creator") {
             PageCreator()
           }
-          NavigationLink("Event listing") {
+          NavigationLink("All Events") {
             EventListing()
           }
-          NavigationLink("Add events to chapters") {
+          NavigationLink("Link events to chapters") {
             ChapterEditor()
           }
         }

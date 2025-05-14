@@ -163,6 +163,7 @@ struct MeetupCreator: View {
   @State private var meetupURL: String = ""
   @State private var meetupEvent: MeetupEvent?
   @State private var description: String = ""
+  @State private var social: URL?
 
   @Environment(\.dismiss) var dismiss
 
@@ -192,7 +193,7 @@ struct MeetupCreator: View {
               title: meetupEvent.title,
               image: meetupEvent.image,
               imageID: nil,
-              ui: meetupEvent.ui(customDescription: description),
+              ui: meetupEvent.ui(customDescription: description, withExtraSocial: social),
               shareURL: meetupEvent.url
             )
           }
@@ -223,6 +224,12 @@ struct MeetupCreator: View {
       let event = try await meetup.event(from: meetupURL)
       meetupEvent = event
       description = event.description
+      if
+        description.lowercased().contains("campinas"),
+        let url = URL(string: "https://instagram.com/cocoaheads.cps")
+      {
+        social = url
+      }
     } catch {
       // TODO: Alert?
     }

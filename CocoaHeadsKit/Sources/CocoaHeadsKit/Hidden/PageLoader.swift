@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PageLoader: View {
+struct PageListing: View {
 
   @Environment(\.cloudKitService) var cloudKit
   @State private var pageList: [String] = []
