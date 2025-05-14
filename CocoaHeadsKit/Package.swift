@@ -7,7 +7,7 @@ let package = Package(
   name: "CocoaHeadsKit",
   platforms: [
     .iOS("18.2"),
-    .visionOS(.v2)
+    .visionOS("2.2")
   ],
   products: [
     // Products define the executables and libraries a package produces, making them visible to other packages.

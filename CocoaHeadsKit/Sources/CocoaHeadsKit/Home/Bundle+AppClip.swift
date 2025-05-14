@@ -17,5 +17,5 @@ extension UIApplication {
 extension Bundle {
   var isAppClip: Bool {
     infoDictionary?["NSAppClip"] != nil
-  }
+  }   
 }

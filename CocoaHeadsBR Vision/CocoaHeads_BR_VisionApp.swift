@@ -7,7 +7,6 @@
 //
 
 import CocoaHeadsKit
-import NSBrazilLib
 import SwiftUI
 
 // TODO: Limit window width
@@ -17,7 +16,7 @@ import SwiftUI
 struct CocoaHeads_BR_VisionApp: App {
   var body: some Scene {
     WindowGroup {
-      Home()
+      HomePage()
     }
   }
 }
