@@ -34,14 +34,15 @@ struct UIOrderingEditor: View {
             ForEach(innerUI) { eventUI in
               Text(eventUI.id)
             }
-            .onMove {
-              indexSet,
-              int in
-              moveEventDetailUI(
-                fromOffsets: indexSet,
-                toOffset: int,
-                on: uiElement.wrappedValue
-              )
+            .onMove { indexSet, int in
+              updateEventDetailUI(on: uiElement.wrappedValue) {
+                $0.move(fromOffsets: indexSet, toOffset: int)
+              }
+            }
+            .onDelete { indexSet in
+              updateEventDetailUI(on: uiElement.wrappedValue) {
+                $0.remove(atOffsets: indexSet)
+              }
             }
           }
         } label: {
@@ -56,22 +57,15 @@ struct UIOrderingEditor: View {
     }
   }
 
-  func moveEventDetailUI(
-    fromOffsets indexSet: IndexSet,
-    toOffset int: Int,
-    on base: UI
+  private func updateEventDetailUI(
+    on base: UI,
+    apply: (inout [EventDetailUI]) -> Void
   ) {
-    let uiCopy = ui
     guard
-      let baseIndex = ui.firstIndex(where: {
-        $0 == base
-      })
+      let baseIndex = ui.firstIndex(where: { $0 == base })
     else { return }
     if case .eventDetail(var eventDetailUIArray) = ui[baseIndex] {
-      eventDetailUIArray.move(
-        fromOffsets: indexSet,
-        toOffset: int
-      )
+      apply(&eventDetailUIArray)
       ui[baseIndex] = .eventDetail(eventDetailUIArray)
     }
   }
