@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// TODO: Nicer image placeholder and image loading transition
+
 struct EventDetailHeader: View {
   let title: String
   let imageURL: URL?

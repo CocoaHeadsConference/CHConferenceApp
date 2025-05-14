@@ -53,7 +53,7 @@ public struct EventDetailRenderer: View {
         EventDetailRenderer(ui: [ui])
       }
     case .divider:
-      Divider()
+      Divider().id(UUID())
     case .details(title: let title, remoteImage: let remote, cloudKitImageID: let ckImage, shareURL: let share):
       Color.clear.preference(
         key: EventDetailsPreferenceKey.self,

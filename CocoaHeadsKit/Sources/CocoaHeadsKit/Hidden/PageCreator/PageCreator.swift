@@ -11,9 +11,10 @@ struct PageCreator: View {
 
   enum Sheet: String, Identifiable {
     case chapterPicker
+    case createUIFromScratch
     case meetupScraper
     case templatePicker
-    case createUIFromScratch
+    case uiOrderingEditor
 
     var id: String { rawValue }
   }
@@ -52,7 +53,15 @@ struct PageCreator: View {
         }
 
         if !ui.isEmpty {
+          Button("Reorder UI") {
+            sheetState = .uiOrderingEditor
+          }
+
           Text("Content is loaded")
+
+          NavigationLink("Preview") {
+            PageRenderer(ui: ui)
+          }
         }
       }
     }
@@ -91,6 +100,8 @@ struct PageCreator: View {
         }
       case .createUIFromScratch:
         Text("TO-DO: Build a UI creator")
+      case .uiOrderingEditor:
+        UIOrderingEditor(ui: $ui)
       }
     }
     .alert(error, isPresented: $isAlertPresented) {

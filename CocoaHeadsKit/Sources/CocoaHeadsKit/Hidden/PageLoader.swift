@@ -27,8 +27,13 @@ struct PageLoader: View {
             onPageTap(pageTitle)
           }
         } else {
-          NavigationLink(pageTitle) {
-            Page(slug: pageTitle)
+          Section {
+            NavigationLink(pageTitle) {
+              Page(slug: pageTitle)
+            }
+            NavigationLink("Edit") {
+              PageEditor(slug: pageTitle)
+            }
           }
         }
       }

@@ -321,6 +321,71 @@ actor CloudKitService: Sendable {
     ]
   }
 
+  func fetchPageAndID(slug: String) async throws -> (String, [UI]) {
+    let database = container.publicCloudDatabase
+    let (matchResults, _) = try await database.records(
+      matching: .init(
+        recordType: "Page",
+        predicate: NSPredicate(format: "slug == %@", slug)
+      )
+    )
+
+    for (_, result) in matchResults {
+      switch result {
+      case .success(let success):
+        guard
+          let pageJSON = success["ui"] as? String,
+          let pageData = pageJSON.data(using: .utf8)
+        else {
+          return (
+            "failure",
+            [
+              .eventDetail([
+                .text("Atualize o app - Decode Error")
+              ])
+            ]
+          )
+        }
+
+        let decoder = LenientJSONDecoder()
+        let ui = try decoder.decode([UI].self, from: pageData)
+        return (success.recordID.recordName, ui)
+
+      case .failure:
+        continue
+      }
+    }
+
+    return (
+      "failure",
+      [
+        .eventDetail([
+          .text("Atualize o app - Couldn't find page at \(slug)")
+        ])
+      ]
+    )
+  }
+
+  func updatePage(
+    id: String,
+    slug: String,
+    ui: [UI],
+    with encoder: JSONEncoder = JSONEncoder()
+  ) async throws {
+    let database = container.publicCloudDatabase
+    let id = CKRecord.ID(recordName: id)
+    do {
+      let record = try await database.record(for: id)
+      let jsonUI = try encoder.encode(ui)
+      let jsonUIString = String(data: jsonUI, encoding: .utf8) ?? ""
+      record["slug"] = slug
+      record["ui"] = jsonUIString
+      try await database.save(record)
+    } catch {
+      throw error
+    }
+  }
+
   func fetchPageList() async throws -> [String] {
     let database = container.publicCloudDatabase
     let (matchResults, _) = try await database.records(

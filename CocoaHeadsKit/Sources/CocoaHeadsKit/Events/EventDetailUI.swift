@@ -43,7 +43,7 @@ extension EventDetailUI: Identifiable {
     case .details(title: let title, remoteImage: let remote, cloudKitImageID: let ckImage, shareURL: let share):
       "details-\(title)-\(remote?.hashValue ?? 0)-\(ckImage?.hashValue ?? 0)-\(share.hashValue)"
     case .divider:
-      "divider" + UUID().uuidString
+      "divider"
     case .empty:
       ""
     case .link(let url, let title):
