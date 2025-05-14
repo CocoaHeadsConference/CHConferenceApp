@@ -32,12 +32,14 @@ struct Home: View {
       case .loading:
         ProgressView()
       case .loaded(let chapters):
-        LoadedHome(chapters: chapters)
-          .refreshable {
-            Task {
-              await fetchData()
+        NavigationStack {
+          LoadedHome(chapters: chapters)
+            .refreshable {
+              Task {
+                await fetchData()
+              }
             }
-          }
+        }
       case .error:
         ContentUnavailableView {
           Text("Algum erro ocorreu")
@@ -85,32 +87,29 @@ struct LoadedHome: View {
   @State private var buttonVisibilityTimer: Timer?
 
   var body: some View {
-    NavigationStack {
-      ScrollView {
-        ZStack(alignment: .leading) {
-          NavigationTitle("Eventos")
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .offset(x: dragOffset)
-            .gesture(drag)
-
-          NavigationLink {
-            Debug()
-          } label: {
-            Image(systemName: "gearshape")
-              .font(.title)
-              .fontWeight(.light)
-              .tint(.primary)
-          }
-          .opacity(shouldShowButton ? 1 : 0)
-          .animation(.default, value: shouldShowButton)
+    ScrollView {
+      ZStack(alignment: .leading) {
+        NavigationTitle("Eventos")
+          .frame(maxWidth: .infinity, alignment: .leading)
+          .offset(x: dragOffset)
+          .gesture(drag)
+        NavigationLink {
+          Debug()
+        } label: {
+          Image(systemName: "gearshape")
+            .font(.title)
+            .fontWeight(.light)
+            .tint(.primary)
         }
-        .padding()
-        ChapterSelectionView(
-          selectedChapter: $selectedChapter,
-          availableChapters: chapters
-        )
-        EventList(events: selectedChapter?.events ?? [])
+        .opacity(shouldShowButton ? 1 : 0)
+        .animation(.default, value: shouldShowButton)
       }
+      .padding()
+      ChapterSelectionView(
+        selectedChapter: $selectedChapter,
+        availableChapters: chapters
+      )
+      EventList(events: selectedChapter?.events ?? [])
     }
     .animation(.default, value: dragOffset)
     .onAppear {

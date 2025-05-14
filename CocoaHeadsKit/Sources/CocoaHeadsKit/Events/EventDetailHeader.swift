@@ -22,7 +22,6 @@ struct EventDetailHeader: View {
         .multilineTextAlignment(.center)
     }
     .id(title)
-    .padding(.bottom)
     .background(
       GeometryReader { proxy in
         Color.clear
@@ -69,7 +68,11 @@ private struct InnerImage: View {
       }
     }
     .aspectRatio(contentMode: .fill)
-    .frame(maxWidth: .infinity, maxHeight: 250)
+    .padding(.horizontal)
+    .containerRelativeFrame(.horizontal) { size, axis in
+      size * 0.9
+    }
+    .frame(maxHeight: 250)
     .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
     .padding(3)
     .background {
