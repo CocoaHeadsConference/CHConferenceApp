@@ -22,7 +22,7 @@ struct LinkView: View {
             Circle()
               .fill(.blue)
           }
-        Text(title ?? url.host() ?? "")
+        Text(actualTitle)
           .fontWeight(.light)
           .kerning(0)
       }
@@ -33,6 +33,12 @@ struct LinkView: View {
       }
     }
     .buttonStyle(.plain)
+  }
+
+  private var actualTitle: String {
+    let unwrappedTitle = title ?? ""
+    guard !unwrappedTitle.isEmpty else { return url.host() ?? "" }
+    return title ?? url.host() ?? ""
   }
 }
 
