@@ -13,6 +13,9 @@ public struct HomePage: View {
   public init() {}
   public var body: some View {
     Page(slug: "local-home")
+      .onAppear {
+        UIApplication.shared.registerForRemoteNotifications()
+      }
   }
 }
 

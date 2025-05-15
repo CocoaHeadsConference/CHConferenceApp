@@ -42,6 +42,9 @@ struct Debug: View {
           NavigationLink("Link events to chapters") {
             ChapterEditor()
           }
+          NavigationLink("Raffle") {
+            RaffleCreationView()
+          }
         }
       }
     }

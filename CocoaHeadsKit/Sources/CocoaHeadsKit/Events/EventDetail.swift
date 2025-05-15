@@ -33,7 +33,7 @@ struct EventDetail: View {
         $headerSize.wrappedValue = height
       }
 
-      ScrollView {
+      ScrollView(.vertical) {
         PositionObservingView(
           coordinateSpace: .named("EventDetail"),
           position: $scrollPosition
@@ -53,7 +53,11 @@ struct EventDetail: View {
           .ignoresSafeArea()
       }
       .toolbarBackground(.hidden, for: .navigationBar)
-      .toolbar { toolbarItems }
+      .toolbar {
+        if !Bundle.main.isAppClip {
+          toolbarItems
+        }
+      }
     }
     .onChange(of: scrollPosition.y) {
       if scrollPosition.y > 180 {

@@ -12,10 +12,11 @@ extension Event {
   public var ui: [EventDetailUI] {
     return [
       .details(title: title, remoteImage: nil, cloudKitImageID: id, shareURL: rsvpURL),
+      .raffle("67sp"),
       .card(
         title: nil,
         ui: [
-          .text("Running on app clip: \(UIApplication.shared.isAppClip)"),
+          .text("Running on app clip: \(Bundle.main.isAppClip)"),
           .caption(text: "(Este card só aparece para usuários do TestFlight)")
         ]
       ).debug(),

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// TODO: .largeLink(URL) -> LPLinkPresentation
+
 public indirect enum EventDetailUI: Codable, Sendable {
   case card(title: String?, edges: Edge.Set, insetBy: CGFloat?, ui: [EventDetailUI])
   case carousel(ui: [EventDetailUI])
@@ -19,6 +21,7 @@ public indirect enum EventDetailUI: Codable, Sendable {
   case empty
   case link(URL, title: String?)
   case map(address: String, lat: Double, lng: Double)
+  case raffle(String)
   case subtitle(String)
   case text(String)
   case titleSubtitle(title: String, subtitle: String, systemImage: String)
@@ -50,6 +53,8 @@ extension EventDetailUI: Identifiable {
       "link-\(url.absoluteString)-\(title ?? "nil")"
     case .map(address: let addr, lat: let lat, lng: let lng):
       "map-\(addr)-\(lat)-\(lng)"
+    case .raffle(let id):
+      "raffle-\(id)"
     case .subtitle(let text):
       "subtitle-\(text)"
     case .text(let text):

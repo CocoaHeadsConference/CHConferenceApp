@@ -71,6 +71,8 @@ public struct EventDetailRenderer: View {
       LinkView(url: url, title: title)
     case .map(address: let addr, lat: let lat, lng: let lng):
       MapUI(address: addr, latitude: lat, longitude: lng)
+    case .raffle(let id):
+      RaffleView(id: id)
     case .subtitle(let text):
       Text(LocalizedStringKey(text))
         .foregroundStyle(.secondary)
