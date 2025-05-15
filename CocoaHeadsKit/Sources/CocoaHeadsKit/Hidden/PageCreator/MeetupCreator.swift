@@ -54,6 +54,7 @@ struct MeetupCreator: View {
 
       meetupEventSection
     }
+    .interactiveDismissDisabled(meetupEvent != nil)
     .toolbar {
       Button("Done") {
         guard let meetupEvent else { return }
