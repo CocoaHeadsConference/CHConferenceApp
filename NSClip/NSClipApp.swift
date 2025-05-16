@@ -7,13 +7,22 @@
 //
 
 import CocoaHeadsKit
+import StoreKit
 import SwiftUI
 
 @main
 struct NSClipApp: App {
+
+  @State private var isPresented = false
   var body: some Scene {
     WindowGroup {
       AppClipView()
+        .appStoreOverlay(isPresented: $isPresented) {
+          SKOverlay.AppConfiguration(appIdentifier: "1180455342", position: .bottom)
+        }
+        .onAppear {
+          isPresented = true
+        }
     }
   }
 }
