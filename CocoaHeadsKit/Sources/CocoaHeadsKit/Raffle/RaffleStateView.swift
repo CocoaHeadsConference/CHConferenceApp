@@ -36,10 +36,25 @@ struct RaffleStateView: View {
   }
 
   @State private var isButtonLoading = false
+  @FocusState private var isTextFieldFocused
 
   @ViewBuilder var submitView: some View {
-    VStack {
+    VStack(spacing: 20) {
       TextField("Seu nome", text: $textField)
+        .scrollDismissesKeyboard(.immediately)
+        .padding()
+        .contentShape(
+          RoundedRectangle(cornerRadius: 20, style: .continuous)
+        )
+        .background {
+          RoundedRectangle(cornerRadius: 20, style: .continuous)
+            .stroke(.gray.opacity(0.3), lineWidth: 2)
+        }
+        .focused($isTextFieldFocused)
+        .onTapGesture {
+          isTextFieldFocused = true
+        }
+
       Button {
         isButtonLoading = true
         onSubmit()
@@ -48,7 +63,7 @@ struct RaffleStateView: View {
           ProgressView()
             .tint(.white)
         } else {
-          Text("Quero ganhar")
+          Text("Participar")
         }
       }
       .buttonStyle(CallToAction())
@@ -57,14 +72,18 @@ struct RaffleStateView: View {
   }
 
   @ViewBuilder var submittedView: some View {
-    Text("Agora é só esperar e torcer")
+    Text("🤞🤞🤞")
   }
 
   // TODO: Add confetti effects onAppear
   @ViewBuilder var winnerView: some View {
-    VStack {
-      Image(systemName: "flag.pattern.checkered.2.crossed")
+    VStack(spacing: 20) {
+      Text("🎉🎉🎉🎉🎉🎉🎉")
+        .font(.largeTitle)
+
       Text("Parabéns! Você ganhou!")
+        .kerning(-0.5)
+        .foregroundStyle(.secondary)
     }
     .onAppear {
       do {
