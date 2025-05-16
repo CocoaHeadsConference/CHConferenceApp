@@ -17,8 +17,9 @@ struct MapUI: View {
     Button {
       openInMaps()
     } label: {
-      // TODO: Add pin on location
-      Map(initialPosition: position, interactionModes: [])
+      Map(initialPosition: position, interactionModes: []) {
+        Marker(address, image: "", coordinate: location)
+      }
     }
     .frame(height: 200)
     .contextMenu {
@@ -44,10 +45,14 @@ struct MapUI: View {
     }
   }
 
+  private var location: CLLocationCoordinate2D {
+    CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+  }
+
   private var position: MapCameraPosition {
     .region(
       .init(
-        center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude),
+        center: location,
         latitudinalMeters: 1000,
         longitudinalMeters: 1000
       )
@@ -57,7 +62,7 @@ struct MapUI: View {
   private func openInMaps() {
     MKMapItem(
       placemark: MKPlacemark(
-        coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        coordinate: location
       )
     ).openInMaps()
   }

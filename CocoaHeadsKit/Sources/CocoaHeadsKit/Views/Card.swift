@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// TODO: Add `title`
-
 struct Card<Content: View>: View {
   var title: String? = nil
   var contentInset: (Edge.Set, CGFloat?) = (.all, 20)

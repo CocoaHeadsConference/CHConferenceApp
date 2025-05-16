@@ -18,8 +18,8 @@ struct EventList: View {
     VStack(alignment: .leading) {
       if events.isEmpty {
         ContentUnavailableView(
-          "Não tem eventos cadastrados (TODO: Copy)",
-          systemImage: "tuningfork"
+          "Não encontramos eventos para este chapter",
+          systemImage: "exclamationmark.triangle"
         )
       } else {
         ForEach(events) { event in

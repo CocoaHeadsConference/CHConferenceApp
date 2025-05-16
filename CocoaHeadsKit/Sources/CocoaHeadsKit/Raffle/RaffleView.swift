@@ -11,6 +11,7 @@ struct RaffleView: View {
 
   let id: String
   @State private var isLoading = true
+  @State private var hasError = false
   @State private var raffle: Raffle?
   @State private var entry: RaffleEntry?
   @State private var textField = ""
@@ -18,7 +19,7 @@ struct RaffleView: View {
 
   var body: some View {
     ZStack {
-      if !(ProcessInfo.processInfo.isiOSAppOnMac || Bundle.main.isAppClip) {
+      if !(ProcessInfo.processInfo.isiOSAppOnMac || Bundle.main.isAppClip || hasError) {
         Card {
           RaffleStateView(
             state: raffleState,
@@ -44,6 +45,7 @@ struct RaffleView: View {
   }
 
   var raffleState: RaffleState {
+    guard !hasError else { return .noRaffle }
     guard let raffle else { return .noRaffle }
     guard !isLoading else { return .noRaffle }
 
@@ -82,8 +84,14 @@ struct RaffleView: View {
 
   func fetchExistingEntry() async {
     do {
+      try await cloudKit.container.userRecordID()
+    } catch {
+      hasError = true
+      return
+    }
+
+    do {
       guard let raffle else { return }
-      let id = try await cloudKit.container.userRecordID().recordName
       let entry = try await cloudKit.fetchEntry(raffleID: raffle.id, cloudKitIdentifier: id)
       self.entry = entry
     } catch {

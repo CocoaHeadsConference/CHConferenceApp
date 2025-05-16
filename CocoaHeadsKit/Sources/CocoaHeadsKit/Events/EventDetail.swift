@@ -69,7 +69,6 @@ struct EventDetail: View {
     }
   }
 
-  #warning("FIXME: Fix the fact that these buttons are not the same size")
   @ToolbarContentBuilder
   var toolbarItems: some ToolbarContent {
     ToolbarItem(placement: .topBarLeading) {
@@ -77,6 +76,7 @@ struct EventDetail: View {
         dismiss()
       } label: {
         Image(systemName: "chevron.down")
+          .padding(4)/// For some reason, a `Button` is smaller than a `ShareLink`
           .toolbarStyle(scrollPosition: scrollPosition.y)
       }
       .buttonStyle(.plain)
