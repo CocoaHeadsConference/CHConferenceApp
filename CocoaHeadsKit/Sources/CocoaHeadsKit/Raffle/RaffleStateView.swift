@@ -41,7 +41,6 @@ struct RaffleStateView: View {
   @ViewBuilder var submitView: some View {
     VStack(spacing: 20) {
       TextField("Seu nome", text: $textField)
-        .scrollDismissesKeyboard(.immediately)
         .padding()
         .contentShape(
           RoundedRectangle(cornerRadius: 20, style: .continuous)
