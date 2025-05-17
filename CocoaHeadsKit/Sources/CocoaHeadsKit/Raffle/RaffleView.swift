@@ -7,12 +7,13 @@
 
 import SwiftUI
 
+// TODO: Make a view/modifier for TestFlight/Debug-specific views
+
 struct RaffleView: View {
 
   let id: String
   @State private var isLoading = true
   @State private var hasError = false
-  @State private var debugText = ""
   @State private var raffle: Raffle?
   @State private var entry: RaffleEntry?
   @State private var textField = ""
@@ -20,14 +21,6 @@ struct RaffleView: View {
 
   var body: some View {
     VStack {
-      // TODO: Make a view/modifier for this
-      if Config.isTestflightOrDebug {
-        Card {
-          Text("hasError \(hasError)")
-          Text("raffleState = \(raffleState)")
-          Text(debugText)
-        }
-      }
       if !(ProcessInfo.processInfo.isiOSAppOnMac || Bundle.main.isAppClip || hasError) {
         Card {
           RaffleStateView(
@@ -80,14 +73,8 @@ struct RaffleView: View {
 
   func fetchRaffle() async {
     do {
-      guard let raffle = try await cloudKit.fetchRaffle(name: id) else {
-        print("raffle fetch error")
-        return
-      }
-
-      self.raffle = raffle
+      self.raffle = try await cloudKit.fetchRaffle(name: id)
     } catch {
-      debugText = "non existent raffle, \(error)"
       // Non existent raffle
     }
   }
@@ -97,26 +84,22 @@ struct RaffleView: View {
       try await cloudKit.container.userRecordID()
     } catch {
       hasError = true
-      debugText = "no cloudkit, \(error)"
       return
     }
 
     do {
       guard let raffle else {
-        debugText = "no raffle on fetchExistingEntry"
         return
       }
       let entry = try await cloudKit.fetchEntry(raffleID: raffle.id, cloudKitIdentifier: id)
       self.entry = entry
     } catch {
-      debugText = "catch for fetchExistingEntry, \(error)"
       // This means this user has not entered the raffle yet
     }
   }
 
   func listenToRaffleUpdates() async {
     guard let raffle else {
-      debugText = "no raffle for listenToRaffleUpdates"
       return
     }
     isLoading = false

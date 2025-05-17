@@ -73,33 +73,45 @@ extension CloudKitService {
     )
   }
 
-  // TODO: Refactor this into something more inteligible like fetchEntry
-  func fetchRaffle(name: String) async throws -> Raffle? {
+  func fetchRaffle(name: String) async throws -> Raffle {
     let db = container.publicCloudDatabase
     let predicate = NSPredicate(format: "name == %@", name)
     let query = CKQuery(recordType: "Raffle", predicate: predicate)
     let (results, _) = try await db.records(matching: query)
 
-    if let existing = results.first?.1,
-      let record = try? existing.get(),
-      let winnerRef = record["winner"] as? CKRecord.Reference
-    {
-      let winnerEntry = try await db.record(for: winnerRef.recordID)
-      let winner = RaffleEntry(
-        name: winnerEntry["name"] ?? "",
-        identifier: winnerEntry["cloudKitIdentifier"] ?? "",
-        raffleIdentifier: record.recordID.recordName
+    guard let existing = results.first?.1, let record = try? existing.get() else {
+      // No raffle found
+      throw NSError(
+        domain: "RaffleError",
+        code: 1,
+        userInfo: [NSLocalizedDescriptionKey: "No Raffle found with name: \(name)"]
       )
+    }
 
+    guard let winnerRef = record["winner"] as? CKRecord.Reference else {
+      // No winner for raffle
       return Raffle(
         id: record.recordID.recordName,
         name: name,
-        winner: winner,
+        winner: nil,
         isOpen: record["isOpen"] as? Bool ?? false
       )
     }
 
-    return nil
+    // Winner reference found, we need to fetch it
+    let winnerEntry = try await db.record(for: winnerRef.recordID)
+    let winner = RaffleEntry(
+      name: winnerEntry["name"] ?? "",
+      identifier: winnerEntry["cloudKitIdentifier"] ?? "",
+      raffleIdentifier: record.recordID.recordName
+    )
+
+    return Raffle(
+      id: record.recordID.recordName,
+      name: name,
+      winner: winner,
+      isOpen: record["isOpen"] as? Bool ?? false
+    )
   }
 
   func fetchRaffle(id: String) async throws -> Raffle? {
