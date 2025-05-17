@@ -87,7 +87,7 @@ struct RaffleView: View {
 
       self.raffle = raffle
     } catch {
-      debugText = "non existent raffle"
+      debugText = "non existent raffle, \(error)"
       // Non existent raffle
     }
   }
@@ -97,7 +97,7 @@ struct RaffleView: View {
       try await cloudKit.container.userRecordID()
     } catch {
       hasError = true
-      debugText = "no cloudkit"
+      debugText = "no cloudkit, \(error)"
       return
     }
 
@@ -109,7 +109,7 @@ struct RaffleView: View {
       let entry = try await cloudKit.fetchEntry(raffleID: raffle.id, cloudKitIdentifier: id)
       self.entry = entry
     } catch {
-      debugText = "catch for fetchExistingEntry"
+      debugText = "catch for fetchExistingEntry, \(error)"
       // This means this user has not entered the raffle yet
     }
   }
