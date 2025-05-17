@@ -12,13 +12,22 @@ struct RaffleView: View {
   let id: String
   @State private var isLoading = true
   @State private var hasError = false
+  @State private var debugText = ""
   @State private var raffle: Raffle?
   @State private var entry: RaffleEntry?
   @State private var textField = ""
   @Environment(\.cloudKitService) private var cloudKit
 
   var body: some View {
-    ZStack {
+    VStack {
+      // TODO: Make a view/modifier for this
+      if Config.isTestflightOrDebug {
+        Card {
+          Text("hasError \(hasError)")
+          Text("raffleState = \(raffleState)")
+          Text(debugText)
+        }
+      }
       if !(ProcessInfo.processInfo.isiOSAppOnMac || Bundle.main.isAppClip || hasError) {
         Card {
           RaffleStateView(
@@ -78,6 +87,7 @@ struct RaffleView: View {
 
       self.raffle = raffle
     } catch {
+      debugText = "non existent raffle"
       // Non existent raffle
     }
   }
@@ -87,20 +97,28 @@ struct RaffleView: View {
       try await cloudKit.container.userRecordID()
     } catch {
       hasError = true
+      debugText = "no cloudkit"
       return
     }
 
     do {
-      guard let raffle else { return }
+      guard let raffle else {
+        debugText = "no raffle on fetchExistingEntry"
+        return
+      }
       let entry = try await cloudKit.fetchEntry(raffleID: raffle.id, cloudKitIdentifier: id)
       self.entry = entry
     } catch {
+      debugText = "catch for fetchExistingEntry"
       // This means this user has not entered the raffle yet
     }
   }
 
   func listenToRaffleUpdates() async {
-    guard let raffle else { return }
+    guard let raffle else {
+      debugText = "no raffle for listenToRaffleUpdates"
+      return
+    }
     isLoading = false
     for await raffle in await cloudKit.listenToRaffle(for: raffle.id) {
       self.raffle = raffle

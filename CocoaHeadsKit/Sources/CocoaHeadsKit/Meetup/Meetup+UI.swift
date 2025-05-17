@@ -33,6 +33,7 @@ extension MeetupEvent {
     speakers: EventDetailUI
   ) -> [EventDetailUI] {
     [
+      .details(title: title, remoteImage: image, cloudKitImageID: nil, shareURL: url),
       .rsvpCard(url: url),
       .infoCard(date: date, address: address),
       .descriptionCard(customDescription),
