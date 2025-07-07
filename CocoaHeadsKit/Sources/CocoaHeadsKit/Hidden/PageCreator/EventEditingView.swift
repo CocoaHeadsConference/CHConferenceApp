@@ -13,6 +13,36 @@ import SwiftUI
 // TODO: Break the sub sections into smaller views
 // MARK: - Editing
 
+enum ImageState {
+  case success(Image)
+  case loading(Progress)
+  case failure(Error)
+  case empty
+}
+
+struct ImageStateView: View {
+  let state: ImageState
+
+  var body: some View {
+    VStack {
+      switch state {
+      case .success(let image):
+        image
+          .resizable()
+          .aspectRatio(contentMode: .fit)
+          .frame(height: 200)
+
+      case .loading(let progress):
+        ProgressView(value: progress.fractionCompleted)
+      case .failure(let error):
+        Text(error.localizedDescription)
+      case .empty:
+        Text("No image selected")
+      }
+    }
+  }
+}
+
 struct EventEditingView: View {
   @Environment(\.cloudKitService) private var cloudKit
   @Environment(\.dismiss) private var dismiss
@@ -36,13 +66,6 @@ struct EventEditingView: View {
     self._rsvpURL = State(initialValue: event.rsvpURL.absoluteString)
     self._page = State(initialValue: event.page)
     self._address = State(initialValue: event.address)
-  }
-
-  enum ImageState {
-    case success(Image)
-    case loading(Progress)
-    case failure(Error)
-    case empty
   }
 
   @State private var imageState: ImageState = .empty
@@ -93,22 +116,7 @@ struct EventEditingView: View {
             imageState = .empty
           }
         }
-      VStack {
-        switch imageState {
-        case .success(let image):
-          image
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(height: 200)
-
-        case .loading(let progress):
-          ProgressView(value: progress.fractionCompleted)
-        case .failure(let error):
-          Text(error.localizedDescription)
-        case .empty:
-          Text("No image selected")
-        }
-      }
+      ImageStateView(state: imageState)
 
       if let errorMessage = errorMessage {
         Text(errorMessage)
@@ -203,39 +211,48 @@ struct EventCreationView: View {
   @State private var isSaving = false
   @State private var errorMessage: String?
   @State private var isPrefilling = false
+  @State private var imageState: ImageState = .empty
   private let meetupService = MeetupService()
 
   var body: some View {
     Form {
-      TextField("Title", text: $title)
-      TextField("Address", text: $address)
-      TextField("Location (latitude)", text: $latitude)
-      TextField("Location (longitude)", text: $longitude)
-      DatePicker("Date", selection: $date, displayedComponents: [.date, .hourAndMinute])
-      TextField("RSVP URL", text: $rsvpURL)
-      NavigationLink(
-        page.isEmpty
-          ? "Select page"
-          : page
-      ) {
-        PageListing { pageTitle in
-          page = pageTitle
+      Section {
+        TextField("RSVP URL", text: $rsvpURL)
+        Button("Prefill from Meetup URL") {
+          Task {
+            await prefillFromMeetup()
+          }
         }
+        .disabled(isPrefilling || rsvpURL.isEmpty)
+        .padding(.top, 10)
+      }
+      Section {
+        TextField("Title", text: $title)
+        TextField("Address", text: $address)
+        TextField("Location (latitude)", text: $latitude)
+        TextField("Location (longitude)", text: $longitude)
+        DatePicker("Date", selection: $date, displayedComponents: [.date, .hourAndMinute])
+
+        NavigationLink(
+          page.isEmpty
+            ? "Select page"
+            : page
+        ) {
+          PageListing { pageTitle in
+            page = pageTitle
+          }
+        }
+
+        ImageStateView(state: imageState)
       }
 
       if let errorMessage = errorMessage {
-        Text(errorMessage)
-          .foregroundColor(.red)
-          .padding(.top, 10)
-      }
-
-      Button("Prefill from Meetup URL") {
-        Task {
-          await prefillFromMeetup()
+        Section {
+          Text(errorMessage)
+            .foregroundColor(.red)
+            .padding(.top, 10)
         }
       }
-      .disabled(isPrefilling || rsvpURL.isEmpty)
-      .padding(.top, 10)
     }
     .toolbar {
       ToolbarItem(placement: .confirmationAction) {
@@ -269,8 +286,20 @@ struct EventCreationView: View {
       latitude = "\(meetupEvent.location.coordinate.latitude)"
       longitude = "\(meetupEvent.location.coordinate.longitude)"
       date = meetupEvent.date
-      page = meetupEvent.url.absoluteString
       errorMessage = nil
+
+      if let imageURL = meetupEvent.image {
+        imageState = .loading(.init())
+        let (data, _) = try await URLSession.shared.data(from: imageURL)
+        if let uiImage = UIImage(data: data) {
+          imageState = .success(Image(uiImage: uiImage))
+        } else {
+          imageState = .failure(NSError(domain: "Failed to decode image", code: 0))
+        }
+      } else {
+        imageState = .failure(NSError(domain: "No image found on Meetup", code: 0))
+      }
+
     } catch {
       errorMessage = "Failed to fill with data from Meetup: \(error.localizedDescription)"
     }
@@ -289,7 +318,7 @@ struct EventCreationView: View {
         return
       }
 
-      let newEvent = Event(
+      var newEvent = Event(
         id: UUID(),
         title: title,
         address: address,
@@ -299,6 +328,11 @@ struct EventCreationView: View {
         rsvpURL: url,
         page: page
       )
+
+      if case .success(let image) = imageState {
+        newEvent.image = try? await image.exported(as: .jpeg)
+      }
+
       try await cloudKit.createEvent(newEvent)
       dismiss()
     } catch {

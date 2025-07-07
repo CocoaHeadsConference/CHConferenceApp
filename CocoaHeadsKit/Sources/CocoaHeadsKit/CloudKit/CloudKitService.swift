@@ -14,7 +14,7 @@ extension EnvironmentValues {
 }
 
 extension CloudKitService {
-  static var live = CloudKitService()
+  static let live = CloudKitService()
 }
 
 // TODO: Make a service protocol so we reach for a local mock when running debug builds
