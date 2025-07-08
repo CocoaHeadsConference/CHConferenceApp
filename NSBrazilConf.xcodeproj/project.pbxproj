@@ -80,6 +80,7 @@
 		B4BAA62D2C61542C0024B351 /* NSBrazilConf.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = NSBrazilConf.xctestplan; sourceTree = "<group>"; };
 		B4C5F8C32C5ADD1C0031246C /* Common */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Common; sourceTree = "<group>"; };
 		B4DD00112C6F0536003ADBD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		VERSIONXCCONFIG123456789 /* Version.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +121,7 @@
 		1D0A951E2342E87500B2C582 = {
 			isa = PBXGroup;
 			children = (
+				VERSIONXCCONFIG123456789 /* Version.xcconfig */,
 				2233E22C2DC83F1F008351FD /* CocoaHeadsBR Watch.entitlements */,
 				2233E22B2DC83E4E008351FD /* CocoaHeadsBR Vision.entitlements */,
 				2211E38D2DC1004700D347E8 /* CocoaHeadsBR-Watch-Info.plist */,
@@ -591,11 +593,11 @@
 		};
 		1D0A953C2342E87700B2C582 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NSBrazilConf/NSBrazilConf.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"NSBrazilConf/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
@@ -608,7 +610,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = CocoaHeadsBR;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -622,11 +623,11 @@
 		};
 		1D0A953D2342E87700B2C582 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NSBrazilConf/NSBrazilConf.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"NSBrazilConf/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
@@ -639,7 +640,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = CocoaHeadsBR;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -653,6 +653,7 @@
 		};
 		B44067C325B1E25800D9DE9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -660,7 +661,6 @@
 				CODE_SIGN_ENTITLEMENTS = NSClip/NSClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"NSClip/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
@@ -671,7 +671,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.baseClip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -685,6 +684,7 @@
 		};
 		B44067C425B1E25800D9DE9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -692,7 +692,6 @@
 				CODE_SIGN_ENTITLEMENTS = NSClip/NSClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"NSClip/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
@@ -703,7 +702,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.baseClip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -717,6 +715,7 @@
 		};
 		B482AA962C5C721700F66F3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -725,7 +724,6 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = "CocoaHeadsBR Watch.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeadsBR Watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
@@ -741,7 +739,6 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.watchkitapp;
 				PRODUCT_NAME = CocoaHeadsBR;
 				SDKROOT = watchos;
@@ -756,6 +753,7 @@
 		};
 		B482AA972C5C721700F66F3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -764,7 +762,6 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = "CocoaHeadsBR Watch.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeadsBR Watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
@@ -780,7 +777,6 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.watchkitapp;
 				PRODUCT_NAME = CocoaHeadsBR;
 				SDKROOT = watchos;
@@ -794,6 +790,7 @@
 		};
 		B4A60BE82C5C9C1A00D2597B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -802,7 +799,6 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = "CocoaHeadsBR Vision/CocoaHeadsBR Vision.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeadsBR Vision/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
@@ -816,7 +812,6 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = xros;
@@ -831,6 +826,7 @@
 		};
 		B4A60BE92C5C9C1A00D2597B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -839,7 +835,6 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = "CocoaHeadsBR Vision/CocoaHeadsBR Vision.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeadsBR Vision/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
@@ -853,7 +848,6 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = xros;

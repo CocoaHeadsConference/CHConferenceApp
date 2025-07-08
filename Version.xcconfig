@@ -1,0 +1,5 @@
+// Version.xcconfig
+// Centralized version configuration for all targets
+
+MARKETING_VERSION = 2025.3
+CURRENT_PROJECT_VERSION = 3
