@@ -608,7 +608,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2025.2;
+				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = CocoaHeadsBR;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -639,7 +639,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2025.2;
+				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = CocoaHeadsBR;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -671,7 +671,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2025.2;
+				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.baseClip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -703,7 +703,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2025.2;
+				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.baseClip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -741,7 +741,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2025.1;
+				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.watchkitapp;
 				PRODUCT_NAME = CocoaHeadsBR;
 				SDKROOT = watchos;
@@ -780,7 +780,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2025.1;
+				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.watchkitapp;
 				PRODUCT_NAME = CocoaHeadsBR;
 				SDKROOT = watchos;
@@ -816,7 +816,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2025.1;
+				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = xros;
@@ -853,7 +853,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2025.1;
+				MARKETING_VERSION = 2025.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = xros;

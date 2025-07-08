@@ -23,11 +23,14 @@ struct Config {
       }
     } catch {
       var isSimulatorOrTestFlight: Bool {
-        // TODO: Come up with a non-deprecated way to do this that actually works
-        guard let path = Bundle.main.appStoreReceiptURL?.path else {
-          return false
-        }
-        return path.contains("CoreSimulator") || path.contains("sandboxReceipt")
+        #if targetEnvironment(simulator)
+          return true
+        #else
+          guard let receiptURL = Bundle.main.appStoreReceiptURL else {
+            return false
+          }
+          return receiptURL.lastPathComponent == "sandboxReceipt"
+        #endif
       }
       isTestflightOrDebug = isSimulatorOrTestFlight
     }
