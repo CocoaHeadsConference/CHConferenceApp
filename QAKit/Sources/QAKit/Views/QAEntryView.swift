@@ -203,7 +203,7 @@ public struct QAEntryView: View {
           isSubmitting = false
 
           // Haptic feedback for successful submission
-          #if canImport(UIKit)
+          #if canImport(UIKit) && os(iOS)
             let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
             impactFeedback.impactOccurred()
           #endif
