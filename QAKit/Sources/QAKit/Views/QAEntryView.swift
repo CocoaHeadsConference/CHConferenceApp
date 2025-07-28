@@ -18,6 +18,7 @@ extension Notification.Name {
 public struct QAEntryView: View {
   @Environment(\.qaService) private var qaService
   @Environment(\.dismiss) private var dismiss
+  @AppStorage("qakit_user_name") private var storedUserName: String = ""
 
   let eventID: UUID
   @State private var userName: String = ""
@@ -64,6 +65,12 @@ public struct QAEntryView: View {
       } message: {
         Text(errorMessage)
       }
+      .onAppear {
+        if !storedUserName.isEmpty {
+          userName = storedUserName
+          currentStep = .question
+        }
+      }
     }
   }
 
@@ -82,7 +89,9 @@ public struct QAEntryView: View {
         .accessibilityLabel("Nome do usuário")
         .accessibilityHint("Digite seu nome para participar das perguntas")
         .onSubmit {
-          if !userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+          let trimmedName = userName.trimmingCharacters(in: .whitespacesAndNewlines)
+          if !trimmedName.isEmpty {
+            storedUserName = trimmedName
             withAnimation {
               currentStep = .question
             }
@@ -92,7 +101,9 @@ public struct QAEntryView: View {
       Spacer()
 
       Button("Continuar") {
-        if !userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        let trimmedName = userName.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !trimmedName.isEmpty {
+          storedUserName = trimmedName
           withAnimation {
             currentStep = .question
           }
@@ -111,7 +122,18 @@ public struct QAEntryView: View {
         Text("Olá, \(userName)!")
           .font(.title2)
           .fontWeight(.semibold)
+
         Spacer()
+
+        Button("Alterar Nome") {
+          withAnimation {
+            currentStep = .name
+          }
+        }
+        .font(.caption)
+        .buttonStyle(.bordered)
+        .accessibilityLabel("Alterar nome")
+        .accessibilityHint("Permite trocar o nome usado para fazer perguntas")
       }
 
       Text("O que você gostaria de perguntar?")
@@ -132,24 +154,13 @@ public struct QAEntryView: View {
 
       Spacer()
 
-      HStack {
-        Button("Voltar") {
-          withAnimation {
-            currentStep = .name
-          }
-        }
-        .buttonStyle(.bordered)
-        .accessibilityLabel("Voltar")
-        .accessibilityHint("Retorna para a tela de inserção de nome")
-
-        Button("Enviar") {
-          submitQuestion()
-        }
-        .buttonStyle(.borderedProminent)
-        .disabled(questionText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || isSubmitting)
-        .accessibilityLabel("Enviar pergunta")
-        .accessibilityHint("Envia sua pergunta para todos os participantes do evento")
+      Button("Enviar") {
+        submitQuestion()
       }
+      .buttonStyle(.borderedProminent)
+      .disabled(questionText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || isSubmitting)
+      .accessibilityLabel("Enviar pergunta")
+      .accessibilityHint("Envia sua pergunta para todos os participantes do evento")
     }
     .disabled(isSubmitting)
     .overlay {
