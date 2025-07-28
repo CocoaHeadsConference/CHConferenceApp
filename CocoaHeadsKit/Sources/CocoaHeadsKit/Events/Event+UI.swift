@@ -16,6 +16,11 @@ extension Event {
       .card(
         title: nil,
         ui: [
+          .qa(eventID: self.id)
+        ]),
+      .card(
+        title: nil,
+        ui: [
           .text("Running on app clip: \(Bundle.main.isAppClip)"),
           .caption(text: "(Este card só aparece para usuários do TestFlight)")
         ]

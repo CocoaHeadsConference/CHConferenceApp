@@ -23,6 +23,20 @@
         "identifier" : "CommonTests",
         "name" : "CommonTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:QAKit",
+        "identifier" : "QAKitTests",
+        "name" : "QAKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:CocoaHeadsKit",
+        "identifier" : "CocoaHeadsKitTests",
+        "name" : "CocoaHeadsKitTests"
+      }
     }
   ],
   "version" : 1

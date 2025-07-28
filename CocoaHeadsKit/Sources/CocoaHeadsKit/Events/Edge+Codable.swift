@@ -9,7 +9,7 @@ import SwiftUI
 
 // TODO: Move this to `Common`
 
-extension Edge.Set: Codable {
+extension Edge.Set: @retroactive Codable {
   private enum CodingKeys: String, CodingKey {
     case top, leading, bottom, trailing, all, horizontal, vertical
   }

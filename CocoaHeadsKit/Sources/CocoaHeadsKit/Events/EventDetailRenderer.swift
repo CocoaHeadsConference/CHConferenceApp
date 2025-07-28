@@ -5,6 +5,7 @@
 //  Created by Mauricio on 5/7/25.
 //
 
+import QAKit
 import SwiftUI
 
 // TODO: Break views into their own files
@@ -71,6 +72,8 @@ public struct EventDetailRenderer: View {
       LinkView(url: url, title: title)
     case .map(address: let addr, lat: let lat, lng: let lng):
       MapUI(address: addr, latitude: lat, longitude: lng)
+    case .qa(let eventID):
+      QASection(eventID: eventID)
     case .raffle(let id):
       RaffleView(id: id)
     case .subtitle(let text):

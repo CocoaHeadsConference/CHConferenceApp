@@ -21,6 +21,7 @@ public indirect enum EventDetailUI: Codable, Sendable {
   case empty
   case link(URL, title: String?)
   case map(address: String, lat: Double, lng: Double)
+  case qa(eventID: UUID)
   case raffle(String)
   case subtitle(String)
   case text(String)
@@ -53,6 +54,8 @@ extension EventDetailUI: Identifiable {
       "link-\(url.absoluteString)-\(title ?? "nil")"
     case .map(address: let addr, lat: let lat, lng: let lng):
       "map-\(addr)-\(lat)-\(lng)"
+    case .qa(let eventID):
+      "qa-\(eventID)"
     case .raffle(let id):
       "raffle-\(id)"
     case .subtitle(let text):

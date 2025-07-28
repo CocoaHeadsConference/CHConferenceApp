@@ -80,6 +80,7 @@
 		B4BAA62D2C61542C0024B351 /* NSBrazilConf.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = NSBrazilConf.xctestplan; sourceTree = "<group>"; };
 		B4C5F8C32C5ADD1C0031246C /* Common */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Common; sourceTree = "<group>"; };
 		B4DD00112C6F0536003ADBD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4FB8CD82E370CE300C2CCB9 /* QAKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = QAKit; sourceTree = "<group>"; };
 		VERSIONXCCONFIG123456789 /* Version.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,13 +122,14 @@
 		1D0A951E2342E87500B2C582 = {
 			isa = PBXGroup;
 			children = (
+				B4C5F8C32C5ADD1C0031246C /* Common */,
+				226DD9BF2DC0579B0026B3CA /* CocoaHeadsKit */,
+				B4FB8CD82E370CE300C2CCB9 /* QAKit */,
 				VERSIONXCCONFIG123456789 /* Version.xcconfig */,
 				2233E22C2DC83F1F008351FD /* CocoaHeadsBR Watch.entitlements */,
 				2233E22B2DC83E4E008351FD /* CocoaHeadsBR Vision.entitlements */,
 				2211E38D2DC1004700D347E8 /* CocoaHeadsBR-Watch-Info.plist */,
 				B4BAA62D2C61542C0024B351 /* NSBrazilConf.xctestplan */,
-				226DD9BF2DC0579B0026B3CA /* CocoaHeadsKit */,
-				B4C5F8C32C5ADD1C0031246C /* Common */,
 				1D0A95292342E87500B2C582 /* NSBrazilConf */,
 				B44067B325B1E25700D9DE9B /* NSClip */,
 				B482AA882C5C721600F66F3B /* CocoaHeadsBR Watch Watch App */,

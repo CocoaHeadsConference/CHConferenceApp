@@ -96,6 +96,7 @@ struct LoadedHome: View {
           .frame(maxWidth: .infinity, alignment: .leading)
           .offset(x: dragOffset)
           .gesture(drag)
+
         NavigationLink {
           Debug()
         } label: {
@@ -108,11 +109,30 @@ struct LoadedHome: View {
         .animation(.default, value: shouldShowButton)
       }
       .padding()
+
       ChapterSelectionView(
         selectedChapter: $selectedChapter,
         availableChapters: chapters
       )
       EventList(events: selectedChapter?.events ?? [])
+
+      if Config.isTestflightOrDebug {
+        NavigationLink {
+          ScrollView {
+            EventDetailRenderer(ui: Event.mock.ui)
+          }
+        } label: {
+          Text("Mock event")
+        }
+        .buttonStyle(.borderedProminent)
+        NavigationLink {
+          Debug()
+        } label: {
+          Text("Hidden")
+        }
+        .buttonStyle(.borderedProminent)
+      }
+
     }
     .animation(.default, value: dragOffset)
     .onAppear {
