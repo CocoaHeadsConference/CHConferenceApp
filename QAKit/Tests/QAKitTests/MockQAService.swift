@@ -34,14 +34,14 @@ actor MockQAService: QAServiceProtocol {
 
   init() {}
 
-  func fetchQuestions(for eventID: UUID) async throws -> [Question] {
+  func fetchQuestions(for sessionID: String) async throws -> [Question] {
     if shouldThrowError {
       throw errorToThrow
     }
 
     return
       questions
-      .filter { $0.eventID == eventID }
+      .filter { $0.sessionID == sessionID }
       .sorted { $0.timestamp > $1.timestamp }
   }
 
@@ -75,7 +75,7 @@ actor MockQAService: QAServiceProtocol {
     return questions.count
   }
 
-  func getQuestions(for eventID: UUID) -> [Question] {
-    return questions.filter { $0.eventID == eventID }
+  func getQuestions(for sessionID: String) -> [Question] {
+    return questions.filter { $0.sessionID == sessionID }
   }
 }

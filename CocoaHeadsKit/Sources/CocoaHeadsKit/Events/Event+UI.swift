@@ -16,7 +16,7 @@ extension Event {
       .card(
         title: nil,
         ui: [
-          .qa(eventID: self.id)
+          .qa(sessionID: "event-\(self.id.uuidString)")
         ]),
       .card(
         title: nil,

@@ -11,7 +11,7 @@ import SwiftUI
 public struct QAListView: View {
   @Environment(\.qaService) private var qaService
 
-  let eventID: UUID
+  let sessionID: String
   @State private var questions: [Question] = []
   @State private var isLoading = true
   @State private var showError = false
@@ -19,8 +19,8 @@ public struct QAListView: View {
   @State private var showEntrySheet = false
   @State private var pollingTask: Task<Void, Never>?
 
-  public init(eventID: UUID) {
-    self.eventID = eventID
+  public init(sessionID: String) {
+    self.sessionID = sessionID
   }
 
   public var body: some View {
@@ -51,7 +51,7 @@ public struct QAListView: View {
         }
       }
       .sheet(isPresented: $showEntrySheet) {
-        QAEntryView(eventID: eventID)
+        QAEntryView(sessionID: sessionID)
       }
       .alert("Erro", isPresented: $showError) {
         Button("Tentar Novamente") {
@@ -77,7 +77,7 @@ public struct QAListView: View {
       }
       .onReceive(NotificationCenter.default.publisher(for: .localQuestionPosted)) { notification in
         guard let question = notification.object as? Question,
-          question.eventID == eventID
+          question.sessionID == sessionID
         else { return }
 
         // Add question immediately to the top of the list
@@ -131,7 +131,7 @@ public struct QAListView: View {
 
   private func loadQuestions() async {
     do {
-      let fetchedQuestions = try await qaService.fetchQuestions(for: eventID)
+      let fetchedQuestions = try await qaService.fetchQuestions(for: sessionID)
       await MainActor.run {
         self.questions = fetchedQuestions
         self.isLoading = false
@@ -161,7 +161,7 @@ public struct QAListView: View {
 
   private func refreshQuestions() async {
     do {
-      let fetchedQuestions = try await qaService.fetchQuestions(for: eventID)
+      let fetchedQuestions = try await qaService.fetchQuestions(for: sessionID)
       await MainActor.run {
         // Filter out questions that already exist (including locally posted ones)
         let newQuestions = fetchedQuestions.filter { fetchedQ in

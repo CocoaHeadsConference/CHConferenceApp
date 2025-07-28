@@ -20,7 +20,7 @@ public struct QAEntryView: View {
   @Environment(\.dismiss) private var dismiss
   @AppStorage("qakit_user_name") private var storedUserName: String = ""
 
-  let eventID: UUID
+  let sessionID: String
   @State private var userName: String = ""
   @State private var questionText: String = ""
   @State private var isSubmitting = false
@@ -34,8 +34,8 @@ public struct QAEntryView: View {
 
   @State private var currentStep: EntryStep = .name
 
-  public init(eventID: UUID) {
-    self.eventID = eventID
+  public init(sessionID: String) {
+    self.sessionID = sessionID
   }
 
   public var body: some View {
@@ -184,7 +184,7 @@ public struct QAEntryView: View {
     Task {
       do {
         let question = Question(
-          eventID: eventID,
+          sessionID: sessionID,
           userName: trimmedName,
           questionText: trimmedQuestion
         )

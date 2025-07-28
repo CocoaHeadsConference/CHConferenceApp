@@ -10,20 +10,20 @@ import Foundation
 
 public struct Question: Identifiable, Sendable, Hashable {
   public let id: UUID
-  public let eventID: UUID
+  public let sessionID: String
   public let userName: String
   public let questionText: String
   public let timestamp: Date
 
   public init(
     id: UUID = UUID(),
-    eventID: UUID,
+    sessionID: String,
     userName: String,
     questionText: String,
     timestamp: Date = Date()
   ) {
     self.id = id
-    self.eventID = eventID
+    self.sessionID = sessionID
     self.userName = userName
     self.questionText = questionText
     self.timestamp = timestamp
@@ -33,8 +33,7 @@ public struct Question: Identifiable, Sendable, Hashable {
 extension Question {
   init?(from record: CKRecord) {
     guard let id = UUID(uuidString: record.recordID.recordName),
-      let eventIDString = record["eventID"] as? String,
-      let eventID = UUID(uuidString: eventIDString),
+      let sessionID = record["sessionID"] as? String,
       let userName = record["userName"] as? String,
       let questionText = record["questionText"] as? String,
       let timestamp = record["timestamp"] as? Date
@@ -43,7 +42,7 @@ extension Question {
     }
 
     self.id = id
-    self.eventID = eventID
+    self.sessionID = sessionID
     self.userName = userName
     self.questionText = questionText
     self.timestamp = timestamp
@@ -53,7 +52,7 @@ extension Question {
     let recordID = CKRecord.ID(recordName: id.uuidString)
     let record = CKRecord(recordType: "Question", recordID: recordID)
 
-    record["eventID"] = eventID.uuidString
+    record["sessionID"] = sessionID
     record["userName"] = userName
     record["questionText"] = questionText
     record["timestamp"] = timestamp

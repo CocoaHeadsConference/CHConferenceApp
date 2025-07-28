@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 public protocol QAServiceProtocol: Sendable {
-  func fetchQuestions(for eventID: UUID) async throws -> [Question]
+  func fetchQuestions(for sessionID: String) async throws -> [Question]
   func createQuestion(_ question: Question) async throws
 }
 
@@ -27,9 +27,9 @@ public actor QAService: QAServiceProtocol, Sendable {
 
   fileprivate init() {}
 
-  public func fetchQuestions(for eventID: UUID) async throws -> [Question] {
+  public func fetchQuestions(for sessionID: String) async throws -> [Question] {
     let database = container.publicCloudDatabase
-    let predicate = NSPredicate(format: "eventID == %@", eventID.uuidString)
+    let predicate = NSPredicate(format: "sessionID == %@", sessionID)
     let query = CKQuery(recordType: "Question", predicate: predicate)
     query.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
 

@@ -13,29 +13,29 @@ import XCTest
 final class QuestionTests: XCTestCase {
 
   func testQuestionInitialization() {
-    let eventID = UUID()
+    let sessionID = "test-session-123"
     let userName = "João Silva"
     let questionText = "Qual é a melhor forma de usar SwiftUI?"
     let timestamp = Date()
 
     let question = Question(
-      eventID: eventID,
+      sessionID: sessionID,
       userName: userName,
       questionText: questionText,
       timestamp: timestamp
     )
 
     XCTAssertNotNil(question.id)
-    XCTAssertEqual(question.eventID, eventID)
+    XCTAssertEqual(question.sessionID, sessionID)
     XCTAssertEqual(question.userName, userName)
     XCTAssertEqual(question.questionText, questionText)
     XCTAssertEqual(question.timestamp, timestamp)
   }
 
   func testQuestionDefaultTimestamp() {
-    let eventID = UUID()
+    let sessionID = "test-session-456"
     let question = Question(
-      eventID: eventID,
+      sessionID: sessionID,
       userName: "Maria",
       questionText: "Como funciona o Combine?"
     )
@@ -45,7 +45,7 @@ final class QuestionTests: XCTestCase {
   }
 
   func testQuestionToCKRecord() {
-    let eventID = UUID()
+    let sessionID = "test-session-789"
     let questionID = UUID()
     let userName = "Pedro"
     let questionText = "Como usar async/await?"
@@ -53,7 +53,7 @@ final class QuestionTests: XCTestCase {
 
     let question = Question(
       id: questionID,
-      eventID: eventID,
+      sessionID: sessionID,
       userName: userName,
       questionText: questionText,
       timestamp: timestamp
@@ -63,7 +63,7 @@ final class QuestionTests: XCTestCase {
 
     XCTAssertEqual(record.recordID.recordName, questionID.uuidString)
     XCTAssertEqual(record.recordType, "Question")
-    XCTAssertEqual(record["eventID"] as? String, eventID.uuidString)
+    XCTAssertEqual(record["sessionID"] as? String, sessionID)
     XCTAssertEqual(record["userName"] as? String, userName)
     XCTAssertEqual(record["questionText"] as? String, questionText)
     XCTAssertEqual(record["timestamp"] as? Date, timestamp)
@@ -71,14 +71,14 @@ final class QuestionTests: XCTestCase {
 
   func testQuestionFromCKRecord() {
     let questionID = UUID()
-    let eventID = UUID()
+    let sessionID = "test-session-abc"
     let userName = "Carlos"
     let questionText = "O que é TCA?"
     let timestamp = Date()
 
     let recordID = CKRecord.ID(recordName: questionID.uuidString)
     let record = CKRecord(recordType: "Question", recordID: recordID)
-    record["eventID"] = eventID.uuidString
+    record["sessionID"] = sessionID
     record["userName"] = userName
     record["questionText"] = questionText
     record["timestamp"] = timestamp
@@ -87,14 +87,14 @@ final class QuestionTests: XCTestCase {
 
     XCTAssertNotNil(question)
     XCTAssertEqual(question?.id, questionID)
-    XCTAssertEqual(question?.eventID, eventID)
+    XCTAssertEqual(question?.sessionID, sessionID)
     XCTAssertEqual(question?.userName, userName)
     XCTAssertEqual(question?.questionText, questionText)
     XCTAssertEqual(question?.timestamp, timestamp)
   }
 
   func testQuestionFromInvalidCKRecord() {
-    // Test with missing eventID
+    // Test with missing sessionID
     let recordID = CKRecord.ID(recordName: UUID().uuidString)
     let record = CKRecord(recordType: "Question", recordID: recordID)
     record["userName"] = "Test"
@@ -109,7 +109,7 @@ final class QuestionTests: XCTestCase {
     // Test with invalid UUID for recordName
     let recordID = CKRecord.ID(recordName: "invalid-uuid")
     let record = CKRecord(recordType: "Question", recordID: recordID)
-    record["eventID"] = UUID().uuidString
+    record["sessionID"] = "test-session"
     record["userName"] = "Test"
     record["questionText"] = "Test question"
     record["timestamp"] = Date()
@@ -120,7 +120,7 @@ final class QuestionTests: XCTestCase {
 
   func testQuestionRoundTripSerialization() {
     let originalQuestion = Question(
-      eventID: UUID(),
+      sessionID: "test-session-round-trip",
       userName: "Lucia",
       questionText: "Como implementar testes unitários?",
       timestamp: Date()
@@ -131,7 +131,7 @@ final class QuestionTests: XCTestCase {
 
     XCTAssertNotNil(deserializedQuestion)
     XCTAssertEqual(originalQuestion.id, deserializedQuestion?.id)
-    XCTAssertEqual(originalQuestion.eventID, deserializedQuestion?.eventID)
+    XCTAssertEqual(originalQuestion.sessionID, deserializedQuestion?.sessionID)
     XCTAssertEqual(originalQuestion.userName, deserializedQuestion?.userName)
     XCTAssertEqual(originalQuestion.questionText, deserializedQuestion?.questionText)
     XCTAssertEqual(

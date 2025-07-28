@@ -9,7 +9,7 @@ import QAKit
 import SwiftUI
 
 struct QASection: View {
-  let eventID: UUID
+  let sessionID: String
   @State private var showQAList = false
 
   var body: some View {
@@ -39,7 +39,7 @@ struct QASection: View {
     }
     .buttonStyle(.plain)
     .sheet(isPresented: $showQAList) {
-      QAListView(eventID: eventID)
+      QAListView(sessionID: sessionID)
     }
   }
 }

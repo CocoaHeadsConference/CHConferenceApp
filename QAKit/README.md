@@ -25,19 +25,19 @@ The Q&A system uses the existing CloudKit container: `iCloud.br.com.cocoaHeads.c
 You'll need to add a new record type in CloudKit Dashboard:
 
 **Record Type: Question**
-- `eventID` (String) - UUID of the associated event
+- `sessionID` (String) - Unique identifier for the Q&A session
 - `userName` (String) - Name of the person asking
 - `questionText` (String) - The question content
 - `timestamp` (Date) - When the question was asked
 
 ### 3. Add Q&A to Event Details
 
-To add Q&A functionality to an event, include the `.qa(eventID: UUID)` case in your EventDetailUI array:
+To add Q&A functionality to any content, include the `.qa(sessionID: String)` case in your EventDetailUI array:
 
 ```swift
 let eventUI: [EventDetailUI] = [
     // ... other UI elements
-    .qa(eventID: event.id),
+    .qa(sessionID: "unique-session-identifier"),
     // ... more UI elements
 ]
 ```

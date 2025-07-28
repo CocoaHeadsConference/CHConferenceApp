@@ -87,11 +87,11 @@ Add to main app's Package.swift or Xcode project dependencies.
 
 ### 2. EventDetailUI Integration
 ```swift
-.qa(eventID: event.id)  // Add to EventDetailUI array
+.qa(sessionID: "unique-session-id")  // Add to EventDetailUI array
 ```
 
 ### 3. CloudKit Record Type
-Create "Question" record type with fields: eventID, userName, questionText, timestamp
+Create "Question" record type with fields: sessionID, userName, questionText, timestamp
 
 ## Testing Strategy
 

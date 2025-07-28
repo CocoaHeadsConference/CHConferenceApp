@@ -15,6 +15,7 @@ extension MeetupEvent {
     [
       .details(title: title, remoteImage: image, cloudKitImageID: nil, shareURL: url),
       .rsvpCard(url: url),
+      .qaCard(for: self),
       .infoCard(date: date, address: address),
       .descriptionCard(description),
       .socials(adding: nil),
@@ -35,6 +36,7 @@ extension MeetupEvent {
     [
       .details(title: title, remoteImage: image, cloudKitImageID: nil, shareURL: url),
       .rsvpCard(url: url),
+      .qaCard(for: self),
       .infoCard(date: date, address: address),
       .descriptionCard(customDescription),
       speakers,
@@ -127,6 +129,15 @@ extension EventDetailUI {
     } else {
       .empty
     }
+  }
+
+  fileprivate static func qaCard(for meetupEvent: MeetupEvent) -> EventDetailUI {
+    .card(
+      title: nil,
+      ui: [
+        .qa(sessionID: "meetup-\(meetupEvent.url.absoluteString.hash)")
+      ]
+    )
   }
 
   fileprivate static var codeOfConduct: EventDetailUI {
