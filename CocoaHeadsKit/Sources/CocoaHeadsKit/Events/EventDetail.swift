@@ -5,6 +5,7 @@
 //  Created by Mauricio on 4/28/25.
 //
 
+import CocoaHeadsCore
 import SwiftUI
 
 struct EventDetail: View {
@@ -109,33 +110,33 @@ extension View {
   @ViewBuilder
   fileprivate func toolbarStyle(scrollPosition: CGFloat) -> some View {
     #if os(visionOS)
-    self
-      .font(.caption)
-      .foregroundStyle(.white)
-      .padding()
-      .background {
-        Circle()
-          .fill(Color(.lightGray))
-          .shadow(radius: scrollPosition < -100 ? 1 : 0)
-          .animation(.default, value: scrollPosition)
-      }
-    #else
-    if #available(iOS 26.0, *) {
       self
         .font(.caption)
-        .foregroundStyle(Color(.toolbarItem))
-    } else {
-      self
-        .font(.caption)
-        .foregroundStyle(Color.buttonBottomGradient)
+        .foregroundStyle(.white)
         .padding()
         .background {
           Circle()
-            .fill(.background)
+            .fill(Color(.lightGray))
             .shadow(radius: scrollPosition < -100 ? 1 : 0)
             .animation(.default, value: scrollPosition)
         }
-    }
+    #else
+      if #available(iOS 26.0, *) {
+        self
+          .font(.caption)
+          .foregroundStyle(Color(.toolbarItem))
+      } else {
+        self
+          .font(.caption)
+          .foregroundStyle(Color.buttonBottomGradient)
+          .padding()
+          .background {
+            Circle()
+              .fill(.background)
+              .shadow(radius: scrollPosition < -100 ? 1 : 0)
+              .animation(.default, value: scrollPosition)
+          }
+      }
     #endif
   }
 }

@@ -71,9 +71,10 @@ extension EventDetailUI: Identifiable {
 }
 
 extension EventDetailUI {
+  // TODO: _spi?
   // TODO: This should be part of a base set of server driven UIs
   // eg.: .sdui(.debug(.eventDetail(self)))
-  func debug() -> EventDetailUI {
+  public func debug() -> EventDetailUI {
     .debug(self)
   }
 }
@@ -84,15 +85,15 @@ extension EventDetailUI {
     return .card(title: title, edges: .all, insetBy: nil, ui: ui)
   }
 
-  static func callToAction(title: String, url: URL) -> EventDetailUI {
+  public static func callToAction(title: String, url: URL) -> EventDetailUI {
     return .callToAction(title: title, url: url, systemImage: nil)
   }
 
-  static func link(_ url: URL) -> EventDetailUI {
+  public static func link(_ url: URL) -> EventDetailUI {
     return .link(url, title: nil)
   }
 
-  static func speaker(name: String?, talk: String?) -> EventDetailUI {
+  public static func speaker(name: String?, talk: String?) -> EventDetailUI {
     var string = ""
     if let name {
       string.append("**\(name)**\n")

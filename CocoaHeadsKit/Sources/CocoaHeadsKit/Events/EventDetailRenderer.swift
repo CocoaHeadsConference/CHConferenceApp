@@ -5,6 +5,7 @@
 //  Created by Mauricio on 5/7/25.
 //
 
+import CocoaHeadsCore
 import QAKit
 import SwiftUI
 

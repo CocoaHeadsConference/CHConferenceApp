@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:CocoaHeadsCore"
+      name = "CocoaHeadsCore">
+      <Group
+         location = "group:Tests"
+         name = "Tests">
+         <Group
+            location = "group:CocoaHeadsCoreTests"
+            name = "CocoaHeadsCoreTests">
+            <FileRef
+               location = "group:CocoaHeadsCoreTests.swift">
+            </FileRef>
+         </Group>
+      </Group>
+      <FileRef
+         location = "group:Package.swift">
+      </FileRef>
+      <Group
+         location = "group:Sources"
+         name = "Sources">
+         <Group
+            location = "group:CocoaHeadsCore"
+            name = "CocoaHeadsCore">
+            <FileSystemSynchronizedGroup
+               location = "group:ServerDrivenUI"
+               name = "ServerDrivenUI">
+            </FileSystemSynchronizedGroup>
+            <FileRef
+               location = "group:CocoaHeadsCore.swift">
+            </FileRef>
+         </Group>
+      </Group>
+   </Group>
+   <FileRef
+      location = "container:NSBrazilConf.xcodeproj">
+   </FileRef>
+</Workspace>

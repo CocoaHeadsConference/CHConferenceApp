@@ -5,6 +5,7 @@
 //  Created by Mauricio on 5/9/25.
 //
 
+import CocoaHeadsCore
 import SwiftUI
 
 struct EventDetailUIViewer: View {

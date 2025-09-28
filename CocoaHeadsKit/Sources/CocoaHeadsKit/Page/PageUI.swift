@@ -7,6 +7,8 @@
 
 // TODO: We need stable identifiers that don't rely on inner values
 
+import CocoaHeadsCore
+
 indirect enum UI: Codable, Identifiable, Sendable, Equatable {
   case home(HomeUI)
   case eventDetail([EventDetailUI])
