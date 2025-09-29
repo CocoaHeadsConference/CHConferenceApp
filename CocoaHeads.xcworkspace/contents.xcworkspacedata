@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <FileRef
+      location = "group:backend">
+   </FileRef>
    <Group
       location = "group:CocoaHeadsCore"
       name = "CocoaHeadsCore">
-      <Group
+      <FileSystemSynchronizedGroup
          location = "group:Tests"
          name = "Tests">
-         <Group
-            location = "group:CocoaHeadsCoreTests"
-            name = "CocoaHeadsCoreTests">
-            <FileRef
-               location = "group:CocoaHeadsCoreTests.swift">
-            </FileRef>
-         </Group>
-      </Group>
+      </FileSystemSynchronizedGroup>
       <FileRef
          location = "group:Package.swift">
       </FileRef>
@@ -24,6 +20,10 @@
          <Group
             location = "group:CocoaHeadsCore"
             name = "CocoaHeadsCore">
+            <FileSystemSynchronizedGroup
+               location = "group:MeetupEvent"
+               name = "MeetupEvent">
+            </FileSystemSynchronizedGroup>
             <FileSystemSynchronizedGroup
                location = "group:ServerDrivenUI"
                name = "ServerDrivenUI">
