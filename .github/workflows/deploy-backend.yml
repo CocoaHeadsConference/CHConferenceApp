@@ -1,0 +1,49 @@
+name: Deploy Backend
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'develop'
+        type: choice
+        options:
+          - develop
+
+jobs:
+  deploy:
+    name: Deploy to AWS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to AWS Server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.AWS_HOST }}
+          username: ${{ secrets.AWS_USERNAME }}
+          key: ${{ secrets.AWS_SSH_KEY }}
+          port: ${{ secrets.AWS_PORT || 22 }}
+          script: |
+            # Set the branch to deploy
+            export DEPLOY_BRANCH="${{ github.event.inputs.branch }}"
+
+            # Navigate to the project directory
+            cd ${{ secrets.REPO_PATH || '/home/ubuntu/CHConferenceApp' }}
+
+            # Run the deployment script
+            cd backend
+            bash deploy.sh
+
+      - name: Deployment Status
+        if: success()
+        run: |
+          echo "✓ Backend deployed successfully from branch: ${{ github.event.inputs.branch }}"
+          echo "✓ Deployment completed at: $(date)"
+
+      - name: Deployment Failed
+        if: failure()
+        run: |
+          echo "✗ Backend deployment failed"
+          echo "Please check the AWS server logs for more details"
+          exit 1
