@@ -14,11 +14,11 @@ struct MeetupController: RouteCollection {
     let meetupRoutes = routes.grouped("meetup")
     meetupRoutes.post(use: self.event)
   }
-  
+
   @Sendable
   func event(req: Request) async throws -> MeetupEvent {
     let meetup = try req.content.decode(MeetupEventRequest.self)
-    
+
     guard
       let url = URL(string: meetup.url),
       case (let data, _) = try await URLSession.shared.data(from: url),
@@ -43,7 +43,7 @@ struct MeetupController: RouteCollection {
       image: try parseImage(from: document)
     )
   }
-  
+
   func parseTitle(from document: Document) throws -> String {
     let title = try document.title()
     return "\(title.split(separator: ",").first ?? "")"
@@ -162,4 +162,4 @@ extension MeetupEvent: @retroactive RequestDecodable {}
 extension MeetupEvent: @retroactive ResponseEncodable {}
 extension MeetupEvent: @retroactive AsyncRequestDecodable {}
 extension MeetupEvent: @retroactive AsyncResponseEncodable {}
-extension MeetupEvent: @retroactive Content { }
+extension MeetupEvent: @retroactive Content {}

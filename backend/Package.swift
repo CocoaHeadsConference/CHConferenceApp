@@ -28,7 +28,7 @@ let package = Package(
         .product(name: "NIOCore", package: "swift-nio"),
         .product(name: "NIOPosix", package: "swift-nio"),
         .product(name: "SwiftSoup", package: "SwiftSoup"),
-        "CocoaHeadsCore",
+        "CocoaHeadsCore"
       ],
       swiftSettings: swiftSettings
     ),

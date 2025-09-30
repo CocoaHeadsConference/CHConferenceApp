@@ -5,18 +5,9 @@
 //  Created by Mauricio on 5/9/25.
 //
 
+import CocoaHeadsCore
 import CoreLocation
 import SwiftSoup
-
-struct MeetupEvent: Equatable {
-  let title: String
-  let address: String
-  let location: CLLocation
-  let description: String
-  let date: Date
-  let url: URL
-  let image: URL?
-}
 
 struct MeetupService {
   func event(from urlString: String) async throws -> MeetupEvent {
@@ -62,14 +53,14 @@ struct MeetupService {
     return eventLocation + "\n" + address
   }
 
-  func parseLocation(from document: Document) throws -> CLLocation {
+  func parseLocation(from document: Document) throws -> MeetupEvent.Location {
     let latlngString = try document.select("[data-event-label='event-map']").first()?.attr("href") ?? ""
     let latLng = extractCoordinates(from: latlngString)
     guard let (lat, lng) = latLng else {
       throw Error.coordinateError
     }
 
-    return CLLocation(
+    return MeetupEvent.Location(
       latitude: lat,
       longitude: lng
     )

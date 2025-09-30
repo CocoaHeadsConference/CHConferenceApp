@@ -1,6 +1,6 @@
 //
 //  MeetupEvent.swift
-//  
+//
 //
 //  Created by Mauricio Cardozo on 9/28/25.
 //
@@ -25,7 +25,7 @@ public struct MeetupEvent: Codable, Equatable, Sendable {
     self.url = url
     self.image = image
   }
-  
+
   public let title: String
   public let address: String
   public let location: Location
@@ -33,7 +33,7 @@ public struct MeetupEvent: Codable, Equatable, Sendable {
   public let date: Date
   public let url: URL
   public let image: URL?
-  
+
   public struct Location: Codable, Equatable, Sendable {
     public init(latitude: Double, longitude: Double) {
       self.latitude = latitude

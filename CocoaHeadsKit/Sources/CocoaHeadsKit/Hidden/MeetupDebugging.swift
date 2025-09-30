@@ -5,6 +5,7 @@
 //  Created by Mauricio on 5/9/25.
 //
 
+import CocoaHeadsCore
 import SwiftUI
 
 struct MeetupDebugging: View {
@@ -100,7 +101,7 @@ struct MeetupDebugging: View {
       eventTitle = event.title
       eventDate = event.date.formatted()
       eventLocation =
-        event.address + "\nlat: \(event.location.coordinate.latitude) lng: \(event.location.coordinate.longitude)"
+        event.address + "\nlat: \(event.location.latitude) lng: \(event.location.longitude)"
       eventDescription = event.description
       eventRSVPLink = event.url.absoluteString
       meetupEvent = event

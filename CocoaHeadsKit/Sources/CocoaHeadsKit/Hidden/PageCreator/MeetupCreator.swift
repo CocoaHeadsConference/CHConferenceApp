@@ -214,3 +214,8 @@ struct MeetupCreator: View {
     }
   }
 }
+
+#Preview {
+  @Previewable @State var ui: [UI] = []
+  MeetupCreator(ui: $ui)
+}

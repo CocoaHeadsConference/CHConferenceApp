@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,8 +6,8 @@ import PackageDescription
 let package = Package(
   name: "CocoaHeadsKit",
   platforms: [
-    .iOS("18.2"),
-    .visionOS("2.2")
+    .iOS(.v26),
+    .visionOS(.v26)
   ],
   products: [
     // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -17,8 +17,8 @@ let package = Package(
   ],
   dependencies: [
     .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.8.7"),
-    .package(path: "Common"),
-    .package(path: "QAKit"),
+    .package(path: "../Common"),
+    .package(path: "../QAKit"),
     .package(path: "../CocoaHeadsCore")
   ],
   targets: [
