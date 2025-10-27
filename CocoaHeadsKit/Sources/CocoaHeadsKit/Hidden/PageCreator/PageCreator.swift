@@ -5,6 +5,7 @@
 //  Created by Mauricio on 5/9/25.
 //
 
+import Foundation
 import SwiftUI
 
 struct PageCreator: View {
@@ -149,7 +150,7 @@ struct PageCreator: View {
 extension String {
   func cleanAndLowercased() -> String {
     lowercased()
-      .trim()
+      .trimmingCharacters(in: .whitespacesAndNewlines)
       .folding(options: .diacriticInsensitive, locale: .current)
       .replacingOccurrences(of: " ", with: "")
   }

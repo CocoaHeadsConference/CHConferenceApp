@@ -16,7 +16,6 @@ let package = Package(
       targets: ["CocoaHeadsKit"])
   ],
   dependencies: [
-    .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.8.7"),
     .package(path: "../Common"),
     .package(path: "../QAKit"),
     .package(path: "../CocoaHeadsCore")
@@ -27,7 +26,6 @@ let package = Package(
     .target(
       name: "CocoaHeadsKit",
       dependencies: [
-        .product(name: "SwiftSoup", package: "SwiftSoup"),
         "CocoaHeadsCore",
         "Common",
         "QAKit"

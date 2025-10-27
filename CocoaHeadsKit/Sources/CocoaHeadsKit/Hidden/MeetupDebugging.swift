@@ -107,7 +107,7 @@ struct MeetupDebugging: View {
       meetupEvent = event
     } catch {
       eventTitle =
-        if let error = error as? MeetupService.Error {
+        if let error = error as? MeetupError {
           error.localizedDescription
         } else {
           "error: \(error)"

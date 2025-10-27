@@ -15,7 +15,8 @@ public struct MeetupEvent: Codable, Equatable, Sendable {
     description: String,
     date: Date,
     url: URL,
-    image: URL? = nil
+    image: URL? = nil,
+    talks: [Talk] = []
   ) {
     self.title = title
     self.address = address
@@ -24,6 +25,7 @@ public struct MeetupEvent: Codable, Equatable, Sendable {
     self.date = date
     self.url = url
     self.image = image
+    self.talks = talks
   }
 
   public let title: String
@@ -33,6 +35,7 @@ public struct MeetupEvent: Codable, Equatable, Sendable {
   public let date: Date
   public let url: URL
   public let image: URL?
+  public let talks: [Talk]
 
   public struct Location: Codable, Equatable, Sendable {
     public init(latitude: Double, longitude: Double) {
@@ -42,5 +45,15 @@ public struct MeetupEvent: Codable, Equatable, Sendable {
 
     public let latitude: Double
     public let longitude: Double
+  }
+  
+  public struct Talk: Codable, Equatable, Sendable {
+    public init(speaker: String, title: String) {
+      self.speaker = speaker
+      self.title = title
+    }
+    
+    public let speaker: String
+    public let title: String
   }
 }
