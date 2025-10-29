@@ -38,7 +38,7 @@ struct NestedProperty: Codable, Sendable {
 
 struct FirecrawlExtractionStatus: Content {
   let status: Status
-  
+
   enum Status: String, Content {
     case completed, processing, failed, cancelled
   }
@@ -57,7 +57,7 @@ struct FirecrawlExtractResponse: Content {
 enum FirecrawlError: AbortError {
   case missingAPIKey
   case extractionFailed
-  
+
   var status: HTTPResponseStatus { .internalServerError }
   var reason: String { localizedDescription }
 }

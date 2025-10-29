@@ -46,13 +46,13 @@ public struct MeetupEvent: Codable, Equatable, Sendable {
     public let latitude: Double
     public let longitude: Double
   }
-  
+
   public struct Talk: Codable, Equatable, Sendable {
     public init(speaker: String, title: String) {
       self.speaker = speaker
       self.title = title
     }
-    
+
     public let speaker: String
     public let title: String
   }

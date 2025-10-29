@@ -10,11 +10,7 @@ import Vapor
 
 struct ScrapingController: RouteCollection {
   let firecrawl: any FirecrawlServiceProtocol
-  
-  init(firecrawl: any FirecrawlServiceProtocol) {
-    self.firecrawl = firecrawl
-  }
-  
+
   func boot(routes: any Vapor.RoutesBuilder) throws {
     let meetupRoutes = routes.grouped("scrape")
     meetupRoutes.post(use: self.event)
@@ -27,7 +23,7 @@ struct ScrapingController: RouteCollection {
     guard let url = URL(string: meetup.url) else {
       throw MeetupError.urlError
     }
-    
+
     let extractedData: ExtractedEventData = try await firecrawl.extract(
       req: req,
       request: createFirecrawlRequest(
@@ -35,7 +31,7 @@ struct ScrapingController: RouteCollection {
       )
     )
 
-    guard let eventDate = ISO8601DateFormatter().date(from: extractedData.event_date) else {
+    guard let eventDate = ISO8601DateFormatter().date(from: extractedData.eventDate) else {
       throw MeetupError.dateError
     }
 
@@ -45,22 +41,23 @@ struct ScrapingController: RouteCollection {
     )
 
     let fullAddress: String
-    if let addressName = extractedData.address_name {
+    if let addressName = extractedData.addressName {
       fullAddress = "\(addressName)\n\(extractedData.address)"
     } else {
       fullAddress = extractedData.address
     }
 
-    let description = extractedData.event_description
-    
-    let talks = extractedData.talks?.map {
-      MeetupEvent.Talk(speaker: $0.speaker_name, title: $0.talk_title)
-    } ?? []
+    let description = extractedData.eventDescription
 
-    let imageURL = extractedData.cover_image_url.flatMap { URL(string: $0) }
+    let talks =
+      extractedData.talks?.map {
+        MeetupEvent.Talk(speaker: $0.speakerName, title: $0.talkTitle)
+      } ?? []
+
+    let imageURL = extractedData.coverImageURL.flatMap { URL(string: $0) }
 
     return MeetupEvent(
-      title: extractedData.event_title,
+      title: extractedData.eventTitle,
       address: fullAddress,
       location: location,
       description: description,
@@ -70,7 +67,7 @@ struct ScrapingController: RouteCollection {
       talks: talks
     )
   }
-  
+
   private func createFirecrawlRequest(for event: URL) -> FirecrawlRequest {
     let schema = FirecrawlSchema(
       type: "object",
@@ -105,19 +102,36 @@ struct ScrapingController: RouteCollection {
 }
 
 struct ExtractedEventData: Content {
-  let event_title: String
-  let event_date: String
+  let eventTitle: String
+  let eventDate: String
   let address: String
-  let address_name: String?
+  let addressName: String?
   let latitude: Double?
   let longitude: Double?
-  let event_description: String
-  let cover_image_url: String?
+  let eventDescription: String
+  let coverImageURL: String?
   let talks: [Talk]?
 
   struct Talk: Codable {
-    let talk_title: String
-    let speaker_name: String
+    let talkTitle: String
+    let speakerName: String
+
+    enum CodingKeys: String, CodingKey {
+      case talkTitle = "talk_title"
+      case speakerName = "speaker_name"
+    }
+  }
+
+  enum CodingKeys: String, CodingKey {
+    case eventTitle = "event_title"
+    case eventDate = "event_date"
+    case address
+    case addressName = "address_name"
+    case latitude
+    case longitude
+    case eventDescription = "event_description"
+    case coverImageURL = "cover_image_url"
+    case talks
   }
 }
 
