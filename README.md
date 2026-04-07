@@ -28,4 +28,17 @@
 * Talks from past conferences
 * List of all talks separated by day and time
 
-You can use this application to learn about SwiftUI, Combine and contribute to the community. It uses a very standard view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object. 
+You can use this application to learn about SwiftUI, Combine and contribute to the community. It uses a very standard view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object.
+
+## Dependency Graph
+```mermaid 
+flowchart TD
+
+CocoaHeadsCore <--> Vapor
+CocoaHeadsCore <--> CocoaHeadsKit
+QAKit --> CocoaHeadsKit
+CocoaHeadsKit --> app[NSBrazilConf App]
+CocoaHeadsKit --> NSClip
+CocoaHeadsKit --> visionOS
+CocoaHeadsKit --> watchOS
+```
