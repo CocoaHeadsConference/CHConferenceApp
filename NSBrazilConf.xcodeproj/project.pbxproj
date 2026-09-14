@@ -16,7 +16,7 @@
 		6BCB43422C4C20350076A6E9 /* NSBrazilConfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB43412C4C20350076A6E9 /* NSBrazilConfApp.swift */; };
 		B44067B525B1E25700D9DE9B /* NSClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44067B425B1E25700D9DE9B /* NSClipApp.swift */; };
 		B44067BC25B1E25800D9DE9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44067BB25B1E25800D9DE9B /* Preview Assets.xcassets */; };
-		B44067C125B1E25800D9DE9B /* NSClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = B44067B225B1E25700D9DE9B /* NSClip.app */; platformFilters = (ios, maccatalyst, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B44067C125B1E25800D9DE9B /* NSClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = B44067B225B1E25700D9DE9B /* NSClip.app */; platformFilters = (ios, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B44067CB25B1E26900D9DE9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A95302342E87700B2C582 /* Assets.xcassets */; };
 		B482AA8A2C5C721600F66F3B /* CocoaHeadsBR_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B482AA892C5C721600F66F3B /* CocoaHeadsBR_WatchApp.swift */; };
 		B482AA8E2C5C721700F66F3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B482AA8D2C5C721700F66F3B /* Assets.xcassets */; };
@@ -52,6 +52,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CAE6FE349033241A61E22621 /* CocoaHeadsCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CocoaHeadsCore; sourceTree = "<group>"; };
+		3DF577C03D5F4B058DD3CF71 /* CocoaHeadsNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CocoaHeadsNetworking; sourceTree = "<group>"; };
+		A83F0BB839A4858B88252A10 /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		1D0A95272342E87500B2C582 /* CocoaHeadsBR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaHeadsBR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D0A95302342E87700B2C582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D0A95332342E87700B2C582 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -123,6 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				B4C5F8C32C5ADD1C0031246C /* Common */,
+				CAE6FE349033241A61E22621 /* CocoaHeadsCore */,
+				3DF577C03D5F4B058DD3CF71 /* CocoaHeadsNetworking */,
+				A83F0BB839A4858B88252A10 /* Configuration */,
 				226DD9BF2DC0579B0026B3CA /* CocoaHeadsKit */,
 				B4FB8CD82E370CE300C2CCB9 /* QAKit */,
 				VERSIONXCCONFIG123456789 /* Version.xcconfig */,
@@ -602,7 +608,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NSBrazilConf/NSBrazilConf.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"NSBrazilConf/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
@@ -632,7 +638,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NSBrazilConf/NSBrazilConf.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"NSBrazilConf/Preview Content\"";
 				DEVELOPMENT_TEAM = V45SL99ZK4;
 				ENABLE_PREVIEWS = YES;
@@ -863,6 +869,442 @@
 			};
 			name = Release;
 		};
+		9231119F5598C2124D45C29B /* Debug-Localhost */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
+			buildSettings = {
+				COCOAHEADS_ENVIRONMENT = localhost;
+				COCOAHEADS_API_KEY = "$(COCOAHEADS_LOCAL_API_KEY)";
+				COCOAHEADS_APP_ATTEST_ENVIRONMENT = development;
+				COCOAHEADS_API_BASE_URL = "$(COCOAHEADS_LOCAL_URL)";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug-Localhost";
+		};
+		0D8EFA6CE1B472C0CE580D19 /* Debug-Mock */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
+			buildSettings = {
+				COCOAHEADS_ENVIRONMENT = mock;
+				COCOAHEADS_API_KEY = "";
+				COCOAHEADS_APP_ATTEST_ENVIRONMENT = development;
+				COCOAHEADS_API_BASE_URL = "";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug-Mock";
+		};
+		16D44A6600B5A5F3797D6B1C /* Debug-Localhost */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
+			buildSettings = {
+				COCOAHEADS_ENVIRONMENT = localhost;
+				COCOAHEADS_API_KEY = "$(COCOAHEADS_LOCAL_API_KEY)";
+				COCOAHEADS_APP_ATTEST_ENVIRONMENT = development;
+				COCOAHEADS_API_BASE_URL = "$(COCOAHEADS_LOCAL_URL)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NSBrazilConf/NSBrazilConf.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
+				DEVELOPMENT_ASSET_PATHS = "\"NSBrazilConf/Preview Content\"";
+				DEVELOPMENT_TEAM = V45SL99ZK4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = NSBrazilConf/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CocoaHeadsBR;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
+				PRODUCT_NAME = CocoaHeadsBR;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = "Debug-Localhost";
+		};
+		283C276F3E9FC270AD8C8912 /* Debug-Mock */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
+			buildSettings = {
+				COCOAHEADS_ENVIRONMENT = mock;
+				COCOAHEADS_API_KEY = "";
+				COCOAHEADS_APP_ATTEST_ENVIRONMENT = development;
+				COCOAHEADS_API_BASE_URL = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NSBrazilConf/NSBrazilConf.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
+				DEVELOPMENT_ASSET_PATHS = "\"NSBrazilConf/Preview Content\"";
+				DEVELOPMENT_TEAM = V45SL99ZK4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = NSBrazilConf/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CocoaHeadsBR;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
+				PRODUCT_NAME = CocoaHeadsBR;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = "Debug-Mock";
+		};
+		9679232026DEA7D6C474D56B /* Debug-Localhost */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
+			buildSettings = {
+				COCOAHEADS_ENVIRONMENT = localhost;
+				COCOAHEADS_API_KEY = "$(COCOAHEADS_LOCAL_API_KEY)";
+				COCOAHEADS_APP_ATTEST_ENVIRONMENT = development;
+				COCOAHEADS_API_BASE_URL = "$(COCOAHEADS_LOCAL_URL)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = NSClip/NSClip.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"NSClip/Preview Content\"";
+				DEVELOPMENT_TEAM = V45SL99ZK4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = NSClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CocoaHeadsBR;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.baseClip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug-Localhost";
+		};
+		CC38508CF0EBD5C0DFDE58B1 /* Debug-Mock */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
+			buildSettings = {
+				COCOAHEADS_ENVIRONMENT = mock;
+				COCOAHEADS_API_KEY = "";
+				COCOAHEADS_APP_ATTEST_ENVIRONMENT = development;
+				COCOAHEADS_API_BASE_URL = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = NSClip/NSClip.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"NSClip/Preview Content\"";
+				DEVELOPMENT_TEAM = V45SL99ZK4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = NSClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CocoaHeadsBR;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.baseClip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug-Mock";
+		};
+		700D29887B91415D028D84AA /* Debug-Localhost */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
+			buildSettings = {
+				COCOAHEADS_ENVIRONMENT = localhost;
+				COCOAHEADS_API_KEY = "$(COCOAHEADS_LOCAL_API_KEY)";
+				COCOAHEADS_APP_ATTEST_ENVIRONMENT = development;
+				COCOAHEADS_API_BASE_URL = "$(COCOAHEADS_LOCAL_URL)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "CocoaHeadsBR Watch.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeadsBR Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = V45SL99ZK4;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CocoaHeadsBR-Watch-Info.plist";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.cocoaheadsbr.conf;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.watchkitapp;
+				PRODUCT_NAME = CocoaHeadsBR;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = "Debug-Localhost";
+		};
+		48FAD2AD6D02F6361FDAE8DC /* Debug-Mock */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
+			buildSettings = {
+				COCOAHEADS_ENVIRONMENT = mock;
+				COCOAHEADS_API_KEY = "";
+				COCOAHEADS_APP_ATTEST_ENVIRONMENT = development;
+				COCOAHEADS_API_BASE_URL = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "CocoaHeadsBR Watch.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeadsBR Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = V45SL99ZK4;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CocoaHeadsBR-Watch-Info.plist";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.cocoaheadsbr.conf;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf.watchkitapp;
+				PRODUCT_NAME = CocoaHeadsBR;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = "Debug-Mock";
+		};
+		EDAD165C27EF81A7EECF7801 /* Debug-Localhost */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
+			buildSettings = {
+				COCOAHEADS_ENVIRONMENT = localhost;
+				COCOAHEADS_API_KEY = "$(COCOAHEADS_LOCAL_API_KEY)";
+				COCOAHEADS_APP_ATTEST_ENVIRONMENT = development;
+				COCOAHEADS_API_BASE_URL = "$(COCOAHEADS_LOCAL_URL)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "CocoaHeadsBR Vision/CocoaHeadsBR Vision.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeadsBR Vision/Preview Content\"";
+				DEVELOPMENT_TEAM = V45SL99ZK4;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = CocoaHeadsBR;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = "Debug-Localhost";
+		};
+		5B87E0B59AF7453FAAD44225 /* Debug-Mock */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = VERSIONXCCONFIG123456789 /* Version.xcconfig */;
+			buildSettings = {
+				COCOAHEADS_ENVIRONMENT = mock;
+				COCOAHEADS_API_KEY = "";
+				COCOAHEADS_APP_ATTEST_ENVIRONMENT = development;
+				COCOAHEADS_API_BASE_URL = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "CocoaHeadsBR Vision/CocoaHeadsBR Vision.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CocoaHeadsBR Vision/Preview Content\"";
+				DEVELOPMENT_TEAM = V45SL99ZK4;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = CocoaHeadsBR;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaheadsbr.conf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = "Debug-Mock";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -870,6 +1312,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D0A95392342E87700B2C582 /* Debug */,
+				9231119F5598C2124D45C29B /* Debug-Localhost */,
+				0D8EFA6CE1B472C0CE580D19 /* Debug-Mock */,
 				1D0A953A2342E87700B2C582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -879,6 +1323,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D0A953C2342E87700B2C582 /* Debug */,
+				16D44A6600B5A5F3797D6B1C /* Debug-Localhost */,
+				283C276F3E9FC270AD8C8912 /* Debug-Mock */,
 				1D0A953D2342E87700B2C582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -888,6 +1334,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B44067C325B1E25800D9DE9B /* Debug */,
+				9679232026DEA7D6C474D56B /* Debug-Localhost */,
+				CC38508CF0EBD5C0DFDE58B1 /* Debug-Mock */,
 				B44067C425B1E25800D9DE9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -897,6 +1345,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B482AA962C5C721700F66F3B /* Debug */,
+				700D29887B91415D028D84AA /* Debug-Localhost */,
+				48FAD2AD6D02F6361FDAE8DC /* Debug-Mock */,
 				B482AA972C5C721700F66F3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -906,6 +1356,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B4A60BE82C5C9C1A00D2597B /* Debug */,
+				EDAD165C27EF81A7EECF7801 /* Debug-Localhost */,
+				5B87E0B59AF7453FAAD44225 /* Debug-Mock */,
 				B4A60BE92C5C9C1A00D2597B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

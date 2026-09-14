@@ -1,43 +1,55 @@
 {
-  "configurations" : [
+  "configurations": [
     {
-      "id" : "EAF37B6F-CF6C-431C-9298-91E396511DFF",
-      "name" : "Test Scheme Action",
-      "options" : {
-
-      }
+      "id": "EAF37B6F-CF6C-431C-9298-91E396511DFF",
+      "name": "Test Scheme Action",
+      "options": {}
     }
   ],
-  "defaultOptions" : {
-    "codeCoverage" : false,
-    "targetForVariableExpansion" : {
-      "containerPath" : "container:NSBrazilConf.xcodeproj",
-      "identifier" : "1D0A95262342E87500B2C582",
-      "name" : "NSBrazilConf"
+  "defaultOptions": {
+    "codeCoverage": false,
+    "targetForVariableExpansion": {
+      "containerPath": "container:NSBrazilConf.xcodeproj",
+      "identifier": "1D0A95262342E87500B2C582",
+      "name": "NSBrazilConf"
     }
   },
-  "testTargets" : [
+  "testTargets": [
     {
-      "target" : {
-        "containerPath" : "container:Common",
-        "identifier" : "CommonTests",
-        "name" : "CommonTests"
+      "target": {
+        "containerPath": "container:Common",
+        "identifier": "CommonTests",
+        "name": "CommonTests"
       }
     },
     {
-      "target" : {
-        "containerPath" : "container:QAKit",
-        "identifier" : "QAKitTests",
-        "name" : "QAKitTests"
+      "target": {
+        "containerPath": "container:QAKit",
+        "identifier": "QAKitTests",
+        "name": "QAKitTests"
       }
     },
     {
-      "target" : {
-        "containerPath" : "container:CocoaHeadsKit",
-        "identifier" : "CocoaHeadsKitTests",
-        "name" : "CocoaHeadsKitTests"
+      "target": {
+        "containerPath": "container:CocoaHeadsKit",
+        "identifier": "CocoaHeadsKitTests",
+        "name": "CocoaHeadsKitTests"
+      }
+    },
+    {
+      "target": {
+        "containerPath": "container:CocoaHeadsCore",
+        "identifier": "CocoaHeadsCoreTests",
+        "name": "CocoaHeadsCoreTests"
+      }
+    },
+    {
+      "target": {
+        "containerPath": "container:CocoaHeadsNetworking",
+        "identifier": "CocoaHeadsNetworkingTests",
+        "name": "CocoaHeadsNetworkingTests"
       }
     }
   ],
-  "version" : 1
+  "version": 1
 }

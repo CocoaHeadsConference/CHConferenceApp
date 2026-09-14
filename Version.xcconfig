@@ -3,3 +3,5 @@
 
 MARKETING_VERSION = 2025.4
 CURRENT_PROJECT_VERSION = 1
+
+#include "Configuration/Server.xcconfig"

@@ -7,13 +7,10 @@ import VaporTesting
 
 @testable import backend
 
-/// DB-backed rotation tests. Enabled only when `TEST_DATABASE` is set — run a
-/// Postgres locally first, e.g.:
-/// ```
-/// docker compose up -d db   # in backend/
-/// TEST_DATABASE=1 swift test
-/// ```
-/// (Point `DATABASE_HOST`/`DATABASE_PORT` at the instance if not localhost:5432.)
+/// DB-backed rotation tests. Requires TEST_DATABASE and an explicit DATABASE_NAME
+/// ending in `_test`. This suite creates/reverts all configured migrations, so use
+/// a disposable database and run separately from OrganizerIntegrationTests.
+/// See docs/organizer-setup.md for the complete connection environment.
 @Suite(
   "Refresh token rotation (Postgres)",
   .serialized,
@@ -21,6 +18,12 @@ import VaporTesting
 )
 struct RotationIntegrationTests {
   private func withApp(_ test: (Application) async throws -> Void) async throws {
+    // This check must run before app creation/configuration and outside cleanup:
+    // autoRevert drops every migrated table in the selected database.
+    let databaseName = try #require(
+      Environment.get("DATABASE_NAME"), "Set DATABASE_NAME explicitly to a disposable database ending in _test.")
+    try #require(
+      databaseName.hasSuffix("_test"), "Refusing destructive tests against a database without the _test suffix.")
     let app = try await Application.make(.testing)
     do {
       try await configure(app)

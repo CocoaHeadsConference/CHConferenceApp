@@ -22,13 +22,13 @@ struct TokenEncryption: Sendable {
   }
 
   static func load() throws -> TokenEncryption {
-    if let base64 = Environment.get("TOKEN_ENCRYPTION_KEY") {
+    if let base64 = AuthEnvironment.value("TOKEN_ENCRYPTION_KEY") {
       guard let data = Data(base64Encoded: base64), data.count == 32 else {
         throw AuthError.invalidEncryptionKey
       }
       return TokenEncryption(key: SymmetricKey(data: data))
     }
-    guard let signingKey = Environment.get("JWT_SIGNING_KEY") else {
+    guard let signingKey = AuthEnvironment.value("JWT_SIGNING_KEY") else {
       throw AuthError.missingSigningKey
     }
     let derived = SHA256.hash(data: Data("token-encryption:\(signingKey)".utf8))

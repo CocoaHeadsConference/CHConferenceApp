@@ -18,7 +18,8 @@ let package = Package(
   dependencies: [
     .package(path: "../Common"),
     .package(path: "../QAKit"),
-    .package(path: "../CocoaHeadsCore")
+    .package(path: "../CocoaHeadsCore"),
+    .package(path: "../CocoaHeadsNetworking")
   ],
   targets: [
     // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -27,6 +28,7 @@ let package = Package(
       name: "CocoaHeadsKit",
       dependencies: [
         "CocoaHeadsCore",
+        "CocoaHeadsNetworking",
         "Common",
         "QAKit"
       ]

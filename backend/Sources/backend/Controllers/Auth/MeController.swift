@@ -13,7 +13,8 @@ struct MeController: RouteCollection {
   let appleAuth: any AppleAuthServiceProtocol
 
   func boot(routes: any RoutesBuilder) throws {
-    let me = routes
+    let me =
+      routes
       .grouped(AccessTokenPayload.authenticator(), AccessTokenPayload.guardMiddleware())
       .grouped("me")
     me.get(use: current)
