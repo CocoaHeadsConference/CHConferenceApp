@@ -14,12 +14,14 @@ public struct AppleSignInRequest: Codable, Equatable, Sendable {
     identityToken: String,
     authorizationCode: String,
     fullName: String? = nil,
-    email: String? = nil
+    email: String? = nil,
+    nonce: String? = nil
   ) {
     self.identityToken = identityToken
     self.authorizationCode = authorizationCode
     self.fullName = fullName
     self.email = email
+    self.nonce = nonce
   }
 
   /// The Apple identity token (a JWT) from `ASAuthorizationAppleIDCredential`.
@@ -30,6 +32,8 @@ public struct AppleSignInRequest: Codable, Equatable, Sendable {
   public let fullName: String?
   /// Only present on the user's first authorization. May be a Hide-My-Email relay.
   public let email: String?
+  /// Raw, cryptographically random nonce. The Apple request carries its SHA-256 digest.
+  public let nonce: String?
 }
 
 /// Token pair returned by `POST /auth/apple` and `POST /auth/refresh`.
@@ -84,8 +88,8 @@ public struct UserDTO: Codable, Equatable, Sendable {
   public let role: UserRole
 }
 
-/// Roles are foundation-only for now: they are embedded in access-token claims
-/// but not yet enforced by any middleware.
+/// Global account role. Privileged operations recheck the current database role
+/// and chapter assignments; token claims alone never grant publishing access.
 public enum UserRole: String, Codable, Equatable, Sendable, CaseIterable {
   case user
   case organizer

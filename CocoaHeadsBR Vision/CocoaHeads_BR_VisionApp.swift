@@ -9,14 +9,13 @@
 import CocoaHeadsKit
 import SwiftUI
 
-// TODO: Limit window width
-// TODO: Fix card visuals (no opaque backgrounds, fonts not being readable etc)
-
 @main
 struct CocoaHeads_BR_VisionApp: App {
+  @State private var services = CocoaHeadsAppServices()
   var body: some Scene {
     WindowGroup {
-      HomePage()
+      CocoaHeadsAppView(services: services)
     }
+    .defaultSize(width: 1100, height: 800)
   }
 }

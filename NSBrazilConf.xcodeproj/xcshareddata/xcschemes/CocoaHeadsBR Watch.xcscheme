@@ -60,7 +60,6 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B482AA862C5C721600F66F3B"
             BuildableName = "CocoaHeadsBR.app"
-            BlueprintName = "CocoaHeadsBR Watch"
             ReferencedContainer = "container:NSBrazilConf.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -77,7 +76,6 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B482AA862C5C721600F66F3B"
             BuildableName = "CocoaHeadsBR.app"
-            BlueprintName = "CocoaHeadsBR Watch"
             ReferencedContainer = "container:NSBrazilConf.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

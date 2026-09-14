@@ -12,7 +12,7 @@ struct TicketImage: Transferable {
 
   static var transferRepresentation: some TransferRepresentation {
     DataRepresentation(importedContentType: .image) { data in
-      #if canImport(AppKit)
+      #if os(macOS)
         guard let nsImage = NSImage(data: data) else {
           throw Error.decodingError
         }

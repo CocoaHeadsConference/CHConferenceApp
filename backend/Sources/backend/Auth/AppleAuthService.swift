@@ -12,20 +12,31 @@ import Vapor
 /// exchanging the authorization code for Apple tokens at sign-in (§4) and
 /// revoking the user's grant at account deletion (§8).
 protocol AppleAuthServiceProtocol: Sendable {
+  func verifyIdentityToken(_ token: String, on req: Request) async throws -> AppleIdentityToken
+
   /// Exchanges the single-use `authorizationCode` for Apple's token set.
-  /// Returns Apple's refresh token.
-  func exchangeAuthorizationCode(_ code: String, on req: Request) async throws -> String
+  /// Both tokens are needed to bind the stored grant to the signed-in identity.
+  func exchangeAuthorizationCode(_ code: String, on req: Request) async throws -> AppleAuthorizationGrant
 
   /// Revokes the user's Sign in with Apple grant using the stored Apple
   /// refresh token.
   func revokeRefreshToken(_ appleRefreshToken: String, on req: Request) async throws
 }
 
+struct AppleAuthorizationGrant: Sendable {
+  let refreshToken: String
+  let identityToken: String
+}
+
 struct AppleAuthService: AppleAuthServiceProtocol {
   static let tokenURL = URI(string: "https://appleid.apple.com/auth/token")
   static let revokeURL = URI(string: "https://appleid.apple.com/auth/revoke")
 
-  func exchangeAuthorizationCode(_ code: String, on req: Request) async throws -> String {
+  func verifyIdentityToken(_ token: String, on req: Request) async throws -> AppleIdentityToken {
+    try await req.jwt.apple.verify(token, applicationIdentifier: req.authConfiguration.appleBundleID)
+  }
+
+  func exchangeAuthorizationCode(_ code: String, on req: Request) async throws -> AppleAuthorizationGrant {
     let config = req.authConfiguration
     let clientSecret = try await makeClientSecret(config: config)
 
@@ -48,7 +59,10 @@ struct AppleAuthService: AppleAuthServiceProtocol {
     }
 
     let tokens = try response.content.decode(AppleTokenResponse.self)
-    return tokens.refreshToken
+    guard let identityToken = tokens.idToken,
+      !identityToken.isEmpty, !tokens.refreshToken.isEmpty
+    else { throw Abort(.unauthorized, reason: "Apple returned an incomplete authorization grant.") }
+    return AppleAuthorizationGrant(refreshToken: tokens.refreshToken, identityToken: identityToken)
   }
 
   func revokeRefreshToken(_ appleRefreshToken: String, on req: Request) async throws {

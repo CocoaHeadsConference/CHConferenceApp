@@ -1,0 +1,14 @@
+// Set the Render public origin here when the public catalog is available.
+// Escape URL slashes in xcconfig, for example: https:/$()/your-service.onrender.com
+COCOAHEADS_PRODUCTION_URL =
+COCOAHEADS_LOCAL_URL = http:/$()/localhost:8080
+
+COCOAHEADS_ENVIRONMENT = production
+COCOAHEADS_API_BASE_URL = $(COCOAHEADS_PRODUCTION_URL)
+
+// Client identification for authenticated endpoints. Public catalog requests do not use this key.
+// Configure the same value in the backend API_KEYS setting; this is not a user credential.
+COCOAHEADS_PRODUCTION_API_KEY =
+COCOAHEADS_LOCAL_API_KEY = local-development-key
+COCOAHEADS_API_KEY = $(COCOAHEADS_PRODUCTION_API_KEY)
+COCOAHEADS_APP_ATTEST_ENVIRONMENT = production
