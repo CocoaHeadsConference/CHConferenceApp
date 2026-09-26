@@ -33,7 +33,8 @@ struct OrganizerDraftTests {
   @Test(
     "Publication validates dates, venue, URLs and timezone",
     arguments: [
-      "date", "venue", "url", "timezone", "coordinates", "online", "talks", "links", "blankQuestions", "URLCredentials"
+      "date", "venue", "url", "timezone", "coordinatePair", "coordinateRange", "online", "talks", "links",
+      "blankQuestions", "URLCredentials", "encodedURLLength"
     ])
   func validation(kind: String) throws {
     var draft = draft
@@ -44,9 +45,15 @@ struct OrganizerDraftTests {
     case "blankQuestions": draft.qaSessionID = " \n\t"
     case "URLCredentials": draft.registrationURL = "https://username:password@example.com/event"
     case "timezone": draft.timezoneID = "Invalid/Zone"
-    case "coordinates": draft.venue?.latitude = 100
+    case "coordinatePair": draft.venue?.latitude = 10
+    case "coordinateRange":
+      draft.venue?.latitude = 100
+      draft.venue?.longitude = 0
     case "online": draft.format = .online
     case "talks": draft.talks = [EventTalk(id: "", title: "", speakerName: "")]
+    case "encodedURLLength":
+      // Within the editable limit, but percent-encoding grows it past 4,096.
+      draft.registrationURL = "https://example.com/" + String(repeating: "é", count: 1_000)
     case "links": draft.links = [EventLink(id: "link", title: "Link", url: URL(string: "file:///etc/passwd")!)]
     default: break
     }
@@ -79,5 +86,28 @@ struct OrganizerDraftTests {
     var draft = draft
     draft.summary = String(repeating: "x", count: 20_001)
     #expect(throws: OrganizerValidationError.self) { try draft.validateForSaving() }
+  }
+
+  @Test("Saving bounds stored bytes, not just visible characters")
+  func combiningMarks() throws {
+    var draft = draft
+    // One visible character carrying 200 KB of combining accents.
+    draft.title = "a" + String(repeating: "\u{0301}", count: 100_000)
+    #expect(draft.title.count == 1)
+    #expect(throws: OrganizerValidationError.self) { try draft.validateForSaving() }
+  }
+
+  @Test("Accented text within the character limit still saves")
+  func accentedText() throws {
+    var draft = draft
+    draft.title = String(repeating: "ção", count: 80)
+    try draft.validateForSaving()
+  }
+
+  @Test("Publishing trims the Q&A session identifier")
+  func trimmedQuestionSession() throws {
+    var draft = draft
+    draft.qaSessionID = "  legacy-cloudkit-session\n"
+    #expect(try draft.publishedEvent(id: "event").qaSessionID == "legacy-cloudkit-session")
   }
 }

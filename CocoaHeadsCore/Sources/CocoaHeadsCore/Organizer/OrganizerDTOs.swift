@@ -69,28 +69,28 @@ public struct OrganizerEventDraft: Codable, Hashable, Sendable {
 
   public func validateForSaving() throws {
     let bounded =
-      title.count <= 240 && chapterID.count <= 100 && summary.count <= 20_000
-      && registrationURL.count <= 4_096 && (edition?.count ?? 0) <= 100
-      && timezoneID.count <= 100 && (qaSessionID?.count ?? 0) <= 200
+      Self.fits(title, 240) && Self.fits(chapterID, 100) && Self.fits(summary, 20_000)
+      && Self.fits(registrationURL, 4_096) && Self.fits(edition, 100)
+      && Self.fits(timezoneID, 100) && Self.fits(qaSessionID, 200)
       && talks.count <= 100 && links.count <= 50
     try require(bounded, "O evento excede o limite de texto, palestras ou links.")
     for url in [shareURL, onlineURL, imageURL].compactMap({ $0 }) {
-      try require(url.absoluteString.count <= 4_096, "Um dos links é muito longo.")
+      try require(Self.fits(url.absoluteString, 4_096), "Um dos links é muito longo.")
     }
     if let venue {
       try require(
-        venue.name.count <= 240 && venue.address.count <= 1_000 && (venue.arrivalInstructions?.count ?? 0) <= 10_000,
+        Self.fits(venue.name, 240) && Self.fits(venue.address, 1_000) && Self.fits(venue.arrivalInstructions, 10_000),
         "As informações do local excedem o limite de texto.")
     }
     for talk in talks {
       try require(
-        talk.id.count <= 200 && talk.title.count <= 240 && talk.speakerName.count <= 240
-          && (talk.speakerRole?.count ?? 0) <= 240 && (talk.speakerImageURL?.absoluteString.count ?? 0) <= 4_096,
+        Self.fits(talk.id, 200) && Self.fits(talk.title, 240) && Self.fits(talk.speakerName, 240)
+          && Self.fits(talk.speakerRole, 240) && Self.fits(talk.speakerImageURL?.absoluteString, 4_096),
         "Uma palestra excede o limite de texto.")
     }
     for link in links {
       try require(
-        link.id.count <= 200 && link.title.count <= 240 && link.url.absoluteString.count <= 4_096,
+        Self.fits(link.id, 200) && Self.fits(link.title, 240) && Self.fits(link.url.absoluteString, 4_096),
         "Um link excede o limite de texto.")
     }
   }
@@ -113,6 +113,8 @@ public struct OrganizerEventDraft: Codable, Hashable, Sendable {
     guard let registration = URL(string: trimmed(registrationURL)), Self.isWebURL(registration) else {
       throw OrganizerValidationError(reason: "Informe o link de inscrição completo, começando com https:// ou http://.")
     }
+    // Parsing percent-encodes non-ASCII text, so recheck the length the event will store.
+    try require(Self.fits(registration.absoluteString, 4_096), "O link de inscrição é muito longo.")
     for url in [shareURL, onlineURL, imageURL].compactMap({ $0 }) {
       try require(Self.isWebURL(url), "Os links do evento devem começar com https:// ou http://.")
     }
@@ -153,7 +155,13 @@ public struct OrganizerEventDraft: Codable, Hashable, Sendable {
       startDate: startDate, endDate: endDate, timezoneID: timezoneID,
       summary: summary, registrationURL: registration, shareURL: shareURL,
       format: format, venue: venue, onlineURL: onlineURL, imageURL: imageURL,
-      talks: talks, links: links, qaSessionID: qaSessionID, isFeatured: isFeatured)
+      talks: talks, links: links, qaSessionID: qaSessionID.map(trimmed), isFeatured: isFeatured)
+  }
+
+  /// Limits visible characters and stored size: combining marks add bytes without adding characters.
+  private static func fits(_ text: String?, _ limit: Int) -> Bool {
+    guard let text else { return true }
+    return text.count <= limit && text.utf8.count <= limit * 4
   }
 
   private static func isWebURL(_ url: URL) -> Bool {
