@@ -29,22 +29,23 @@ struct AuthController: RouteCollection {
   func signInWithApple(req: Request) async throws -> TokenResponse {
     let config = req.authConfiguration
     let signIn = try req.content.decode(AppleSignInRequest.self)
-
-    let identity = try await req.jwt.apple.verify(
-      signIn.identityToken,
-      applicationIdentifier: config.appleBundleID
-    )
+    let rawNonce = try AppleSignInValidation.requireNonce(signIn.nonce)
+    let identity = try await appleAuth.verifyIdentityToken(signIn.identityToken, on: req)
+    try AppleSignInValidation.validate(identity, rawNonce: rawNonce, audience: config.appleBundleID)
 
     // Exchanging the code for Apple's refresh token is mandatory groundwork
     // for account deletion (§8). Local development without the `.p8` service
     // credentials may skip it — never production.
     let encryptedRefreshToken: String?
     if config.hasAppleServiceCredentials {
-      let appleRefreshToken = try await appleAuth.exchangeAuthorizationCode(
+      let grant = try await appleAuth.exchangeAuthorizationCode(
         signIn.authorizationCode,
         on: req
       )
-      encryptedRefreshToken = try req.application.tokenEncryption.encrypt(appleRefreshToken)
+      let exchangedIdentity = try await appleAuth.verifyIdentityToken(grant.identityToken, on: req)
+      try AppleSignInValidation.validate(exchangedIdentity, rawNonce: rawNonce, audience: config.appleBundleID)
+      try AppleSignInValidation.match(identity, exchangedIdentity: exchangedIdentity)
+      encryptedRefreshToken = try req.application.tokenEncryption.encrypt(grant.refreshToken)
     } else if req.application.environment != .production {
       req.logger.warning(
         "Apple service credentials not configured — skipping authorization-code exchange. Account deletion cannot revoke Apple's grant for this sign-in."
@@ -57,42 +58,9 @@ struct AuthController: RouteCollection {
       )
     }
 
-    var user = try await User.query(on: req.db)
-      .filter(\.$appleUserIdentifier == identity.subject.value)
-      .first()
-      ?? User(appleUserIdentifier: identity.subject.value)
-
-    // Name and email only arrive on the user's first authorization — persist
-    // them whenever present. The email may be a Hide-My-Email relay. Prefer
-    // the email from the verified identity token; the request-body value is
-    // client-supplied and only a fallback (the name has no token source).
-    if let email = identity.email ?? signIn.email {
-      user.email = email
-    }
-    if let fullName = signIn.fullName {
-      user.fullName = fullName
-    }
-    // Keep any previously stored Apple refresh token when the dev-mode
-    // exchange skip produced none.
-    if let encryptedRefreshToken {
-      user.appleRefreshToken = encryptedRefreshToken
-    }
-    do {
-      try await user.save(on: req.db)
-    } catch let error where (error as? any DatabaseError)?.isConstraintFailure == true {
-      // Two concurrent first sign-ins raced on the unique Apple `sub`; adopt
-      // the row the winner created instead of failing.
-      guard
-        let existing = try await User.query(on: req.db)
-          .filter(\.$appleUserIdentifier == identity.subject.value)
-          .first()
-      else { throw error }
-      existing.email = user.email ?? existing.email
-      existing.fullName = user.fullName ?? existing.fullName
-      existing.appleRefreshToken = user.appleRefreshToken ?? existing.appleRefreshToken
-      try await existing.save(on: req.db)
-      user = existing
-    }
+    let user = try await AppleUserService().signIn(
+      appleIdentifier: identity.subject.value, email: identity.email ?? signIn.email,
+      fullName: signIn.fullName, encryptedRefreshToken: encryptedRefreshToken, on: req.db)
 
     return try await tokens.issueTokenPair(for: user, on: req)
   }

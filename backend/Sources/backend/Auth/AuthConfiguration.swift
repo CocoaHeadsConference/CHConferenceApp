@@ -38,24 +38,37 @@ struct AuthConfiguration: Sendable {
     appleTeamID != nil && appleSignInKeyID != nil && appleSignInPrivateKey != nil
   }
 
-  static func load(from environment: Environment) -> AuthConfiguration {
-    AuthConfiguration(
-      appleBundleID: Environment.get("APPLE_BUNDLE_ID") ?? "com.cocoaheadsbr.conf",
+  static func load(
+    from environment: Environment, read: (String) -> String? = AuthEnvironment.value
+  ) -> AuthConfiguration {
+    func setting(_ key: String) -> String? { AuthEnvironment.nonEmpty(read(key)) }
+    return AuthConfiguration(
+      appleBundleID: setting("APPLE_BUNDLE_ID") ?? "com.cocoaheadsbr.conf",
       apiKeys: Set(
-        (Environment.get("API_KEYS") ?? "")
+        (setting("API_KEYS") ?? "")
           .split(separator: ",")
-          .map { $0.trimmingCharacters(in: .whitespaces) }
+          .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
           .filter { !$0.isEmpty }
       ),
-      accessTokenTTL: Environment.get("ACCESS_TOKEN_TTL").flatMap(TimeInterval.init) ?? 900,
-      refreshTokenTTL: Environment.get("REFRESH_TOKEN_TTL").flatMap(TimeInterval.init)
+      accessTokenTTL: setting("ACCESS_TOKEN_TTL").flatMap(TimeInterval.init) ?? 900,
+      refreshTokenTTL: setting("REFRESH_TOKEN_TTL").flatMap(TimeInterval.init)
         ?? 45 * 24 * 60 * 60,
-      accountPurgeGraceDays: Environment.get("ACCOUNT_PURGE_GRACE_DAYS").flatMap(Int.init) ?? 30,
-      appleTeamID: Environment.get("APPLE_TEAM_ID"),
-      appleSignInKeyID: Environment.get("APPLE_SIGNIN_KEY_ID"),
-      appleSignInPrivateKey: Environment.get("APPLE_SIGNIN_PRIVATE_KEY")
+      accountPurgeGraceDays: setting("ACCOUNT_PURGE_GRACE_DAYS").flatMap(Int.init) ?? 30,
+      appleTeamID: setting("APPLE_TEAM_ID"),
+      appleSignInKeyID: setting("APPLE_SIGNIN_KEY_ID"),
+      appleSignInPrivateKey: setting("APPLE_SIGNIN_PRIVATE_KEY")
     )
   }
+}
+
+/// Environment reads that treat blank values (e.g. Compose's `${VAR:-}`) as unset.
+enum AuthEnvironment {
+  static func nonEmpty(_ value: String?) -> String? {
+    guard let trimmed = value?.trimmingCharacters(in: .whitespacesAndNewlines), !trimmed.isEmpty else { return nil }
+    return trimmed
+  }
+
+  static func value(_ key: String) -> String? { nonEmpty(Environment.get(key)) }
 }
 
 extension Application {
