@@ -66,6 +66,20 @@ private func event(
   #expect(subject.phase(at: subject.archiveDate) == .past)
 }
 
+@Test func archiveBoundaryHandlesADayThatStartsAfterASkippedMidnight() {
+  // Santiago skips 00:00 on 2026-09-06; that day starts at 01:00 local.
+  let subject = event(start: "2026-09-06T18:00:00Z", end: "2026-09-06T21:00:00Z", timezone: "America/Santiago")
+  #expect(subject.archiveDate == instant("2026-09-07T03:00:00Z"))
+  #expect(subject.phase(at: instant("2026-09-07T03:00:00Z")) == .past)
+}
+
+@Test func eventWithoutEndTimeHandlesADayThatStartsAfterASkippedMidnight() {
+  let subject = event(start: "2026-09-06T18:00:00Z", end: nil, timezone: "America/Santiago")
+  #expect(subject.archiveDate == instant("2026-09-07T03:00:00Z"))
+  #expect(subject.phase(at: instant("2026-09-07T02:59:59Z")) == .ongoing)
+  #expect(subject.phase(at: instant("2026-09-07T03:00:00Z")) == .past)
+}
+
 @Test func omittedEndDateDecodesAsUnspecified() throws {
   let encoder = JSONEncoder()
   encoder.dateEncodingStrategy = .iso8601

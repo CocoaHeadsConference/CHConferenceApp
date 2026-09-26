@@ -121,12 +121,14 @@ public struct CommunityEvent: Codable, Hashable, Identifiable, Sendable {
 
   public var timeZone: TimeZone { TimeZone(identifier: timezoneID) ?? TimeZone(secondsFromGMT: 0)! }
 
-  /// Events leave Upcoming at midnight after their final day, in the event's timezone.
-  /// Without an end time, the start date determines the final day.
+  /// Events leave Upcoming at the start of the day after their final day, in the event's
+  /// timezone. Without an end time, the start date determines the final day.
   public var archiveDate: Date {
     var calendar = Calendar(identifier: .gregorian)
     calendar.timeZone = timeZone
-    return calendar.date(byAdding: .day, value: 1, to: calendar.startOfDay(for: endDate ?? startDate))!
+    let finalDay = endDate ?? startDate
+    // The day's interval ends at the next day's real start, even when DST skips midnight.
+    return calendar.dateInterval(of: .day, for: finalDay)?.end ?? finalDay.addingTimeInterval(24 * 60 * 60)
   }
 
   public func phase(at date: Date) -> EventPhase {
