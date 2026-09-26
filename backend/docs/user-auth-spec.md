@@ -19,18 +19,18 @@ This spec defines **two independent security layers**. They are orthogonal — a
 must pass both to reach a user-scoped route:
 
 1. **App authentication** — *"is this a legitimate client?"*
-   API key + Apple **App Attest** middleware. Applied to **all** routes, including the
-   existing `/scrape`. Goal: only well-known clients (a genuine build of our app) can
-   reach the server.
+   API-key middleware. Applied to **all** routes, including the existing `/scrape`.
+   Goal: identify requests as coming from our app (see §6 for why this is not an
+   integrity guarantee and why App Attest was dropped).
 2. **User authentication** — *"who is this person?"*
    Sign in with Apple → backend-issued JWT. Applied to user-scoped routes only.
 
 ```
-                ┌──────────────────── App authentication ───────────────────┐
-Request ──▶ [ X-API-Key check ] ──▶ [ App Attest assertion ] ──▶ ... 
-                                                                    │
-                                              ┌── User authentication ──┐
-                                          ──▶ [ Bearer JWT check ] ──▶ handler
+                ┌─ App authentication ─┐
+Request ──▶ [ X-API-Key check ] ──▶ ...
+                                     │
+                   ┌── User authentication ──┐
+               ──▶ [ Bearer JWT check ] ──▶ handler
 ```
 
 ### Non-goals for this phase
@@ -47,7 +47,6 @@ Request ──▶ [ X-API-Key check ] ──▶ [ App Attest assertion ] ──�
   in the Apple identity token, and the client id for Apple's token/revoke endpoints.
 - App Clip (`com.cocoaheadsbr.conf.baseClip`) and Watch
   (`com.cocoaheadsbr.conf.watchkitapp`) are **out of scope** for sign-in.
-- **App Attest app id:** `<TeamID>.com.cocoaheadsbr.conf`.
 
 ### Environment variables
 Follow the existing `Environment.get(...)` pattern already used in
@@ -67,7 +66,6 @@ existing `DATABASE_*` and `FIRECRAWL_API_KEY` vars.
 | `APPLE_TEAM_ID` | Apple Developer Team ID. |
 | `APPLE_SIGNIN_KEY_ID` | Key ID of the Sign in with Apple `.p8` key. |
 | `APPLE_SIGNIN_PRIVATE_KEY` | The `.p8` private-key contents (ES256). |
-| `APP_ATTEST_TEAM_ID` | Team ID used to construct the App Attest app id. |
 
 ---
 
@@ -101,17 +99,6 @@ and they will run through the `migrate` / `revert` services already stubbed in
 | `revoked` | Bool | Set on logout / rotation / deletion. |
 | `createdAt` | Date | |
 
-### `AppAttestKey`
-| Field | Type | Notes |
-| --- | --- | --- |
-| `id` | UUID | PK |
-| `userID` | UUID? | Device-scoped; may be associated with a user after sign-in. |
-| `keyId` | String | The App Attest key identifier. |
-| `publicKey` | Data | Attested public key, used to verify later assertions. |
-| `receipt` | Data | Apple attestation receipt. |
-| `signCount` | Int | Monotonic counter; reject non-increasing values. |
-| `createdAt` | Date | |
-
 ---
 
 ## 4. Sign in with Apple flow
@@ -120,7 +107,7 @@ and they will run through the `migrate` / `revert` services already stubbed in
 1. **Client** runs `ASAuthorizationController` and obtains an Apple `identityToken`
    (a JWT) plus an `authorizationCode`.
 2. Client calls **`POST /auth/apple`** with the identity token, the `authorizationCode`,
-   the user's name/email (present only on first run), and an App Attest assertion.
+   the user's name/email (present only on first run), and the API key.
 3. **Server**:
    - Verifies the Apple identity token using Vapor's JWT package built-in Apple support
      — `request.jwt.apple.verify(applicationIdentifier:)` — which fetches/caches Apple's
@@ -166,34 +153,24 @@ verification and the backend's own JWT signing.
 
 ---
 
-## 6. App authentication layer (API key + App Attest)
+## 6. App authentication layer (API key)
 
-Order of checks for a protected route: **API key → App Attest → (user routes) Bearer JWT.**
+Order of checks for a protected route: **API key → (user routes) Bearer JWT.**
 The existing `/scrape` route becomes gated behind app-auth.
 
 ### API key middleware
 - Checks an `X-API-Key` header against the configured `API_KEYS` (static env var, per the
   chosen approach).
-- **Caveat (documented intentionally):** a key baked into a shipped iOS app is
-  extractable from the binary. This is a coarse first gate, **not** a real integrity
-  guarantee. App Attest provides the actual guarantee.
+- **Caveat (documented intentionally):** a key baked into a shipped app is extractable
+  from the binary. This is a coarse gate, **not** a client-integrity guarantee.
 
-### App Attest middleware (two phases)
-1. **Attestation / registration**
-   - `POST /attest/challenge` — server issues a one-time challenge.
-   - `POST /attest/key` — client sends its attestation object + key id; server verifies
-     it against Apple's App Attest **root CA** and stores the public key as an
-     `AppAttestKey`.
-2. **Assertion (per request)**
-   - Protected requests carry an assertion header signed by the attested key over a
-     challenge / request hash.
-   - Middleware verifies the signature and that `signCount` is **monotonically
-     increasing** (replay protection).
-
-> **Implementation note / highest-effort item:** no existing Swift *server-side* App
-> Attest library is assumed. The verification logic — CBOR decoding and X.509 certificate
-> chain validation against Apple's App Attest root — must be implemented or vendored. Flag
-> this as the largest piece of the follow-up implementation.
+### App Attest (removed)
+An earlier revision of this spec added an App Attest assertion gate. It was removed:
+`DCAppAttestService` is unsupported on the Mac (and the Simulator), so Mac clients could
+never attest, and making it optional on account routes would let any client bypass it by
+omitting the headers. User-scoped routes are protected by Sign in with Apple, backend
+tokens, and server-side role checks; abuse of costly routes should be handled with rate
+limiting (§10).
 
 ---
 
@@ -218,7 +195,7 @@ server-to-server endpoint. This is a first-class part of the spec, not future wo
   user forever does **not** satisfy the guideline. On deletion:
   1. Set `User.deletedAt`; immediately **scrub/anonymize PII** (`email`, `fullName`) and
      treat the account as gone for all app purposes.
-  2. Revoke **all** of the user's `RefreshToken`s and `AppAttestKey`s.
+  2. Revoke **all** of the user's `RefreshToken`s.
   3. Call Apple's revocation endpoint
      `POST https://appleid.apple.com/auth/revoke` with the stored `appleRefreshToken`
      plus a freshly minted client-secret JWT, to revoke Apple's grant.
@@ -239,7 +216,7 @@ server-to-server endpoint. This is a first-class part of the spec, not future wo
   is a `fatalError` stub. A small `URLSession`-based client must be built.
 - **Sign in with Apple capability + entitlement** must be added (not currently present in
   the app's entitlements).
-- **Keychain storage** for the refresh token and App Attest key id (no Keychain usage
+- **Keychain storage** for the refresh token (no Keychain usage
   exists today).
 - **"Delete Account" UI** is mandatory and must be reachable in-app (Guideline 5.1.1(v))
   — calls `DELETE /me`, then clears the local Keychain/session.
@@ -251,10 +228,9 @@ server-to-server endpoint. This is a first-class part of the spec, not future wo
 
 ## 10. Security considerations & open questions
 
-- **API key extractability** — App Attest is the real client-integrity guarantee; the API
-  key is only a coarse gate.
-- **Token replay** — refresh-token single-use rotation; revocation on logout; App Attest
-  `signCount` monotonicity.
+- **API key extractability** — the API key is only a coarse gate; there is no
+  client-integrity guarantee (see §6).
+- **Token replay** — refresh-token single-use rotation; revocation on logout.
 - **Hide My Email** — the stored `email` may be an Apple relay address; do not assume it
   is reachable or stable.
 - **Secrets at rest** — encryption for the stored Apple refresh token; key management for
@@ -266,12 +242,12 @@ server-to-server endpoint. This is a first-class part of the spec, not future wo
 ## 11. Summary of follow-up implementation work
 
 1. Add `vapor/jwt` to `Package.swift`.
-2. Create `User`, `RefreshToken`, `AppAttestKey` models + migrations; register them in
+2. Create `User`, `RefreshToken` models + migrations; register them in
    `configure.swift`.
 3. Add new env vars (config + `docker-compose.yml`).
-4. Build middleware: API-key, App Attest (attestation + assertion), Bearer JWT.
+4. Build middleware: API-key, Bearer JWT.
 5. Build controllers/routes: `/auth/apple`, `/auth/refresh`, `/auth/logout`, `/me`
-   (GET + DELETE), `/attest/challenge`, `/attest/key`. Gate `/scrape` behind app-auth.
+   (GET + DELETE). Gate `/scrape` behind app-auth.
 6. Implement Apple `authorizationCode` exchange + revocation client.
 7. Implement the soft-delete scrub + scheduled hard-purge job.
 8. Add shared auth DTOs to `CocoaHeadsCore`.

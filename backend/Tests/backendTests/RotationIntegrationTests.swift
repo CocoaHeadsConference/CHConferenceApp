@@ -34,10 +34,7 @@ struct RotationIntegrationTests {
         accountPurgeGraceDays: 30,
         appleTeamID: nil,
         appleSignInKeyID: nil,
-        appleSignInPrivateKey: nil,
-        appAttestTeamID: nil,
-        appAttestEnvironment: .production,
-        appAttestDisabled: true
+        appleSignInPrivateKey: nil
       )
       try await app.autoMigrate()
       try await test(app)
