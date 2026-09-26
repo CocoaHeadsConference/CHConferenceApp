@@ -21,8 +21,8 @@ swift test
 
 ## Authentication
 
-The backend has two security layers: app authentication (API key + Apple App
-Attest) on every route, and user authentication (Sign in with Apple → backend
+The backend has two security layers: app authentication (API key) on every
+route, and user authentication (Sign in with Apple → backend
 JWTs) on user-scoped routes. See
 [docs/user-auth-spec.md](docs/user-auth-spec.md) for the design and
 [docs/user-auth-implementation.md](docs/user-auth-implementation.md) for the

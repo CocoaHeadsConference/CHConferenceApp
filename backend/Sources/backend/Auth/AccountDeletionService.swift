@@ -36,10 +36,6 @@ struct AccountDeletionService: Sendable {
     try await user.save(on: req.db)
 
     try await TokenService().revokeAll(for: userID, on: req.db)
-    try await AppAttestKey.query(on: req.db)
-      .filter(\.$user.$id == userID)
-      .set(\.$revoked, to: true)
-      .update()
 
     // Sets `deleted_at` (Fluent soft delete); hard purge follows after the
     // configured grace period.

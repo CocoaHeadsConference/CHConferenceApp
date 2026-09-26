@@ -10,9 +10,9 @@ import Vapor
 /// Coarse first gate of the app-authentication layer: checks `X-API-Key`
 /// against the static keys configured via `API_KEYS`.
 ///
-/// Caveat (intentional, per spec §6): a key baked into a shipped iOS app is
-/// extractable from the binary. This is not an integrity guarantee — App
-/// Attest provides that. Fails closed when no keys are configured.
+/// Caveat (intentional, per spec §6): a key baked into a shipped app is
+/// extractable from the binary, so this identifies the client but is not an
+/// integrity guarantee. Fails closed when no keys are configured.
 struct APIKeyMiddleware: AsyncMiddleware {
   static let header = HTTPHeaders.Name("X-API-Key")
 

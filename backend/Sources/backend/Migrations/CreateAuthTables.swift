@@ -45,23 +45,3 @@ struct CreateRefreshToken: AsyncMigration {
     try await database.schema(RefreshToken.schema).delete()
   }
 }
-
-struct CreateAppAttestKey: AsyncMigration {
-  func prepare(on database: any Database) async throws {
-    try await database.schema(AppAttestKey.schema)
-      .id()
-      .field("user_id", .uuid, .references(User.schema, "id", onDelete: .setNull))
-      .field("key_id", .string, .required)
-      .field("public_key", .data, .required)
-      .field("receipt", .data, .required)
-      .field("sign_count", .int, .required, .sql(.default(0)))
-      .field("revoked", .bool, .required, .sql(.default(false)))
-      .field("created_at", .datetime)
-      .unique(on: "key_id")
-      .create()
-  }
-
-  func revert(on database: any Database) async throws {
-    try await database.schema(AppAttestKey.schema).delete()
-  }
-}

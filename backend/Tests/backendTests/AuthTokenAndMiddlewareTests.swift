@@ -2,10 +2,8 @@ import CocoaHeadsCore
 import Crypto
 import Foundation
 import JWTKit
-import SwiftASN1
 import Testing
 import VaporTesting
-import X509
 
 @testable import backend
 
@@ -129,10 +127,7 @@ struct APIKeyMiddlewareTests {
       accountPurgeGraceDays: 30,
       appleTeamID: nil,
       appleSignInKeyID: nil,
-      appleSignInPrivateKey: nil,
-      appAttestTeamID: nil,
-      appAttestEnvironment: .production,
-      appAttestDisabled: true
+      appleSignInPrivateKey: nil
     )
   }
 
@@ -201,116 +196,6 @@ struct APIKeyMiddlewareTests {
         afterResponse: { res async in
           #expect(res.status == .serviceUnavailable)
         }
-      )
-    }
-  }
-}
-
-@Suite("App Attest attestation failure paths")
-struct AttestationFailureTests {
-  private let verifier = AppAttestVerifier(environment: .development)
-  private static let appID = "TEAMID1234.com.cocoaheadsbr.conf"
-  private static let keyId = Data(repeating: 1, count: 32)
-  private static let challenge = Data("challenge".utf8)
-
-  // Minimal CBOR encoders for building attestation objects in tests.
-  private func cborText(_ string: String) -> Data {
-    Data([0x60 | UInt8(string.utf8.count)]) + Data(string.utf8)
-  }
-
-  private func cborBytes(_ data: Data) -> Data {
-    precondition(data.count < 65536)
-    if data.count <= 23 { return Data([0x40 | UInt8(data.count)]) + data }
-    if data.count < 256 { return Data([0x58, UInt8(data.count)]) + data }
-    return Data([0x59, UInt8(data.count >> 8), UInt8(data.count & 0xFF)]) + data
-  }
-
-  private func attestationObject(fmt: String, credCertDER: Data) -> Data {
-    var object = Data([0xA3])
-    object.append(cborText("fmt"))
-    object.append(cborText(fmt))
-    object.append(cborText("attStmt"))
-    object.append(Data([0xA2]))
-    object.append(cborText("x5c"))
-    object.append(Data([0x81]))
-    object.append(cborBytes(credCertDER))
-    object.append(cborText("receipt"))
-    object.append(cborBytes(Data()))
-    object.append(cborText("authData"))
-    object.append(cborBytes(Data(repeating: 0, count: 55)))
-    return object
-  }
-
-  @Test("Rejects garbage input")
-  func garbage() async {
-    await #expect(throws: (any Error).self) {
-      try await verifier.verifyAttestation(
-        Data([0xDE, 0xAD, 0xBE, 0xEF]),
-        keyId: Self.keyId,
-        challenge: Self.challenge,
-        appID: Self.appID
-      )
-    }
-  }
-
-  @Test("Rejects a non-App-Attest format")
-  func wrongFormat() async {
-    let attestation = attestationObject(fmt: "packed", credCertDER: Data([1, 2, 3]))
-    await #expect(throws: AppAttestVerifier.VerificationError.unexpectedFormat("packed")) {
-      try await verifier.verifyAttestation(
-        attestation,
-        keyId: Self.keyId,
-        challenge: Self.challenge,
-        appID: Self.appID
-      )
-    }
-  }
-
-  @Test("Rejects an unparseable credential certificate")
-  func malformedCertificate() async {
-    let attestation = attestationObject(fmt: "apple-appattest", credCertDER: Data([1, 2, 3]))
-    await #expect(throws: (any Error).self) {
-      try await verifier.verifyAttestation(
-        attestation,
-        keyId: Self.keyId,
-        challenge: Self.challenge,
-        appID: Self.appID
-      )
-    }
-  }
-
-  @Test("Rejects a certificate that does not chain to Apple's root")
-  func selfSignedCertificate() async throws {
-    let key = P256.Signing.PrivateKey()
-    let name = try DistinguishedName {
-      CommonName("Fake App Attest Credential")
-    }
-    let now = Date()
-    let certificate = try Certificate(
-      version: .v3,
-      serialNumber: .init(),
-      publicKey: .init(key.publicKey),
-      notValidBefore: now.addingTimeInterval(-3600),
-      notValidAfter: now.addingTimeInterval(3600),
-      issuer: name,
-      subject: name,
-      signatureAlgorithm: .ecdsaWithSHA256,
-      extensions: Certificate.Extensions(),
-      issuerPrivateKey: .init(key)
-    )
-    var serializer = DER.Serializer()
-    try serializer.serialize(certificate)
-    let attestation = attestationObject(
-      fmt: "apple-appattest",
-      credCertDER: Data(serializer.serializedBytes)
-    )
-
-    await #expect(throws: AppAttestVerifier.VerificationError.certificateChainInvalid) {
-      try await verifier.verifyAttestation(
-        attestation,
-        keyId: Self.keyId,
-        challenge: Self.challenge,
-        appID: Self.appID
       )
     }
   }

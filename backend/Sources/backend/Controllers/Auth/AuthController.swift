@@ -94,14 +94,6 @@ struct AuthController: RouteCollection {
       user = existing
     }
 
-    // Associate the attested device key with the signed-in user.
-    if let attestedKeyID = req.attestedKeyID {
-      try await AppAttestKey.query(on: req.db)
-        .filter(\.$keyId == attestedKeyID)
-        .set(\.$user.$id, to: user.id)
-        .update()
-    }
-
     return try await tokens.issueTokenPair(for: user, on: req)
   }
 
