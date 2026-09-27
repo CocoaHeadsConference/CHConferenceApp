@@ -22,6 +22,8 @@ public func configure(_ app: Application) async throws {
 
   app.migrations.add(CreateUser())
   app.migrations.add(CreateRefreshToken())
+  app.migrations.add(CreateAppAttestKey())
+  app.migrations.add(DropAppAttestKeys())
 
   try await configureAuth(app)
 
