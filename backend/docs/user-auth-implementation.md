@@ -28,11 +28,21 @@ it (see spec §6).
 ## Sign in with Apple
 
 `POST /auth/apple` body is `AppleSignInRequest` (shared DTO in
-`CocoaHeadsCore`). The server verifies the identity token against Apple's JWKS
-(`aud` = `APPLE_BUNDLE_ID`), upserts the user on the Apple `sub`, exchanges the
-authorization code at `https://appleid.apple.com/auth/token` (client-secret JWT
-signed with the Sign in with Apple `.p8` key), stores Apple's refresh token
-AES-GCM-encrypted, and returns a `TokenResponse`:
+`CocoaHeadsCore`). The client generates a random raw `nonce`, sets its SHA-256
+hex digest on the `ASAuthorizationAppleIDRequest`, and sends the raw value in
+the body. The server:
+
+1. Rejects a missing or blank `nonce` (400).
+2. Verifies the identity token against Apple's JWKS (`aud` = `APPLE_BUNDLE_ID`)
+   and requires its `nonce` claim to equal SHA-256(raw nonce).
+3. Exchanges the authorization code at `https://appleid.apple.com/auth/token`
+   (client-secret JWT signed with the Sign in with Apple `.p8` key), verifies
+   the returned `id_token` the same way, and requires the same `sub` — so a
+   code from a different sign-in cannot be attached to this identity.
+4. Upserts the user on the Apple `sub` (`AppleUserService`). Signing in after
+   account deletion creates a **new** ordinary user; the tombstone keeps its
+   deletion timestamp and role, and its Apple identifier is released.
+5. Stores Apple's refresh token AES-GCM-encrypted and returns a `TokenResponse`:
 
 - **Access token**: backend-signed JWT (ES256 when `JWT_SIGNING_KEY` is a PEM,
   HS256 otherwise), TTL `ACCESS_TOKEN_TTL` (default 15 min), claims
@@ -64,6 +74,9 @@ AES-GCM-encrypted, and returns a `TokenResponse`:
 | `APPLE_SIGNIN_KEY_ID` | Key ID of the Sign in with Apple `.p8` key | — |
 | `APPLE_SIGNIN_PRIVATE_KEY` | `.p8` private-key contents (ES256) | — |
 | `TOKEN_ENCRYPTION_KEY` | Base64 32-byte AES-256 key for secrets at rest | derived from `JWT_SIGNING_KEY` |
+
+Blank values (such as Compose's `${VAR:-}` defaults) are treated as unset, and
+values are trimmed of surrounding whitespace.
 
 ## Local development
 

@@ -41,7 +41,7 @@ func configureAuth(_ app: Application) async throws {
 
   // Backend access-token signing key: an ES256 private-key PEM (recommended)
   // or a plain HS256 secret.
-  if let signingKey = Environment.get("JWT_SIGNING_KEY") {
+  if let signingKey = AuthEnvironment.value("JWT_SIGNING_KEY") {
     if signingKey.contains("BEGIN") {
       try await app.jwt.keys.add(ecdsa: ES256PrivateKey(pem: signingKey))
     } else {
@@ -55,7 +55,7 @@ func configureAuth(_ app: Application) async throws {
     await app.jwt.keys.add(hmac: "insecure-development-key", digestAlgorithm: .sha256)
   }
 
-  if Environment.get("TOKEN_ENCRYPTION_KEY") != nil || Environment.get("JWT_SIGNING_KEY") != nil {
+  if AuthEnvironment.value("TOKEN_ENCRYPTION_KEY") != nil || AuthEnvironment.value("JWT_SIGNING_KEY") != nil {
     app.tokenEncryption = try TokenEncryption.load()
   } else {
     app.tokenEncryption = TokenEncryption(
