@@ -168,9 +168,13 @@ The existing `/scrape` route becomes gated behind app-auth.
 An earlier revision of this spec added an App Attest assertion gate. It was removed:
 `DCAppAttestService` is unsupported on the Mac (and the Simulator), so Mac clients could
 never attest, and making it optional on account routes would let any client bypass it by
-omitting the headers. User-scoped routes are protected by Sign in with Apple, backend
-tokens, and server-side role checks; abuse of costly routes should be handled with rate
-limiting (§10).
+omitting the headers. User-scoped routes are protected by Sign in with Apple and backend
+tokens. Roles are not enforced yet (§7), so any signed-in user passes the same gates;
+abuse of costly routes should be handled with rate limiting (§10).
+
+Databases migrated before the removal still have an `app_attest_keys` table;
+the `DropAppAttestKeys` migration removes it. `CreateAppAttestKey` stays registered
+as a no-op so those databases can still revert past the batch that recorded it.
 
 ---
 
